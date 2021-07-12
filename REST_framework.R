@@ -20,12 +20,12 @@ function(beta, sigma, gamma, S0, E0, I0, R0) {
   if(file.exists(input_file)) file.remove(input_file)
   
   beta_val  <- beta
-  gamma_val <- sigma
-  sigma_val <- gamma
-  S_0_val   <- S
-  E_0_val   <- E
-  I_0_val   <- I
-  R_0_val   <- R
+  sigma_val <- sigma
+  gamma_val <- gamma
+  S_0_val   <- S0
+  E_0_val   <- E0
+  I_0_val   <- I0
+  R_0_val   <- R0
   
   inputs <- data.frame(par_beta  = beta_val,
                        par_gamma = gamma_val,
@@ -34,6 +34,8 @@ function(beta, sigma, gamma, S0, E0, I0, R0) {
                        E         = E_0_val,
                        I         = I_0_val,
                        R         = R_0_val)
+  
+  
   
   readr::write_tsv(inputs, input_file)
   
