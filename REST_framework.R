@@ -5,17 +5,27 @@ function() {
   jsonlite::toJSON(sim_results)
 }
 
+#* @param beta Effective contact rate
+#* @param sigma rate of onset of infectiousness
+#* @param gamma Recovery rate
+#* @param S0 Initial susceptible
+#* @param E0 Initial exposed
+#* @param I0 Initial infectious
+#* @param R0 Initial recovered
 #* @get /model_01
-function() {
-  library(readr)
+function(beta, sigma, gamma, S0, E0, I0, R0) {
   
-  beta_val  <- 1
-  gamma_val <- 0.5
-  sigma_val <- 0.5
-  S_0_val   <- 999
-  E_0_val   <- 0
-  I_0_val   <- 1
-  R_0_val   <- 0
+  input_file <- "./model_01/inputs.txt"
+  
+  if(file.exists(input_file)) file.remove(input_file)
+  
+  beta_val  <- beta
+  gamma_val <- sigma
+  sigma_val <- gamma
+  S_0_val   <- S
+  E_0_val   <- E
+  I_0_val   <- I
+  R_0_val   <- R
   
   inputs <- data.frame(par_beta  = beta_val,
                        par_gamma = gamma_val,
@@ -25,7 +35,7 @@ function() {
                        I         = I_0_val,
                        R         = R_0_val)
   
-  write_tsv(inputs, "./model_01/inputs.txt")
+  readr::write_tsv(inputs, input_file)
   
   system("./stella_simulator ./model_01/model_01.stmx")
   sim_results <- readr::read_tsv("./model_01/output.txt")
