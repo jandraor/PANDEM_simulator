@@ -44,7 +44,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
     readr::read_tsv("./model_01/output.txt")
   }
   
-  if(sens = 0) {
+  if(sens == 0) {
     sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0)
     readr::write_csv(sim_results, "./test_single_run.csv")
     return(jsonlite::toJSON(sim_results))
