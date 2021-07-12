@@ -60,7 +60,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
     I_0_vals   <- strsplit(I0, ",")[[1]]
     R_0_vals   <- strsplit(R0, ",")[[1]]
     
-    n_sims <- nrow(beta_vals)
+    n_sims <- length(beta_vals)
     
     purrr::map_df(1:n_sims, function(i) {
       sim_results <- run_model(beta_vals[[i]], sigma[[i]], gamma[[i]], S0[[i]],
