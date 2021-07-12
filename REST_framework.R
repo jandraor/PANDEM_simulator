@@ -63,8 +63,9 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
     n_sims <- length(beta_vals)
     
     purrr::map_df(1:n_sims, function(i) {
-      sim_results <- run_model(beta_vals[[i]], sigma[[i]], gamma[[i]], S0[[i]],
-                               E0[[i]], I0[[i]], R0[[i]]) |>
+      sim_results <- run_model(beta_vals[[i]], sigma_vals[[i]], gamma-vals[[i]],
+                               S0_vals[[i]], E0_vals[[i]], I0_vals[[i]], 
+                               R0_vals[[i]]) |>
         dplyr::mutate(iter = i)
     }) -> sim_results
     
