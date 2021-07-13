@@ -77,11 +77,11 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     gamma_length <- length(gamma_vals)
     S_length     <- length(S_0_vals)
     E_length     <- length(E_0_vals)
-    I_0_vals     <- length(I_0_vals)
-    R_0_vals     <- length(R_0_vals)
+    I_length     <- length(I_0_vals)
+    R_length     <- length(R_0_vals)
     
     lengths <- c(beta_length, sigma_length, gamma_length, S_length,
-                 E_length, I_0_vals, R_0_vals )
+                 E_length, I_length, R_length)
     
     if(length(unique(lengths)) != 1) {
       error_msg <- list(error = "Unequal number of values for each parameter")
