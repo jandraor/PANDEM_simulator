@@ -13,8 +13,7 @@ function() {
 #* @param I0 Initial infectious
 #* @param R0 Initial recovered
 #* @get /model_01
-function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
-  
+function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
   
   run_model <- function(beta, sigma, gamma, S0, E0, I0, R0) {
     
@@ -45,9 +44,39 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
   }
   
   if(sens == 0) {
-    sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0)
-    readr::write_csv(sim_results, "./test_single_run.csv")
-    return(jsonlite::toJSON(sim_results))
+    
+    sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) |>
+      dplyr::mutate(dC = C - dplyr::lag(C)) |>
+      dplyr::filter(time != 0)
+    
+    if(ci == 0) {
+      readr::write_csv(sim_results, "./test_single_run.csv")  
+      return(jsonlite::toJSON(sim_results))
+    }
+    
+    if(ci == 1) {
+      n_meas      <- 100 # number of measurements
+      
+      dC_vals <- sim_results$dC
+      
+      purrr::map_df(1:60, function(i) {
+        measurements <- rpois(n_meas, dC_vals[[i]])
+        quantiles    <- quantile(measurements, c(0.025, 0.25, 50, 75, 0.975))
+        
+        data.frame(time = i, 
+                   var  = "dC", 
+                   q2.5  = quantiles[[1]],
+                   q25   = quantiles[[2]],
+                   q50   = quantiles[[3]],
+                   q75   = quantiles[[4]],
+                   q97.5 = quantiles[[5]])
+      }) -> quantiles_df
+      
+      readr::write_csv(quantiles_df, "./test_single_run_ci.csv")
+      return(jsonlite::toJSON(quantiles_df))
+    }
+    
+    
   }
   
   if(sens == 1) {
@@ -60,7 +89,23 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0) {
     I_0_vals   <- strsplit(I0, ",")[[1]]
     R_0_vals   <- strsplit(R0, ",")[[1]]
     
-    n_sims <- length(beta_vals)
+    beta_length  <- length(beta_vals)
+    sigma_length <- length(sigma_vals)
+    gamma_length <- length(gamma_vals)
+    S_length     <- length(S_0_vals)
+    E_length     <- length(E_0_vals)
+    I_0_vals     <- length(I_0_vals)
+    R_0_vals     <- length(R_0_vals)
+    
+    lengths <- c(beta_length, sigma_length, gamma_length, S_length,
+                 E_length, I_0_vals, R_0_vals )
+    
+    if(length(unique(ranks)) != 1) {
+      error_msg <- list(error = "Unequal number of values for each parameter")
+      return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
+    }
+    
+    n_sims <- beta_length
     
     purrr::map_df(1:n_sims, function(i) {
       sim_results <- run_model(beta_vals[[i]], sigma_vals[[i]], gamma_vals[[i]],
