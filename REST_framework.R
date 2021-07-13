@@ -107,7 +107,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
       purrr::map_df(1:n_sims, function(i) {
         
         iter_df <- dplyr::filter(sim_results, iter == i)
-        create_ci_df(iter_df) |> mutate(iter == i)
+        create_ci_df(iter_df) |> dplyr::mutate(iter == i)
       }) -> scenarios_ci_df
       
       readr::write_csv(scenarios_ci_df, "./test_multiple_run_ci.csv")
