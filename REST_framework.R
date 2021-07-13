@@ -47,7 +47,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     
     sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) |>
       dplyr::mutate(dC = C - dplyr::lag(C)) |>
-      dplyr::filter(day != 0)
+      dplyr::filter(Day != 0)
     
     if(ci == 0) {
       readr::write_csv(sim_results, "./test_single_run.csv")  
