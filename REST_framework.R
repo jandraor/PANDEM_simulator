@@ -60,8 +60,9 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
       dC_vals <- sim_results$dC
       
       purrr::map_df(1:60, function(i) {
+        
         measurements <- rpois(n_meas, dC_vals[[i]])
-        quantiles    <- quantile(measurements, c(0.025, 0.25, 50, 75, 0.975))
+        quantiles    <- quantile(measurements, c(0.025, 0.25, 0.5, 0.75, 0.975))
         
         data.frame(time = i, 
                    var  = "dC", 
