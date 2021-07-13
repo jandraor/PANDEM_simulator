@@ -40,14 +40,15 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     readr::write_tsv(inputs, input_file)
     
     system("./stella_simulator ./model_01/model_01.stmx")
-    readr::read_tsv("./model_01/output.txt")
+    
+    readr::read_tsv("./model_01/output.txt") |>
+      dplyr::mutate(dC = C - dplyr::lag(C)) |>
+      dplyr::filter(Day != 0)
   }
   
   if(sens == 0) {
     
-    sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) |>
-      dplyr::mutate(dC = C - dplyr::lag(C)) |>
-      dplyr::filter(Day != 0)
+    sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) 
     
     if(ci == 0) {
       readr::write_csv(sim_results, "./test_single_run.csv")  
@@ -55,29 +56,10 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     }
     
     if(ci == 1) {
-      n_meas      <- 100 # number of measurements
-      
-      dC_vals <- sim_results$dC
-      
-      purrr::map_df(1:60, function(i) {
-        
-        measurements <- rpois(n_meas, dC_vals[[i]])
-        quantiles    <- quantile(measurements, c(0.025, 0.25, 0.5, 0.75, 0.975))
-        
-        data.frame(time = i, 
-                   var  = "dC", 
-                   q2.5  = quantiles[[1]],
-                   q25   = quantiles[[2]],
-                   q50   = quantiles[[3]],
-                   q75   = quantiles[[4]],
-                   q97.5 = quantiles[[5]])
-      }) -> quantiles_df
-      
+      quantiles_df <- create_ci_df(sim_results)
       readr::write_csv(quantiles_df, "./test_single_run_ci.csv")
       return(jsonlite::toJSON(quantiles_df))
     }
-    
-    
   }
   
   if(sens == 1) {
@@ -115,8 +97,43 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
         dplyr::mutate(iter = i)
     }) -> sim_results
     
-    readr::write_csv(sim_results, "./test_multiple_run.csv")
-    jsonlite::toJSON(sim_results)
+    if(ci == 0) {
+      readr::write_csv(sim_results, "./test_multiple_run.csv")
+      return(jsonlite::toJSON(sim_results))
+    }
+    
+    if(ci == 1) {
+      
+      purrr::map_df(1:sims, function(i) {
+        
+        iter_df <- dplyr::filter(sim_results, iter == i)
+        create_ci_df(iter_df) |> mutate(iter == i)
+      }) -> scenarios_ci_df
+      
+      readr::write_csv(sim_results, "./test_multiple_run_ci.csv")
+      return(jsonlite::toJSON(scenarios_ci_df))
+    }
+
   }
+}
+
+create_ci_df <- function(sim_df) {
+  n_meas      <- 100 # number of measurements
+  
+  dC_vals <- sim_df$dC
+  
+  purrr::map_df(1:60, function(i) {
+    
+    measurements <- rpois(n_meas, dC_vals[[i]])
+    quantiles    <- quantile(measurements, c(0.025, 0.25, 0.5, 0.75, 0.975))
+    
+    data.frame(time = i, 
+               var  = "dC", 
+               q2.5  = quantiles[[1]],
+               q25   = quantiles[[2]],
+               q50   = quantiles[[3]],
+               q75   = quantiles[[4]],
+               q97.5 = quantiles[[5]])
+  })
 }
 
