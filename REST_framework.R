@@ -83,7 +83,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     lengths <- c(beta_length, sigma_length, gamma_length, S_length,
                  E_length, I_0_vals, R_0_vals )
     
-    if(length(unique(ranks)) != 1) {
+    if(length(unique(lengths)) != 1) {
       error_msg <- list(error = "Unequal number of values for each parameter")
       return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
     }
