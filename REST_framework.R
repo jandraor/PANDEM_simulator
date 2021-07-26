@@ -51,13 +51,11 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) 
     
     if(ci == 0) {
-      readr::write_csv(sim_results, "./test_single_run.csv")  
       return(jsonlite::toJSON(sim_results))
     }
     
     if(ci == 1) {
       quantiles_df <- create_ci_df(sim_results)
-      readr::write_csv(quantiles_df, "./test_single_run_ci.csv")
       return(jsonlite::toJSON(quantiles_df))
     }
   }
@@ -98,7 +96,6 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     }) -> sim_results
     
     if(ci == 0) {
-      readr::write_csv(sim_results, "./test_multiple_run.csv")
       return(jsonlite::toJSON(sim_results))
     }
     
@@ -110,7 +107,6 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
         create_ci_df(iter_df) |> dplyr::mutate(iter = i)
       }) -> scenarios_ci_df
       
-      readr::write_csv(scenarios_ci_df, "./test_multiple_run_ci.csv")
       return(jsonlite::toJSON(scenarios_ci_df))
     }
 
