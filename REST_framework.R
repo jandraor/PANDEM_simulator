@@ -137,6 +137,7 @@ run_model <- function(par_list, fldr_path) {
   
   output_file <- file.path(fldr_path, "output.txt")
   if(file.exists(output_file)) file.remove(output_file)
+  file.create(output_file)
   
   inputs     <- as.data.frame(par_list)
   readr::write_tsv(inputs, input_file)
