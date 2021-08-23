@@ -28,7 +28,7 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
   
    if(sens == 0) {
     
-    sim_results <- run_model(par_list, fld_path) 
+    sim_results <- run_model(par_list, fldr_path) 
     
     if(ci == 0) {
       return(jsonlite::toJSON(sim_results))
