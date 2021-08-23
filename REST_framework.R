@@ -15,40 +15,20 @@ function() {
 #* @get /model_01
 function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
   
-  run_model <- function(beta, sigma, gamma, S0, E0, I0, R0) {
-    
-    input_file <- "./model_01/inputs.txt"
-    
-    if(file.exists(input_file)) file.remove(input_file)
-    
-    beta_val  <- beta
-    sigma_val <- sigma
-    gamma_val <- gamma
-    S_0_val   <- S0
-    E_0_val   <- E0
-    I_0_val   <- I0
-    R_0_val   <- R0
-    
-    inputs <- data.frame(par_beta  = beta_val,
-                         par_gamma = gamma_val,
-                         par_sigma = sigma_val,
-                         S         = S_0_val,
-                         E         = E_0_val,
-                         I         = I_0_val,
-                         R         = R_0_val)
-    
-    readr::write_tsv(inputs, input_file)
-    
-    system("./stella_simulator ./model_01/model_01.stmx")
-    
-    readr::read_tsv("./model_01/output.txt") |>
-      dplyr::mutate(dC = C - dplyr::lag(C)) |>
-      dplyr::filter(Day != 0)
-  }
+   fldr_path <- create_sim_folder()
+   
+   par_list <- list(par_beta  = beta,
+                    par_gamma = gamma,
+                    par_sigma = sigma,
+                    gamma = gamma,
+                    S    = S0,
+                    E    = E0,
+                    I    = I0,
+                    R    = R0)
   
-  if(sens == 0) {
+   if(sens == 0) {
     
-    sim_results <- run_model(beta, sigma, gamma, S0, E0, I0, R0) 
+    sim_results <- run_model(par_list, fld_path) 
     
     if(ci == 0) {
       return(jsonlite::toJSON(sim_results))
@@ -89,10 +69,16 @@ function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
     n_sims <- beta_length
     
     purrr::map_df(1:n_sims, function(i) {
-      sim_results <- run_model(beta_vals[[i]], sigma_vals[[i]], gamma_vals[[i]],
-                               S_0_vals[[i]], E_0_vals[[i]], I_0_vals[[i]], 
-                               R_0_vals[[i]]) |>
-        dplyr::mutate(iter = i)
+      
+      par_list <- list(par_beta  = beta_vals[[i]],
+                       par_gamma = gamma_vals[[i]],
+                       par_sigma = sigma_vals[[i]],
+                       S         = S_0_vals[[i]],
+                       E         = E_0_vals[[i]],
+                       I         = I_0_vals[[i]],
+                       R         = R_0_vals[[i]])
+      
+      sim_results <- run_model(par_list, fldr_path) |> dplyr::mutate(iter = i)
     }) -> sim_results
     
     if(ci == 0) {
@@ -131,5 +117,36 @@ create_ci_df <- function(sim_df) {
                q75   = quantiles[[4]],
                q97.5 = quantiles[[5]])
   })
+}
+
+create_sim_folder <- function() {
+  
+  folder_id       <- paste0(sample(c(0:9, LETTERS), 8, T), collapse = '')
+  new_folder_path <- file.path("./model_01", folder_id)
+  dir.create(new_folder_path)
+  new_file_path   <- file.path(new_folder_path, "model_01.stmx")
+  file.copy("./model_01/model_01.stmx", new_file_path)
+  new_folder_path
+  
+}
+
+run_model <- function(par_list, fldr_path) {
+  
+  input_file <- file.path(fldr_path, "inputs.txt")
+  if(file.exists(input_file)) file.remove(input_file)
+  
+  output_file <- file.path(fldr_path, "output.txt")
+  if(file.exists(output_file)) file.remove(output_file)
+  
+  inputs     <- as.data.frame(par_list)
+  readr::write_tsv(inputs, input_file)
+  
+  mdl_path <- file.path(fldr_path, "model_01.stmx")
+  sys_cmd  <- paste("./stella_simulator", mdl_path)
+  system(sys_cmd)
+  
+  readr::read_tsv(output_file) |>
+    dplyr::mutate(dC = C - dplyr::lag(C)) |>
+    dplyr::filter(Day != 0)
 }
 
