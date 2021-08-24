@@ -1,32 +1,26 @@
-#* @get /sim
-function() {
-  system("./stella_simulator SIR_Test.stmx")
-  sim_results <- readr::read_tsv("./output.txt")
-  jsonlite::toJSON(sim_results)
-}
+#* @get /sim/<model_id>
+function(req) {
+  
+  user_args <- req$args
+  model_id  <- user_args$model_id
+  
+  # available models
+  avl_mdl <- stringr::str_glue("model_{c('01', '02')}")
+  
+  if(!model_id %in% avl_mdl) {
+    error_msg <- list(error = stringr::str_glue("Model '{model_id}' not found"))
+    return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
+  }
+  
+  fldr_path <- create_sim_folder(model_id)
+  
+  par_list <- extract_pars(user_args, model_id)
+  
+  ci <- ifelse(is.null(user_args$ci), 0, user_args$ci)
+  sens <- ifelse(is.null(user_args$sens), 0, user_args$sens)
 
-#* @param beta Effective contact rate
-#* @param sigma rate of onset of infectiousness
-#* @param gamma Recovery rate
-#* @param S0 Initial susceptible
-#* @param E0 Initial exposed
-#* @param I0 Initial infectious
-#* @param R0 Initial recovered
-#* @get /model_01
-function(beta, sigma, gamma, S0, E0, I0, R0, sens = 0, ci = 0) {
-  
-   fldr_path <- create_sim_folder()
-   
-   par_list <- list(par_beta  = beta,
-                    par_gamma = gamma,
-                    par_sigma = sigma,
-                    gamma = gamma,
-                    S    = S0,
-                    E    = E0,
-                    I    = I0,
-                    R    = R0)
-  
-   if(sens == 0) {
+
+  if(sens == 0) {
     
     sim_results <- run_model(par_list, fldr_path) 
     
@@ -119,13 +113,17 @@ create_ci_df <- function(sim_df) {
   })
 }
 
-create_sim_folder <- function() {
+create_sim_folder <- function(model_id) {
   
   folder_id       <- paste0(sample(c(0:9, LETTERS), 8, T), collapse = '')
-  new_folder_path <- file.path("./model_01", folder_id)
+  root_folder     <- stringr::str_glue("./{model_id}")
+  new_folder_path <- file.path(root_folder, folder_id)
   dir.create(new_folder_path)
-  new_file_path   <- file.path(new_folder_path, "model_01.stmx")
-  file.copy("./model_01/model_01.stmx", new_file_path)
+  
+  stl_file        <- stringr::str_glue("{model_id}.stmx") # Stella file
+  src_file        <- stringr::str_glue("./{model_id}/{model_id}.stmx")
+  new_file_path   <- file.path(new_folder_path, stl_file)
+  file.copy(src_file, new_file_path)
   new_folder_path
   
 }
@@ -149,5 +147,22 @@ run_model <- function(par_list, fldr_path) {
   readr::read_tsv(output_file) |>
     dplyr::mutate(dC = C - dplyr::lag(C)) |>
     dplyr::filter(Day != 0)
+}
+
+extract_pars <- function(user_args, model_id) {
+  
+  if(model_id == "model_01") {
+    
+    par_list <- list(par_beta  = user_args$beta,
+                     par_gamma = user_args$gamma,
+                     par_sigma = user_args$sigma,
+                     gamma     = user_args$gamma,
+                     S         = user_args$S0,
+                     E         = user_args$E0,
+                     I         = user_args$I0,
+                     R         = user_args$R0)
+  }
+  
+  pars_list
 }
 
