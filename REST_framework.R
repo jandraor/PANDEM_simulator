@@ -163,6 +163,6 @@ extract_pars <- function(user_args, model_id) {
                      R         = user_args$R0)
   }
   
-  pars_list
+  par_list
 }
 

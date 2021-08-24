@@ -16,7 +16,8 @@ RUN apt-get update -qq && apt-get install -y \
 RUN install2.r --error \
     readr \
     plumber \
-    dplyr
+    dplyr \
+    stringr
 
 # copy app code into docker image 
 COPY / /
