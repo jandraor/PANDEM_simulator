@@ -172,11 +172,11 @@ extract_pars <- function(user_args, model_id) {
     actual_pars   <- names(user_args)
     vald          <- expected_pars %in% actual_pars # Validation
     
-    if(any(vald == FALSE) {
+    if(any(vald == FALSE)) {
       mis_par <- paste(expected_pars[vald], collapse = ", ") # Missing params
       msg     <- stringr::str_glue("Parameters '{mis_par}' not found")
       stop(msg, call. = FALSE)
-    })
+    }
       
     valid_cms <- c("Belgium", "Germany", "Finland", "United Kingdom",
                    "Italy", "Luxembourg", "Netherlands", "Poland")
