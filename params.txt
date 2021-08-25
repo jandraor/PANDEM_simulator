@@ -1,2 +1,0 @@
-Contacts	Infected	Infectious Duration	Infectivity	Removed	Susceptible
-10	1	2	0.2	0	9999

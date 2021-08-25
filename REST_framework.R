@@ -13,8 +13,8 @@ function(req) {
   }
   
   fldr_path <- create_sim_folder(model_id)
-  par_list  <- extract_pars(user_args, model_id)
   
+  par_list  <- extract_pars(user_args, model_id)
   ci   <- ifelse(is.null(user_args$ci), 0, user_args$ci)
   sens <- ifelse(is.null(user_args$sens), 0, user_args$sens)
 
@@ -173,13 +173,15 @@ extract_pars <- function(user_args, model_id) {
     vald          <- expected_pars %in% actual_pars # Validation
     
     if(any(vald == FALSE)) {
-      mis_par <- paste(expected_pars[vald], collapse = ", ") # Missing params
+      mis_par <- paste(expected_pars[!vald], collapse = ", ") # Missing params
       msg     <- stringr::str_glue("Parameters '{mis_par}' not found")
       stop(msg, call. = FALSE)
     }
       
     valid_cms <- c("Belgium", "Germany", "Finland", "United Kingdom",
                    "Italy", "Luxembourg", "Netherlands", "Poland")
+    
+    cm <- user_args$cm
     
     if(!cm %in% valid_cms) {
       msg <- stringr::str_glue("Contact matrix for '{cm}' not available")
@@ -188,10 +190,11 @@ extract_pars <- function(user_args, model_id) {
       
     age_limits <- c(0, 5, 15, 45)
     
-    cm_object <- contact_matrix(polymod, age.limits = age_limits,
-                                countries  = cm,
-                                survey.pop = cm,
-                                symmetric  = TRUE)
+    cm_object <- socialmixr::contact_matrix(socialmixr::polymod, 
+                                            age.limits = age_limits,
+                                            countries  = cm,
+                                            survey.pop = cm,
+                                            symmetric  = TRUE)
     
     pop_df    <- cm_object$demography |> 
       dplyr::rename(age_group  = age.group) |>
