@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
-		<smile version="1.0" namespace="std, isee"/>
-		<name>model_01</name>
+		<smile version="1.0" namespace="std, isee" uses_arrays="1"/>
+		<name>model_02</name>
 		<uuid>9376e596-c0c9-4177-bdb7-9b4c728d957a</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="2.0" isee:build_number="2190" isee:saved_by_v1="true" lang="en">Stella Architect</product>
@@ -12,6 +12,32 @@
 		<stop>60</stop>
 		<dt reciprocal="true">8</dt>
 	</sim_specs>
+	<dimensions>
+		<dim name="Age">
+			<elem name="A"/>
+			<elem name="B"/>
+			<elem name="C"/>
+			<elem name="D"/>
+		</dim>
+		<dim name="Contacts">
+			<elem name="AA"/>
+			<elem name="AB"/>
+			<elem name="AC"/>
+			<elem name="AD"/>
+			<elem name="BA"/>
+			<elem name="BB"/>
+			<elem name="BC"/>
+			<elem name="BD"/>
+			<elem name="CA"/>
+			<elem name="CB"/>
+			<elem name="CC"/>
+			<elem name="CD"/>
+			<elem name="DA"/>
+			<elem name="DB"/>
+			<elem name="DC"/>
+			<elem name="DD"/>
+		</dim>
+	</dimensions>
 	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
@@ -22,46 +48,175 @@
 		<export resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/output.txt" interval="DT" precomputed="false" isee:format="numbers">
 			<all/>
 		</export>
-		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/inputs.txt"/>
+		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_02/inputs.txt"/>
 	</data>
 	<model_units/>
 	<model>
 		<variables>
 			<stock name="S">
-				<eqn>999</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>999</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>999</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>999</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>999</eqn>
+				</element>
 				<outflow>S_to_E</outflow>
 			</stock>
 			<flow name="S to E">
-				<eqn>S * lambda</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>S[1] * lambda[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>S[2] * lambda[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>S[3] * lambda[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>S[4] * lambda[4]</eqn>
+				</element>
 				<non_negative/>
 			</flow>
 			<stock name="E">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
 				<eqn>0</eqn>
 				<inflow>S_to_E</inflow>
 				<outflow>E_to_I</outflow>
 			</stock>
 			<flow name="E to I">
-				<eqn>par_sigma * E</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>E[1] * par_sigma</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>E[2] * par_sigma</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>E[3] * par_sigma</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>E[4] * par_sigma</eqn>
+				</element>
 				<non_negative/>
 			</flow>
 			<stock name="I">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
 				<eqn>1</eqn>
 				<inflow>E_to_I</inflow>
 				<outflow>I_to_R</outflow>
 			</stock>
 			<flow name="I to R">
-				<eqn>par_gamma * I</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>par_gamma * I[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>par_gamma * I[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>par_gamma * I[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>par_gamma * I[4]</eqn>
+				</element>
 				<non_negative/>
 			</flow>
 			<stock name="R">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
 				<eqn>0</eqn>
 				<inflow>I_to_R</inflow>
 			</stock>
 			<aux name="lambda">
-				<eqn>par_beta * I /N</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>par_beta[AA] * I[A] + par_beta[AB] * I[B] + par_beta[AC] * I[C]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>par_beta[BA] * I[A] + par_beta[BB] * I[B] + par_beta[BC] * I[C] + par_beta[BD] * I[D]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>par_beta[CA] * I[A] + par_beta[CB] * I[B] + par_beta[CC] * I[C] + par_beta[CD] * I[D]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>par_beta[DA] * I[A] + par_beta[DB] * I[B] + par_beta[DC] * I[C] + par_beta[DD] * I[D]</eqn>
+				</element>
 			</aux>
 			<aux name="par beta">
-				<eqn>1</eqn>
+				<dimensions>
+					<dim name="Contacts"/>
+				</dimensions>
+				<element subscript="AA">
+					<eqn>w[AA] * q / N[A]</eqn>
+				</element>
+				<element subscript="AB">
+					<eqn>w[AB] * q / N[A]</eqn>
+				</element>
+				<element subscript="AC">
+					<eqn>w[AC] * q / N[A]</eqn>
+				</element>
+				<element subscript="AD">
+					<eqn>w[AD] * q / N[A]</eqn>
+				</element>
+				<element subscript="BA">
+					<eqn>w[BA] * q / N[B]</eqn>
+				</element>
+				<element subscript="BB">
+					<eqn>w[BB] * q / N[B]</eqn>
+				</element>
+				<element subscript="BC">
+					<eqn>w[BC] * q / N[B]</eqn>
+				</element>
+				<element subscript="BD">
+					<eqn>w[BD] * q / N[B]</eqn>
+				</element>
+				<element subscript="CA">
+					<eqn>w[CA] * q / N[C]</eqn>
+				</element>
+				<element subscript="CB">
+					<eqn>w[CB] * q / N[C]</eqn>
+				</element>
+				<element subscript="CC">
+					<eqn>w[CC] * q / N[C]</eqn>
+				</element>
+				<element subscript="CD">
+					<eqn>w[CD] * q / N[C]</eqn>
+				</element>
+				<element subscript="DA">
+					<eqn>w[DA] * q / N[D]</eqn>
+				</element>
+				<element subscript="DB">
+					<eqn>w[DB] * q / N[D]</eqn>
+				</element>
+				<element subscript="DC">
+					<eqn>w[DC] * q / N[D]</eqn>
+				</element>
+				<element subscript="DD">
+					<eqn>w[DD] * q / N[D]</eqn>
+				</element>
 			</aux>
 			<aux name="par sigma">
 				<eqn>0.5</eqn>
@@ -70,19 +225,119 @@
 				<eqn>0.5</eqn>
 			</aux>
 			<stock name="dC">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
 				<eqn>0</eqn>
 				<inflow>to_dC</inflow>
 				<outflow>out_of_dC</outflow>
 			</stock>
 			<flow name="to dC">
-				<eqn>E_to_I</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>E_to_I[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>E_to_I[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>E_to_I[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>E_to_I[4]</eqn>
+				</element>
 			</flow>
+			<aux name="w">
+				<dimensions>
+					<dim name="Contacts"/>
+				</dimensions>
+				<element subscript="AA">
+					<eqn>12</eqn>
+				</element>
+				<element subscript="AB">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="AC">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="AD">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="BA">
+					<eqn>3</eqn>
+				</element>
+				<element subscript="BB">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="BC">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="BD">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="CA">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="CB">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="CC">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="CD">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="DA">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="DB">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="DC">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="DD">
+					<eqn>1</eqn>
+				</element>
+			</aux>
 			<aux name="N">
-				<eqn>E + I + R + S</eqn>
-				<isee:summing/>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>S[A] + E[A] + I[A] + R[A]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>S[B] + E[B] + I[B] + R[B]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>S[C] + E[C] + I[C] + R[C]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>S[D] + E[D] + I[D] + R[D]</eqn>
+				</element>
+			</aux>
+			<aux name="q">
+				<eqn>0.1</eqn>
 			</aux>
 			<flow name="out of dC">
-				<eqn>PULSE(dC,  1,  1)</eqn>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>PULSE(dC[A], 1, 1)</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>PULSE(dC[B], 1, 1)</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>PULSE(dC[C], 1, 1)</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>PULSE(dC[D], 1, 1)</eqn>
+				</element>
 			</flow>
 		</variables>
 		<views>
@@ -130,7 +385,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="818" page_height="575" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="818" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -194,10 +449,10 @@
 					<from>I</from>
 					<to>lambda</to>
 				</connector>
-				<aux x="172.375" y="157" width="35.25" height="10" name="par beta">
+				<aux x="174.375" y="157" width="35.25" height="10" name="par beta">
 					<shape type="name_only"/>
 				</aux>
-				<connector uid="2" angle="357.51">
+				<connector uid="2" angle="357.436">
 					<from>par_beta</from>
 					<to>lambda</to>
 				</connector>
@@ -242,20 +497,69 @@
 					<from>E_to_I</from>
 					<to>to_dC</to>
 				</connector>
-				<aux label_side="top" x="254.875" y="108" width="8.25" height="10" name="N">
-					<shape type="name_only"/>
-				</aux>
-				<connector uid="10" angle="270">
-					<from>N</from>
-					<to>lambda</to>
+				<aux x="116" y="101" name="w"/>
+				<aux label_side="center" x="611" y="567" name="N"/>
+				<connector uid="10" angle="321.248">
+					<from>w</from>
+					<to>par_beta</to>
 				</connector>
-				<flow x="509" y="376" name="out of dC">
+				<aux x="123" y="162" name="q"/>
+				<connector uid="11" angle="0">
+					<from>q</from>
+					<to>par_beta</to>
+				</connector>
+				<connector uid="12" angle="332.162">
+					<from>
+						<alias uid="13"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="14" angle="19.9831">
+					<from>
+						<alias uid="15"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="16" angle="211.283">
+					<from>
+						<alias uid="17"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="18" angle="150.255">
+					<from>
+						<alias uid="19"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="20" angle="240.068">
+					<from>
+						<alias uid="21"/>
+					</from>
+					<to>par_beta</to>
+				</connector>
+				<alias font_style="italic" label_side="center" uid="13" x="501.5" y="516.5" width="40" height="28">
+					<of>S</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="17" x="663.5" y="515" width="34" height="24">
+					<of>E</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="15" x="499" y="595.5" width="37" height="25">
+					<of>I</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="19" x="663.5" y="595.5" width="34" height="25">
+					<of>R</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="21" x="230" y="82" width="18" height="18">
+					<of>N</of>
+				</alias>
+				<flow x="511.5" y="378" name="out of dC">
 					<pts>
-						<pt x="449" y="376"/>
-						<pt x="581" y="376"/>
+						<pt x="449" y="378"/>
+						<pt x="586" y="378"/>
 					</pts>
 				</flow>
-				<connector uid="11" angle="23.4121">
+				<connector uid="22" angle="23.9625">
 					<from>dC</from>
 					<to>out_of_dC</to>
 				</connector>
