@@ -132,7 +132,7 @@ extract_pars <- function(user_args, model_id) {
   if(model_id == "model_01") {
     
     expected_pars <- user_pars(model_id)
-    par_list      <- user_args[expected_pars] |> sanitise_names()
+    par_list      <- user_args[expected_pars] |> sanitise_par_names()
   
   }
   
@@ -247,7 +247,7 @@ user_pars <- function(model_id) {
   pars
 }  
 
-sanitise_names <- function(par_list) {
+sanitise_par_names <- function(par_list) {
   
   forb_names <- c("sigma", "gamma", "beta")
   
