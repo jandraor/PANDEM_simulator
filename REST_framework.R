@@ -38,7 +38,7 @@ function(req) {
     expected_pars <- user_pars(model_id)
     user_inputs   <- user_args[expected_pars]
     sep_vals      <- lapply(user_inputs, \(vals) strsplit(vals, ",")[[1]])
-    lenghts       <- purrr::map_int(sep_vals, \(vals) length(vals))        
+    lengths       <- purrr::map_int(sep_vals, \(vals) length(vals))        
     
     if(length(unique(lengths)) != 1) {
       error_msg <- list(error = "Unequal number of values for each parameter")
