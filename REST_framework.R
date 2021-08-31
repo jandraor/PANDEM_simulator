@@ -51,7 +51,8 @@ function(req) {
       
       par_list    <- purrr::map(sep_vals, i)
       par_list    <- sanitise_par_names(par_list)
-      sim_results <- run_model(par_list, fldr_path) |> dplyr::mutate(iter = i)
+      sim_results <- run_model(model_id, par_list, fldr_path) |> 
+        dplyr::mutate(iter = i)
       
     }) -> sim_results
     
