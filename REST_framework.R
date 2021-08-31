@@ -35,21 +35,10 @@ function(req) {
   
   if(sens == 1) {
     
-    beta_vals  <- strsplit(beta, ",")[[1]]
-    sigma_vals <- strsplit(sigma, ",")[[1]]
-    gamma_vals <- strsplit(gamma, ",")[[1]]
-    S_0_vals   <- strsplit(S0, ",")[[1]]
-    E_0_vals   <- strsplit(E0, ",")[[1]]
-    I_0_vals   <- strsplit(I0, ",")[[1]]
-    R_0_vals   <- strsplit(R0, ",")[[1]]
-    
-    beta_length  <- length(beta_vals)
-    sigma_length <- length(sigma_vals)
-    gamma_length <- length(gamma_vals)
-    S_length     <- length(S_0_vals)
-    E_length     <- length(E_0_vals)
-    I_length     <- length(I_0_vals)
-    R_length     <- length(R_0_vals)
+    expected_pars <- user_pars(model_id)
+    user_inputs   <- user_args[model_pars]
+    sep_vals      <- lapply(user_inputs, \(vals) strsplit(vals, ",")[[1]])
+    lenghts       <- purrr::map_int(sep_vals, \(vals) length(vals))        
     
     lengths <- c(beta_length, sigma_length, gamma_length, S_length,
                  E_length, I_length, R_length)
@@ -59,19 +48,14 @@ function(req) {
       return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
     }
     
-    n_sims <- beta_length
+    n_sims <- lengths[1]
     
     purrr::map_df(1:n_sims, function(i) {
       
-      par_list <- list(par_beta  = beta_vals[[i]],
-                       par_gamma = gamma_vals[[i]],
-                       par_sigma = sigma_vals[[i]],
-                       S         = S_0_vals[[i]],
-                       E         = E_0_vals[[i]],
-                       I         = I_0_vals[[i]],
-                       R         = R_0_vals[[i]])
-      
+      par_list    <- purrr::map(sep_vals, i)
+      par_list    <- sanitise_par_names(par_list)
       sim_results <- run_model(par_list, fldr_path) |> dplyr::mutate(iter = i)
+      
     }) -> sim_results
     
     if(ci == 0) {
@@ -259,4 +243,28 @@ discrete_separation <- function(props, total) {
   vals1 <- total - sum(vals2)
   
   c(vals1, vals2)
+}
+
+user_pars <- function(model_id) {
+  
+  if(model_id == "model_01") {
+    
+    pars <- c("beta", "gamma", "sigma", "gamma", "S", "E", "I", "R")
+  }
+  
+  pars
+}  
+
+sanitise_names <- function(par_list) {
+  
+  forb_names <- c("sigma", "gamma", "beta")
+  
+  old_names <- names(par_list)
+  
+  new_names <- ifelse(old_names %in% forb_names, paste0("par_", old_names), 
+                      old_names)
+  
+  names(par_list) <- new_names
+  
+  par_list
 }
