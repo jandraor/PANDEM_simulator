@@ -40,9 +40,6 @@ function(req) {
     sep_vals      <- lapply(user_inputs, \(vals) strsplit(vals, ",")[[1]])
     lenghts       <- purrr::map_int(sep_vals, \(vals) length(vals))        
     
-    lengths <- c(beta_length, sigma_length, gamma_length, S_length,
-                 E_length, I_length, R_length)
-    
     if(length(unique(lengths)) != 1) {
       error_msg <- list(error = "Unequal number of values for each parameter")
       return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
