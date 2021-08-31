@@ -36,7 +36,7 @@ function(req) {
   if(sens == 1) {
     
     expected_pars <- user_pars(model_id)
-    user_inputs   <- user_args[model_pars]
+    user_inputs   <- user_args[expected_pars]
     sep_vals      <- lapply(user_inputs, \(vals) strsplit(vals, ",")[[1]])
     lenghts       <- purrr::map_int(sep_vals, \(vals) length(vals))        
     
@@ -134,14 +134,9 @@ extract_pars <- function(user_args, model_id) {
   
   if(model_id == "model_01") {
     
-    par_list <- list(par_beta  = user_args$beta,
-                     par_gamma = user_args$gamma,
-                     par_sigma = user_args$sigma,
-                     gamma     = user_args$gamma,
-                     S         = user_args$S,
-                     E         = user_args$E,
-                     I         = user_args$I,
-                     R         = user_args$R)
+    expected_pars <- user_pars(model_id)
+    par_list      <- user_args[expected_pars] |> sanitise_names()
+  
   }
   
   if(model_id == "model_02") {
