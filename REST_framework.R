@@ -18,10 +18,12 @@ function(req) {
 
 
   if(sens == 0) {
+    
     par_list    <- extract_pars(user_args, model_id)
     sim_results <- run_model(model_id, par_list, fldr_path) 
     
     if(ci == 0) {
+      unlink(fldr_path, recursive = TRUE)
       return(jsonlite::toJSON(sim_results))
     }
     
@@ -56,6 +58,7 @@ function(req) {
     }) -> sim_results
     
     if(ci == 0) {
+      unlink(fldr_path, recursive = TRUE)
       return(jsonlite::toJSON(sim_results))
     }
     
