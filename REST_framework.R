@@ -13,14 +13,12 @@ function(req) {
   }
   
   fldr_path <- create_sim_folder(model_id)
-  
-  par_list  <- extract_pars(user_args, model_id)
   ci   <- ifelse(is.null(user_args$ci), 0, user_args$ci)
   sens <- ifelse(is.null(user_args$sens), 0, user_args$sens)
 
 
   if(sens == 0) {
-    
+    par_list    <- extract_pars(user_args, model_id)
     sim_results <- run_model(model_id, par_list, fldr_path) 
     
     if(ci == 0) {
@@ -47,9 +45,10 @@ function(req) {
     
     n_sims <- lengths[1]
     
-    purrr::map_df(1:n_sims, function(i) {
+    purrr::map_df(seq_len(n_sims), function(i) {
       
-      par_list    <- purrr::map(sep_vals, i)
+      iter_vals   <- purrr::map(sep_vals, i)
+      par_list    <- extract_pars(iter_vals, model_id)
       par_list    <- sanitise_par_names(par_list)
       sim_results <- run_model(model_id, par_list, fldr_path) |> 
         dplyr::mutate(iter = i)
@@ -220,8 +219,8 @@ format_age_group <- function(ag_vector) {
     
     if(stringr::str_detect(current_ag, pattern)) {
       output_sm   <- stringr::str_match(current_ag, pattern)
-      lower_bound <- output_sm[[2]] %>% stringr::str_pad(width = 2, pad = "0")
-      upper_bound <- (as.numeric(output_sm[[3]]) - 1) %>% 
+      lower_bound <- output_sm[[2]] |> stringr::str_pad(width = 2, pad = "0")
+      upper_bound <- (as.numeric(output_sm[[3]]) - 1) |> 
         stringr::str_pad(width = 2, pad = "0")
       current_ag  <- paste(lower_bound, upper_bound, sep = "-")
     }
@@ -242,7 +241,15 @@ user_pars <- function(model_id) {
   
   if(model_id == "model_01") {
     
-    pars <- c("beta", "gamma", "sigma", "gamma", "S", "E", "I", "R")
+    pars <- c("beta", "gamma", "sigma", "S", "E", "I", "R")
+  }
+  
+  if(model_id == "model_02") {
+    
+    whp        <- c("S", "E", "I", "R") # Within-host profile
+    groups     <- c("A", "B", "C", "D")
+    api_stocks <- paste(rep(whp, 4),  rep(groups, each = 4), sep = "_")
+    pars       <- c(api_stocks, "q", "gamma", "sigma", "cm")
   }
   
   pars
