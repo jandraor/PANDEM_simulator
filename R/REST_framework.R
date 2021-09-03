@@ -61,21 +61,6 @@ simulator <- function(req) {
   }
 }
 
-create_sim_folder <- function(model_id) {
-
-  folder_id       <- paste0(sample(c(0:9, LETTERS), 8, T), collapse = '')
-  root_folder     <- stringr::str_glue("./{model_id}")
-  new_folder_path <- file.path(root_folder, folder_id)
-  dir.create(new_folder_path)
-
-  stl_file        <- stringr::str_glue("{model_id}.stmx") # Stella file
-  src_file        <- stringr::str_glue("./{model_id}/{model_id}.stmx")
-  new_file_path   <- file.path(new_folder_path, stl_file)
-  file.copy(src_file, new_file_path)
-  new_folder_path
-
-}
-
 run_model <- function(model_id, par_list, fldr_path) {
 
   input_file <- file.path(fldr_path, "inputs.txt")
