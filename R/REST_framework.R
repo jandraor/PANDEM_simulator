@@ -74,7 +74,7 @@ run_model <- function(model_id, par_list, fldr_path) {
   readr::write_tsv(inputs, input_file)
 
   mdl_path <- file.path(fldr_path, paste0(model_id, ".stmx"))
-  sys_cmd  <- paste("./stella_simulator", mdl_path)
+  sys_cmd  <- paste("../stella_simulator", mdl_path)
   system(sys_cmd)
 
   readr::read_tsv(output_file)
