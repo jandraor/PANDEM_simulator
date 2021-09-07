@@ -22,7 +22,7 @@ simulator <- function(req) {
     sim_results <- run_model(model_id, par_list, fldr_path)
     unlink(fldr_path, recursive = TRUE)
 
-    return(jsonlite::toJSON(sim_results))
+    return(jsonlite::toJSON(sim_results, auto_unbox = TRUE))
   }
 
   if(sens == 1) {
@@ -50,7 +50,7 @@ simulator <- function(req) {
     }) -> sim_results
 
     unlink(fldr_path, recursive = TRUE)
-    return(jsonlite::toJSON(sim_results))
+    return(jsonlite::toJSON(sim_results, auto_unbox = TRUE))
   }
 }
 
