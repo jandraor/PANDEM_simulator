@@ -12,15 +12,15 @@ simulator <- function(req) {
     return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
   }
 
-  rel_path <- create_sim_folder(model_id)
-  sens     <- ifelse(is.null(user_args$sens), 0, user_args$sens)
+  fldr_path <- create_sim_folder(model_id)
+  sens      <- ifelse(is.null(user_args$sens), 0, user_args$sens)
 
 
   if(sens == 0) {
 
     par_list    <- extract_pars(user_args, model_id)
-    sim_results <- run_model(model_id, par_list, rel_path)
-    unlink(file.path(here::here(), rel_path), recursive = TRUE)
+    sim_results <- run_model(model_id, par_list, fldr_path)
+    unlink(fldr_path, recursive = TRUE)
 
     return(jsonlite::toJSON(sim_results))
   }
@@ -49,14 +49,12 @@ simulator <- function(req) {
 
     }) -> sim_results
 
-    unlink(file.path(here::here(), rel_path), recursive = TRUE)
+    unlink(fldr_path, recursive = TRUE)
     return(jsonlite::toJSON(sim_results))
   }
 }
 
-run_model <- function(model_id, par_list, rel_path) {
-
-  fldr_path <- file.path(here::here(), rel_path)
+run_model <- function(model_id, par_list, fldr_path) {
 
   input_file <- file.path(fldr_path, "inputs.txt")
   if(file.exists(input_file)) file.remove(input_file)
@@ -69,7 +67,7 @@ run_model <- function(model_id, par_list, rel_path) {
   readr::write_tsv(inputs, input_file)
 
   mdl_path <- file.path(fldr_path, paste0(model_id, ".stmx"))
-  sys_cmd  <- paste("../stella_simulator", mdl_path)
+  sys_cmd  <- paste("./stella_simulator", mdl_path)
   system(sys_cmd)
 
   readr::read_tsv(output_file)
