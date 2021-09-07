@@ -12,21 +12,17 @@ simulator <- function(req) {
     return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
   }
 
-  fldr_path <- create_sim_folder(model_id)
-  ci   <- ifelse(is.null(user_args$ci), 0, user_args$ci)
-  sens <- ifelse(is.null(user_args$sens), 0, user_args$sens)
+  rel_path <- create_sim_folder(model_id)
+  sens     <- ifelse(is.null(user_args$sens), 0, user_args$sens)
 
 
   if(sens == 0) {
 
     par_list    <- extract_pars(user_args, model_id)
-    sim_results <- run_model(model_id, par_list, fldr_path)
+    sim_results <- run_model(model_id, par_list, rel_path)
+    unlink(file.path(here::here(), rel_path), recursive = TRUE)
 
-    if(ci == 0) {
-      unlink(fldr_path, recursive = TRUE)
-      return(jsonlite::toJSON(sim_results))
-    }
-
+    return(jsonlite::toJSON(sim_results))
   }
 
   if(sens == 1) {
@@ -53,15 +49,14 @@ simulator <- function(req) {
 
     }) -> sim_results
 
-    if(ci == 0) {
-      unlink(fldr_path, recursive = TRUE)
-      return(jsonlite::toJSON(sim_results))
-    }
-
+    unlink(file.path(here::here(), rel_path), recursive = TRUE)
+    return(jsonlite::toJSON(sim_results))
   }
 }
 
-run_model <- function(model_id, par_list, fldr_path) {
+run_model <- function(model_id, par_list, rel_path) {
+
+  fldr_path <- file.path(here::here(), rel_path)
 
   input_file <- file.path(fldr_path, "inputs.txt")
   if(file.exists(input_file)) file.remove(input_file)
