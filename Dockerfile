@@ -7,7 +7,8 @@ LABEL maintainer='carlos.tighe@insight-centre.org'
 # GET UPDATES AND PACKAGES NEEDED
 RUN apt-get update -qq && apt-get install -y \
     libssl-dev \
-    libcurl4-gnutls-dev
+    libcurl4-gnutls-dev \
+    libxml2-dev
 
 # install plumber
 # RUN R -e "install.packages('plumber')"
