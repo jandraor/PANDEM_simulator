@@ -1,5 +1,6 @@
 #* @get /sim/<model_id>
-simulator <- function(req) {
+#* @serializer unboxedJSON
+simulator <- function(req, res) {
 
   user_args <- req$args
   model_id  <- user_args$model_id
@@ -8,8 +9,16 @@ simulator <- function(req) {
   avl_mdl <- stringr::str_glue("model_{c('01', '02')}")
 
   if(!model_id %in% avl_mdl) {
-    error_msg <- list(error = stringr::str_glue("Model '{model_id}' not found"))
-    return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
+
+    error_msg  <- stringr::str_glue("Model '{model_id}' not found")
+    res$status <- 400
+
+    res$body <- jsonlite::toJSON(auto_unbox = TRUE, list(
+      status  = 400,
+      message = error_msg
+    ))
+
+    return(res)
   }
 
   fldr_path <- create_sim_folder(model_id)
@@ -22,7 +31,7 @@ simulator <- function(req) {
     sim_results <- run_model(model_id, par_list, fldr_path)
     unlink(fldr_path, recursive = TRUE)
 
-    return(jsonlite::toJSON(sim_results, auto_unbox = TRUE))
+    return(sim_results)
   }
 
   if(sens == 1) {
@@ -33,8 +42,15 @@ simulator <- function(req) {
     lengths       <- purrr::map_int(sep_vals, \(vals) length(vals))
 
     if(length(unique(lengths)) != 1) {
-      error_msg <- list(error = "Unequal number of values for each parameter")
-      return(jsonlite::toJSON(error_msg, auto_unbox = TRUE))
+      error_msg  <- "Unequal number of values for each parameter"
+      res$status <- 400
+
+      res$body <- jsonlite::toJSON(auto_unbox = TRUE, list(
+        status  = 400,
+        message = error_msg
+      ))
+
+      return(res)
     }
 
     n_sims <- lengths[1]
@@ -50,27 +66,8 @@ simulator <- function(req) {
     }) -> sim_results
 
     unlink(fldr_path, recursive = TRUE)
-    return(jsonlite::toJSON(sim_results, auto_unbox = TRUE))
+    return(sim_results)
   }
-}
-
-run_model <- function(model_id, par_list, fldr_path) {
-
-  input_file <- file.path(fldr_path, "inputs.txt")
-  if(file.exists(input_file)) file.remove(input_file)
-
-  output_file <- file.path(fldr_path, "output.txt")
-  if(file.exists(output_file)) file.remove(output_file)
-  file.create(output_file)
-
-  inputs     <- as.data.frame(par_list)
-  readr::write_tsv(inputs, input_file)
-
-  mdl_path <- file.path(fldr_path, paste0(model_id, ".stmx"))
-  sys_cmd  <- paste("./stella_simulator", mdl_path)
-  system(sys_cmd)
-
-  readr::read_tsv(output_file)
 }
 
 extract_pars <- function(user_args, model_id) {
@@ -214,3 +211,23 @@ sanitise_par_names <- function(par_list) {
 
   par_list
 }
+
+run_model <- function(model_id, par_list, fldr_path) {
+
+  input_file <- file.path(fldr_path, "inputs.txt")
+  if(file.exists(input_file)) file.remove(input_file)
+
+  output_file <- file.path(fldr_path, "output.txt")
+  if(file.exists(output_file)) file.remove(output_file)
+  file.create(output_file)
+
+  inputs     <- as.data.frame(par_list)
+  readr::write_tsv(inputs, input_file)
+
+  mdl_path <- file.path(fldr_path, paste0(model_id, ".stmx"))
+  sys_cmd  <- paste("./stella_simulator", mdl_path)
+  system(sys_cmd)
+
+  readr::read_tsv(output_file)
+}
+
