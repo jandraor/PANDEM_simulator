@@ -121,7 +121,7 @@ extract_pars <- function(user_args, model_id) {
                     group_name = groups,
                     population = discrete_separation(proportion, pop_size))
 
-    w_matrix           <- cm_object$matrix
+    w_matrix           <- t(cm_object$matrix)
     colnames(w_matrix) <- groups
     rownames(w_matrix) <- groups
 
