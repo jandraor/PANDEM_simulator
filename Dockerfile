@@ -19,7 +19,8 @@ RUN install2.r --error \
     plumber \
     dplyr \
     stringr\
-    socialmixr
+    socialmixr\
+    devtools
 # copy app code into docker image
 COPY / /
 

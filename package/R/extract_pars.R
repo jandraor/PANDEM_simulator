@@ -92,3 +92,31 @@ create_stock_list <- function(user_args, api_stocks, whp, groups, pop_df) {
 
   stock_list
 }
+
+format_age_group <- function(ag_vector) {
+  pattern <- stringr::regex("\\[(\\d+),(\\d+)\\)")
+
+  new_ag_vector <- vector(length = length(ag_vector), mode = "character")
+
+  for(i in seq_along(ag_vector)) {
+    current_ag <- ag_vector[[i]]
+
+    if(stringr::str_detect(current_ag, pattern)) {
+      output_sm   <- stringr::str_match(current_ag, pattern)
+      lower_bound <- output_sm[[2]] |> stringr::str_pad(width = 2, pad = "0")
+      upper_bound <- (as.numeric(output_sm[[3]]) - 1) |>
+        stringr::str_pad(width = 2, pad = "0")
+      current_ag  <- paste(lower_bound, upper_bound, sep = "-")
+    }
+
+    new_ag_vector[[i]] <- current_ag
+  }
+  new_ag_vector
+}
+
+discrete_separation <- function(props, total) {
+  vals2 <- round(total * props[-1], 0)
+  vals1 <- total - sum(vals2)
+
+  c(vals1, vals2)
+}

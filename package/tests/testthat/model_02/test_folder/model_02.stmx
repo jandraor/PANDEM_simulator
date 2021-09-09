@@ -45,10 +45,10 @@
 	</isee:time_formats>
 	<default_format/>
 	<data>
-		<export enabled="false" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/output.txt" interval="DT" precomputed="false" isee:format="numbers">
+		<export resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEMsim/package/R/model_02/output.txt" interval="DT" precomputed="false" isee:format="numbers">
 			<all/>
 		</export>
-		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEMsim/R/model_02/inputs.txt"/>
+		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEMsim/package/R/model_02/inputs.txt"/>
 	</data>
 	<model_units/>
 	<model>
