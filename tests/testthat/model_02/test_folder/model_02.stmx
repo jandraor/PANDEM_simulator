@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee" uses_arrays="1"/>
+		<name>model_02</name>
+		<uuid>9376e596-c0c9-4177-bdb7-9b4c728d957a</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="2.0" isee:build_number="2190" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="1.3" isee:simulation_delay="0.0216667" isee:restore_on_start="false" isee:save_interval="1" method="RK4" time_units="Day" isee:instantaneous_flows="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>0</start>
+		<stop>60</stop>
+		<dt reciprocal="true">8</dt>
+	</sim_specs>
+	<dimensions>
+		<dim name="Age">
+			<elem name="A"/>
+			<elem name="B"/>
+			<elem name="C"/>
+			<elem name="D"/>
+		</dim>
+		<dim name="Contacts">
+			<elem name="AA"/>
+			<elem name="AB"/>
+			<elem name="AC"/>
+			<elem name="AD"/>
+			<elem name="BA"/>
+			<elem name="BB"/>
+			<elem name="BC"/>
+			<elem name="BD"/>
+			<elem name="CA"/>
+			<elem name="CB"/>
+			<elem name="CC"/>
+			<elem name="CD"/>
+			<elem name="DA"/>
+			<elem name="DB"/>
+			<elem name="DC"/>
+			<elem name="DD"/>
+		</dim>
+	</dimensions>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<default_format/>
+	<data>
+		<export enabled="false" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/output.txt" interval="DT" precomputed="false" isee:format="numbers">
+			<all/>
+		</export>
+		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEMsim/R/model_02/inputs.txt"/>
+	</data>
+	<model_units/>
+	<model>
+		<variables>
+			<stock name="S">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>603</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>6</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
+				<outflow>S_to_E</outflow>
+			</stock>
+			<flow name="S to E">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>S[1] * lambda[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>S[2] * lambda[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>S[3] * lambda[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>S[4] * lambda[4]</eqn>
+				</element>
+				<non_negative/>
+			</flow>
+			<stock name="E">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>1207</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>12</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
+				<inflow>S_to_E</inflow>
+				<outflow>E_to_I</outflow>
+			</stock>
+			<flow name="E to I">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>E[1] * par_sigma</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>E[2] * par_sigma</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>E[3] * par_sigma</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>E[4] * par_sigma</eqn>
+				</element>
+				<non_negative/>
+			</flow>
+			<stock name="I">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>4087</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>41</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
+				<inflow>E_to_I</inflow>
+				<outflow>I_to_R</outflow>
+			</stock>
+			<flow name="I to R">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>par_gamma * I[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>par_gamma * I[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>par_gamma * I[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>par_gamma * I[4]</eqn>
+				</element>
+				<non_negative/>
+			</flow>
+			<stock name="R">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>4004</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>40</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
+				<inflow>I_to_R</inflow>
+			</stock>
+			<aux name="lambda">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>par_beta[AA] * I[A] + par_beta[AB] * I[B] + par_beta[AC] * I[C]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>par_beta[BA] * I[A] + par_beta[BB] * I[B] + par_beta[BC] * I[C] + par_beta[BD] * I[D]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>par_beta[CA] * I[A] + par_beta[CB] * I[B] + par_beta[CC] * I[C] + par_beta[CD] * I[D]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>par_beta[DA] * I[A] + par_beta[DB] * I[B] + par_beta[DC] * I[C] + par_beta[DD] * I[D]</eqn>
+				</element>
+			</aux>
+			<aux name="par beta">
+				<dimensions>
+					<dim name="Contacts"/>
+				</dimensions>
+				<element subscript="AA">
+					<eqn>w[AA] * q / N[A]</eqn>
+				</element>
+				<element subscript="AB">
+					<eqn>w[AB] * q / N[A]</eqn>
+				</element>
+				<element subscript="AC">
+					<eqn>w[AC] * q / N[A]</eqn>
+				</element>
+				<element subscript="AD">
+					<eqn>w[AD] * q / N[A]</eqn>
+				</element>
+				<element subscript="BA">
+					<eqn>w[BA] * q / N[B]</eqn>
+				</element>
+				<element subscript="BB">
+					<eqn>w[BB] * q / N[B]</eqn>
+				</element>
+				<element subscript="BC">
+					<eqn>w[BC] * q / N[B]</eqn>
+				</element>
+				<element subscript="BD">
+					<eqn>w[BD] * q / N[B]</eqn>
+				</element>
+				<element subscript="CA">
+					<eqn>w[CA] * q / N[C]</eqn>
+				</element>
+				<element subscript="CB">
+					<eqn>w[CB] * q / N[C]</eqn>
+				</element>
+				<element subscript="CC">
+					<eqn>w[CC] * q / N[C]</eqn>
+				</element>
+				<element subscript="CD">
+					<eqn>w[CD] * q / N[C]</eqn>
+				</element>
+				<element subscript="DA">
+					<eqn>w[DA] * q / N[D]</eqn>
+				</element>
+				<element subscript="DB">
+					<eqn>w[DB] * q / N[D]</eqn>
+				</element>
+				<element subscript="DC">
+					<eqn>w[DC] * q / N[D]</eqn>
+				</element>
+				<element subscript="DD">
+					<eqn>w[DD] * q / N[D]</eqn>
+				</element>
+			</aux>
+			<aux name="par sigma">
+				<eqn>0.5</eqn>
+			</aux>
+			<aux name="par gamma">
+				<eqn>0.5</eqn>
+			</aux>
+			<stock name="dC">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>to_dC</inflow>
+				<outflow>out_of_dC</outflow>
+			</stock>
+			<flow name="to dC">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>E_to_I[1]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>E_to_I[2]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>E_to_I[3]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>E_to_I[4]</eqn>
+				</element>
+			</flow>
+			<aux name="w">
+				<dimensions>
+					<dim name="Contacts"/>
+				</dimensions>
+				<element subscript="AA">
+					<eqn>3.71875</eqn>
+				</element>
+				<element subscript="AB">
+					<eqn>2.25567525168748</eqn>
+				</element>
+				<element subscript="AC">
+					<eqn>4.521396442548</eqn>
+				</element>
+				<element subscript="AD">
+					<eqn>1.33645555846854</eqn>
+				</element>
+				<element subscript="BA">
+					<eqn>1.12828019133026</eqn>
+				</element>
+				<element subscript="BB">
+					<eqn>12.6808510638298</eqn>
+				</element>
+				<element subscript="BC">
+					<eqn>5.29714496947755</eqn>
+				</element>
+				<element subscript="BD">
+					<eqn>2.0315794385583</eqn>
+				</element>
+				<element subscript="CA">
+					<eqn>0.667636661414072</eqn>
+				</element>
+				<element subscript="CB">
+					<eqn>1.56375624923851</eqn>
+				</element>
+				<element subscript="CC">
+					<eqn>9.84285714285715</eqn>
+				</element>
+				<element subscript="CD">
+					<eqn>3.88335756362535</eqn>
+				</element>
+				<element subscript="DA">
+					<eqn>0.201477060846361</eqn>
+				</element>
+				<element subscript="DB">
+					<eqn>0.612300346216201</eqn>
+				</element>
+				<element subscript="DC">
+					<eqn>3.96470498705144</eqn>
+				</element>
+				<element subscript="DD">
+					<eqn>5.48076923076923</eqn>
+				</element>
+			</aux>
+			<aux name="N">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>S[A] + E[A] + I[A] + R[A]</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>S[B] + E[B] + I[B] + R[B]</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>S[C] + E[C] + I[C] + R[C]</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>S[D] + E[D] + I[D] + R[D]</eqn>
+				</element>
+			</aux>
+			<aux name="q">
+				<eqn>0.1</eqn>
+			</aux>
+			<flow name="out of dC">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="A">
+					<eqn>PULSE(dC[A], 1, 1)</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>PULSE(dC[B], 1, 1)</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>PULSE(dC[C], 1, 1)</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>PULSE(dC[D], 1, 1)</eqn>
+				</element>
+			</flow>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="818" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#CCCCCC" background="white" font_color="#CCCCCC" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock label_side="center" x="166" y="243" name="S"/>
+				<flow x="227.5" y="245" name="S to E">
+					<pts>
+						<pt x="188.5" y="245"/>
+						<pt x="278.5" y="245"/>
+					</pts>
+				</flow>
+				<stock label_side="center" x="301" y="245" name="E"/>
+				<flow x="361.5" y="244" name="E to I">
+					<pts>
+						<pt x="323.5" y="244"/>
+						<pt x="411.5" y="244"/>
+					</pts>
+				</flow>
+				<stock label_side="center" x="434" y="244" name="I"/>
+				<flow x="492" y="242" name="I to R">
+					<pts>
+						<pt x="456.5" y="242"/>
+						<pt x="539.5" y="242"/>
+					</pts>
+				</flow>
+				<stock label_side="center" x="562" y="242" name="R"/>
+				<aux label_side="right" label_angle="45" x="259" y="165" name="lambda"/>
+				<connector uid="1" angle="141.71">
+					<from>I</from>
+					<to>lambda</to>
+				</connector>
+				<aux x="174.375" y="157" width="35.25" height="10" name="par beta">
+					<shape type="name_only"/>
+				</aux>
+				<connector uid="2" angle="357.436">
+					<from>par_beta</from>
+					<to>lambda</to>
+				</connector>
+				<connector uid="3" angle="25.2777">
+					<from>S</from>
+					<to>S_to_E</to>
+				</connector>
+				<connector uid="4" angle="241.39">
+					<from>lambda</from>
+					<to>S_to_E</to>
+				</connector>
+				<aux x="290.875" y="284" width="41.25" height="10" name="par sigma">
+					<shape type="name_only"/>
+				</aux>
+				<connector uid="5" angle="41.9872">
+					<from>par_sigma</from>
+					<to>E_to_I</to>
+				</connector>
+				<connector uid="6" angle="29.2488">
+					<from>E</from>
+					<to>E_to_I</to>
+				</connector>
+				<aux x="420.375" y="280" width="47.25" height="10" name="par gamma">
+					<shape type="name_only"/>
+				</aux>
+				<connector uid="7" angle="41.855">
+					<from>par_gamma</from>
+					<to>I_to_R</to>
+				</connector>
+				<connector uid="8" angle="40.0303">
+					<from>I</from>
+					<to>I_to_R</to>
+				</connector>
+				<stock label_side="center" x="426.5" y="378" name="dC"/>
+				<flow x="349" y="379" name="to dC">
+					<pts>
+						<pt x="282" y="379"/>
+						<pt x="404" y="379"/>
+					</pts>
+				</flow>
+				<connector uid="9" angle="267.138">
+					<from>E_to_I</from>
+					<to>to_dC</to>
+				</connector>
+				<aux x="116" y="101" name="w"/>
+				<aux label_side="center" x="611" y="567" name="N"/>
+				<connector uid="10" angle="321.248">
+					<from>w</from>
+					<to>par_beta</to>
+				</connector>
+				<aux x="123" y="162" name="q"/>
+				<connector uid="11" angle="0">
+					<from>q</from>
+					<to>par_beta</to>
+				</connector>
+				<connector uid="12" angle="332.162">
+					<from>
+						<alias uid="13"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="14" angle="19.9831">
+					<from>
+						<alias uid="15"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="16" angle="211.283">
+					<from>
+						<alias uid="17"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="18" angle="150.255">
+					<from>
+						<alias uid="19"/>
+					</from>
+					<to>N</to>
+				</connector>
+				<connector uid="20" angle="240.068">
+					<from>
+						<alias uid="21"/>
+					</from>
+					<to>par_beta</to>
+				</connector>
+				<flow x="511.5" y="378" name="out of dC">
+					<pts>
+						<pt x="449" y="378"/>
+						<pt x="586" y="378"/>
+					</pts>
+				</flow>
+				<connector uid="22" angle="23.9625">
+					<from>dC</from>
+					<to>out_of_dC</to>
+				</connector>
+				<alias font_style="italic" label_side="center" uid="13" x="501.5" y="516.5" width="40" height="28">
+					<of>S</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="17" x="663.5" y="515" width="34" height="24">
+					<of>E</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="15" x="499" y="595.5" width="37" height="25">
+					<of>I</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="19" x="663.5" y="595.5" width="34" height="25">
+					<of>R</of>
+				</alias>
+				<alias font_style="italic" label_side="center" uid="21" x="230" y="82" width="18" height="18">
+					<of>N</of>
+				</alias>
+			</view>
+		</views>
+	</model>
+</xmile>
+
