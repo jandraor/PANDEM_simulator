@@ -1,4 +1,5 @@
-test_that("multiplication works", {
+test_that("the input file contains the square brackets", {
+
   fldr_path <- "./model_02/test_folder"
   model_id  <- "model_02"
   user_args <- list(S_A = 0.99, E_A = 0, I_A = 0.01, R_A = 0,
@@ -14,7 +15,7 @@ test_that("multiplication works", {
 
   write_input_file(input_file, par_list)
 
-  input_df <- readr::read_tsv(input_file)
+  input_df <- suppressMessages(readr::read_tsv(input_file, progress = FALSE))
 
   expect_equal(colnames(input_df), names(par_list))
 })
