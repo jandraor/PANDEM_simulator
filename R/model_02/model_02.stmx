@@ -45,10 +45,10 @@
 	</isee:time_formats>
 	<default_format/>
 	<data>
-		<export resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/output.txt" interval="DT" precomputed="false" isee:format="numbers">
+		<export enabled="false" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_01/output.txt" interval="DT" precomputed="false" isee:format="numbers">
 			<all/>
 		</export>
-		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEM_simulator/model_02/inputs.txt"/>
+		<import isee:overwrite="true" resource="/Users/jairandrade/Documents/OneDrive/Projects/NUIG/PANDEM-2/PANDEMsim/R/model_02/inputs.txt"/>
 	</data>
 	<model_units/>
 	<model>
@@ -58,16 +58,16 @@
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="A">
-					<eqn>999</eqn>
+					<eqn>603</eqn>
 				</element>
 				<element subscript="B">
-					<eqn>999</eqn>
+					<eqn>0</eqn>
 				</element>
 				<element subscript="C">
-					<eqn>999</eqn>
+					<eqn>6</eqn>
 				</element>
 				<element subscript="D">
-					<eqn>999</eqn>
+					<eqn>0</eqn>
 				</element>
 				<outflow>S_to_E</outflow>
 			</stock>
@@ -93,7 +93,18 @@
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>0</eqn>
+				<element subscript="A">
+					<eqn>1207</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>12</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
 				<inflow>S_to_E</inflow>
 				<outflow>E_to_I</outflow>
 			</stock>
@@ -119,7 +130,18 @@
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>1</eqn>
+				<element subscript="A">
+					<eqn>4087</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>41</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
 				<inflow>E_to_I</inflow>
 				<outflow>I_to_R</outflow>
 			</stock>
@@ -145,7 +167,18 @@
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>0</eqn>
+				<element subscript="A">
+					<eqn>4004</eqn>
+				</element>
+				<element subscript="B">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="C">
+					<eqn>40</eqn>
+				</element>
+				<element subscript="D">
+					<eqn>0</eqn>
+				</element>
 				<inflow>I_to_R</inflow>
 			</stock>
 			<aux name="lambda">
@@ -254,52 +287,52 @@
 					<dim name="Contacts"/>
 				</dimensions>
 				<element subscript="AA">
-					<eqn>12</eqn>
+					<eqn>3.71875</eqn>
 				</element>
 				<element subscript="AB">
-					<eqn>1</eqn>
+					<eqn>2.25567525168748</eqn>
 				</element>
 				<element subscript="AC">
-					<eqn>1</eqn>
+					<eqn>4.521396442548</eqn>
 				</element>
 				<element subscript="AD">
-					<eqn>1</eqn>
+					<eqn>1.33645555846854</eqn>
 				</element>
 				<element subscript="BA">
-					<eqn>3</eqn>
+					<eqn>1.12828019133026</eqn>
 				</element>
 				<element subscript="BB">
-					<eqn>1</eqn>
+					<eqn>12.6808510638298</eqn>
 				</element>
 				<element subscript="BC">
-					<eqn>1</eqn>
+					<eqn>5.29714496947755</eqn>
 				</element>
 				<element subscript="BD">
-					<eqn>1</eqn>
+					<eqn>2.0315794385583</eqn>
 				</element>
 				<element subscript="CA">
-					<eqn>1</eqn>
+					<eqn>0.667636661414072</eqn>
 				</element>
 				<element subscript="CB">
-					<eqn>1</eqn>
+					<eqn>1.56375624923851</eqn>
 				</element>
 				<element subscript="CC">
-					<eqn>1</eqn>
+					<eqn>9.84285714285715</eqn>
 				</element>
 				<element subscript="CD">
-					<eqn>1</eqn>
+					<eqn>3.88335756362535</eqn>
 				</element>
 				<element subscript="DA">
-					<eqn>1</eqn>
+					<eqn>0.201477060846361</eqn>
 				</element>
 				<element subscript="DB">
-					<eqn>1</eqn>
+					<eqn>0.612300346216201</eqn>
 				</element>
 				<element subscript="DC">
-					<eqn>1</eqn>
+					<eqn>3.96470498705144</eqn>
 				</element>
 				<element subscript="DD">
-					<eqn>1</eqn>
+					<eqn>5.48076923076923</eqn>
 				</element>
 			</aux>
 			<aux name="N">
@@ -538,6 +571,16 @@
 					</from>
 					<to>par_beta</to>
 				</connector>
+				<flow x="511.5" y="378" name="out of dC">
+					<pts>
+						<pt x="449" y="378"/>
+						<pt x="586" y="378"/>
+					</pts>
+				</flow>
+				<connector uid="22" angle="23.9625">
+					<from>dC</from>
+					<to>out_of_dC</to>
+				</connector>
 				<alias font_style="italic" label_side="center" uid="13" x="501.5" y="516.5" width="40" height="28">
 					<of>S</of>
 				</alias>
@@ -553,16 +596,6 @@
 				<alias font_style="italic" label_side="center" uid="21" x="230" y="82" width="18" height="18">
 					<of>N</of>
 				</alias>
-				<flow x="511.5" y="378" name="out of dC">
-					<pts>
-						<pt x="449" y="378"/>
-						<pt x="586" y="378"/>
-					</pts>
-				</flow>
-				<connector uid="22" angle="23.9625">
-					<from>dC</from>
-					<to>out_of_dC</to>
-				</connector>
 			</view>
 		</views>
 	</model>
