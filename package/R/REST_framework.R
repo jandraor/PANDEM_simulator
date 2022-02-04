@@ -1,4 +1,5 @@
 #* @get /sim/<model_id>
+#* @post /sim/<model_id>
 #* @serializer unboxedJSON
 simulator <- function(req, res) {
 
