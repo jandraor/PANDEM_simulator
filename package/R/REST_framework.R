@@ -70,3 +70,35 @@ simulator <- function(req, res) {
     return(sim_results)
   }
 }
+
+#* Download the Stella model file (.stmx), which is in XMILE (XML) format
+#* @param filename The name of the Stella stmx model file (OMIT .stmx)
+#* @get /model
+#* @serializer contentType list(type='xml')
+# Author: Caroline Green, NUIG, 10th March 2022
+# Purpose: Allow download of .stmx file, if found
+# Assumption: Model file is contained within a subfolder of the same name, eg model_01/model_01.stmx
+# Dependencies: The R packages plumber, readr and stringr are needed and are assumed to be loaded already
+function(res, filename = "") {
+  # Filename sent as parameter should not include file extension - search for a '.'
+  if (!stringr::str_detect(filename, "\\.")) {
+    # Trim whitespace from input string and add folder name and the .stmx file extension
+    filename <- paste0(trimws(filename), "/", trimws(filename), ".stmx")
+    print(paste("Request to get model file", filename))
+    if(file.exists(filename)){
+      print(paste("File", filename, "found"))
+      # Read whole file
+      model_file_contents <- readr::read_file(filename)
+      # Return the file as a downloadable attachment
+      plumber::as_attachment(model_file_contents, filename)
+    } else {
+      # Return error (file not found)
+      res$status = 404
+      print(paste("File", filename, "not found"))
+    }
+  } else {
+    # Return error (invalid filename)
+    res$status = 404
+    print("Filename entered contains a full stop. Enter file name without a file extension!")
+  }
+}
