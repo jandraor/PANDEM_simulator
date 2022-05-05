@@ -79,7 +79,7 @@ simulator <- function(req, res) {
 # Assumption: Model file is contained within a subfolder of the same name, eg model_01/model_01.stmx
 # Dependencies: The R packages plumber, readr and stringr are needed and are assumed to be loaded already
 function(req, res) {
-  
+
   user_args <- req$args
   model_id  <- user_args$model_id
 
@@ -104,4 +104,29 @@ function(req, res) {
     res$status = 404
     print("Filename entered contains a full stop. Enter file name without a file extension!")
   }
+}
+
+#* @get /parameters/<model_id>
+#* @serializer unboxedJSON
+function(req, res) {
+
+  model_id  <- user_args$model_id
+
+  # available models
+  avl_mdl <- stringr::str_glue("model_{c('03')}")
+
+  if(!model_id %in% avl_mdl) {
+
+    error_msg  <- stringr::str_glue("Model '{model_id}' not found")
+    res$status <- 400
+
+    res$body <- jsonlite::toJSON(auto_unbox = TRUE, list(
+      status  = 400,
+      message = error_msg
+    ))
+
+    return(res)
+  }
+
+  get_pars(model_id)
 }
