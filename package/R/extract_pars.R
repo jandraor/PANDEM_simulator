@@ -67,6 +67,8 @@ extract_pars <- function(user_args, model_id) {
     par_list$q         <- user_args$q
   }
 
+  if(model_id == "model_03") pars_list <- user_args
+
   par_list
 }
 

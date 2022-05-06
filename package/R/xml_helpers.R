@@ -30,6 +30,9 @@ extract_dim_elems <- function(dim_tag) {
 
 create_par_obj <- function(module_xml, dims_obj) {
 
+  module_name <- xml2::xml_attr(module_xml, "name")
+  category    <- sub("^Inputs_", "", module_name)
+
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   auxs_xml   <- xml2::xml_find_all(vars_xml, ".//d1:aux")
 
@@ -41,8 +44,9 @@ create_par_obj <- function(module_xml, dims_obj) {
 
     is_arrayed <- ifelse(length(dims_aux) > 0, TRUE, FALSE)
 
-    par_obj <- list(name  = aux_name,
-                    array = is_arrayed)
+    par_obj <- list(name     = aux_name,
+                    category = category,
+                    array    = is_arrayed)
 
     if(is_arrayed) {
 

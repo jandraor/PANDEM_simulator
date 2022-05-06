@@ -7,7 +7,7 @@ simulator <- function(req, res) {
   model_id  <- user_args$model_id
 
   # available models
-  avl_mdl <- stringr::str_glue("model_{c('01', '02')}")
+  avl_mdl <- stringr::str_glue("model_{c('01', '02', '03')}")
 
   if(!model_id %in% avl_mdl) {
 
