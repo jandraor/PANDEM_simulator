@@ -110,6 +110,7 @@ function(req, res) {
 #* @serializer unboxedJSON
 function(req, res) {
 
+  user_args <- req$args
   model_id  <- user_args$model_id
 
   # available models

@@ -20,7 +20,8 @@ RUN install2.r --error \
     dplyr \
     stringr\
     socialmixr\
-    devtools
+    devtools\
+    xml2
 # copy app code into docker image
 COPY / /
 
