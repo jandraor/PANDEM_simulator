@@ -46,16 +46,14 @@
 	<model>
 		<variables>
 			<module name="MODEL" isee:label="">
-				<connect to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
-				<connect2 to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
 				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
 				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
 				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
 				<connect2 to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
 				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
 				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
-				<connect to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
-				<connect2 to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
 				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
 				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
 				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
@@ -66,12 +64,8 @@
 				<connect2 to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
 				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
 				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect2 to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
 			</module>
 			<module name="PANDEM2 Inputs" isee:label="">
 				<connect to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
@@ -92,16 +86,10 @@
 				<connect2 to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
 			</module>
 			<module name="PANDEM2 Outputs" isee:label="">
-				<connect to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
-				<connect2 to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect2 to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
-				<connect2 to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
 			</module>
 		</variables>
 		<views>
@@ -218,8 +206,8 @@
 	<model name="MODEL">
 		<variables>
 			<module name="EPI Model" isee:label="">
-				<connect to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
-				<connect2 to="PANDEM2_Outputs.P2_Output_Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
 				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
 				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
 				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
@@ -228,8 +216,6 @@
 				<connect2 to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
 				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
 				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
-				<connect to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
-				<connect2 to="PANDEM2_Outputs.Converter_4" from="EPI_Model.Regional_Attack_Rates"/>
 				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
 				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
 				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
@@ -244,12 +230,8 @@
 				<connect2 to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
 				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
 				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Hospital_Model.Patients_In_Hospital"/>
-				<connect to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect2 to="PANDEM2_Outputs.Converter_3" from="Hospital_Model.Reported_Beds_Gap"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Hospital_Model.Daily_Hospitalisations"/>
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
 			</module>
 		</variables>
 		<views>
@@ -1455,7 +1437,7 @@
 	</model>
 	<model name="PANDEM2_Outputs">
 		<variables>
-			<aux name="P2 Output Reported Daily Cases" access="input">
+			<aux name="Reported Daily Cases" access="input">
 				<doc>The reported number of cases from the model run</doc>
 				<dimensions>
 					<dim name="Region"/>
@@ -1463,31 +1445,15 @@
 				</dimensions>
 				<eqn>P2_Output_Number_of_Daily_Cases</eqn>
 			</aux>
-			<aux name="Converter 1" access="input">
+			<aux name="Patients In Hospital" access="input">
 				<dimensions>
 					<dim name="Region"/>
 					<dim name="Age"/>
-				</dimensions>
-			</aux>
-			<aux name="Converter 2" access="input">
-				<dimensions>
-					<dim name="Region"/>
-					<dim name="Age"/>
-				</dimensions>
-			</aux>
-			<aux name="Converter 3" access="input">
-				<dimensions>
-					<dim name="Region"/>
-				</dimensions>
-			</aux>
-			<aux name="Converter 4" access="input">
-				<dimensions>
-					<dim name="Region"/>
 				</dimensions>
 			</aux>
 		</variables>
 		<views>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="2" isee:scroll_x="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1525,55 +1491,11 @@
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
 				<stacked_container uid="55" x="872.944" y="343.778" width="467" height="306">
-					<graph width="467" height="306" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="EPI_Model.Reported_Daily_Cases[*, *]"/>
-						</plot>
-						<plot color="#0CA0FF" pen_style="dotted" isee:keep_zero_visible="true" pen_width="1" index="0" right_axis="true" show_y_axis="true">
-							<entity name="Hospital_Model.Daily_Hospitalisations[*, *]"/>
-						</plot>
-					</graph>
+					<graph width="467" height="306" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
-				<aux font_style="italic" font_weight="bold" x="304" y="157" name="P2 Output Reported Daily Cases"/>
-				<stacked_container uid="56" x="426" y="495" width="641" height="459">
+				<stacked_container uid="56" x="194" y="411" width="641" height="459">
 					<table orientation="vertical" interval="1" report_balances="beginning" report_flows="instantaneous" width="641" height="459" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Young]"/>
-						</item>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Adult]"/>
-						</item>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Young]"/>
-						</item>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Adult]"/>
-						</item>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Young]"/>
-						</item>
-						<item>
-							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Adult]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL13, Young]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL13, Adult]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL21, Young]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL21, Adult]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL22, Young]"/>
-						</item>
-						<item>
-							<entity name="Hospital_Model.Daily_Hospitalisations[NL22, Adult]"/>
-						</item>
 						<item>
 							<entity name="Hospital_Model.Patients_In_Hospital[NL13, Young]"/>
 						</item>
@@ -1592,19 +1514,31 @@
 						<item>
 							<entity name="Hospital_Model.Patients_In_Hospital[NL22, Adult]"/>
 						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Adult]"/>
+						</item>
 					</table>
 				</stacked_container>
-				<aux font_style="italic" font_weight="bold" x="290" y="274" name="Converter 1"/>
-				<aux font_style="italic" font_weight="bold" x="272" y="461" name="Converter 2"/>
-				<aux font_style="italic" font_weight="bold" x="279" y="369" name="Converter 3"/>
-				<aux font_style="italic" font_weight="bold" x="272" y="586" name="Converter 4"/>
 				<stacked_container uid="57" x="1101" y="225" width="552" height="348">
-					<graph width="552" height="348" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Hospital_Model.Daily_Hospitalisations[*, *]"/>
-						</plot>
-					</graph>
+					<graph width="552" height="348" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
+				<aux font_style="italic" font_weight="bold" x="272" y="146" name="Reported Daily Cases"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="427" y="146" name="Patients In Hospital"/>
 			</view>
 		</views>
 	</model>

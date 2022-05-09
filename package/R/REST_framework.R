@@ -30,6 +30,7 @@ simulator <- function(req, res) {
 
     par_list    <- extract_pars(user_args, model_id)
     sim_results <- run_model(model_id, par_list, fldr_path)
+    sim_results <- tidy_results(sim_results, model_id)
     unlink(fldr_path, recursive = TRUE)
 
     return(sim_results)
