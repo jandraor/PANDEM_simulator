@@ -21,7 +21,8 @@ RUN install2.r --error \
     stringr\
     socialmixr\
     devtools\
-    xml2
+    xml2\
+    tidyr
 # copy app code into docker image
 COPY / /
 
