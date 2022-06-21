@@ -4,6 +4,8 @@ tidy_results <- function(sim_results, model_id) {
     return(sim_results)
   }
 
+  colnames(sim_results) <- sanitise_name(colnames(sim_results))
+
   var_names <- colnames(sim_results)
 
   indicator_list <- get_output_indicators(model_id)
