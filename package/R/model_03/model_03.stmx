@@ -150,7 +150,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -295,7 +295,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -515,44 +515,44 @@
 			<aux name="Symmetric contact matrix">
 				<dimensions>
 					<dim name="Region"/>
-					<dim name="Age"/>
-					<dim name="Age"/>
+					<dim name="Age_contactor"/>
+					<dim name="Age_contactee"/>
 				</dimensions>
 				<element subscript="NL13, Young, Young">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Young,Young]</eqn>
 				</element>
 				<element subscript="NL13, Young, Adult">
-					<eqn>1/(2*Population[NL13,Young])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL13,Young]+BaseContacts[Age_contactor,Age_contactee]*Population[NL13,Adult])</eqn>
+					<eqn>BaseContacts[Adult,Young]</eqn>
 				</element>
 				<element subscript="NL13, Adult, Young">
-					<eqn>1/(2*Population[NL13,Adult])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL13,Adult]+BaseContacts[Age_contactor,Age_contactee]*Population[NL13,Young])</eqn>
+					<eqn>BaseContacts[Adult,Young]</eqn>
 				</element>
 				<element subscript="NL13, Adult, Adult">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Adult,Adult]</eqn>
 				</element>
 				<element subscript="NL21, Young, Young">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Young,Young]</eqn>
 				</element>
 				<element subscript="NL21, Young, Adult">
-					<eqn>1/(2*Population[NL21,Young])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL21,Young]+BaseContacts[Age_contactor,Age_contactee]*Population[NL21,Adult])</eqn>
+					<eqn>BaseContacts[Young,Adult]</eqn>
 				</element>
 				<element subscript="NL21, Adult, Young">
-					<eqn>1/(2*Population[NL21,Adult])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL21,Adult]+BaseContacts[Age_contactor,Age_contactee]*Population[NL21,Young])</eqn>
+					<eqn>BaseContacts[Adult,Young]</eqn>
 				</element>
 				<element subscript="NL21, Adult, Adult">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Adult,Adult]</eqn>
 				</element>
 				<element subscript="NL22, Young, Young">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Young,Young]</eqn>
 				</element>
 				<element subscript="NL22, Young, Adult">
-					<eqn>1/(2*Population[NL22,Young])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL22,Young]+BaseContacts[Age_contactor,Age_contactee]*Population[NL22,Adult])</eqn>
+					<eqn>BaseContacts[Young,Adult]</eqn>
 				</element>
 				<element subscript="NL22, Adult, Young">
-					<eqn>1/(2*Population[NL22,Adult])*(BaseContacts[Age_contactor,Age_contactee]*Population[NL22,Adult]+BaseContacts[Age_contactor,Age_contactee]*Population[NL22,Young])</eqn>
+					<eqn>BaseContacts[Adult,Young]</eqn>
 				</element>
 				<element subscript="NL22, Adult, Adult">
-					<eqn>BaseContacts[Age_contactor,Age_contactee]</eqn>
+					<eqn>BaseContacts[Adult,Adult]</eqn>
 				</element>
 			</aux>
 			<aux name="Infectivity" access="input">
@@ -564,7 +564,7 @@
 					<dim name="Age"/>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>Symmetric_contact_matrix[Region,Age, Age]*Infectivity</eqn>
+				<eqn>Infectivity * Symmetric_contact_matrix[Region,Age,Age]</eqn>
 			</aux>
 			<aux name="PerCapitalBetaMatrix">
 				<dimensions>
@@ -656,7 +656,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="4" isee:scroll_y="255" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -939,10 +939,6 @@
 				<aux x="257" y="402" name="Symmetric contact matrix"/>
 				<connector uid="25" angle="358.657">
 					<from>BaseContacts</from>
-					<to>Symmetric_contact_matrix</to>
-				</connector>
-				<connector uid="26" angle="151.032">
-					<from>Population</from>
 					<to>Symmetric_contact_matrix</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="337" y="293" name="Infectivity"/>
