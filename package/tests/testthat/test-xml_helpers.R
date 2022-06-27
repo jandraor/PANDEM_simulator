@@ -24,6 +24,7 @@ test_var_xml <- xml2::read_xml('
 	    <model name="Inputs_Epi">
 	      <variables>
 			    <aux name="ClinicalFraction" access="output">
+			      <doc>The fraction of people who develop symptoms, and so are detected by the surveillance system</doc>
 					  <dimensions>
 					    <dim name="Age"/>
 				    </dimensions>
@@ -77,6 +78,7 @@ test_that("format_par_obj returns the expected list for array with a common valu
   expected <- list(
     name           = "ClinicalFraction",
     category       = module_name,
+    description    = "The fraction of people who develop symptoms, and so are detected by the surveillance system",
     array          = TRUE,
     dimensions     = list(Age = c("Young", "Adult")),
     default_values = list(`Inputs_Epi.ClinicalFraction[Young]` = 0.5,
@@ -100,6 +102,7 @@ test_that("format_par_obj returns the expected list for array with a common valu
   expected <- list(
     name           = "Pathogen_Seed_Time",
     category       = module_name,
+    description    = "NA",
     array          = TRUE,
     dimensions     = list(Region = c("NL13", "NL21", "NL22"),
                           Age    = c("Young", "Adult")),
@@ -128,6 +131,7 @@ test_that("format_par_obj returns the expected list for a multidimensional array
   expected <- list(
     name           = "BaseContacts",
     category       = module_name,
+    description    = "NA",
     array          = TRUE,
     dimensions     = list(Age_contactor = c("Young", "Adult"),
                           Age_contactee = c("Young", "Adult")),

@@ -41,17 +41,20 @@ create_par_obj <- function(module_xml, dims_obj, type) {
 
 format_par_obj <- function(aux_obj, category, dims_obj, type) {
 
-  aux_name <- xml2::xml_attr(aux_obj, "name")
+  aux_name   <- xml2::xml_attr(aux_obj, "name")
+  name       <- sanitise_name(aux_name)
 
-  dims_aux <- xml2::xml_find_first(aux_obj, ".//d1:dimensions")
+  dims_aux   <- xml2::xml_find_first(aux_obj, ".//d1:dimensions")
 
   is_arrayed <- ifelse(length(dims_aux) > 0, TRUE, FALSE)
 
-  name <- sanitise_name(aux_name)
+  desc_txt  <- xml2::xml_find_first(aux_obj, ".//d1:doc") |>
+    xml2::xml_text()
 
-  par_obj <- list(name     = name,
-                  category = category,
-                  array    = is_arrayed)
+  par_obj <- list(name         = name,
+                  category     = category,
+                  description  = desc_txt,
+                  array        = is_arrayed)
 
   if(!is_arrayed & type == "input") {
 
