@@ -10,7 +10,7 @@ get_pars <- function(model_id) {
   input_idx     <- which(grepl("^Inputs_", mdl_names))
   input_modules <- mdl_xml[input_idx]
 
-  par_list <- lapply(input_modules, create_par_obj, dims_obj)
+  par_list <- lapply(input_modules, create_par_obj, dims_obj, "input")
 
   unlist(par_list, recursive = FALSE)
 }
@@ -27,7 +27,7 @@ get_output_indicators <- function(model_id) {
   output_idx     <- which(grepl("PANDEM2_Outputs", mdl_names))
   output_module  <- mdl_xml[output_idx]
 
-  create_par_obj(output_module, dims_obj)
+  create_par_obj(output_module, dims_obj, "output")
 }
 
 

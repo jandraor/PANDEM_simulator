@@ -72,7 +72,7 @@ test_that("format_par_obj returns the expected list for array with a common valu
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   aux_obj    <- xml2::xml_find_first(vars_xml, ".//d1:aux")
 
-  actual   <- format_par_obj(aux_obj, module_name, dims_obj)
+  actual   <- format_par_obj(aux_obj, module_name, dims_obj, "input")
 
   expected <- list(
     name           = "ClinicalFraction",
@@ -95,7 +95,7 @@ test_that("format_par_obj returns the expected list for array with a common valu
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   aux_obj    <- xml2::xml_find_all(vars_xml, ".//d1:aux")[[2]]
 
-  actual   <- format_par_obj(aux_obj, module_name, dims_obj)
+  actual   <- format_par_obj(aux_obj, module_name, dims_obj, "input")
 
   expected <- list(
     name           = "Pathogen_Seed_Time",
@@ -123,7 +123,7 @@ test_that("format_par_obj returns the expected list for a multidimensional array
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   aux_obj    <- xml2::xml_find_all(vars_xml, ".//d1:aux")[[4]]
 
-  actual   <- format_par_obj(aux_obj, module_name, dims_obj)
+  actual   <- format_par_obj(aux_obj, module_name, dims_obj, "input")
 
   expected <- list(
     name           = "BaseContacts",

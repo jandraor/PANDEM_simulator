@@ -1,0 +1,1937 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee" uses_arrays="3" uses_submodels=""/>
+		<name>model_03</name>
+		<uuid>42444136-83d9-4121-986d-72baa80ce770</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.0254237" isee:restore_on_start="false" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>1</start>
+		<stop>60</stop>
+		<dt reciprocal="true">8</dt>
+	</sim_specs>
+	<dimensions>
+		<dim name="Age">
+			<elem name="Young"/>
+			<elem name="Adult"/>
+		</dim>
+		<dim name="Age_contactee">
+			<elem name="Young"/>
+			<elem name="Adult"/>
+		</dim>
+		<dim name="Age_contactor">
+			<elem name="Young"/>
+			<elem name="Adult"/>
+		</dim>
+		<dim name="Region">
+			<elem name="NL13"/>
+			<elem name="NL21"/>
+			<elem name="NL22"/>
+		</dim>
+	</dimensions>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+		<isee:time_format name="TimeLabel1" type="grouped" start_offset="0" start_offset_units="days">
+			<isee:time_format_groupings>
+				<isee:time_format_grouping unit="years" prefix="Yr "/>
+				<isee:time_format_grouping unit="months" prefix=" " as_word="true"/>
+				<isee:time_format_grouping unit="days" prefix=" D"/>
+			</isee:time_format_groupings>
+		</isee:time_format>
+	</isee:time_formats>
+	<default_format/>
+	<data>
+		<export resource="r../output.txt" precomputed="false" isee:format="numbers">
+			<table name="PANDEM2 Outputs" use_settings="true"/>
+		</export>
+		<import isee:overwrite="true" orientation="horizontal" resource="r../inputs.txt"/>
+	</data>
+	<model_units/>
+	<model>
+		<variables>
+			<module name="MODEL" isee:label="">
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect2 to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect2 to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect2 to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect2 to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect2 to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+			</module>
+			<module name="PANDEM2 Inputs" isee:label="">
+				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect2 to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect2 to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect2 to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect2 to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect2 to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+			</module>
+			<module name="PANDEM2 Outputs" isee:label="">
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+			</module>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<module label_side="center" x="242.5" y="57.5" width="75" height="58" name="MODEL"/>
+				<module x="449.5" y="59.5" width="69" height="55" name="PANDEM2 Inputs"/>
+				<module x="445.5" y="197.5" width="72" height="53" name="PANDEM2 Outputs"/>
+				<connector uid="1" isee:thickness="2" angle="207.699">
+					<from>PANDEM2_Inputs</from>
+					<to>MODEL</to>
+				</connector>
+				<connector uid="2" isee:thickness="2" angle="282.875">
+					<from>MODEL</from>
+					<to>PANDEM2_Outputs</to>
+				</connector>
+			</view>
+			<view background="white" page_width="1066" page_height="600" home_view="true" type="interface">
+				<style/>
+				<slider x="341.5" y="57" width="332" height="99" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="341.5" y="187" width="332" height="99" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+			</view>
+			<isee:templates>
+				<view background="white" page_width="1066" page_height="600" type="template">
+					<style/>
+				</view>
+			</isee:templates>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="MODEL">
+		<variables>
+			<module name="EPI Model" isee:label="">
+				<connect to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
+				<connect2 to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
+				<connect to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect2 to="PANDEM2_Outputs.Reported_Daily_Cases" from="EPI_Model.Reported_Daily_Cases"/>
+				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect2 to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect2 to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect2 to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
+			</module>
+			<module name="Hospital Model" isee:label="">
+				<connect to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect2 to="PANDEM2_Outputs.Patients_In_Hospital" from="Hospital_Model.Patients_In_Hospital"/>
+				<connect to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect2 to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect2 to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
+				<connect2 to="Hospital_Model.Converter_3" from="EPI_Model.Entering_Hospital"/>
+				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+			</module>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<module x="344" y="104" name="EPI Model"/>
+				<module x="558" y="104" name="Hospital Model"/>
+				<connector uid="5" isee:thickness="2" angle="20.556">
+					<from>EPI_Model</from>
+					<to>Hospital_Model</to>
+				</connector>
+			</view>
+		</views>
+	</model>
+	<model name="EPI_Model">
+		<variables>
+			<aux name="Infectious Duration">
+				<eqn>2</eqn>
+			</aux>
+			<stock name="Susceptible">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Population[Region,  Age]</eqn>
+				<outflow>IR</outflow>
+			</stock>
+			<stock name="Infected">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>IR</inflow>
+				<inflow>Imported_Infections</inflow>
+				<outflow>RR</outflow>
+			</stock>
+			<stock name="Recovered">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>RR</inflow>
+			</stock>
+			<flow name="IR">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Susceptible[Region,Age]*Lambda[Region,Age]</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="RR">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Infected[Region,Age]/Infectious_Duration</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Inc Cases">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>IR[Region,Age]*Converter_2[Age]</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Total\nClinical\nCases">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>Inc_Cases</inflow>
+			</stock>
+			<aux name="Reporting Lag">
+				<eqn>2</eqn>
+			</aux>
+			<aux name="Reported Daily Cases" access="output">
+				<doc>The reported number of cases from the model run</doc>
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>SMTH3(Raw_Daily_Cases[Region,Age],  Reporting_Lag)</eqn>
+			</aux>
+			<aux name="Raw Daily Cases">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Total_Clinical_Cases[Region,Age]-HISTORY(Total_Clinical_Cases[Region,Age],  TIME - 1)</eqn>
+			</aux>
+			<aux name="Lambda">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="NL13, Young">
+					<eqn>PerCapitalBetaMatrix[NL13,Young,Young]*Infected[NL13,Young]+PerCapitalBetaMatrix[NL13,Young,Adult]*Infected[NL13,Adult]</eqn>
+				</element>
+				<element subscript="NL13, Adult">
+					<eqn>PerCapitalBetaMatrix[NL13,Adult,Young]*Infected[NL13,Young]+PerCapitalBetaMatrix[NL13,Adult,Adult]*Infected[NL13,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Young">
+					<eqn>PerCapitalBetaMatrix[NL21,Young,Young]*Infected[NL21,Young]+PerCapitalBetaMatrix[NL21,Young,Adult]*Infected[NL21,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Adult">
+					<eqn>PerCapitalBetaMatrix[NL21,Adult,Young]*Infected[NL21,Young]+PerCapitalBetaMatrix[NL21,Adult,Adult]*Infected[NL21,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Young">
+					<eqn>PerCapitalBetaMatrix[NL22,Young,Young]*Infected[NL22,Young]+PerCapitalBetaMatrix[NL22,Young,Adult]*Infected[NL22,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Adult">
+					<eqn>PerCapitalBetaMatrix[NL22,Adult,Young]*Infected[NL22,Young]+PerCapitalBetaMatrix[NL22,Adult,Adult]*Infected[NL22,Adult]</eqn>
+				</element>
+			</aux>
+			<flow name="Imported Infections">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>IF TIME = Converter_1[Region,Age] THEN Number_Seeded/DT ELSE 0</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Converter 1" access="input">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<aux name="Number Seeded">
+				<eqn>10</eqn>
+			</aux>
+			<aux name="Converter 2" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<aux name="Entering Hospital" access="output">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Inc_Cases[Region,Age]*Converter_3[Age]</eqn>
+			</aux>
+			<aux name="Converter 3" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<aux name="Clinical Cases By Region">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>SUM(Total_Clinical_Cases[Region,*])</eqn>
+			</aux>
+			<aux name="Regional Attack Rates" access="output">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>Clinical_Cases_By_Region[Region]/Population_By_Region[Region]</eqn>
+			</aux>
+			<aux name="Population By Region">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>SUM(Population[Region,*])</eqn>
+			</aux>
+			<aux name="Population" access="input">
+				<doc>The total population for the area being simulated.</doc>
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+			</aux>
+			<aux name="BaseContacts" access="input">
+				<dimensions>
+					<dim name="Age_contactor"/>
+					<dim name="Age_contactee"/>
+				</dimensions>
+			</aux>
+			<aux name="Symmetric contact matrix">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age_contactor"/>
+					<dim name="Age_contactee"/>
+				</dimensions>
+				<element subscript="NL13, Young, Young">
+					<eqn>BaseContacts[Young,Young]</eqn>
+				</element>
+				<element subscript="NL13, Young, Adult">
+					<eqn>BaseContacts[Adult,Young]</eqn>
+				</element>
+				<element subscript="NL13, Adult, Young">
+					<eqn>BaseContacts[Adult,Young]</eqn>
+				</element>
+				<element subscript="NL13, Adult, Adult">
+					<eqn>BaseContacts[Adult,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Young, Young">
+					<eqn>BaseContacts[Young,Young]</eqn>
+				</element>
+				<element subscript="NL21, Young, Adult">
+					<eqn>BaseContacts[Young,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Adult, Young">
+					<eqn>BaseContacts[Adult,Young]</eqn>
+				</element>
+				<element subscript="NL21, Adult, Adult">
+					<eqn>BaseContacts[Adult,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Young, Young">
+					<eqn>BaseContacts[Young,Young]</eqn>
+				</element>
+				<element subscript="NL22, Young, Adult">
+					<eqn>BaseContacts[Young,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Adult, Young">
+					<eqn>BaseContacts[Adult,Young]</eqn>
+				</element>
+				<element subscript="NL22, Adult, Adult">
+					<eqn>BaseContacts[Adult,Adult]</eqn>
+				</element>
+			</aux>
+			<aux name="Infectivity" access="input">
+				<eqn>0.1</eqn>
+			</aux>
+			<aux name="BetaMatrix">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Infectivity * Symmetric_contact_matrix[Region,Age,Age]</eqn>
+			</aux>
+			<aux name="PerCapitalBetaMatrix">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="NL13, Young, Young">
+					<eqn>BetaMatrix[NL13,Young,Young]/Population[NL13,Young]</eqn>
+				</element>
+				<element subscript="NL13, Young, Adult">
+					<eqn>BetaMatrix[NL13,Young,Adult]/Population[NL13,Adult]</eqn>
+				</element>
+				<element subscript="NL13, Adult, Young">
+					<eqn>BetaMatrix[NL13,Adult,Young]/Population[NL13,Young]</eqn>
+				</element>
+				<element subscript="NL13, Adult, Adult">
+					<eqn>BetaMatrix[NL13,Adult,Adult]/Population[NL13,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Young, Young">
+					<eqn>BetaMatrix[NL21,Young,Young]/Population[NL21,Young]</eqn>
+				</element>
+				<element subscript="NL21, Young, Adult">
+					<eqn>BetaMatrix[NL21,Young,Adult]/Population[NL21,Adult]</eqn>
+				</element>
+				<element subscript="NL21, Adult, Young">
+					<eqn>BetaMatrix[NL21,Adult,Young]/Population[NL21,Young]</eqn>
+				</element>
+				<element subscript="NL21, Adult, Adult">
+					<eqn>BetaMatrix[NL21,Adult,Adult]/Population[NL21,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Young, Young">
+					<eqn>BetaMatrix[NL22,Young,Young]/Population[NL22,Young]</eqn>
+				</element>
+				<element subscript="NL22, Young, Adult">
+					<eqn>BetaMatrix[NL22,Young,Adult]/Population[NL22,Adult]</eqn>
+				</element>
+				<element subscript="NL22, Adult, Young">
+					<eqn>BetaMatrix[NL22,Adult,Young]/Population[NL22,Young]</eqn>
+				</element>
+				<element subscript="NL22, Adult, Adult">
+					<eqn>BetaMatrix[NL22,Adult,Adult]/Population[NL22,Adult]</eqn>
+				</element>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="4" isee:scroll_y="255" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux x="725" y="275" name="Infectious Duration"/>
+				<stock label_side="center" x="300.5" y="144.5" width="73" height="47" name="Susceptible"/>
+				<stock label_side="center" x="534.5" y="144" width="62" height="48" name="Infected"/>
+				<stock label_side="center" x="744.5" y="145.5" width="66" height="45" name="Recovered"/>
+				<flow label_side="bottom" x="448" y="168" name="IR">
+					<pts>
+						<pt x="373.5" y="168"/>
+						<pt x="534.5" y="168"/>
+					</pts>
+				</flow>
+				<connector uid="6" angle="337.249">
+					<from>Susceptible</from>
+					<to>IR</to>
+				</connector>
+				<flow x="664.5" y="168" name="RR">
+					<pts>
+						<pt x="596.5" y="168"/>
+						<pt x="744.5" y="168"/>
+					</pts>
+				</flow>
+				<connector uid="7" angle="119.485">
+					<from>Infectious_Duration</from>
+					<to>RR</to>
+				</connector>
+				<connector uid="8" angle="331.305">
+					<from>Infected</from>
+					<to>RR</to>
+				</connector>
+				<flow x="546.75" y="556" name="Inc Cases">
+					<pts>
+						<pt x="492" y="556"/>
+						<pt x="601.5" y="556"/>
+					</pts>
+				</flow>
+				<stock label_side="center" x="601.5" y="529.5" width="72" height="54" name="Total\nClinical\nCases"/>
+				<aux x="901" y="452" name="Reporting Lag"/>
+				<aux x="877" y="538" name="Reported Daily Cases"/>
+				<connector uid="9" angle="295.201">
+					<from>Reporting_Lag</from>
+					<to>Reported_Daily_Cases</to>
+				</connector>
+				<aux label_side="bottom" x="753" y="498" name="Raw Daily Cases"/>
+				<connector uid="10" angle="358.315">
+					<from>Raw_Daily_Cases</from>
+					<to>Reported_Daily_Cases</to>
+				</connector>
+				<connector uid="11" angle="39.3907">
+					<from>Total_Clinical_Cases</from>
+					<to>Raw_Daily_Cases</to>
+				</connector>
+				<aux x="453" y="268" name="Lambda"/>
+				<connector uid="12" angle="149.036">
+					<from>Lambda</from>
+					<to>IR</to>
+				</connector>
+				<flow x="574" y="102" name="Imported Infections">
+					<pts>
+						<pt x="574" y="60"/>
+						<pt x="574" y="144"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" x="660" y="62" name="Converter 1"/>
+				<connector uid="13" angle="223.363">
+					<from>Converter_1</from>
+					<to>Imported_Infections</to>
+				</connector>
+				<aux x="471" y="44" name="Number Seeded"/>
+				<connector uid="14" angle="326.689">
+					<from>Number_Seeded</from>
+					<to>Imported_Infections</to>
+				</connector>
+				<connector uid="15" angle="304.16">
+					<from>IR</from>
+					<to>Inc_Cases</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="596" y="470" name="Converter 2"/>
+				<connector uid="16" angle="225.855">
+					<from>Converter_2</from>
+					<to>Inc_Cases</to>
+				</connector>
+				<aux x="637.5" y="632" name="Entering Hospital"/>
+				<connector uid="17" angle="281.768">
+					<from>Inc_Cases</from>
+					<to>Entering_Hospital</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="470" y="629" name="Converter 3"/>
+				<connector uid="18" angle="338.629">
+					<from>Converter_3</from>
+					<to>Entering_Hospital</to>
+				</connector>
+				<stacked_container uid="19" x="1114.5" y="138" width="599" height="1046">
+					<table orientation="horizontal" interval="1" report_balances="beginning" report_flows="instantaneous" width="599" height="1046">
+						<item type="time"/>
+						<item>
+							<entity name="Entering_Hospital[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.ClinicalFraction[Young]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.ClinicalFraction[Adult]"/>
+						</item>
+						<item>
+							<entity name="IR[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="IR[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="IR[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="IR[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="IR[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="IR[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital.HospitalisationFraction[Young]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital.HospitalisationFraction[Adult]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Inc_Cases[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Imported_Infections[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Susceptible[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Lambda[NL22, Adult]"/>
+						</item>
+					</table>
+				</stacked_container>
+				<connector uid="20" angle="248.552">
+					<from>Infected</from>
+					<to>Lambda</to>
+				</connector>
+				<stacked_container uid="21" x="326" y="724" width="713" height="324">
+					<graph width="713" height="324" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Reported_Daily_Cases[*, *]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="813" y="635" name="Clinical Cases By Region"/>
+				<connector uid="22" angle="329.5">
+					<from>Total_Clinical_Cases</from>
+					<to>Clinical_Cases_By_Region</to>
+				</connector>
+				<aux x="835" y="707" name="Regional Attack Rates"/>
+				<connector uid="23" angle="275.194">
+					<from>Clinical_Cases_By_Region</from>
+					<to>Regional_Attack_Rates</to>
+				</connector>
+				<aux x="972" y="685" name="Population By Region"/>
+				<connector uid="24" angle="212.196">
+					<from>Population_By_Region</from>
+					<to>Regional_Attack_Rates</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="369" y="464" name="Population"/>
+				<aux font_style="italic" font_weight="bold" x="129" y="399" name="BaseContacts"/>
+				<aux x="257" y="402" name="Symmetric contact matrix"/>
+				<connector uid="25" angle="358.657">
+					<from>BaseContacts</from>
+					<to>Symmetric_contact_matrix</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="337" y="293" name="Infectivity"/>
+				<aux x="369" y="354" name="BetaMatrix"/>
+				<connector uid="27" angle="29.4759">
+					<from>Symmetric_contact_matrix</from>
+					<to>BetaMatrix</to>
+				</connector>
+				<connector uid="28" angle="297.681">
+					<from>Infectivity</from>
+					<to>BetaMatrix</to>
+				</connector>
+				<aux x="466" y="361" name="PerCapitalBetaMatrix"/>
+				<connector uid="29" angle="355.872">
+					<from>BetaMatrix</from>
+					<to>PerCapitalBetaMatrix</to>
+				</connector>
+				<connector uid="30" angle="46.7184">
+					<from>Population</from>
+					<to>PerCapitalBetaMatrix</to>
+				</connector>
+				<connector uid="31" angle="97.9575">
+					<from>PerCapitalBetaMatrix</from>
+					<to>Lambda</to>
+				</connector>
+				<connector uid="32" angle="247.38">
+					<from>
+						<alias uid="33"/>
+					</from>
+					<to>Population_By_Region</to>
+				</connector>
+				<alias font_style="italic" font_weight="bold" uid="33" x="991" y="598" width="18" height="18">
+					<of>Population</of>
+				</alias>
+			</view>
+		</views>
+	</model>
+	<model name="Hospital_Model">
+		<variables>
+			<aux name="Converter 1" access="input">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+			</aux>
+			<aux name="Converter 2" access="input">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<aux name="Converter 3" access="input">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<aux name="Total Region Populations">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>SUM(Converter_2[Region,*])</eqn>
+			</aux>
+			<aux name="Total Hospital Beds">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>Converter_1[Region]/1000*Total_Region_Populations[Region]</eqn>
+			</aux>
+			<aux name="Converter 4" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+			<stock name="Patients In Hospital" access="output">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>Entering_Hospital</inflow>
+				<outflow>Leaving_Hospital</outflow>
+			</stock>
+			<flow name="Entering Hospital">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Converter_3[Region,Age]</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Leaving Hospital">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>DELAY3(Entering_Hospital[Region,Age], Converter_4[Age])</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Regional Totals In Hospital">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>SUM(Patients_In_Hospital[Region,*])</eqn>
+			</aux>
+			<aux name="Beds Gap">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>Total_Hospital_Beds[Region]-Regional_Totals_In_Hospital[Region]</eqn>
+			</aux>
+			<aux name="Reported Beds Gap" access="output">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>SMTH3(Beds_Gap[Region], Hospital_Reporting_Lag)</eqn>
+			</aux>
+			<aux name="Hospital Reporting Lag">
+				<eqn>1</eqn>
+			</aux>
+			<stock name="Total Entering Hospital">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>EH</inflow>
+			</stock>
+			<flow name="EH">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Entering_Hospital[Region,Age]</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Daily Hospitalisations" access="output">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Total_Entering_Hospital[Region,Age]-HISTORY(Total_Entering_Hospital[Region,Age], TIME-1)</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux font_style="italic" font_weight="bold" x="260" y="54" name="Converter 1"/>
+				<aux font_style="italic" font_weight="bold" x="483" y="61" name="Converter 2"/>
+				<aux font_style="italic" font_weight="bold" x="63" y="235" width="31" height="31" name="Converter 3"/>
+				<aux x="577" y="114" name="Total Region Populations"/>
+				<connector uid="34" angle="344.476">
+					<from>Converter_2</from>
+					<to>Total_Region_Populations</to>
+				</connector>
+				<aux x="351" y="140" name="Total Hospital Beds"/>
+				<connector uid="35" angle="322.431">
+					<from>Converter_1</from>
+					<to>Total_Hospital_Beds</to>
+				</connector>
+				<connector uid="36" angle="194.036">
+					<from>Total_Region_Populations</from>
+					<to>Total_Hospital_Beds</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="483" y="491" name="Converter 4"/>
+				<stock label_side="center" x="218.5" y="361.5" width="80" height="61" name="Patients In Hospital"/>
+				<flow x="145.75" y="383" name="Entering Hospital">
+					<pts>
+						<pt x="73" y="383"/>
+						<pt x="218.5" y="383"/>
+					</pts>
+				</flow>
+				<connector uid="37" angle="294.59">
+					<from>Converter_3</from>
+					<to>Entering_Hospital</to>
+				</connector>
+				<flow x="366.25" y="394" name="Leaving Hospital">
+					<pts>
+						<pt x="298.5" y="394"/>
+						<pt x="458" y="394"/>
+					</pts>
+				</flow>
+				<connector uid="38" angle="166.373">
+					<from>Converter_4</from>
+					<to>Leaving_Hospital</to>
+				</connector>
+				<connector uid="39" angle="285.376">
+					<from>Entering_Hospital</from>
+					<to>Leaving_Hospital</to>
+				</connector>
+				<aux x="336" y="279" name="Regional Totals In Hospital"/>
+				<connector uid="40" angle="60.3169">
+					<from>Patients_In_Hospital</from>
+					<to>Regional_Totals_In_Hospital</to>
+				</connector>
+				<aux x="452" y="235" name="Beds Gap"/>
+				<connector uid="41" angle="33.3106">
+					<from>Regional_Totals_In_Hospital</from>
+					<to>Beds_Gap</to>
+				</connector>
+				<connector uid="42" angle="322.352">
+					<from>Total_Hospital_Beds</from>
+					<to>Beds_Gap</to>
+				</connector>
+				<stacked_container uid="43" x="795" y="97" width="659" height="344">
+					<graph width="659" height="344" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Beds_Gap[*]"/>
+						</plot>
+						<plot color="#008F44" pen_style="dashed" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="Reported_Beds_Gap[*]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="44" x="734" y="571" width="845" height="314">
+					<table orientation="vertical" interval="1" report_balances="beginning" report_flows="instantaneous" width="845" height="314">
+						<item type="time"/>
+						<item>
+							<entity name="Entering_Hospital[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Leaving_Hospital[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Entering_Hospital[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Leaving_Hospital[NL13, Adult]"/>
+						</item>
+					</table>
+				</stacked_container>
+				<aux x="565" y="282" name="Reported Beds Gap"/>
+				<aux x="620" y="205" name="Hospital Reporting Lag"/>
+				<connector uid="45" angle="352.648">
+					<from>Beds_Gap</from>
+					<to>Reported_Beds_Gap</to>
+				</connector>
+				<connector uid="46" angle="216.027">
+					<from>Hospital_Reporting_Lag</from>
+					<to>Reported_Beds_Gap</to>
+				</connector>
+				<stock x="228.5" y="656" name="Total Entering Hospital"/>
+				<flow x="156.5" y="656" name="EH">
+					<pts>
+						<pt x="107" y="656"/>
+						<pt x="206" y="656"/>
+					</pts>
+				</flow>
+				<connector uid="47" angle="228.601">
+					<from>Entering_Hospital</from>
+					<to>EH</to>
+				</connector>
+				<aux x="156.5" y="812" name="Daily Hospitalisations"/>
+				<connector uid="48" angle="255.124">
+					<from>Total_Entering_Hospital</from>
+					<to>Daily_Hospitalisations</to>
+				</connector>
+			</view>
+		</views>
+	</model>
+	<model name="PANDEM2_Inputs">
+		<variables>
+			<module name="Inputs data" isee:label="">
+				<connect to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect2 to="EPI_Model.BaseContacts" from="Inputs_data.BaseContacts"/>
+				<connect to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect2 to="EPI_Model.Population" from="Inputs_data.Population"/>
+				<connect to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+				<connect2 to="Hospital_Model.Converter_2" from="Inputs_data.Population"/>
+			</module>
+			<module name="Inputs Epi" isee:label="">
+				<connect to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect2 to="EPI_Model.Converter_2" from="Inputs_Epi.ClinicalFraction"/>
+				<connect to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect2 to="EPI_Model.Infectivity" from="Inputs_Epi.Infectivity"/>
+				<connect to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+				<connect2 to="EPI_Model.Converter_1" from="Inputs_Epi.Pathogen_Seed_Time"/>
+			</module>
+			<module name="Inputs Hospital" isee:label="">
+				<connect to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect2 to="Hospital_Model.Converter_4" from="Inputs_Hospital.ALOS"/>
+				<connect to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect2 to="Hospital_Model.Converter_1" from="Inputs_Hospital.HospitalBedsPer1K"/>
+				<connect to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+				<connect2 to="EPI_Model.Converter_3" from="Inputs_Hospital.HospitalisationFraction"/>
+			</module>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:scroll_x="1.36364" isee:scroll_y="1.36364" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<module label_side="top" x="79.4545" y="95.5909" width="74.4545" height="54.7273" name="Inputs data"/>
+				<module label_side="top" x="222.864" y="95.3182" width="71.2727" height="55.2727" name="Inputs Epi"/>
+				<module label_side="top" x="367.545" y="96.4546" width="74" height="53" name="Inputs Hospital"/>
+			</view>
+		</views>
+	</model>
+	<model name="Inputs_data">
+		<variables>
+			<aux name="Population" access="output">
+				<doc>The total population for the area being simulated.</doc>
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>1</eqn>
+			</aux>
+			<aux name="BaseContacts" access="output">
+				<dimensions>
+					<dim name="Age_contactor"/>
+					<dim name="Age_contactee"/>
+				</dimensions>
+				<element subscript="Young, Young">
+					<eqn>1</eqn>
+				</element>
+				<element subscript="Young, Adult">
+					<eqn>2</eqn>
+				</element>
+				<element subscript="Adult, Young">
+					<eqn>3</eqn>
+				</element>
+				<element subscript="Adult, Adult">
+					<eqn>4</eqn>
+				</element>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="2" isee:scroll_x="109" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux x="297" y="132" name="Population"/>
+				<stacked_container uid="49" x="739.462" y="367.577" width="526.654" height="324.577" minimized="true">
+					<graph width="526.654" height="324.577" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Population[*, *]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="192.636" y="132" name="BaseContacts"/>
+				<stacked_container uid="50" x="1014" y="184" width="674" height="365">
+					<graph width="674" height="365" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Population[*, *]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="51" x="371" y="369" width="526" height="352">
+					<table orientation="horizontal" interval="1" report_balances="beginning" report_flows="instantaneous" width="526" height="352">
+						<item type="time"/>
+					</table>
+				</stacked_container>
+				<stacked_container uid="52" x="963" y="599" width="384" height="375">
+					<table orientation="horizontal" interval="1" report_balances="beginning" report_flows="instantaneous" width="384" height="375">
+						<item type="time"/>
+					</table>
+				</stacked_container>
+			</view>
+		</views>
+	</model>
+	<model name="Inputs_Epi">
+		<variables>
+			<aux name="ClinicalFraction" access="output">
+				<doc>The fraction of people who develop symptoms, and so are detected by the surveillance system</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>.5</eqn>
+				<scale min="0" max="1"/>
+			</aux>
+			<aux name="Pathogen Seed Time" access="output">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Infectivity" access="output">
+				<eqn>0.1</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux x="612" y="125" width="37" height="37" name="ClinicalFraction"/>
+				<stacked_container uid="53" x="384" y="272" width="635" height="271">
+					<table width="635" height="271">
+						<item type="time"/>
+						<item>
+							<entity name="ClinicalFraction[Young]"/>
+						</item>
+						<item>
+							<entity name="ClinicalFraction[Adult]"/>
+						</item>
+						<item>
+							<entity name="Pathogen_Seed_Time[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Infectivity"/>
+						</item>
+					</table>
+				</stacked_container>
+				<aux x="438" y="120" width="36" height="36" name="Pathogen Seed Time"/>
+				<stacked_container uid="54" x="1079" y="229" width="484" height="357">
+					<graph width="484" height="357" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Pathogen_Seed_Time[*, *]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="316" y="118.5" width="39" height="39" name="Infectivity"/>
+			</view>
+		</views>
+	</model>
+	<model name="Inputs_Hospital">
+		<variables>
+			<aux name="ALOS" access="output">
+				<doc>The average length of stay in hospital</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>12</eqn>
+				<scale min="1" max="30"/>
+			</aux>
+			<aux name="HospitalisationFraction" access="output">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+			</aux>
+			<aux name="HospitalBedsPer1K" access="output">
+				<dimensions>
+					<dim name="Region"/>
+				</dimensions>
+				<eqn>0</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux x="221.667" y="124.667" name="ALOS"/>
+				<aux x="351.485" y="124.667" name="HospitalisationFraction"/>
+				<aux x="492.777" y="124.667" name="HospitalBedsPer1K"/>
+			</view>
+		</views>
+	</model>
+	<model name="PANDEM2_Outputs">
+		<variables>
+			<aux name="Reported Daily Cases" access="input">
+				<doc>The reported number of cases from the model run</doc>
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>P2_Output_Number_of_Daily_Cases</eqn>
+			</aux>
+			<aux name="Patients In Hospital" access="input">
+				<dimensions>
+					<dim name="Region"/>
+					<dim name="Age"/>
+				</dimensions>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:dual_slider color="black" background="white" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stacked_container uid="55" x="872.944" y="343.778" width="467" height="306">
+					<graph width="467" height="306" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				</stacked_container>
+				<stacked_container uid="56" x="194" y="411" width="641" height="459">
+					<table orientation="vertical" interval="1" report_balances="beginning" report_flows="instantaneous" width="641" height="459" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
+						<item type="time"/>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Model.Patients_In_Hospital[NL22, Adult]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL13, Adult]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL21, Adult]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Young]"/>
+						</item>
+						<item>
+							<entity name="EPI_Model.Reported_Daily_Cases[NL22, Adult]"/>
+						</item>
+					</table>
+				</stacked_container>
+				<stacked_container uid="57" x="1101" y="225" width="552" height="348">
+					<graph width="552" height="348" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				</stacked_container>
+				<aux font_style="italic" font_weight="bold" x="272" y="146" name="Reported Daily Cases"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="427" y="146" name="Patients In Hospital"/>
+			</view>
+		</views>
+	</model>
+</xmile>
+

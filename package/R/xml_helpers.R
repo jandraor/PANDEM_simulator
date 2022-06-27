@@ -28,7 +28,7 @@ extract_dim_elems <- function(dim_tag) {
   sapply(elems_xml, function(elem_tag) xml2::xml_attr(elem_tag, "name"))
 }
 
-create_par_obj <- function(module_xml, dims_obj) {
+create_par_obj <- function(module_xml, dims_obj, type) {
 
   module_name <- xml2::xml_attr(module_xml, "name")
   category    <- module_name
@@ -36,10 +36,10 @@ create_par_obj <- function(module_xml, dims_obj) {
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   auxs_xml   <- xml2::xml_find_all(vars_xml, ".//d1:aux")
 
-  lapply(auxs_xml, format_par_obj, module_name, dims_obj)
+  lapply(auxs_xml, format_par_obj, module_name, dims_obj, type)
 }
 
-format_par_obj <- function(aux_obj, category, dims_obj) {
+format_par_obj <- function(aux_obj, category, dims_obj, type) {
 
   aux_name <- xml2::xml_attr(aux_obj, "name")
 
@@ -53,7 +53,7 @@ format_par_obj <- function(aux_obj, category, dims_obj) {
                   category = category,
                   array    = is_arrayed)
 
-  if(!is_arrayed) {
+  if(!is_arrayed & type == "input") {
 
     def_val <- xml2::xml_find_first(aux_obj, ".//d1:eqn") |>
       xml2::xml_text() |> as.numeric()
@@ -74,39 +74,40 @@ format_par_obj <- function(aux_obj, category, dims_obj) {
 
     par_obj$dimensions <- dims_list
 
-    cld_xml      <- xml2::xml_children(aux_obj)
-    child_names  <- xml2::xml_name(cld_xml)
+    if(type == "input") {
 
-    if("eqn" %in% child_names) {
-      par_val <- xml2::xml_find_first(aux_obj, ".//d1:eqn") |>
-        xml2::xml_text() |> as.numeric()
+      cld_xml      <- xml2::xml_children(aux_obj)
+      child_names  <- xml2::xml_name(cld_xml)
 
-      combs <- purrr::cross(dims_list)
+      if("eqn" %in% child_names) {
 
-      elems <- purrr::map_chr(combs, \(elem_obj) paste(elem_obj, collapse = ","))
+        par_val <- xml2::xml_find_first(aux_obj, ".//d1:eqn") |>
+          xml2::xml_text() |> as.numeric()
 
-      elems_list <- rep(par_val, length(elems)) |> as.list()
+        combs <- purrr::cross(dims_list)
 
+        elems <- purrr::map_chr(combs, \(elem_obj) paste(elem_obj, collapse = ","))
 
+        elems_list <- rep(par_val, length(elems)) |> as.list()
+      }
+
+      if(!("eqn" %in% child_names)) {
+
+        elements_xml <- xml2::xml_find_all(aux_obj, ".//d1:element")
+
+        elems <- xml2::xml_attr(elements_xml, "subscript") |>
+          stringr::str_remove(" ")
+
+        elems_list <- xml2::xml_find_all(elements_xml, ".//d1:eqn") |>
+          xml2::xml_text() |> as.numeric() |> as.list()
+
+      }
+
+      labels            <- stringr::str_glue("{category}.{name}[{elems}]")
+      names(elems_list) <- labels
+
+      par_obj$default_values <- elems_list
     }
-
-    if(!("eqn" %in% child_names)) {
-
-      elements_xml <- xml2::xml_find_all(aux_obj, ".//d1:element")
-
-      elems <- xml2::xml_attr(elements_xml, "subscript") |>
-        stringr::str_remove(" ")
-
-      elems_list <- xml2::xml_find_all(elements_xml, ".//d1:eqn") |>
-        xml2::xml_text() |> as.numeric() |> as.list()
-
-    }
-
-    labels <- stringr::str_glue("{category}.{name}[{elems}]")
-
-    names(elems_list) <- labels
-
-    par_obj$default_values <- elems_list
   }
 
   par_obj
