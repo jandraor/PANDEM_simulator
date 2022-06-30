@@ -64,8 +64,8 @@
 				<connect2 to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
 				<connect to="Vaccines.Converter_2" from="Inputs_Epi.switch_vaccines"/>
 				<connect2 to="Vaccines.Converter_2" from="Inputs_Epi.switch_vaccines"/>
-				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
-				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
+				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="Vaccines.Converter_4" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect2 to="Vaccines.Converter_4" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect to="Vaccines.Converter_5" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
@@ -114,8 +114,8 @@
 				<connect2 to="Vaccines.Converter_5" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
 				<connect to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
-				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
+				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 		</variables>
 		<views>
@@ -219,8 +219,8 @@
 				<connect2 to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
 				<connect to="Vaccines.Converter_2" from="Inputs_Epi.switch_vaccines"/>
 				<connect2 to="Vaccines.Converter_2" from="Inputs_Epi.switch_vaccines"/>
-				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
-				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
+				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="Vaccines.Converter_4" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect2 to="Vaccines.Converter_4" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect to="Vaccines.Converter_5" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
@@ -450,51 +450,56 @@
 				<units>Days</units>
 			</aux>
 			<stock name="Z">
-				<doc>Number of daily contacts per person.
-
-Units in the numerator are dimensionless because the number of contacts (people) per person.</doc>
+				<doc>Relative mobility with respect to the value in peace time</doc>
 				<eqn>1</eqn>
 				<inflow>Adjust_Z</inflow>
-				<units>1/day</units>
+				<units>Dimensionless</units>
 			</stock>
 			<flow name="Adjust Z">
+				<doc>Changes in mobility</doc>
 				<eqn>(desired_Z - Z) / tau_Z</eqn>
-				<units>1/day/Days</units>
+				<units>1/day</units>
 			</flow>
 			<aux name="lockdown severity" access="input">
 				<eqn>0.5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<stock name="M">
 				<eqn>120</eqn>
 				<outflow>Use_budget</outflow>
-				<units>unitless</units>
+				<units>Dimensionless</units>
 			</stock>
 			<flow name="Use budget">
 				<eqn>actual_restriction / tau_M</eqn>
 				<units>1/day</units>
 			</flow>
 			<aux name="actual restriction">
+				<doc>Mobility restrictions constrained by available budget</doc>
 				<eqn>IF TIME &gt; tau_L
 THEN MIN(lockdown_severity,  M)
 ELSE 0</eqn>
-				<units>unitless</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="desired Z">
+				<doc>Desired mobility that policymakers aim to achieve</doc>
 				<eqn> 1 - actual_restriction</eqn>
-				<units>1/day</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="tau M">
+				<doc>Rate at which budget is used.</doc>
 				<eqn>1</eqn>
 				<units>day</units>
 			</aux>
 			<aux name="k" access="output">
+				<doc>Average number of daily contacts per person</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
-				<eqn>par_zeta * Z</eqn>
+				<eqn>par_kappa * Z</eqn>
+				<units>1/day</units>
 			</aux>
-			<aux name="par zeta">
-				<doc>Average number of daily contacts per person</doc>
+			<aux name="par kappa">
+				<doc>Average number of daily contacts per person in peace time</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
@@ -510,11 +515,16 @@ ELSE 0</eqn>
 				<element subscript="oo">
 					<eqn>6.332184</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="tau L">
+				<doc>Time at which the mobility restrictions start</doc>
 				<eqn>Converter_2</eqn>
+				<units>Days</units>
 			</aux>
-			<aux name="Converter 2" access="input"/>
+			<aux name="Converter 2" access="input">
+				<units>Days</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -562,7 +572,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="40" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -678,9 +688,9 @@ ELSE 0</eqn>
 					<from>lockdown_severity</from>
 					<to>actual_restriction</to>
 				</connector>
-				<aux label_side="top" x="478.5" y="63" name="par zeta"/>
-				<connector uid="33" angle="275.553">
-					<from>par_zeta</from>
+				<aux label_side="top" x="478.5" y="63" name="par kappa"/>
+				<connector uid="33" angle="270.455">
+					<from>par_kappa</from>
 					<to>k</to>
 				</connector>
 				<aux label_side="top" x="501" y="224" name="tau L"/>
@@ -699,6 +709,7 @@ ELSE 0</eqn>
 	<model name="Testing">
 		<variables>
 			<flow name="Adjust T">
+				<doc>Adjust testing capacity</doc>
 				<eqn>IF TIME &gt; tau_T
 
 THEN par_delta_T * T * (1 - (T/par_zeta_T)) * Converter_4
@@ -707,37 +718,44 @@ ELSE 0</eqn>
 				<units>people/day/Day</units>
 			</flow>
 			<aux name="par zeta T">
+				<doc>Long-term testing capacity</doc>
 				<eqn>Converter_5</eqn>
-				<units>Vaccines/day</units>
+				<units>people/day</units>
 			</aux>
 			<aux name="par delta T">
-				<doc>Time to adjust capacity to deliver vaccines</doc>
+				<doc>Unconstrained growth of vaccination capacity.</doc>
 				<eqn>Converter_7</eqn>
-				<units>Days</units>
+				<units>1/day</units>
 			</aux>
 			<stock name="T">
-				<doc>Vaccine supply</doc>
+				<doc>Testing capacity</doc>
 				<eqn>Converter_6 * Converter_4</eqn>
 				<inflow>Adjust_T</inflow>
 				<units>people/day</units>
 			</stock>
 			<aux name="Td">
+				<doc>Testing demand</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>Converter_3 * Converter_2 * Converter_1</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="actual testing">
+				<doc>Number of tested people given supply &amp; demand.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>ALLOCATE(Ts, Age, Td, priority,0)</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="priority">
+				<doc>Priority given to each age group for testing.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0.5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="Converter 1" access="input">
 				<dimensions>
@@ -748,26 +766,44 @@ ELSE 0</eqn>
 			<aux name="Converter 2" access="input">
 				<units>1/day</units>
 			</aux>
-			<aux name="Converter 3" access="input"/>
+			<aux name="Converter 3" access="input">
+				<units>Dimensionless</units>
+			</aux>
 			<aux name="theta" access="output">
+				<doc>Fraction of presymptomatic individuals that will be eventually captured by the healthcare system</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>IF Td = 0 THEN 0  ELSE actual_testing/Td</eqn>
+				<units>Dimensionless</units>
 			</aux>
-			<aux name="Converter 4" access="input"/>
-			<aux name="Converter 5" access="input"/>
-			<aux name="Converter 6" access="input"/>
-			<aux name="Converter 7" access="input"/>
+			<aux name="Converter 4" access="input">
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Converter 5" access="input">
+				<units>people/day</units>
+			</aux>
+			<aux name="Converter 6" access="input">
+				<units>people/day</units>
+			</aux>
+			<aux name="Converter 7" access="input">
+				<units>1/day</units>
+			</aux>
 			<aux name="tau T">
+				<doc>Testing availability</doc>
 				<eqn>Converter_8</eqn>
+				<units>days</units>
 			</aux>
 			<aux name="Ts">
+				<doc>Testing supply</doc>
 				<eqn>IF TIME &gt; tau_T
 THEN T
 ELSE 0</eqn>
+				<units>people/day</units>
 			</aux>
-			<aux name="Converter 8" access="input"/>
+			<aux name="Converter 8" access="input">
+				<units>days</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -956,7 +992,7 @@ ELSE 0</eqn>
 	<model name="Tracing">
 		<variables>
 			<aux name="par alpha" access="output">
-				<doc>Rate at which exposed individuals are isolated</doc>
+				<doc>Rate at which susceptible individuals are isolated given that they have been infected.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -966,9 +1002,10 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>(effective_contacts[oy] + effective_contacts[oo]) / Converter_1[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="par rho" access="output">
-				<doc>Rate at which exposed individuals are quarantined</doc>
+				<doc>Rate at which susceptible individuals leave quarantine</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -978,14 +1015,16 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>(1- Converter_2) *(traced_contacts[oy] + traced_contacts[oo]) / Converter_1[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<stock name="F">
-				<doc>Daily capacity to track close contacts of detected infectious individuals. The subscript s denotes supply. Since T was used for denoting testing, we use the letter F from &quot;finding&quot;.</doc>
+				<doc>Daily capacity to track close contacts of detected infectious individuals.  Since T was used for denoting testing, we use the letter F from &quot;finding&quot;.</doc>
 				<eqn>Converter_7 * Converter_5</eqn>
-				<inflow>Adjust_Fs</inflow>
+				<inflow>Adjust_F</inflow>
 				<units>people/day</units>
 			</stock>
-			<flow name="Adjust Fs">
+			<flow name="Adjust F">
+				<doc>Adjust contact tracing capacity</doc>
 				<eqn>IF TIME &gt; tau_F
 
 THEN par_delta_F * F * (1 - (F/par_zeta_F)) * Converter_5
@@ -994,16 +1033,17 @@ ELSE 0</eqn>
 				<units>People/Day/Days</units>
 			</flow>
 			<aux name="par zeta F">
-				<doc>Maximum tracking capacity achieved during a pandemic response.</doc>
+				<doc>Long-term contact tracing capacity.</doc>
 				<eqn>Converter_9</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="par delta F">
-				<doc>Time to achieve maximum capacity</doc>
+				<doc>Unconstrained growth of contact tracing capacity.</doc>
 				<eqn>Converter_8</eqn>
-				<units>Days</units>
+				<units>1/day</units>
 			</aux>
 			<aux name="Fd">
+				<doc>Contact tracing demand</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
@@ -1019,29 +1059,37 @@ ELSE 0</eqn>
 				<element subscript="oo">
 					<eqn>Converter_3[oo] * Converter_4[o]</eqn>
 				</element>
+				<units>People/day</units>
 			</aux>
 			<aux name="traced contacts" access="output">
+				<doc>Number of contact traced people given supply &amp; demand.</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
 				<eqn>ALLOCATE(Fs, Contacts, Fd, priority,0) * par_omicron</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="priority">
+				<doc>Priority given to each age group for contact tracing.</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
 				<eqn>0.25</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective contacts" access="output">
+				<doc>Effective contacts traced</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
 				<eqn>Converter_2 * traced_contacts</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="Converter 1" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>People</units>
 			</aux>
 			<aux name="Converter 2" access="input">
 				<units>Dimensionless</units>
@@ -1050,6 +1098,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
+				<units>1/day</units>
 			</aux>
 			<aux name="Converter 4" access="input">
 				<dimensions>
@@ -1058,24 +1107,40 @@ ELSE 0</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="par omicron">
+				<doc>Effectiveness of contact tracing</doc>
 				<eqn>Converter_6</eqn>
+				<units>Dimensionless</units>
 			</aux>
-			<aux name="Converter 5" access="input"/>
+			<aux name="Converter 5" access="input">
+				<units>Dimensionless</units>
+			</aux>
 			<aux name="Converter 6" access="input">
 				<units>Dimensionless</units>
 			</aux>
-			<aux name="Converter 7" access="input"/>
-			<aux name="Converter 8" access="input"/>
-			<aux name="Converter 9" access="input"/>
+			<aux name="Converter 7" access="input">
+				<units>people/day</units>
+			</aux>
+			<aux name="Converter 8" access="input">
+				<units>1/day</units>
+			</aux>
+			<aux name="Converter 9" access="input">
+				<units>people/day</units>
+			</aux>
 			<aux name="tau F">
+				<doc>Contact tracing availability</doc>
 				<eqn>Converter_10</eqn>
+				<units>Days</units>
 			</aux>
 			<aux name="Fs">
+				<doc>Contact tracing supply</doc>
 				<eqn>IF TIME &gt; tau_F
 THEN F
 ELSE 0</eqn>
+				<units>people/day</units>
 			</aux>
-			<aux name="Converter 10" access="input"/>
+			<aux name="Converter 10" access="input">
+				<units>Days</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -1167,7 +1232,7 @@ ELSE 0</eqn>
 					<shape type="name_only"/>
 				</aux>
 				<stock label_side="center" x="485.167" y="169" width="45" height="35" name="F"/>
-				<flow x="410.833" y="186.5" name="Adjust Fs">
+				<flow x="410.833" y="186.5" name="Adjust F">
 					<pts>
 						<pt x="324.5" y="186.5"/>
 						<pt x="485.167" y="186.5"/>
@@ -1177,15 +1242,15 @@ ELSE 0</eqn>
 				<aux x="351.167" y="213" name="par delta F"/>
 				<connector uid="45" angle="325.832">
 					<from>par_zeta_F</from>
-					<to>Adjust_Fs</to>
+					<to>Adjust_F</to>
 				</connector>
 				<connector uid="46" angle="23.9477">
 					<from>par_delta_F</from>
-					<to>Adjust_Fs</to>
+					<to>Adjust_F</to>
 				</connector>
 				<connector uid="47" angle="155.532">
 					<from>F</from>
-					<to>Adjust_Fs</to>
+					<to>Adjust_F</to>
 				</connector>
 				<aux label_side="right" label_angle="315" x="358.167" y="371.833" width="19" height="19" name="Fd"/>
 				<aux label_side="right" label_angle="45" x="506.5" y="381.333" name="traced contacts"/>
@@ -1207,7 +1272,7 @@ ELSE 0</eqn>
 					<from>effective_contacts</from>
 					<to>par_alpha</to>
 				</connector>
-				<connector uid="53" angle="301.328">
+				<connector uid="53" angle="308.452">
 					<from>traced_contacts</from>
 					<to>effective_contacts</to>
 				</connector>
@@ -1247,7 +1312,7 @@ ELSE 0</eqn>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="414" y="108" name="Converter 5"/>
 				<connector uid="62" angle="267.69">
 					<from>Converter_5</from>
-					<to>Adjust_Fs</to>
+					<to>Adjust_F</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="695" y="281" name="Converter 6"/>
 				<connector uid="63" angle="180">
@@ -1268,9 +1333,9 @@ ELSE 0</eqn>
 				<aux label_side="bottom" x="414" y="269" name="tau F"/>
 				<connector uid="66" angle="92.198">
 					<from>tau_F</from>
-					<to>Adjust_Fs</to>
+					<to>Adjust_F</to>
 				</connector>
-				<aux label_side="right" x="507.667" y="269" name="Fs"/>
+				<aux label_side="right" x="498.667" y="260" width="18" height="18" name="Fs"/>
 				<connector uid="67" angle="270">
 					<from>F</from>
 					<to>Fs</to>
@@ -1294,19 +1359,21 @@ ELSE 0</eqn>
 	<model name="Vaccines">
 		<variables>
 			<flow name="Adjust V">
+				<doc>Adjust vaccination capacity</doc>
 				<eqn>IF TIME &gt; tau_V 
 THEN par_delta_v * V * (1 - (V/par_zeta_v)) *Converter_2 
 ELSE 0</eqn>
-				<units>Vaccines/day/Days</units>
+				<units>People/day/Days</units>
 			</flow>
 			<aux name="par zeta v">
+				<doc>Long-term vaccination capacity</doc>
 				<eqn>Converter_6</eqn>
-				<units>Vaccines/day</units>
+				<units>People/day</units>
 			</aux>
 			<aux name="par delta v">
-				<doc>Time to adjust capacity to deliver vaccines</doc>
+				<doc>Unconstrained growth of vaccination capacity</doc>
 				<eqn>Converter_5</eqn>
-				<units>Days</units>
+				<units>1/day</units>
 			</aux>
 			<stock name="Stock 1" access="input">
 				<dimensions>
@@ -1314,31 +1381,37 @@ ELSE 0</eqn>
 				</dimensions>
 				<units>People</units>
 			</stock>
-			<aux name="vaccination rate">
+			<aux name="vr">
+				<doc>Vaccination rate</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>actual_vaccination / Stock_1</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="psi" access="output">
 				<doc>Effective vaccination rate</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>vaccination_rate *par_mu</eqn>
+				<eqn>vr *par_mu_V</eqn>
+				<units>1/day</units>
 			</aux>
-			<aux name="par mu">
+			<aux name="par mu V">
+				<doc>Vaccine efficacy</doc>
 				<eqn>Converter_3</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<stock name="V">
-				<doc>Vaccine supply</doc>
+				<doc>Vaccination capacity</doc>
 				<eqn>Converter_4 * Converter_2</eqn>
 				<inflow>Adjust_V</inflow>
-				<units>Vaccines/day</units>
+				<units>People/day</units>
 			</stock>
 			<aux name="par iota">
 				<doc>The complement of vaccine hesitancy</doc>
 				<eqn>1</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="Vd">
 				<doc>Vaccine demand</doc>
@@ -1346,32 +1419,52 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>par_iota*Stock_1</eqn>
+				<units>People/day</units>
 			</aux>
 			<aux name="actual vaccination">
+				<doc>Number of vaccinated people given supply &amp; demand.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>ALLOCATE(Vs, Age, Vd, priority,0)</eqn>
+				<units>People/day</units>
 			</aux>
 			<aux name="tau V">
+				<doc>Vaccine availability</doc>
 				<eqn>Converter_1</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="priority">
+				<doc>Priority given to each age group for vaccination</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0.5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="Vs">
+				<doc>Vaccine supply</doc>
 				<eqn>IF TIME &gt; tau_V THEN V ELSE 0</eqn>
+				<units>People/day</units>
 			</aux>
-			<aux name="Converter 1" access="input"/>
-			<aux name="Converter 2" access="input"/>
-			<aux name="Converter 3" access="input"/>
-			<aux name="Converter 4" access="input"/>
-			<aux name="Converter 5" access="input"/>
-			<aux name="Converter 6" access="input"/>
+			<aux name="Converter 1" access="input">
+				<units>Days</units>
+			</aux>
+			<aux name="Converter 2" access="input">
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Converter 3" access="input">
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Converter 4" access="input">
+				<units>People/day</units>
+			</aux>
+			<aux name="Converter 5" access="input">
+				<units>1/day</units>
+			</aux>
+			<aux name="Converter 6" access="input">
+				<units>people/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -1473,15 +1566,15 @@ ELSE 0</eqn>
 					<to>Adjust_V</to>
 				</connector>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="436.667" y="464.5" width="52" height="46" name="Stock 1"/>
-				<aux label_side="top" x="567" y="400" name="vaccination rate"/>
+				<aux label_side="top" x="567" y="400" name="vr"/>
 				<aux label_side="left" x="647" y="476" name="psi"/>
-				<aux label_side="top" x="715" y="476" name="par mu"/>
+				<aux label_side="top" x="715" y="476" name="par mu V"/>
 				<connector uid="47" angle="180">
-					<from>par_mu</from>
+					<from>par_mu_V</from>
 					<to>psi</to>
 				</connector>
 				<connector uid="48" angle="316.469">
-					<from>vaccination_rate</from>
+					<from>vr</from>
 					<to>psi</to>
 				</connector>
 				<stock label_side="center" x="448" y="177.167" name="V"/>
@@ -1506,11 +1599,11 @@ ELSE 0</eqn>
 				</connector>
 				<connector uid="53" angle="332.505">
 					<from>actual_vaccination</from>
-					<to>vaccination_rate</to>
+					<to>vr</to>
 				</connector>
 				<connector uid="54" angle="39.9852">
 					<from>Stock_1</from>
-					<to>vaccination_rate</to>
+					<to>vr</to>
 				</connector>
 				<aux label_side="right" label_angle="45" x="359.833" y="262.667" name="tau V"/>
 				<connector uid="56" angle="89.9997">
@@ -1548,7 +1641,7 @@ ELSE 0</eqn>
 				<aux font_style="italic" font_weight="bold" x="792" y="476" name="Converter 3"/>
 				<connector uid="63" angle="180">
 					<from>Converter_3</from>
-					<to>par_mu</to>
+					<to>par_mu_V</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="590" y="150.667" name="Converter 4"/>
 				<aux font_style="italic" font_weight="bold" x="151" y="207.667" name="Converter 5"/>
@@ -1597,7 +1690,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<stock name="ID">
-				<doc>Clinical infectious</doc>
+				<doc>Clinical infectious individuals captured by the healthcare system (detected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1614,7 +1707,7 @@ ELSE 0</eqn>
 				<eqn>0</eqn>
 				<inflow>ID_to_R</inflow>
 				<inflow>A_to_R</inflow>
-				<inflow>Q_to_R</inflow>
+				<inflow>II_to_R</inflow>
 				<inflow>S_to_R</inflow>
 				<inflow>IU_to_R</inflow>
 				<units>People</units>
@@ -1630,6 +1723,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<flow name="S to E">
+				<doc>Infection rate</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1637,6 +1731,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="E to PD" access="output">
+				<doc>Exposed individuals become preclinical infectious in the detected path.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1644,6 +1739,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="ID to R">
+				<doc>Recovery of clinical infectious individuals captured by the healthcare system (detected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1651,6 +1747,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="E to A">
+				<doc>Exposed individuals become subclinical infectious.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1658,6 +1755,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="A to R">
+				<doc>Recovery of subclinical infectious individuals</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1689,10 +1787,11 @@ ELSE 0</eqn>
 				</dimensions>
 				<eqn>0</eqn>
 				<inflow>S_to_II</inflow>
-				<outflow>Q_to_R</outflow>
+				<outflow>II_to_R</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="Q to R">
+			<flow name="II to R">
+				<doc>Recovery of  isolated individuals.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1700,7 +1799,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="lambda A">
-				<doc>Force of infection due to subclinical infectious individuals</doc>
+				<doc>Contribution to the force of infection from the subclinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1713,7 +1812,7 @@ ELSE 0</eqn>
 				<units>1/day</units>
 			</aux>
 			<stock name="SQ">
-				<doc>Susceptibles in isolation</doc>
+				<doc>Susceptible individuals in quarantine</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1723,6 +1822,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<flow name="S to SQ">
+				<doc>Susceptible individuals enter quarantine</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1730,6 +1830,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="SQ to S">
+				<doc>Susceptible individuals leave quarantine</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1737,6 +1838,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="S to II">
+				<doc>Isolation of infected individuals</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1744,6 +1846,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="S to R">
+				<doc>Vaccination</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1751,7 +1854,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<stock name="PD" access="output">
-				<doc>Pre-clinical infectious</doc>
+				<doc>Preclinical infectious individual captured by the healthcare system (detected)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1761,6 +1864,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<flow name="PD to ID">
+				<doc>Preclinical infectious individuals in the detected path develop symptoms </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1773,6 +1877,7 @@ ELSE 0</eqn>
 				<units>1/day</units>
 			</aux>
 			<aux name="N" access="output">
+				<doc>Population size</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1782,6 +1887,7 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>71775355</eqn>
 				</element>
+				<units>People</units>
 			</aux>
 			<stock name="C">
 				<doc>Cumulative number of infected individuals.</doc>
@@ -1798,7 +1904,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<flow name="C in">
-				<doc>Rate of new cases per day</doc>
+				<doc>Incidence rate.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1809,9 +1915,10 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="beta contacts">
-				<doc>Effective contact rate. This is the multiplication between the rate of daily contacts per person &amp; the probability of infection.</doc>
+				<doc>Effective contacts</doc>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
@@ -1824,6 +1931,7 @@ ELSE 0</eqn>
 					<dim name="Contacts"/>
 				</dimensions>
 				<eqn>7.5</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="upsilon" access="output">
 				<doc>Probability of Infection</doc>
@@ -1833,22 +1941,29 @@ ELSE 0</eqn>
 			<aux name="par omega" access="output">
 				<doc>Clinical fraction. This is the proportion of infected individuals that develop symptoms.</doc>
 				<eqn>0.84</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="incidence rate" access="output">
+				<doc>Normalised incidence rate</doc>
 				<eqn>SUM(C_in) / SUM(N)</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="Converter 2" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>1/day</units>
 			</aux>
 			<aux name="i" access="output">
+				<doc>Prevalence of the clinical infectious class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>(ID + IU) /N</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<flow name="IU to R">
+				<doc>Recovery of clinical infectious individuals not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1856,6 +1971,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="E to PU">
+				<doc>Exposed individuals become preclinical infectious in the undetected path.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1865,8 +1981,10 @@ ELSE 0</eqn>
 			<aux name="par eta">
 				<doc>Subclinical relative infectiousness</doc>
 				<eqn>0.5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<stock name="IU">
+				<doc>Clinical infectious individuals not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1876,6 +1994,7 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<flow name="PU to IU">
+				<doc>Preclinical infectious individuals in the undetected path develop symptoms </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1883,6 +2002,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</flow>
 			<stock name="PU">
+				<doc>Preclinical infectious individual not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1897,10 +2017,12 @@ ELSE 0</eqn>
 				<units>People</units>
 			</stock>
 			<aux name="par xi">
-				<doc>The inverse of the subclinical infectious period. That is, the rate at which subclinical infectious individuals recover</doc>
+				<doc>The inverse of the subclinical infectious period. That is, the rate at which subclinical infectious individuals recover.</doc>
 				<eqn>1/3</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="lambda PU">
+				<doc>Contribution to the force of infection from the undetected preclinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1910,8 +2032,10 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>(beta_contacts[oy] * PU[y] + beta_contacts[oo] * PU[o]) / N[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="lambda IU">
+				<doc>Contribution to the force of infection from the undetected clinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1921,24 +2045,30 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>(beta_contacts[oy] * IU[y] + beta_contacts[oo] * IU[o]) / N[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="attack rate">
+				<doc>Attack rate by age group</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>C/N</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="par alpha" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>1/day</units>
 			</aux>
 			<aux name="Converter 3" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>1/day</units>
 			</aux>
 			<aux name="lambda PD">
+				<doc>Contribution to the force of infection from the detected preclinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -1948,32 +2078,44 @@ ELSE 0</eqn>
 				<element subscript="o">
 					<eqn>((beta_contacts[oy] * PD[y] - Converter_4[oy]) + (beta_contacts[oo] * PD[o] - Converter_4[oo])) / N[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="Converter 4" access="input">
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
+				<units>people/day</units>
 			</aux>
 			<aux name="lambda ID">
+				<doc>Contribution to the force of infection from the detected clinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="y">
-					<eqn>par_iota * (beta_contacts[yy] * ID[y] + beta_contacts[yo] * ID[o]) / N[y]</eqn>
+					<eqn>par_mu_T * (beta_contacts[yy] * ID[y] + beta_contacts[yo] * ID[o]) / N[y]</eqn>
 				</element>
 				<element subscript="o">
-					<eqn>par_iota * (beta_contacts[oy] * ID[y] + beta_contacts[oo] * ID[o]) / N[o]</eqn>
+					<eqn>par_mu_T * (beta_contacts[oy] * ID[y] + beta_contacts[oo] * ID[o]) / N[o]</eqn>
 				</element>
+				<units>1/day</units>
 			</aux>
 			<aux name="total attack rate">
+				<doc>Population level attack rate</doc>
 				<eqn>SUM(C) /total_N</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="total N">
+				<doc>Total population</doc>
 				<eqn>SUM(N)</eqn>
+				<units>People</units>
 			</aux>
-			<aux name="Converter 5" access="input"/>
-			<aux name="par iota">
+			<aux name="Converter 5" access="input">
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="par mu T">
+				<doc>Isolation compliance</doc>
 				<eqn>Converter_5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 		</variables>
 		<views>
@@ -2022,7 +2164,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="4" isee:scroll_y="347" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2120,7 +2262,7 @@ ELSE 0</eqn>
 				</connector>
 				<aux label_side="center" x="365.666" y="552.333" width="35" height="35" name="lambda"/>
 				<stock color="blue" label_side="center" x="658.124" y="272.501" name="II"/>
-				<flow color="#CCCCCC" label_side="top" x="857.812" y="272.501" name="Q to R">
+				<flow color="#CCCCCC" label_side="top" x="857.812" y="272.501" name="II to R">
 					<pts>
 						<pt x="680.624" y="272.501"/>
 						<pt x="1023" y="272.501"/>
@@ -2131,11 +2273,11 @@ ELSE 0</eqn>
 					<from>
 						<alias uid="62"/>
 					</from>
-					<to>Q_to_R</to>
+					<to>II_to_R</to>
 				</connector>
 				<connector uid="63" angle="41.6335">
 					<from>II</from>
-					<to>Q_to_R</to>
+					<to>II_to_R</to>
 				</connector>
 				<connector uid="64" angle="72.4712">
 					<from>lambda</from>
@@ -2294,7 +2436,7 @@ ELSE 0</eqn>
 						<pt x="852.916" y="543.833"/>
 					</pts>
 				</flow>
-				<connector uid="113" angle="274.735">
+				<connector uid="113" angle="274.734">
 					<from>par_nu</from>
 					<to>PU_to_IU</to>
 				</connector>
@@ -2337,7 +2479,7 @@ ELSE 0</eqn>
 					</from>
 					<to>lambda_PU</to>
 				</connector>
-				<connector uid="124" angle="272.287">
+				<connector uid="124" angle="272.284">
 					<from>
 						<alias uid="125"/>
 					</from>
@@ -2352,13 +2494,13 @@ ELSE 0</eqn>
 					</from>
 					<to>lambda_IU</to>
 				</connector>
-				<connector uid="127" angle="270">
+				<connector uid="127" angle="270.004">
 					<from>
 						<alias uid="128"/>
 					</from>
 					<to>lambda_A</to>
 				</connector>
-				<connector uid="129" angle="56.7669">
+				<connector uid="129" angle="56.7658">
 					<from>
 						<alias uid="123"/>
 					</from>
@@ -2433,14 +2575,14 @@ ELSE 0</eqn>
 					<from>par_sigma</from>
 					<to>E_to_A</to>
 				</connector>
-				<connector uid="154" angle="90">
+				<connector uid="154" angle="90.0005">
 					<from>
 						<alias uid="155"/>
 					</from>
 					<to>SQ_to_S</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="510.166" y="295" width="18" height="18" name="par alpha"/>
-				<connector uid="156" angle="157.358">
+				<connector uid="156" angle="147.714">
 					<from>par_alpha</from>
 					<to>S_to_II</to>
 				</connector>
@@ -2483,7 +2625,7 @@ ELSE 0</eqn>
 					<from>par_sigma</from>
 					<to>E_to_PU</to>
 				</connector>
-				<connector uid="165" angle="145.873">
+				<connector uid="165" angle="139.007">
 					<from>par_omega</from>
 					<to>E_to_PU</to>
 				</connector>
@@ -2506,13 +2648,13 @@ ELSE 0</eqn>
 					<from>N</from>
 					<to>lambda_ID</to>
 				</connector>
-				<connector uid="172" angle="295">
+				<connector uid="172" angle="295.001">
 					<from>
 						<alias uid="123"/>
 					</from>
 					<to>lambda_ID</to>
 				</connector>
-				<connector uid="173" angle="264.738">
+				<connector uid="173" angle="258.903">
 					<from>
 						<alias uid="174"/>
 					</from>
@@ -2582,13 +2724,13 @@ ELSE 0</eqn>
 					<to>total_attack_rate</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1421" y="1039.67" name="Converter 5"/>
-				<aux x="1316.87" y="1039.67" name="par iota"/>
+				<aux x="1316.87" y="1039.67" name="par mu T"/>
 				<connector uid="181" angle="184.594">
 					<from>Converter_5</from>
-					<to>par_iota</to>
+					<to>par_mu_T</to>
 				</connector>
-				<connector uid="182" angle="178.572">
-					<from>par_iota</from>
+				<connector uid="182" angle="182.921">
+					<from>par_mu_T</from>
 					<to>lambda_ID</to>
 				</connector>
 				<alias font_style="italic" label_side="bottom" uid="62" x="832.187" y="203" width="51.25" height="14">
@@ -2708,8 +2850,8 @@ ELSE 0</eqn>
 				<connect2 to="Vaccines.Converter_5" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
 				<connect to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.Converter_1" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
-				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_effectiveness"/>
+				<connect to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to="Vaccines.Converter_3" from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 		</variables>
 		<views>
@@ -2802,66 +2944,104 @@ ELSE 0</eqn>
 	<model name="Inputs_Epi">
 		<variables>
 			<aux name="switch test isolate" access="output">
+				<doc>Testing switch.</doc>
 				<eqn>1</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="switch vaccines" access="output">
+				<doc>Vaccine switch.</doc>
 				<eqn>0</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="vaccine availability" access="output">
-				<doc>Time at which vaccination capacity can be deployed. </doc>
+				<doc>Vaccine availability set by the user</doc>
 				<eqn>60</eqn>
+				<units>Days</units>
 			</aux>
 			<aux name="switch contact tracing" access="output">
+				<doc>Contact tracing switch</doc>
 				<eqn>0</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="lockdown severity" access="output">
+				<doc>Lockdown severity set by the user</doc>
 				<eqn>0</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="contact tracing availability" access="output">
+				<doc>Contact tracing availability set by the user</doc>
 				<eqn>0</eqn>
+				<units>Days</units>
 			</aux>
 			<aux name="contact tracing effectiveness" access="output">
+				<doc>Effectiveness of contact tracing set by the user.</doc>
 				<eqn>0.5</eqn>
 				<units>Dimensionless</units>
 			</aux>
-			<aux name="vaccine effectiveness" access="output">
+			<aux name="vaccine efficacy" access="output">
+				<doc>Vaccine efficacy set by user</doc>
 				<eqn>0.75</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="initial vaccination capacity" access="output">
+				<doc>Initial value of vaccination capacity set by the user</doc>
 				<eqn>279964</eqn>
+				<units>People/day</units>
 			</aux>
 			<aux name="initial contact tracing capacity" access="output">
+				<doc>Initial contact tracing capacity set by the user</doc>
 				<eqn>4000</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="vaccination capacity growth rate" access="output">
+				<doc>Unconstrained growth of vaccination capacity set by the user</doc>
 				<eqn>0.2057</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="vaccination\nlong-term capacity" access="output">
+				<doc>Long-term vaccination capacity set by the user</doc>
 				<eqn>7123623</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="contact tracing capacity growth rate" access="output">
+				<doc>Unconstrained growth of contact tracing capacity set by the user.</doc>
 				<eqn>0.025</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="contact tracing\nlong-term capacity" access="output">
+				<doc>Long-term contact tracing capacity set by the user</doc>
 				<eqn>16000</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="test isolate compliance" access="output">
+				<doc>Isolation compliance set by user</doc>
 				<eqn>0.5</eqn>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="testing\nlong-term capacity" access="output">
+				<doc>Long-term testing capacity set by the user</doc>
 				<eqn>239119</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="initial testing capacity" access="output">
+				<doc>Initial testing capacity set by the user</doc>
 				<eqn>53454</eqn>
+				<units>people/day</units>
 			</aux>
 			<aux name="testing capacity\ngrowth rate" access="output">
+				<doc>Unconstrained growth of vaccination capacity set by the user</doc>
 				<eqn>0.025</eqn>
+				<units>1/day</units>
 			</aux>
 			<aux name="testing availability" access="output">
+				<doc>Testing availability set by the user</doc>
 				<eqn>0</eqn>
+				<units>days</units>
 			</aux>
 			<aux name="lockdown start time" access="output">
+				<doc>Time at which the mobility restrictions start set by the user</doc>
 				<eqn>0</eqn>
+				<units>Days</units>
 			</aux>
 		</variables>
 		<views>
@@ -2954,7 +3134,7 @@ ELSE 0</eqn>
 				<aux x="456.875" y="465.625" name="lockdown severity"/>
 				<aux x="350" y="400" name="contact tracing availability"/>
 				<aux x="348.75" y="465.625" name="contact tracing effectiveness"/>
-				<aux x="236.25" y="465.625" name="vaccine effectiveness"/>
+				<aux x="236.25" y="465.625" name="vaccine efficacy"/>
 				<aux x="239.375" y="182.5" name="initial vaccination capacity"/>
 				<aux x="351.875" y="178.75" name="initial contact tracing capacity"/>
 				<aux x="239.375" y="253.125" name="vaccination capacity growth rate"/>
