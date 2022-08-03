@@ -11022,7 +11022,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="463" isee:scroll_y="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11059,27 +11059,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="23.125" y="21.875" width="904.375" height="250" minimized="true">
+				<stacked_container uid="1" x="367.455" y="255.016" width="904.375" height="250">
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
-						<item>
-							<entity name="Hospital.total_in_hospital[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admissions[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_discharges[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_admissions[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_discharges[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.deaths_in_hospital[*]"/>
-						</item>
 						<item>
 							<entity name="Hospital_Resources.Beds"/>
 						</item>
@@ -11091,12 +11073,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name="Hospital.expected_beds_freed"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_Ward_Overflow[*]"/>
 						</item>
 						<item>
 							<entity name="Hospital.physical_ward_beds_needed"/>
@@ -11141,12 +11117,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Hospital_Resources.staffed_ward_beds_gap"/>
 						</item>
 						<item>
-							<entity name="Hospital.ward_admissions[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.moving_to_ward_overflow[*]"/>
-						</item>
-						<item>
 							<entity name="Hospital_Resources.ICU_Beds"/>
 						</item>
 						<item>
@@ -11157,12 +11127,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name="Hospital.expected_ICU_beds_freed"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_ICU[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_ICU_Overflow[*]"/>
 						</item>
 						<item>
 							<entity name="Hospital.physical_ICU_beds_needed"/>
@@ -11222,12 +11186,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Hospital_Resources.staffed_equipped_ICU_beds_gap"/>
 						</item>
 						<item>
-							<entity name="Hospital.moving_to_ICU_overflow[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[*]"/>
-						</item>
-						<item>
 							<entity name="PPE.PPE"/>
 						</item>
 						<item>
@@ -11241,24 +11199,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name="PPE.interrupted_PPE_supply"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_ICU[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_ICU_admissions[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_Ward_Bed[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_Ward_admissions[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.total_deaths[*]"/>
 						</item>
 						<item>
 							<entity name="Hospital.peak_ICU_demand"/>
@@ -11309,10 +11249,136 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name='"Within-host_profile".Attack_rate'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Attack_rate_by_age[*]'/>
+							<entity name='"Within-host_profile".Attack_rate_by_age[y]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Incidence_by_age[*]'/>
+							<entity name='"Within-host_profile".Attack_rate_by_age[o]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Incidence_by_age[y]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Incidence_by_age[o]'/>
+						</item>
+						<item>
+							<entity name="Hospital.total_in_hospital[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_in_hospital[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_discharges[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_discharges[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_discharges[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_discharges[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.deaths_in_hospital[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.deaths_in_hospital[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_Ward_Overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_Ward_Overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ward_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ward_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ward_overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ward_overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_ICU_Overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_ICU_Overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ICU_overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ICU_overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_ICU_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_ICU_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_Ward_Bed[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_Ward_Bed[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_Ward_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_Ward_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_deaths[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_deaths[o]"/>
 						</item>
 					</table>
 				</stacked_container>
