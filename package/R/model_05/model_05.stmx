@@ -10152,7 +10152,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>0.5</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="proportion of nurses\navailable for pandemic" access="output" isee:autocreated="true">
+			<aux name="proportion of nurses available for pandemic" access="output" isee:autocreated="true">
 				<doc>Proportion of nurses available for care of pandemic patients</doc>
 				<eqn>0.5</eqn>
 				<units>dmnl</units>
@@ -10315,7 +10315,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" uid="1" x="84.186" y="143.45" width="164.286" height="50.1429">Proportion of hospital beds made available for care of pandemic patients</text_box>
 				<aux label_side="top" x="354.186" y="114.285" name="proportion of ICU beds available for pandemic"/>
 				<text_box text_align="center" uid="2" x="272.043" y="144.164" width="164.286" height="48.7137">Proportion of ICU beds made available for care of pandemic patients</text_box>
-				<aux label_side="top" x="570.329" y="118" name="proportion of nurses\navailable for pandemic"/>
+				<aux label_side="top" x="570.329" y="118" name="proportion of nurses available for pandemic"/>
 				<text_box text_align="center" uid="3" x="488.186" y="147.021" width="164.286" height="50.1429">Proportion of nurses made available for care of pandemic patients</text_box>
 				<aux label_side="top" x="759.615" y="117.429" name="proportion of ICU nurses\navailable for pandemic"/>
 				<text_box text_align="center" uid="4" x="677.472" y="146.45" width="164.286" height="50.1429">Proportion of ICU nurses made available for care of pandemic patients</text_box>
