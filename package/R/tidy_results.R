@@ -1,6 +1,6 @@
 tidy_results <- function(sim_results, model_id) {
 
-  if(model_id != "model_03") {
+  if(!model_id %in% c("model_03", "model_05")) {
     return(sim_results)
   }
 
