@@ -115,7 +115,7 @@ function(req, res) {
   model_id  <- user_args$model_id
 
   # available models
-  avl_mdl <- stringr::str_glue("model_{c('03')}")
+  avl_mdl <- stringr::str_glue("model_{c('03', '05')}")
 
   if(!model_id %in% avl_mdl) {
 
