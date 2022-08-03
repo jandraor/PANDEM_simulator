@@ -286,10 +286,8 @@
 				<connect2 to="PANDEM2_Outputs.available_nurses" from="Hospital_Resources.available_nurses"/>
 				<connect to="PANDEM2_Outputs.Beds" from="Hospital_Resources.Beds"/>
 				<connect2 to="PANDEM2_Outputs.Beds" from="Hospital_Resources.Beds"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
+				<connect to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
 				<connect to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
@@ -300,12 +298,12 @@
 				<connect2 to="PANDEM2_Outputs.expected_ICU_nurses_freed" from="Hospital_Resources.expected_ICU_nurses_freed"/>
 				<connect to="PANDEM2_Outputs.expected_nurses_freed" from="Hospital_Resources.expected_nurses_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_nurses_freed" from="Hospital_Resources.expected_nurses_freed"/>
-				<connect to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
+				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
 				<connect to="PANDEM2_Outputs.extra_staff_needed_for_overflow_patients" from="Hospital_Resources.extra_staff_needed_for_overflow_patients"/>
 				<connect2 to="PANDEM2_Outputs.extra_staff_needed_for_overflow_patients" from="Hospital_Resources.extra_staff_needed_for_overflow_patients"/>
-				<connect to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
+				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
 				<connect to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
 				<connect2 to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
 				<connect to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
@@ -326,8 +324,8 @@
 				<connect2 to="PANDEM2_Outputs.In_Ward_Overflow" from="Hospital.In_Ward_Overflow"/>
 				<connect to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
 				<connect2 to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
-				<connect to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
-				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
+				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
+				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.max_available_nurses" from="Hospital_Resources.max_available_nurses"/>
@@ -354,22 +352,22 @@
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_ICU" from="Hospital.Patients_Waiting_for_ICU"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect2 to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_gap" from="Hospital.physical_ICU_beds_gap"/>
@@ -386,8 +384,8 @@
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
 				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
-				<connect2 to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
+				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
+				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect2 to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect to="PANDEM2_Outputs.staffed_equipped_ICU_beds_available" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
@@ -402,8 +400,10 @@
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_gap" from="Hospital_Resources.staffed_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
-				<connect to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
-				<connect2 to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
+				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
@@ -416,18 +416,18 @@
 				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
-				<connect to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
-				<connect2 to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
+				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
+				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
-				<connect to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
+				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
 				<connect to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect2 to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
@@ -443,8 +443,8 @@
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
+				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
 				<connect2 to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
 				<connect to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
@@ -455,8 +455,8 @@
 				<connect2 to="Testing.testing_availability" from="Inputs_Epi.testing_availability"/>
 				<connect to="Testing.testing_capacity_growth_rate" from="Inputs_Epi.testing_capacity_growth_rate"/>
 				<connect2 to="Testing.testing_capacity_growth_rate" from="Inputs_Epi.testing_capacity_growth_rate"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
+				<connect to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect2 to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect to="Tracing.contact_tracing_availability" from="Inputs_Epi.contact_tracing_availability"/>
@@ -521,22 +521,22 @@
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_ICU" from="Hospital.Patients_Waiting_for_ICU"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect2 to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_gap" from="Hospital.physical_ICU_beds_gap"/>
@@ -551,8 +551,8 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
-				<connect2 to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
@@ -739,16 +739,16 @@
 				<connect2 to="Hospital_Resources.ward_nurses_per_1K_1" from="Inputs_Data.ward_nurses_per_1K"/>
 				<connect to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
-				<connect to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
-				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
+				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
+				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
 				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
-				<connect2 to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
+				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
+				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect2 to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
-				<connect to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
-				<connect2 to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
+				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
+				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect2 to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect to="PPE.PPE_days_supply_in_target_stock" from="Inputs_Hospital_resource_params.PPE_days_supply_in_target_stock"/>
@@ -767,16 +767,16 @@
 				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
+				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
 				<connect to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect2 to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect to="Ventilators.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
@@ -1019,8 +1019,8 @@
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
-				<connect to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
+				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
 				<connect2 to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
 				<connect to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
@@ -1031,8 +1031,8 @@
 				<connect2 to="Testing.testing_availability" from="Inputs_Epi.testing_availability"/>
 				<connect to="Testing.testing_capacity_growth_rate" from="Inputs_Epi.testing_capacity_growth_rate"/>
 				<connect2 to="Testing.testing_capacity_growth_rate" from="Inputs_Epi.testing_capacity_growth_rate"/>
-				<connect to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
+				<connect to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect2 to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect to="Tracing.contact_tracing_availability" from="Inputs_Epi.contact_tracing_availability"/>
@@ -1133,22 +1133,22 @@
 				<connect2 to="Hospital_Resources.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds_1" from="Hospital.peak_demand_ICU_beds"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses_1" from="Hospital.peak_demand_ICU_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_nurses_1" from="Hospital.peak_demand_nurses"/>
-				<connect to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_PPE_1" from="Hospital.peak_demand_PPE"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators_1" from="Hospital.peak_demand_ventilators"/>
-				<connect to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds_1" from="Hospital.peak_demand_ward_beds"/>
-				<connect to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ICU_demand_1" from="Hospital.peak_ICU_demand"/>
-				<connect to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
-				<connect2 to="PANDEM2_Outputs.peak_ward_demand_1" from="Hospital.peak_ward_demand"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_beds" from="Hospital.peak_demand_ICU_beds"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ICU_nurses" from="Hospital.peak_demand_ICU_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_nurses" from="Hospital.peak_demand_nurses"/>
+				<connect to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_PPE" from="Hospital.peak_demand_PPE"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ventilators" from="Hospital.peak_demand_ventilators"/>
+				<connect to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.peak_demand_ward_beds" from="Hospital.peak_demand_ward_beds"/>
+				<connect to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ICU_demand" from="Hospital.peak_ICU_demand"/>
+				<connect to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
+				<connect2 to="PANDEM2_Outputs.peak_ward_demand" from="Hospital.peak_ward_demand"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect2 to="PANDEM2_Outputs.physical_ICU_beds_available" from="Hospital.physical_ICU_beds_available"/>
 				<connect to="PANDEM2_Outputs.physical_ICU_beds_gap" from="Hospital.physical_ICU_beds_gap"/>
@@ -1163,8 +1163,8 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
-				<connect2 to="PANDEM2_Outputs.total_deaths_1" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
@@ -1403,16 +1403,16 @@
 				<connect2 to="Hospital_Resources.ward_nurses_per_1K_1" from="Inputs_Data.ward_nurses_per_1K"/>
 				<connect to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
-				<connect to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
-				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
+				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
+				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
 				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
-				<connect2 to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
+				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
+				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect2 to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
-				<connect to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
-				<connect2 to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
+				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
+				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect2 to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect to="PPE.PPE_days_supply_in_target_stock" from="Inputs_Hospital_resource_params.PPE_days_supply_in_target_stock"/>
@@ -1431,16 +1431,16 @@
 				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
+				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
 				<connect to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect2 to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect to="Hospital.ventilators_per_ICU_bed_1" from="Ventilators.ventilators_per_ICU_bed"/>
@@ -1587,8 +1587,8 @@
 				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 			<module name="Testing" isee:label="">
-				<connect to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_2" from="Testing.Testing_capacity"/>
+				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to='"Within-host_profile".detection_rate' from="Testing.theta"/>
 				<connect2 to='"Within-host_profile".detection_rate' from="Testing.theta"/>
 				<connect to="Testing.Converter_1" from='"Within-host_profile".E'/>
@@ -1609,8 +1609,8 @@
 				<connect2 to="Testing.testing_capacity_growth_rate" from="Inputs_Epi.testing_capacity_growth_rate"/>
 			</module>
 			<module name="Tracing" isee:label="">
-				<connect to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
-				<connect2 to="PANDEM2_Outputs.Converter_1" from="Tracing.Contact_tracing_capacity"/>
+				<connect to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
+				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to='"Within-host_profile".Converter_4' from="Tracing.effective_contacts"/>
 				<connect2 to='"Within-host_profile".Converter_4' from="Tracing.effective_contacts"/>
 				<connect to='"Within-host_profile".par_alpha' from="Tracing.par_alpha"/>
@@ -6997,18 +6997,18 @@ ICU_beds_supported_by_available_nurses)</eqn>
 				<units>Staff/people</units>
 			</aux>
 			<module name="Ventilators" isee:label="">
-				<connect to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed_1" from="Ventilators.expected_ventilators_freed"/>
-				<connect to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
-				<connect2 to="PANDEM2_Outputs.gap_in_ventilators_1" from="Ventilators.gap_in_ventilators"/>
+				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
+				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
+				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
 				<connect to="Hospital_Resources.max_ICU_beds_supported_by_available_ventilators" from="Ventilators.max_ICU_beds_supported_by_available_ventilators"/>
 				<connect2 to="max_ICU_beds_supported_by_available_ventilators" from="Ventilators.max_ICU_beds_supported_by_available_ventilators"/>
-				<connect to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_available_1" from="Ventilators.ventilators_available"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_stock_1" from="Ventilators.ventilators_in_stock"/>
-				<connect to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
-				<connect2 to="PANDEM2_Outputs.ventilators_in_use_1" from="Ventilators.ventilators_in_use"/>
+				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
+				<connect to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
+				<connect2 to="PANDEM2_Outputs.ventilators_in_use" from="Ventilators.ventilators_in_use"/>
 				<connect to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect2 to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect to="Hospital.ventilators_per_ICU_bed_1" from="Ventilators.ventilators_per_ICU_bed"/>
@@ -7090,20 +7090,20 @@ MAX(ICU_Beds - occupied_ICU_beds,  0)</eqn>
 				<connect2 to="activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
-				<connect to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
-				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply_1" from="PPE.interrupted_PPE_supply"/>
+				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
+				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="Hospital_Resources.max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
 				<connect2 to="max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
 				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
 				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
 				<connect to="Hospital_Resources.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PPE_gap" from="PPE.PPE_gap"/>
-				<connect to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
-				<connect2 to="PANDEM2_Outputs.PPE_gap_1" from="PPE.PPE_gap"/>
+				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
+				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect2 to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
-				<connect to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
-				<connect2 to="PANDEM2_Outputs.total_PPE_used_1" from="PPE.total_PPE_used"/>
+				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
+				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PPE.all_nurses_requiring_PPE" from="Hospital_Resources.all_nurses_requiring_PPE"/>
 				<connect2 to="PPE.all_nurses_requiring_PPE" from="all_nurses_requiring_PPE"/>
 				<connect to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
@@ -10751,42 +10751,42 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<aux name="total deaths 1" access="input">
+			<aux name="total deaths" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>People</units>
 			</aux>
-			<aux name="peak ICU demand 1" access="input">
+			<aux name="peak ICU demand" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
-			<aux name="peak demand ICU beds 1" access="input">
+			<aux name="peak demand ICU beds" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
-			<aux name="peak demand ICU nurses 1" access="input">
+			<aux name="peak demand ICU nurses" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="peak demand ventilators 1" access="input">
+			<aux name="peak demand ventilators" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<aux name="peak ward demand 1" access="input">
+			<aux name="peak ward demand" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
-			<aux name="peak demand ward beds 1" access="input">
+			<aux name="peak demand ward beds" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
-			<aux name="peak demand nurses 1" access="input">
+			<aux name="peak demand nurses" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="peak demand PPE 1" access="input">
+			<aux name="peak demand PPE" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
@@ -10827,7 +10827,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="extra staff needed for\noverflow patients" access="input">
+			<aux name="extra staff needed for overflow patients" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -10855,19 +10855,19 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="ventilators in stock 1" access="input">
+			<aux name="ventilators in stock" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<aux name="ventilators in use 1" access="input">
+			<aux name="ventilators in use" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<aux name="ventilators available 1" access="input">
+			<aux name="ventilators available" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<aux name="expected ventilators freed 1" access="input">
+			<aux name="expected ventilators freed" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
@@ -10875,7 +10875,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<aux name="gap in ventilators 1" access="input">
+			<aux name="gap in ventilators" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
@@ -10888,16 +10888,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
-			<aux name="PPE gap 1" access="input">
+			<aux name="PPE gap" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
-			<stock name="total PPE used 1" access="input">
+			<stock name="total PPE used" access="input">
 				<eqn>0</eqn>
 				<non_negative/>
 				<units>PPE Sets</units>
 			</stock>
-			<aux name="interrupted PPE supply 1" access="input">
+			<aux name="interrupted PPE supply" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -10972,8 +10972,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Vaccination capacity" access="input"/>
-			<aux name="Converter 1" access="input"/>
-			<aux name="Converter 2" access="input"/>
+			<aux name="Contact tracing capacity" access="input"/>
+			<aux name="Testing capacity" access="input"/>
 			<aux name="Mobility index" access="input"/>
 		</variables>
 		<views>
@@ -11022,7 +11022,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="463" isee:scroll_y="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="7" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11380,6 +11380,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						<item>
 							<entity name="Hospital.total_deaths[o]"/>
 						</item>
+						<item>
+							<entity name="Mobility.Mobility_index"/>
+						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
@@ -11461,15 +11464,15 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="503.678" y="1639.58" width="160" height="31.25" name="Total needed Ward Bed 1"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="711.28" y="1639.58" width="147.5" height="31.25" name="Total Ward admissions 1"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="953.76" y="1637.71" width="125" height="35" name="Potential deaths\ndue to lack of ICU 1"/>
-				<aux font_style="italic" font_weight="bold" x="1216.41" y="1655.21" name="total deaths 1"/>
-				<aux font_style="italic" font_weight="bold" x="195.208" y="1867.42" name="peak ICU demand 1"/>
-				<aux font_style="italic" font_weight="bold" x="379.607" y="1867.42" name="peak demand ICU beds 1"/>
-				<aux font_style="italic" font_weight="bold" x="544.515" y="1858.42" width="16.75" height="16.75" name="peak demand ICU nurses 1"/>
-				<aux font_style="italic" font_weight="bold" x="733.751" y="1866.8" name="peak demand ventilators 1"/>
-				<aux font_style="italic" font_weight="bold" x="909.799" y="1869.59" name="peak ward demand 1"/>
-				<aux font_style="italic" font_weight="bold" x="1084.25" y="1869.59" name="peak demand ward beds 1"/>
-				<aux font_style="italic" font_weight="bold" x="1265.25" y="1869.59" name="peak demand nurses 1"/>
-				<aux font_style="italic" font_weight="bold" x="1459.75" y="1866.8" name="peak demand PPE 1"/>
+				<aux font_style="italic" font_weight="bold" x="1216.41" y="1655.21" name="total deaths"/>
+				<aux font_style="italic" font_weight="bold" x="195.208" y="1867.42" name="peak ICU demand"/>
+				<aux font_style="italic" font_weight="bold" x="379.607" y="1867.42" name="peak demand ICU beds"/>
+				<aux font_style="italic" font_weight="bold" x="544.515" y="1858.42" width="16.75" height="16.75" name="peak demand ICU nurses"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="733.751" y="1866.8" name="peak demand ventilators"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="909.799" y="1869.59" name="peak ward demand"/>
+				<aux font_style="italic" font_weight="bold" x="1084.25" y="1869.59" name="peak demand ward beds"/>
+				<aux font_style="italic" font_weight="bold" x="1265.25" y="1869.59" name="peak demand nurses"/>
+				<aux font_style="italic" font_weight="bold" x="1459.75" y="1866.8" name="peak demand PPE"/>
 				<aux font_style="italic" font_weight="bold" x="366.25" y="467.5" name="occupied ward beds"/>
 				<text_box text_align="center" font_size="10pt" uid="63" x="303.75" y="514.04" width="144.643" height="38.961">Total ward beds occupied by patients</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="157.5" y="843.75" width="146.25" height="25.625" name="ICU Beds"/>
@@ -11482,7 +11485,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux font_style="italic" font_weight="bold" x="738.453" y="608.333" name="occupied nurses"/>
 				<aux font_style="italic" font_weight="bold" x="920" y="607.5" name="available nurses"/>
 				<aux font_style="italic" font_weight="bold" x="1258.33" y="610" name="total nurses needed for incoming patients"/>
-				<aux font_style="italic" font_weight="bold" x="1610" y="606.667" name="extra staff needed for\noverflow patients"/>
+				<aux font_style="italic" font_weight="bold" x="1610" y="606.667" name="extra staff needed for overflow patients"/>
 				<text_box text_align="center" font_size="10pt" uid="68" x="134.405" y="639.016" width="164.286" height="54.5472">Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="69" x="312.768" y="639.016" width="164.286" height="54.5472">Nurses absent due to infection (if staff absenteeism option is set)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="70" x="479.643" y="642.349" width="164.286" height="54.5472">Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</text_box>
@@ -11508,12 +11511,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="87" x="308.882" y="1198.14" width="164.286" height="36.3294">Mechanical ventilators currently in use</text_box>
 				<text_box text_align="center" font_size="10pt" uid="88" x="491.715" y="1196.47" width="164.286" height="24.6627">Ventilators not currently in use</text_box>
 				<text_box text_align="center" font_size="10pt" uid="89" x="651.304" y="1196.47" width="164.286" height="40.6627">Ventilators freed as expected ICU beds are freed by transfers to wards and deaths in ICU</text_box>
-				<aux font_style="italic" font_weight="bold" x="216.559" y="1154.17" name="ventilators in stock 1"/>
-				<aux font_style="italic" font_weight="bold" x="394.167" y="1154.17" name="ventilators in use 1"/>
-				<aux font_style="italic" font_weight="bold" x="573.858" y="1154.64" name="ventilators available 1"/>
-				<aux font_style="italic" font_weight="bold" x="733.447" y="1154.64" name="expected ventilators freed 1"/>
+				<aux font_style="italic" font_weight="bold" x="216.559" y="1154.17" name="ventilators in stock"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="394.167" y="1154.17" name="ventilators in use"/>
+				<aux font_style="italic" font_weight="bold" x="573.858" y="1154.64" name="ventilators available"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="733.447" y="1154.64" name="expected ventilators freed"/>
 				<aux font_style="italic" font_weight="bold" x="927.5" y="1154.64" name="ventilators needed for incoming ICU patients"/>
-				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1125.52" y="1154.64" name="gap in ventilators 1"/>
+				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1125.52" y="1154.64" name="gap in ventilators"/>
 				<text_box text_align="center" uid="90" x="321.726" y="1503.14" width="182.583" height="90.9994">PPE sets needed by staff caring for all patients currently in hospital (at normal, non-surge usage rate). Includes patients in wards, waiting for wards and in overflows</text_box>
 				<text_box text_align="center" uid="91" x="150.071" y="1493.64" width="164.286" height="62.3294">Personal protective equipment in stock (masks, gloves, aprons etc). Units are PPE sets.</text_box>
 				<text_box text_align="center" uid="92" x="681.071" y="1512.14" width="164.286" height="52.9994">Cumulative total of PPE sets used over the simulated time period up to this point in time</text_box>
@@ -11521,9 +11524,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" uid="94" x="871.984" y="1514.64" width="219.863" height="73.9994">Whether PPE supply is interrupted (1 for yes, 0 for no). Occurs between a preset start and end time when option to simulate interrupted supply is set.</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="197.214" y="1458.83" width="70" height="22" name="PPE 1"/>
 				<aux font_style="italic" font_weight="bold" x="422.166" y="1469.83" name="PPE needed"/>
-				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="1469.83" name="PPE gap 1"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="712.5" y="1466.64" width="106" height="27" name="total PPE used 1"/>
-				<aux font_style="italic" font_weight="bold" x="981.916" y="1480.14" name="interrupted PPE supply 1"/>
+				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="1469.83" name="PPE gap"/>
+				<stock font_style="italic" font_weight="bold" x="765.5" y="1480.14" name="total PPE used"/>
+				<aux font_style="italic" font_weight="bold" x="981.916" y="1480.14" name="interrupted PPE supply"/>
 				<aux font_style="italic" font_weight="bold" x="1085.83" y="610" name="expected nurses freed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1429.17" y="612.333" name="nurses gap"/>
 				<text_box text_align="center" font_size="10pt" uid="95" x="1003.69" y="658.182" width="164.286" height="63.651">Nurses freed as expected staffed beds are freed by ward discharges, deaths and transfers to ICU</text_box>
@@ -11557,8 +11560,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux font_style="italic" font_weight="bold" x="177" y="133" name="Attack rate"/>
 				<aux font_style="italic" font_weight="bold" x="294.75" y="133" name="Attack rate by age"/>
 				<aux font_style="italic" font_weight="bold" x="429.875" y="137" name="Vaccination capacity"/>
-				<aux font_style="italic" font_weight="bold" x="559.274" y="137" name="Converter 1"/>
-				<aux font_style="italic" font_weight="bold" x="679.357" y="145" name="Converter 2"/>
+				<aux font_style="italic" font_weight="bold" x="559.274" y="137" name="Contact tracing capacity"/>
+				<aux font_style="italic" font_weight="bold" x="679.357" y="145" name="Testing capacity"/>
 				<aux font_style="italic" font_weight="bold" x="805.5" y="145" name="Mobility index"/>
 			</view>
 		</views>
