@@ -25,10 +25,14 @@ run_model <- function(model_id, par_list, fldr_path,
   sys_cmd  <- paste("./stella_simulator", mdl_path)
   system(sys_cmd)
 
-  if(output_type == "indicators") return(readr::read_tsv(output_file1))
+  if(output_type == "indicators") return(read_output_file(output_file1))
 
 
-  if(output_type == "inputs") return(readr::read_tsv(output_file2))
+  if(output_type == "inputs") {
+
+    inputs_df <- read_output_file(output_file2)
+    dplyr::slice(inputs_df, 1)
+  }
 }
 
 create_output_file <- function(output_file) {
@@ -36,4 +40,16 @@ create_output_file <- function(output_file) {
   if(file.exists(output_file)) file.remove(output_file)
 
   file.create(output_file)
+}
+
+read_output_file <- function(output_file) {
+
+  df        <- readr::read_tsv(output_file)
+
+  col_names <- colnames(inputs_df) |>
+    stringr::str_replace_all(" ", "_")
+
+  colnames(df) <- col_names
+
+  df
 }
