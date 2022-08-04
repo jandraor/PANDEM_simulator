@@ -132,3 +132,38 @@ function(req, res) {
 
   get_pars(model_id)
 }
+
+
+#* @post /test_inputs/<model_id>
+#* @serializer unboxedJSON
+function(req, res) {
+
+  user_args <- req$args
+  model_id  <- user_args$model_id
+
+  # available models
+  avl_mdl <- stringr::str_glue("model_{c('05')}")
+
+  if(!model_id %in% avl_mdl) {
+
+    error_msg  <- stringr::str_glue("Model '{model_id}' not found")
+    res$status <- 400
+
+    res$body <- jsonlite::toJSON(auto_unbox = TRUE, list(
+      status  = 400,
+      message = error_msg
+    ))
+
+    return(res)
+  }
+
+  fldr_path <- create_sim_folder(model_id)
+  sens      <- ifelse(is.null(user_args$sens), 0, user_args$sens)
+
+  par_list    <- extract_pars(user_args, model_id)
+  sim_results <- run_model(model_id, par_list, fldr_path, "inputs")
+
+  sim_results
+}
+
+

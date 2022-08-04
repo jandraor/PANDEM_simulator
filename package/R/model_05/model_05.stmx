@@ -34,6 +34,9 @@
 		<export resource="r../output.txt" precomputed="false" isee:format="numbers">
 			<table name="PANDEM2 Outputs" use_settings="true"/>
 		</export>
+		<export resource="r../inputs_val.txt" precomputed="false" isee:format="numbers">
+			<table name="PANDEM2 Inputs" use_settings="true"/>
+		</export>
 		<import isee:overwrite="true" orientation="horizontal" resource="r../inputs.txt"/>
 	</data>
 	<model_units>
@@ -9444,7 +9447,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:scroll_x="68.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="49.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9487,6 +9490,248 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<module label_side="center" x="495.41" y="183.75" width="147.054" height="45" name="Inputs Hospital resource params"/>
 				<module label_side="center" x="802.874" y="183.75" width="123.304" height="45" name="Inputs Modelling options"/>
 				<module label_side="center" x="657.143" y="183.75" width="135" height="45" name="Inputs Hospital surge strategies"/>
+				<stacked_container uid="1" x="238.75" y="358.75" width="628.75" height="250">
+					<table width="628.75" height="250" isee:export_name="PANDEM2 Inputs" isee:mark_for_export="true">
+						<item type="time"/>
+						<item>
+							<entity name="Inputs_Data.Age_specific_contact_rates[yy]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.Age_specific_contact_rates[yo]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.Age_specific_contact_rates[oy]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.Age_specific_contact_rates[oo]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.ICU_beds_per_100K"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.Population_size[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.Population_size[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.ventilators_per_100K"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.ward_beds_per_1K"/>
+						</item>
+						<item>
+							<entity name="Inputs_Data.ward_nurses_per_1K"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.contact_tracing_availability"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.contact_tracing_capacity_growth_rate"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.contact_tracing_effectiveness"/>
+						</item>
+						<item>
+							<entity name='Inputs_Epi."contact_tracing_long-term_capacity"'/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.initial_contact_tracing_capacity"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.initial_testing_capacity"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.initial_vaccination_capacity"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.lockdown_severity"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.lockdown_start_time"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.switch_contact_tracing"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.switch_test_isolate"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.switch_vaccines"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.test_isolate_compliance"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.testing_availability"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.testing_capacity_growth_rate"/>
+						</item>
+						<item>
+							<entity name='Inputs_Epi."testing_long-term_capacity"'/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.vaccination_capacity_growth_rate"/>
+						</item>
+						<item>
+							<entity name='Inputs_Epi."vaccination_long-term_capacity"'/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.vaccine_availability"/>
+						</item>
+						<item>
+							<entity name="Inputs_Epi.vaccine_efficacy"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.admission_delay"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.delay_before_hospitalisation"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.fraction_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.fraction_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.ICU_admission_delay"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_Denied_ICU"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[y]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[o]"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.nurses_per_bed"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.PPE_days_supply_in_target_stock"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.proportion_of_beds_available_for_pandemic"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.proportion_of_ICU_beds_available_for_pandemic"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.proportion_of_ICU_nurses_available_for_pandemic"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.reduced_nurses_per_bed_ratio"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_resource_params.target_PPE_stock"/>
+						</item>
+						<item>
+							<entity name='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"'/>
+						</item>
+						<item>
+							<entity name='Inputs_Hospital_surge_strategies."strategy_2_reduce_nurse-to-patient_ratio"'/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
+						</item>
+						<item>
+							<entity name="Inputs_Hospital_surge_strategies.strategy_4_increase_bed_capacity"/>
+						</item>
+						<item>
+							<entity name="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
+						</item>
+						<item>
+							<entity name="Inputs_Modelling_options.simulate_staff_absenteeism"/>
+						</item>
+					</table>
+				</stacked_container>
 			</view>
 		</views>
 	</model>
