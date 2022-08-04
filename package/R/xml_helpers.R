@@ -62,7 +62,9 @@ format_par_obj <- function(aux_obj, category, dims_obj, type) {
       xml2::xml_text() |> as.numeric()
 
     dv_list         <- list(def_val)
-    names(dv_list)  <- stringr::str_glue("{category}.{aux_name}")
+
+    names(dv_list)  <- stringr::str_glue("{category}.{aux_name}") |>
+      stringr::str_replace_all(" ", "_")
 
     par_obj$default_values <- dv_list
   }
@@ -107,7 +109,7 @@ format_par_obj <- function(aux_obj, category, dims_obj, type) {
       }
 
       labels            <- stringr::str_glue("{category}.{name}[{elems}]")
-      names(elems_list) <- labels
+      names(elems_list) <- stringr::str_replace_all(labels, " ", "_")
 
       par_obj$default_values <- elems_list
     }
