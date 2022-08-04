@@ -46,7 +46,7 @@ read_output_file <- function(output_file) {
 
   df        <- readr::read_tsv(output_file)
 
-  col_names <- colnames(inputs_df) |>
+  col_names <- colnames(df) |>
     stringr::str_replace_all(" ", "_")
 
   colnames(df) <- col_names
