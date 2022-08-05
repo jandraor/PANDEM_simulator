@@ -36,6 +36,14 @@ create_par_obj <- function(module_xml, dims_obj, type) {
   vars_xml   <- xml2::xml_find_first(module_xml, ".//d1:variables")
   auxs_xml   <- xml2::xml_find_all(vars_xml, ".//d1:aux")
 
+  if(type == "output") {
+    stock_xml <- xml2::xml_find_all(vars_xml, ".//d1:stock")
+
+    if(length(stock_xml) > 0) {
+      auxs_xml <- c(auxs_xml, stock_xml)
+    }
+  }
+
   lapply(auxs_xml, format_par_obj, module_name, dims_obj, type)
 }
 

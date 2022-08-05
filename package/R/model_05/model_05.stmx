@@ -383,10 +383,10 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_gap" from="Hospital.physical_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
-				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -407,22 +407,22 @@
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
-				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
-				<connect to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
-				<connect to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
 				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
@@ -552,20 +552,20 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_gap" from="Hospital.physical_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
-				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
-				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
-				<connect to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
-				<connect to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
 				<connect to="Hospital.admission_delay" from="Inputs_Hospital_patient_params.admission_delay"/>
@@ -744,8 +744,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
-				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -840,7 +840,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1164,20 +1164,20 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_gap" from="Hospital.physical_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
-				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU_1" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
-				<connect to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions_1" from="Hospital.Total_ICU_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
-				<connect to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_ICU_1" from="Hospital.Total_needed_ICU"/>
-				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
-				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed_1" from="Hospital.Total_needed_Ward_Bed"/>
-				<connect to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
-				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions_1" from="Hospital.Total_Ward_admissions"/>
+				<connect to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
+				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
+				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
 				<connect to="Hospital.admission_delay" from="Inputs_Hospital_patient_params.admission_delay"/>
@@ -1408,8 +1408,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
-				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -3546,7 +3546,9 @@ ELSE 0</eqn>
 				<units>1/day</units>
 			</aux>
 			<aux name="Attack rate" access="output">
-				<doc>Population level attack rate</doc>
+				<doc>According to the CDC, the attack rate or incidence proportion is the proportion of an initially disease-free population that develops disease during a specified (usually limited) time frame. Taken from: https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html
+
+Simply put, the percentage of the population that acquired the disease during an outbreak.</doc>
 				<eqn>SUM(C) /total_N</eqn>
 				<units>Dimensionless</units>
 			</aux>
@@ -7097,8 +7099,8 @@ MAX(ICU_Beds - occupied_ICU_beds,  0)</eqn>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="Hospital_Resources.max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
 				<connect2 to="max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
-				<connect to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE_1" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
 				<connect to="Hospital_Resources.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
@@ -10956,7 +10958,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>people/day</units>
 			</aux>
-			<stock name="Total needed ICU 1" access="input">
+			<stock name="Total needed ICU" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10964,7 +10966,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<stock name="Total ICU admissions 1" access="input">
+			<stock name="Total ICU admissions" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10972,7 +10974,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<stock name="Total needed Ward Bed 1" access="input">
+			<stock name="Total needed Ward Bed" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10980,7 +10982,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<stock name="Total Ward admissions 1" access="input">
+			<stock name="Total Ward admissions" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10988,7 +10990,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<stock name="Potential deaths\ndue to lack of ICU 1" access="input">
+			<stock name="Potential deaths due to lack of ICU" access="input">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11124,7 +11126,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<stock name="PPE 1" access="input">
+			<stock name="PPE" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<non_negative/>
 				<units>PPE Sets</units>
@@ -11203,11 +11205,15 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Beds</units>
 			</aux>
 			<aux name="Incidence by age" access="input">
+				<doc>New infections per day by age group.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 			</aux>
 			<aux name="Attack rate" access="input">
+				<doc>According to the CDC, the attack rate or incidence proportion is the proportion of an initially disease-free population that develops disease during a specified (usually limited) time frame. Taken from: https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html
+
+Simply put, the percentage of the population that acquired the disease during an outbreak.</doc>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Attack rate by age" access="input">
@@ -11216,10 +11222,18 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				</dimensions>
 				<units>Dimensionless</units>
 			</aux>
-			<aux name="Vaccination capacity" access="input"/>
-			<aux name="Contact tracing capacity" access="input"/>
-			<aux name="Testing capacity" access="input"/>
-			<aux name="Mobility index" access="input"/>
+			<aux name="Vaccination capacity" access="input">
+				<doc>The maximum number of vaccines that the public health system can administer in a day.</doc>
+			</aux>
+			<aux name="Contact tracing capacity" access="input">
+				<doc>The maximum number of people that can be traced in a day by the public health system.</doc>
+			</aux>
+			<aux name="Testing capacity" access="input">
+				<doc>The maximum number of tests that can be run in a day by the public health system.</doc>
+			</aux>
+			<aux name="Mobility index" access="input">
+				<doc>A relative measure of mobility with respect to the mobility level in peace time. In the absence of interventions, this index is equal to one. In the presence of mobility interventions (lockdown, social distancing) this index is less than one.</doc>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11267,7 +11281,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="7" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11304,7 +11318,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="367.455" y="255.016" width="904.375" height="250">
+				<stacked_container uid="1" x="367.455" y="255.016" width="904.375" height="250" minimized="true">
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
@@ -11687,7 +11701,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="43" x="1505.9" y="890.707" width="176.786" height="77.881">Gap in physical ICU beds, comparing ICU beds available plus expected ICU beds freed with ICU beds needed (value greater than zero only when demand exceeds supply)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="44" x="735.774" y="1352.86" width="176.786" height="52.0477">Patients waiting for an ICU bed who cannot get access to one (does not include patients currently in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="45" x="925.774" y="1357.86" width="176.786" height="42.0489">Patients at risk of dying because they cannot access an ICU bed in this time period</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="46" x="39.6766" y="1609.41" width="252.409" height="18.5711">Totals (cumulative - see end of run figures):</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="46" x="45.055" y="1588.64" width="252.409" height="18.5711">Totals (cumulative - see end of run figures):</text_box>
 				<text_box font_style="italic" uid="47" x="107.916" y="1804.52" width="1251.67" height="32.5129">Calculations of peak daily demand for ICU and ward are made by treating all resources as unlimited, allowing admission of all patients needing ICU or a ward beds without the complication of overflows. The required peak capacity of beds, nurses, ventilators and PPE can be calculated from these peak daily figures.</text_box>
 				<text_box text_align="center" uid="48" x="106.606" y="1685.22" width="164.286" height="71.8327">Total of all patients who needed ICU during current run (from admissions and transfers from ward and overflow)</text_box>
 				<text_box text_align="center" uid="49" x="306.252" y="1685.22" width="164.286" height="54.9994">Total number of patients who were admitted to ICU</text_box>
@@ -11704,11 +11718,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" uid="60" x="1183.11" y="1906.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</text_box>
 				<text_box text_align="center" uid="61" x="1377.61" y="1906.56" width="164.286" height="92.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required for ward and ICU nurses</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="45.5099" y="1770.95" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="134.999" y="1642.08" width="118.75" height="26.25" name="Total needed ICU 1"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="314.645" y="1640.21" width="147.5" height="30" name="Total ICU admissions 1"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="503.678" y="1639.58" width="160" height="31.25" name="Total needed Ward Bed 1"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="711.28" y="1639.58" width="147.5" height="31.25" name="Total Ward admissions 1"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="953.76" y="1637.71" width="125" height="35" name="Potential deaths\ndue to lack of ICU 1"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="195.208" y="1659.21" name="Total needed ICU"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="388.395" y="1655.21" name="Total ICU admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="583.678" y="1655.21" name="Total needed Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="785.03" y="1655.21" name="Total Ward admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1016.26" y="1655.21" name="Potential deaths due to lack of ICU"/>
 				<aux font_style="italic" font_weight="bold" x="1216.41" y="1655.21" name="total deaths"/>
 				<aux font_style="italic" font_weight="bold" x="195.208" y="1867.42" name="peak ICU demand"/>
 				<aux font_style="italic" font_weight="bold" x="379.607" y="1867.42" name="peak demand ICU beds"/>
@@ -11767,7 +11781,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" uid="92" x="681.071" y="1512.14" width="164.286" height="52.9994">Cumulative total of PPE sets used over the simulated time period up to this point in time</text_box>
 				<text_box text_align="center" uid="93" x="509.715" y="1506.14" width="164.286" height="56.9994">Gap in PPE (value greater than zero only when demand exceeds supply)</text_box>
 				<text_box text_align="center" uid="94" x="871.984" y="1514.64" width="219.863" height="73.9994">Whether PPE supply is interrupted (1 for yes, 0 for no). Occurs between a preset start and end time when option to simulate interrupted supply is set.</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="197.214" y="1458.83" width="70" height="22" name="PPE 1"/>
+				<stock font_style="italic" font_weight="bold" x="232.214" y="1469.83" name="PPE"/>
 				<aux font_style="italic" font_weight="bold" x="422.166" y="1469.83" name="PPE needed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="1469.83" name="PPE gap"/>
 				<stock font_style="italic" font_weight="bold" x="765.5" y="1480.14" name="total PPE used"/>
