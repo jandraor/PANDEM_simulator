@@ -2,10 +2,10 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1" uses_submodels=""/>
-		<name>model_05</name>
+		<name>model_05_new</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.0.2" isee:build_number="2725" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.00555556" isee:restore_on_start="false" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -24,7 +24,7 @@
 			<elem name="oo"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="map" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -840,7 +840,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1903,7 +1903,9 @@ ELSE 0</eqn>
 				<units>1/day</units>
 			</aux>
 			<aux name="Mobility index" access="output">
+				<doc>A relative measure of mobility with respect to the mobility level in peace time. In the absence of interventions, this index is equal to one. In the presence of mobility interventions (lockdown, social distancing) this index is less than one.</doc>
 				<eqn>Z</eqn>
+				<units>Dimensionless</units>
 			</aux>
 		</variables>
 		<views>
@@ -1952,7 +1954,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="230" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2205,7 +2207,9 @@ ELSE 0</eqn>
 				<units>days</units>
 			</aux>
 			<aux name="Testing capacity" access="output">
+				<doc>The maximum number of tests that can be run in a day by the public health system.</doc>
 				<eqn>Ts</eqn>
+				<units>People/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -2254,7 +2258,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="16" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2561,7 +2565,9 @@ ELSE 0</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="Contact tracing capacity" access="output">
+				<doc>The maximum number of people that can be traced in a day by the public health system.</doc>
 				<eqn>Fs</eqn>
+				<units>People/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -2610,7 +2616,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_rows="2" isee:scroll_y="68" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2904,7 +2910,9 @@ ELSE 0</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Vaccination capacity" access="output">
+				<doc>The maximum number of vaccines that the public health system can administer in a day.</doc>
 				<eqn>Vs</eqn>
+				<units>People/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -2953,7 +2961,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="302.5" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="289.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -3574,10 +3582,12 @@ Simply put, the percentage of the population that acquired the disease during an
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Incidence by age" access="output">
+				<doc>New infections per day by age group.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>C_in</eqn>
+				<units>People/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -3626,7 +3636,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="49.1667" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="200" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9449,7 +9459,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="49.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="49.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9734,6 +9744,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 					</table>
 				</stacked_container>
+				<text_box uid="2" x="246.25" y="638.75" width="613.75" height="58">This export table is used for web service &apos;test_inputs&apos;, which aims to validate that the model is actually getting the inputs from the call. Results are written to text file &apos;inputs_val.txt&apos;.</text_box>
 			</view>
 		</views>
 	</model>
@@ -10820,6 +10831,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 	<model name="PANDEM2_Outputs">
 		<variables>
 			<aux name="hospital admissions" access="input">
+				<doc>People being admitted to hospital, a proportion of (both detected and undetected) infected people</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10827,6 +10839,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="hospital discharges" access="input">
+				<doc>Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will discharged from there)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10834,6 +10847,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients/day</units>
 			</aux>
 			<aux name="total in hospital" access="input">
+				<doc>Total number of patients in hospital in all wards, waiting for wards, and in overflows</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10841,6 +10855,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</aux>
 			<aux name="ICU admissions" access="input">
+				<doc>Patients being admitted to ICU</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10848,6 +10863,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="ICU discharges" access="input">
+				<doc>Patients being transferred from ICU to ward</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10855,6 +10871,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="deaths in hospital" access="input">
+				<doc>Patient deaths in wards, ICU or overflows (includes potential deaths from lack of ICU)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10862,10 +10879,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>People/day</units>
 			</aux>
 			<aux name="expected beds freed" access="input">
+				<doc>Average expected staffed beds freed by ward discharges, deaths and transfers to ICU. Needed to fix the steady state error, where substantially less than the full capacity of available staffed beds would be used.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<stock name="Patients Waiting for Ward Bed" access="input">
+				<doc>Patients waiting for a ward bed</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10874,6 +10893,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="In Ward Overflow" access="input">
+				<doc>Patients who could not get a ward bed and are being cared for outside wards, e.g. in emergency department or on trolleys</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10882,27 +10902,33 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<aux name="physical ward beds needed" access="input">
+				<doc>Number of physical ward beds needed to meet demand at this time - takes into account patients waiting for a bed and in overflow</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="physical ICU beds needed" access="input">
+				<doc>Number of physical ICU beds needed to meet demand at this time - takes into account patients waiting for an ICU bed and patients in ICU overflow</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU beds</units>
 			</aux>
 			<stock name="Beds" access="input">
+				<doc>Physical ward beds in stock and available for pandemic use</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<non_negative/>
 				<units>Beds</units>
 			</stock>
 			<aux name="physical ward beds available" access="input">
+				<doc>Physical ward beds currently unoccupied</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="physical ward beds gap" access="input">
+				<doc>Gap in physical hospital beds, comparing beds available plus expected beds freed with beds needed (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="ward admissions" access="input">
+				<doc>Patients being admitted to ward beds (maximum is staffed wards available plus expected beds freed)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10910,6 +10936,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="moving to ward overflow" access="input">
+				<doc>Patients requiring a ward bed who cannot get access to one (does not include patients currently in overflow)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10917,14 +10944,17 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="physical ICU beds available" access="input">
+				<doc>Physical ICU beds currently unoccupied</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="expected ICU beds freed" access="input">
+				<doc>Average expected staffed ICU beds freed by transfers to wards and  deaths in ICU. Needed to fix the steady state error, where substantially less than the full capacity of available staffed ICU beds would be used</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<stock name="Patients Waiting for ICU" access="input">
+				<doc>Patients waiting for an ICU bed</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10933,6 +10963,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="In ICU Overflow" access="input">
+				<doc>Patients who could not get an ICU bed and are being cared for outside ICU, ideally in an enhanced ward bed with extra equipment or staffing, but may not be possible</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10941,10 +10972,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<aux name="physical ICU beds gap" access="input">
+				<doc>Gap in physical ICU beds, comparing ICU beds available plus expected ICU beds freed with ICU beds needed (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU beds</units>
 			</aux>
 			<aux name="at risk of dying from lack of ICU" access="input">
+				<doc>Patients at risk of dying because they cannot access an ICU bed in this time period</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10952,6 +10985,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="moving to ICU overflow" access="input">
+				<doc>Patients waiting for an ICU bed who cannot get access to one (does not include patients currently in ICU overflow)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10959,6 +10993,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<stock name="Total needed ICU" access="input">
+				<doc>Total of all patients who needed ICU during current run (from admissions and transfers from ward and overflow)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10967,6 +11002,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="Total ICU admissions" access="input">
+				<doc>Total number of patients who were admitted to ICU</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10975,6 +11011,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="Total needed Ward Bed" access="input">
+				<doc>Total of all patients who needed a ward bed during current run (from admissions and transfers from ICU)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10983,6 +11020,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="Total Ward admissions" access="input">
+				<doc>Total number of patients who were admitted to wards (from admissions and transfers from ICU)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10991,6 +11029,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<stock name="Potential deaths due to lack of ICU" access="input">
+				<doc>Patients at risk of dying from requiring ICU when no ICU bed was available to them</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10999,6 +11038,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</stock>
 			<aux name="total deaths" access="input">
+				<doc>Total deaths in hospital; includes potential deaths due to lack of ICU</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11006,59 +11046,73 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>People</units>
 			</aux>
 			<aux name="peak ICU demand" access="input">
+				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand ICU beds" access="input">
+				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU beds required</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="peak demand ICU nurses" access="input">
+				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand ventilators" access="input">
+				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="peak ward demand" access="input">
+				<doc>If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand ward beds" access="input">
+				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of ward beds required</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="peak demand nurses" access="input">
+				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand PPE" access="input">
+				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required for ward and ICU nurses</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<aux name="occupied ward beds" access="input">
+				<doc>Total ward beds occupied by patients</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<stock name="ICU Beds" access="input">
+				<doc>Physical ICU beds in stock and available for pandemic use</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<non_negative/>
 				<units>ICU beds</units>
 			</stock>
 			<aux name="occupied ICU beds" access="input">
+				<doc>Total ICU beds occupied by patients</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="max available nurses" access="input">
+				<doc>Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent nurses" access="input">
+				<doc>Nurses absent due to infection (if staff absenteeism option is set)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="nurses at work" access="input">
+				<doc>Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11067,22 +11121,27 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="available nurses" access="input">
+				<doc>Nurses not occupied with patients nor absent</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="total nurses needed for incoming patients" access="input">
+				<doc>Number of ward nurses needed to meet demand (for patients waiting for ward and in ward overflow) at the normal nurse-to-patient ratio</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="extra staff needed for overflow patients" access="input">
+				<doc>Overflow patients have separate unspecified staff (simplifying assumption)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="max available ICU nurses" access="input">
+				<doc>Total ICU nurses employed and available for care of pandemic patients, assuming none are absent</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent ICU nurses" access="input">
+				<doc>ICU nurses absent due to infection (if staff absenteeism option is set)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11091,60 +11150,74 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="occupied ICU nurses" access="input">
+				<doc>Total ICU nurses occupied with caring for patients in ICU wards, calculated on the basis of number of occupied ICU beds and ICU nurse-to-patient ratio</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="available ICU nurses" access="input">
+				<doc>ICU nurses not occupied with patients nor absent</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="total ICU nurses needed for incoming patients" access="input">
+				<doc>Number of ICU nurses needed to meet demand (for patients waiting for ICU and in ICU overflow) at the normal ICU nurse-to-patient ratio</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="ventilators in stock" access="input">
+				<doc>Mechanical ventilators in stock and available for pandemic use</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="ventilators in use" access="input">
+				<doc>Mechanical ventilators currently in use</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="ventilators available" access="input">
+				<doc>Ventilators not currently in use</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="expected ventilators freed" access="input">
+				<doc>Ventilators freed as expected ICU beds are freed by transfers to wards and deaths in ICU</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="ventilators needed for incoming ICU patients" access="input">
+				<doc>Mechanical ventilators needed, according to current demand for ICU (patients requiring ICU and in overflow, not those currently in ICU)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="gap in ventilators" access="input">
+				<doc>Gap in ventilators, comparing ventilators available plus expected ventilators freed with ventilators needed (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<stock name="PPE" access="input">
+				<doc>Personal protective equipment in stock (masks, gloves, aprons etc). Units are PPE sets.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<non_negative/>
 				<units>PPE Sets</units>
 			</stock>
 			<aux name="PPE needed" access="input">
+				<doc>PPE sets needed by staff caring for all patients currently in hospital (at normal, non-surge usage rate). Includes patients in wards, waiting for wards and in overflows</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<aux name="PPE gap" access="input">
+				<doc>Gap in PPE (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<stock name="total PPE used" access="input">
+				<doc>Cumulative total of PPE sets used over the simulated time period up to this point in time</doc>
 				<eqn>0</eqn>
 				<non_negative/>
 				<units>PPE Sets</units>
 			</stock>
 			<aux name="interrupted PPE supply" access="input">
+				<doc>Whether PPE supply is interrupted (1 for yes, 0 for no). Occurs between a preset start and end time when option to simulate interrupted supply is set.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -11153,54 +11226,67 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="nurses gap" access="input">
+				<doc>Gap in nurses, comparing nurses available plus expected nurses freed with nurses needed (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="expected ICU nurses freed" access="input">
+				<doc>ICU nurses freed as expected ICU beds are freed by transfers to wards and deaths in ICU</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="ICU nurses gap" access="input">
+				<doc>Gap in ICU nurses, comparing ICU nurses available plus expected ICU nurses freed with ICU nurses needed (value greater than zero only when demand exceeds supply)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="staffed equipped ICU beds available" access="input">
+				<doc>The number of ICU ward beds supported by available ICU nurses and ventilators</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="staffed equipped ICU beds needed" access="input">
+				<doc>The number of staffed ICU beds needed to meet current demand (includes patients waiting for ICU and in ICU overflow)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="staffed equipped ICU beds gap" access="input">
+				<doc>The gap in staffed ICU beds, comparing available staffed ICU beds plus expected ICU beds freed with patients waiting for ICU plus patients in ICU overflow</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="activate surge strategy 1" access="input">
+				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients) when ICU nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 2" access="input">
+				<doc>Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients) when nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 3" access="input">
+				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is not enough to supply staff needed to meet demand, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 4" access="input">
+				<doc>Surge strategy 4 is to increase bed capacity. It will be activated when no beds are available, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="staffed ward beds available" access="input">
+				<doc>The number of physical ward beds supported by available nurses</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="staffed ward beds needed" access="input">
+				<doc>The number of staffed ward beds needed to meet current demand (includes patients waiting for ward and in ward overflow)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="staffed ward beds gap" access="input">
+				<doc>The gap in staffed ward beds, comparing available staffed beds plus expected beds freed with patients waiting for a bed plus patients in ward overflow</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
@@ -11209,6 +11295,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
+				<units>People/day</units>
 			</aux>
 			<aux name="Attack rate" access="input">
 				<doc>According to the CDC, the attack rate or incidence proportion is the proportion of an initially disease-free population that develops disease during a specified (usually limited) time frame. Taken from: https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html
@@ -11217,6 +11304,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Attack rate by age" access="input">
+				<doc>Attack rate by age group</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11224,15 +11312,19 @@ Simply put, the percentage of the population that acquired the disease during an
 			</aux>
 			<aux name="Vaccination capacity" access="input">
 				<doc>The maximum number of vaccines that the public health system can administer in a day.</doc>
+				<units>People/day</units>
 			</aux>
 			<aux name="Contact tracing capacity" access="input">
 				<doc>The maximum number of people that can be traced in a day by the public health system.</doc>
+				<units>People/day</units>
 			</aux>
 			<aux name="Testing capacity" access="input">
 				<doc>The maximum number of tests that can be run in a day by the public health system.</doc>
+				<units>People/day</units>
 			</aux>
 			<aux name="Mobility index" access="input">
 				<doc>A relative measure of mobility with respect to the mobility level in peace time. In the absence of interventions, this index is equal to one. In the presence of mobility interventions (lockdown, social distancing) this index is less than one.</doc>
+				<units>Dimensionless</units>
 			</aux>
 		</variables>
 		<views>
@@ -11281,7 +11373,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="360" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11318,7 +11410,7 @@ Simply put, the percentage of the population that acquired the disease during an
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="367.455" y="255.016" width="904.375" height="250" minimized="true">
+				<stacked_container uid="1" x="895.455" y="20" width="904.375" height="250" minimized="true">
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
@@ -11653,20 +11745,20 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="107.292" y="294.167" name="total in hospital"/>
 				<text_box text_align="center" font_size="10pt" uid="16" x="25.1487" y="327.307" width="164.286" height="50.265">Total number of patients in hospital in all wards, waiting for wards, and in overflows</text_box>
 				<aux font_style="italic" font_weight="bold" x="650.417" y="294.167" name="ICU admissions"/>
-				<text_box text_align="center" font_size="10pt" uid="17" x="568.274" y="327.307" width="164.286" height="63.39">Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will discharged from there)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="17" x="568.274" y="327.307" width="164.286" height="63.39">Patients being admitted to ICU</text_box>
 				<aux font_style="italic" font_weight="bold" x="846.042" y="294.167" name="ICU discharges"/>
 				<text_box text_align="center" font_size="10pt" uid="18" x="763.899" y="327.307" width="164.286" height="63.39">Patients being transferred from ICU to ward</text_box>
 				<aux font_style="italic" font_weight="bold" x="1024.79" y="294.167" name="deaths in hospital"/>
 				<text_box text_align="center" font_size="10pt" uid="19" x="942.649" y="327.307" width="164.286" height="63.39">Patient deaths in wards, ICU or overflows (includes potential deaths from lack of ICU)</text_box>
 				<aux font_style="italic" font_weight="bold" x="711.375" y="470.625" name="expected beds freed"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="864.583" y="457.292" width="108.333" height="35" name="Patients Waiting for Ward Bed"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="1037.61" y="461.875" width="117.5" height="25.8333" name="In Ward Overflow"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="867.25" y="458.292" width="103" height="33" name="Patients Waiting for Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1036.86" y="457.792" width="128" height="34" name="In Ward Overflow"/>
 				<aux font_style="italic" font_weight="bold" x="1287.21" y="470.625" name="physical ward beds needed"/>
 				<aux font_style="italic" font_weight="bold" x="1391.46" y="838.667" name="physical ICU beds needed"/>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="20" x="25.0933" y="410.872" width="203.242" height="18.5711">Hospital resource key indicators:</text_box>
 				<text_box text_align="center" font_size="10pt" uid="21" x="133.572" y="505.016" width="164.286" height="36.2139">Physical ward beds in stock and available for pandemic use</text_box>
 				<text_box uid="22" x="25.69" y="459.017" width="88.453" height="45.9994">Ward beds</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="156.652" y="461.875" width="118.125" height="27.5" name="Beds"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="151.214" y="456.292" width="119" height="37" name="Beds"/>
 				<aux font_style="italic" font_weight="bold" x="535.833" y="466.667" name="physical ward beds available"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1505.83" y="470.625" name="physical ward beds gap"/>
 				<aux font_style="italic" font_weight="bold" x="770.5" y="731" name="ward admissions"/>
@@ -11680,9 +11772,9 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box uid="29" x="35.4513" y="1319.78" width="97.454" height="45.9994">Staffed equipped ICU beds</text_box>
 				<aux font_style="italic" font_weight="bold" x="594" y="848.333" name="physical ICU beds available"/>
 				<aux font_style="italic" font_weight="bold" x="787.5" y="842.083" name="expected ICU beds freed"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="944.833" y="836.667" width="105.833" height="29.1667" name="Patients Waiting for ICU"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="1132.3" y="830.417" width="116.667" height="28.3333" name="In ICU Overflow"/>
-				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1594.3" y="844.583" name="physical ICU beds gap"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="941.75" y="844.084" width="109" height="29" name="Patients Waiting for ICU"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1128.63" y="844.584" width="124" height="28" name="In ICU Overflow"/>
+				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1594.29" y="848.333" name="physical ICU beds gap"/>
 				<aux font_style="italic" font_weight="bold" x="1014.17" y="1314.53" name="at risk of dying from lack of ICU"/>
 				<aux font_style="italic" font_weight="bold" x="824.167" y="1318.75" name="moving to ICU overflow"/>
 				<text_box text_align="center" font_size="10pt" uid="30" x="453.69" y="513.207" width="164.286" height="38.961">Physical ward beds currently unoccupied</text_box>
@@ -11716,32 +11808,32 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="58" x="827.656" y="1906.56" width="164.286" height="92.85">If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</text_box>
 				<text_box text_align="center" uid="59" x="1002.11" y="1906.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of ward beds required</text_box>
 				<text_box text_align="center" uid="60" x="1183.11" y="1906.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</text_box>
-				<text_box text_align="center" uid="61" x="1377.61" y="1906.56" width="164.286" height="92.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required for ward and ICU nurses</text_box>
+				<text_box text_align="center" uid="61" x="1377.61" y="1906.56" width="164.286" height="107.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="45.5099" y="1770.95" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="195.208" y="1659.21" name="Total needed ICU"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="388.395" y="1655.21" name="Total ICU admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="583.678" y="1655.21" name="Total needed Ward Bed"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="785.03" y="1655.21" name="Total Ward admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="1016.26" y="1655.21" name="Potential deaths due to lack of ICU"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="123.749" y="1640.21" width="127" height="25" name="Total needed ICU"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="314.357" y="1637.71" width="154" height="28" name="Total ICU admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="508.178" y="1637.21" width="151" height="29" name="Total needed Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="712.5" y="1637.71" width="157" height="35" name="Total Ward admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="951.76" y="1638.71" width="129" height="33" name="Potential deaths due to lack of ICU"/>
 				<aux font_style="italic" font_weight="bold" x="1216.41" y="1655.21" name="total deaths"/>
 				<aux font_style="italic" font_weight="bold" x="195.208" y="1867.42" name="peak ICU demand"/>
-				<aux font_style="italic" font_weight="bold" x="379.607" y="1867.42" name="peak demand ICU beds"/>
+				<aux font_style="italic" font_weight="bold" x="379.607" y="1866.8" name="peak demand ICU beds"/>
 				<aux font_style="italic" font_weight="bold" x="544.515" y="1858.42" width="16.75" height="16.75" name="peak demand ICU nurses"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="733.751" y="1866.8" name="peak demand ventilators"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="734" y="1866.8" name="peak demand ventilators"/>
 				<aux font_style="italic" font_weight="bold" label_side="bottom" x="909.799" y="1869.59" name="peak ward demand"/>
 				<aux font_style="italic" font_weight="bold" x="1084.25" y="1869.59" name="peak demand ward beds"/>
 				<aux font_style="italic" font_weight="bold" x="1265.25" y="1869.59" name="peak demand nurses"/>
 				<aux font_style="italic" font_weight="bold" x="1459.75" y="1866.8" name="peak demand PPE"/>
-				<aux font_style="italic" font_weight="bold" x="366.25" y="467.5" name="occupied ward beds"/>
+				<aux font_style="italic" font_weight="bold" x="380.25" y="466.667" name="occupied ward beds"/>
 				<text_box text_align="center" font_size="10pt" uid="63" x="303.75" y="514.04" width="144.643" height="38.961">Total ward beds occupied by patients</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="157.5" y="843.75" width="146.25" height="25.625" name="ICU Beds"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="160.625" y="837.335" width="140" height="32" name="ICU Beds"/>
 				<aux font_style="italic" font_weight="bold" x="411.875" y="851.25" name="occupied ICU beds"/>
 				<text_box text_align="center" font_size="10pt" uid="64" x="329.732" y="895.54" width="164.286" height="38.961">Total ICU beds occupied by patients</text_box>
 				<text_box text_align="center" font_size="10pt" uid="65" x="148.482" y="885.707" width="164.286" height="38.961">Physical ICU beds in stock and available for pandemic use</text_box>
 				<aux font_style="italic" font_weight="bold" x="216.548" y="591.754" name="max available nurses"/>
 				<aux font_style="italic" font_weight="bold" x="393.875" y="598.333" name="absent nurses"/>
 				<aux font_style="italic" font_weight="bold" x="561.786" y="598.333" name="nurses at work"/>
-				<aux font_style="italic" font_weight="bold" x="738.453" y="608.333" name="occupied nurses"/>
+				<aux font_style="italic" font_weight="bold" x="738.453" y="607.5" name="occupied nurses"/>
 				<aux font_style="italic" font_weight="bold" x="920" y="607.5" name="available nurses"/>
 				<aux font_style="italic" font_weight="bold" x="1258.33" y="610" name="total nurses needed for incoming patients"/>
 				<aux font_style="italic" font_weight="bold" x="1610" y="606.667" name="extra staff needed for overflow patients"/>
@@ -11761,7 +11853,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="77" x="134.405" y="1048.21" width="164.286" height="38.961">Total ICU nurses employed and available for care of pandemic patients, assuming none are absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="78" x="315.357" y="1048.21" width="164.286" height="38.961">ICU nurses absent due to infection (if staff absenteeism option is set)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="79" x="502.024" y="1048.21" width="164.286" height="51.461">ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</text_box>
-				<text_box text_align="center" font_size="10pt" uid="80" x="680.357" y="1048.21" width="164.286" height="51.461">Total ICU nurses occupied with caring for patients in ICU wards, calculated on the basis of number of occupied ICU beds and ICU nurse-to-patient ratio</text_box>
+				<text_box text_align="center" font_size="10pt" uid="80" x="680.357" y="1048.21" width="164.286" height="72.461">Total ICU nurses occupied with caring for patients in ICU wards, calculated on the basis of number of occupied ICU beds and ICU nurse-to-patient ratio</text_box>
 				<text_box text_align="center" font_size="10pt" uid="81" x="853.69" y="1048.21" width="164.286" height="51.461">ICU nurses not occupied with patients nor absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="82" x="1198.69" y="1047.38" width="164.286" height="51.461">Number of ICU nurses needed to meet demand (for patients waiting for ICU and in ICU overflow) at the normal ICU nurse-to-patient ratio</text_box>
 				<text_box text_align="center" font_size="10pt" uid="84" x="140.072" y="1196.14" width="164.286" height="40.3294">Mechanical ventilators in stock and available for pandemic use</text_box>
@@ -11781,11 +11873,11 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="92" x="681.071" y="1512.14" width="164.286" height="52.9994">Cumulative total of PPE sets used over the simulated time period up to this point in time</text_box>
 				<text_box text_align="center" uid="93" x="509.715" y="1506.14" width="164.286" height="56.9994">Gap in PPE (value greater than zero only when demand exceeds supply)</text_box>
 				<text_box text_align="center" uid="94" x="871.984" y="1514.64" width="219.863" height="73.9994">Whether PPE supply is interrupted (1 for yes, 0 for no). Occurs between a preset start and end time when option to simulate interrupted supply is set.</text_box>
-				<stock font_style="italic" font_weight="bold" x="232.214" y="1469.83" name="PPE"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="232.214" y="1469.83" name="PPE"/>
 				<aux font_style="italic" font_weight="bold" x="422.166" y="1469.83" name="PPE needed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="1469.83" name="PPE gap"/>
-				<stock font_style="italic" font_weight="bold" x="765.5" y="1480.14" name="total PPE used"/>
-				<aux font_style="italic" font_weight="bold" x="981.916" y="1480.14" name="interrupted PPE supply"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="713.167" y="1464.64" width="102" height="31" name="total PPE used"/>
+				<aux font_style="italic" font_weight="bold" x="984.76" y="1480.14" name="interrupted PPE supply"/>
 				<aux font_style="italic" font_weight="bold" x="1085.83" y="610" name="expected nurses freed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="1429.17" y="612.333" name="nurses gap"/>
 				<text_box text_align="center" font_size="10pt" uid="95" x="1003.69" y="658.182" width="164.286" height="63.651">Nurses freed as expected staffed beds are freed by ward discharges, deaths and transfers to ICU</text_box>
