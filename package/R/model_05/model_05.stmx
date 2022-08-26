@@ -2,7 +2,7 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1" uses_submodels=""/>
-		<name>model_05_new</name>
+		<name>model_05_WIP</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="3.0.2" isee:build_number="2725" isee:saved_by_v1="true" lang="en">Stella Architect</product>
@@ -24,7 +24,7 @@
 			<elem name="oo"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="map" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -4870,7 +4870,7 @@ expected_ICU_beds_freed_by_deaths) / per_day</eqn>
 				<units>Beds/day</units>
 			</aux>
 			<aux name="hospital discharges" access="output" isee:autocreated="true">
-				<doc>Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will discharged from there)</doc>
+				<doc>Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will be discharged from there)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -5328,7 +5328,7 @@ fraction_ward_to_ICU_3)
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand PPE" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required for ward and ICU nurses</doc>
+				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</doc>
 				<eqn>peak_demand_all_nurses * PPE_per_staff_per_day_1</eqn>
 				<units>PPE Sets</units>
 			</aux>
@@ -7356,7 +7356,7 @@ available_nurses)</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="activate surge strategy 2" access="output" isee:autocreated="true">
-				<doc>Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients) when nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</doc>
 				<eqn>IF available_nurses &lt; (nurses_at_work * 0.05)
 { Surge conditions: insufficient nurses }
 { Originally &lt;= 0 but this prevented the surge strategy kicking in for a long period while numbers were near zero }
@@ -7400,7 +7400,7 @@ available_nurses_supported_by_available_PPE / nurses_per_bed_4</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 4" access="output" isee:autocreated="true">
-				<doc>Surge strategy 4 is to increase bed capacity. It will be activated when no beds are available, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</doc>
 				<eqn>IF Beds - occupied_ward_beds &lt;  (Beds * .05)
 { Surge conditions: nearly most beds occupied }
 AND
@@ -7465,7 +7465,7 @@ ICU_nurses_supported_by_available_PPE / ICU_nurses_per_bed_2</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="activate surge strategy 1" access="output" isee:autocreated="true">
-				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients) when ICU nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</doc>
 				<eqn>IF available_ICU_nurses &lt; (ICU_Nurses_at_work * .05)
 { Surge conditions: insufficient ICU nurses }
 { Originally &lt;= 0 but this prevented the surge strategy kicking in for a long period while numbers were near zero }
@@ -8500,7 +8500,7 @@ MAX(PPE / PPE_per_staff_per_day,  0)</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<aux name="activate surge strategy 3" access="output" isee:autocreated="true">
-				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is not enough to supply staff needed to meet demand, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</doc>
 				<eqn>IF PPE &lt; (target_PPE_stock /PPE_days_supply_in_target_stock)
 AND
 strategy_3_reduce_PPE_per_shift
@@ -9459,7 +9459,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="49.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="199.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11117,6 +11117,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="occupied nurses" access="input">
+				<doc>Total general nurses occupied with caring for patients in wards, calculated on the basis of number of occupied beds and nurse-to-patient ratio</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11146,6 +11147,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="ICU Nurses at work" access="input">
+				<doc>ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11222,6 +11224,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>dmnl</units>
 			</aux>
 			<aux name="expected nurses freed" access="input">
+				<doc>Nurses freed as expected staffed beds are freed by ward discharges, deaths and transfers to ICU</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11373,7 +11376,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="360" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="1600" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11741,7 +11744,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="13" x="203.291" y="327.307" width="164.286" height="50.265">People being admitted to hospital, a proportion of (both detected and undetected) infected people</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="14" x="19.1647" y="241.712" width="203.242" height="18.5711">Hospital key indicators:</text_box>
 				<aux font_style="italic" font_weight="bold" x="466.042" y="294.167" name="hospital discharges"/>
-				<text_box text_align="center" font_size="10pt" uid="15" x="383.899" y="327.307" width="164.286" height="63.39">Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will discharged from there)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="15" x="383.899" y="327.307" width="164.286" height="63.39">Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will be discharged from there)</text_box>
 				<aux font_style="italic" font_weight="bold" x="107.292" y="294.167" name="total in hospital"/>
 				<text_box text_align="center" font_size="10pt" uid="16" x="25.1487" y="327.307" width="164.286" height="50.265">Total number of patients in hospital in all wards, waiting for wards, and in overflows</text_box>
 				<aux font_style="italic" font_weight="bold" x="650.417" y="294.167" name="ICU admissions"/>
@@ -11893,10 +11896,10 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="100" x="337.44" y="1365.78" width="176.786" height="64.5477">The number of staffed ICU beds needed to meet current demand (includes patients waiting for ICU and in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="101" x="535.714" y="1359.53" width="176.786" height="77.0477">The gap in staffed ICU beds, comparing available staffed ICU beds plus expected ICU beds freed with patients waiting for ICU plus patients in ICU overflow</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="102" x="45.497" y="2003.24" width="148.242" height="18.5711">Active surge strategies:</text_box>
-				<text_box text_align="center" uid="103" x="114.156" y="2080.47" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients) when ICU nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="104" x="684.274" y="2084.47" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is not enough to supply staff needed to meet demand, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="105" x="393.156" y="2084.47" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients) when nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="106" x="975.61" y="2087.47" width="260.286" height="51.3294">Surge strategy 4 is to increase bed capacity. It will be activated when no beds are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="103" x="114.156" y="2080.47" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="104" x="684.274" y="2084.47" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="105" x="393.156" y="2084.47" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="106" x="975.61" y="2087.47" width="260.286" height="71.3294">Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</text_box>
 				<aux font_style="italic" font_weight="bold" x="232.214" y="2039.5" name="activate surge strategy 1"/>
 				<aux font_style="italic" font_weight="bold" x="513.309" y="2039.5" name="activate surge strategy 2"/>
 				<aux font_style="italic" font_weight="bold" x="806.167" y="2046.25" name="activate surge strategy 3"/>
