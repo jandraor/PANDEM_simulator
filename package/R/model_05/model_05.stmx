@@ -2,7 +2,7 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1" uses_submodels=""/>
-		<name>model_05_WIP</name>
+		<name>model_05_live</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="3.0.2" isee:build_number="2725" isee:saved_by_v1="true" lang="en">Stella Architect</product>
@@ -9459,7 +9459,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="199.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -10839,7 +10839,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>people/day</units>
 			</aux>
 			<aux name="hospital discharges" access="input">
-				<doc>Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will discharged from there)</doc>
+				<doc>Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will be discharged from there)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11081,7 +11081,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand PPE" access="input">
-				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required for ward and ICU nurses</doc>
+				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
@@ -11259,22 +11259,22 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="activate surge strategy 1" access="input">
-				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients) when ICU nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 2" access="input">
-				<doc>Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients) when nurses are lacking. It will be activated when resources are low, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 3" access="input">
-				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is not enough to supply staff needed to meet demand, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="activate surge strategy 4" access="input">
-				<doc>Surge strategy 4 is to increase bed capacity. It will be activated when no beds are available, and if the strategy is enabled.</doc>
+				<doc>Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -11376,7 +11376,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="1600" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
