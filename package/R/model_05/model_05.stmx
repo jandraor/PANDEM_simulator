@@ -2,7 +2,7 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1" uses_submodels=""/>
-		<name>model_05_live</name>
+		<name>model_05_WIP</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="3.0.2" isee:build_number="2725" isee:saved_by_v1="true" lang="en">Stella Architect</product>
@@ -24,7 +24,7 @@
 			<elem name="oo"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="map" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -293,6 +293,8 @@
 				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
+				<connect to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
 				<connect to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
 				<connect to="PANDEM2_Outputs.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
@@ -500,6 +502,8 @@
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
+				<connect to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
 				<connect to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
 				<connect to="PANDEM2_Outputs.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
@@ -1084,6 +1088,8 @@
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
+				<connect to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.deaths_in_ICU" from="Hospital.deaths_in_ICU"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect2 to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
@@ -1508,7 +1514,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4462,7 +4468,7 @@ priority_ICU,
 				<non_negative/>
 				<units>people/day</units>
 			</flow>
-			<flow name="deaths in ICU">
+			<flow name="deaths in ICU" access="output" isee:autocreated="true">
 				<doc>Patients dying in ICU per time period</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -4472,7 +4478,7 @@ priority_ICU,
 				<non_negative/>
 				<units>Patients/day</units>
 			</flow>
-			<stock name="ICU Deaths">
+			<stock name="ICU Deaths" access="output" isee:autocreated="true">
 				<doc>Patients who died in ICU</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -5393,7 +5399,7 @@ delay_before_hospitalisation</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="105" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5438,7 +5444,7 @@ delay_before_hospitalisation</eqn>
 					</pts>
 				</flow>
 				<text_box font_size="14pt" border_width="thin" border_style="solid" uid="1" x="2.78047" y="10.433" width="116.429" height="22.192">Patient Pathways</text_box>
-				<text_box font_style="italic" uid="5" x="3.764" y="45.1727" width="276.037" height="20.4523">Flows are constrained availability of staffed beds</text_box>
+				<text_box font_style="italic" uid="5" x="133.857" y="11.3028" width="276.037" height="20.4523">Flows are constrained availability of staffed beds</text_box>
 				<stacked_container uid="11" x="1572.4" y="467.649" width="267.5" height="224.351">
 					<graph width="267.5" height="224.351" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -5761,8 +5767,8 @@ delay_before_hospitalisation</eqn>
 				</connector>
 				<text_box font_style="italic" font_size="10pt" uid="100" x="402.161" y="949.432" width="227.571" height="45.5">Assumption 4: Those in ICU overflow still require a bed, but are being treated outside ICU. So they are included in counts of ICU bed gaps.</text_box>
 				<text_box font_style="italic" font_size="10pt" uid="101" x="777.171" y="891.061" width="173.896" height="40.883">Assumption 5: Patients unable to access ICU who die, die in one day, if LOS_Denied_ICU is set to 1</text_box>
-				<text_box font_style="italic" font_size="10pt" uid="102" x="382.802" y="698.576" width="266.288" height="42.0392">Assumption 3: If Denied_ICU_fatality_rate is set to &lt;100%, some patients will survive. They are counted in ICU Overflow and then move back to Patients Waiting for ICU.</text_box>
-				<text_box font_style="italic" font_size="10pt" uid="103" x="378.596" y="713.345" width="342.809" height="53.5103">Assumption 1: If patients cannot access a ward bed, they go to Ward Overflow. They can be counted there. Patient outcomes (transfer to ICU rates, death and discharge rates) are the same as for Ward patients, because they are looked after in Emergency Dept or other alternative care.</text_box>
+				<text_box font_style="italic" font_size="10pt" uid="102" x="384.156" y="698.576" width="266.288" height="42.0392">Assumption 3: If Denied_ICU_fatality_rate is set to &lt;100%, some patients will survive. They are counted in ICU Overflow and then move back to Patients Waiting for ICU.</text_box>
+				<text_box font_style="italic" font_size="10pt" uid="103" x="247.542" y="53.345" width="342.809" height="53.5103">Assumption 1: If patients cannot access a ward bed, they go to Ward Overflow. They can be counted there. Patient outcomes (transfer to ICU rates, death and discharge rates) are the same as for Ward patients, because they are looked after in Emergency Dept or other alternative care.</text_box>
 				<text_box font_style="italic" font_size="10pt" uid="104" x="304.509" y="133.957" width="240.624" height="41.044">Assumption 2: Those In Ward Overflow still require a bed, but are being treated outside normal wards. So they are included in counts of ward bed gaps.</text_box>
 				<flow color="#AAAA7F" font_color="#AAAA7F" label_side="bottom" x="1051.28" y="154.875" name="ward overflow discharges">
 					<pts>
@@ -7254,7 +7260,7 @@ ELSE
 			</aux>
 			<stock name="ICU Nurses" access="output" isee:autocreated="true">
 				<doc>Total ICU ward nurses employed and available for care of pandemic patients, minus absent ICU nurses</doc>
-				<eqn>max_available_ICU_nurses {2000}</eqn>
+				<eqn>max_available_ICU_nurses</eqn>
 				<non_negative/>
 				<units>Staff</units>
 			</stock>
@@ -7466,7 +7472,7 @@ ICU_nurses_supported_by_available_PPE / ICU_nurses_per_bed_2</eqn>
 			</aux>
 			<aux name="activate surge strategy 1" access="output" isee:autocreated="true">
 				<doc>Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</doc>
-				<eqn>IF available_ICU_nurses &lt; (ICU_Nurses_at_work * .05)
+				<eqn>IF available_ICU_nurses &lt; (ICU_Nurses_at_work * threshold_strategy_1)
 { Surge conditions: insufficient ICU nurses }
 { Originally &lt;= 0 but this prevented the surge strategy kicking in for a long period while numbers were near zero }
 AND
@@ -7528,6 +7534,14 @@ ELSE
 				<eqn>expected_ICU_beds_freed * ICU_nurses_per_bed_1</eqn>
 				<units>Staff</units>
 			</aux>
+			<aux name="threshold strategy 1">
+				<eqn>0.05</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="strategy 1 activation threshold">
+				<eqn>threshold_strategy_1 * max_available_ICU_nurses</eqn>
+				<units>ICU Nurses</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -7575,7 +7589,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="250" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8188,7 +8202,7 @@ Nurses require PPE</text_box>
 					<from>reduced_ICU_nurses_per_bed_ratio_1</from>
 					<to>ICU_beds_supported_by_available_nurses</to>
 				</connector>
-				<aux color="#AA0000" font_style="italic" font_weight="bold" font_color="#AA0000" x="885.297" y="613.167" name="strategy 1 reduce\nICU-nurse-to-patient ratio"/>
+				<aux color="#AA0000" font_style="italic" font_weight="bold" font_color="#AA0000" x="954.464" y="630.482" name="strategy 1 reduce\nICU-nurse-to-patient ratio"/>
 				<connector uid="205" angle="139.292">
 					<from>&quot;strategy_1_reduce_ICU-nurse-to-patient_ratio&quot;</from>
 					<to>activate_surge_strategy_1</to>
@@ -8320,6 +8334,62 @@ Nurses require PPE</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
+				<stacked_container uid="236" x="892.86" y="1285.9" width="270.37" height="143.464">
+					<graph width="270.37" height="143.464" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="PPE.activate_surge_strategy_3"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="237" x="158.872" y="1286.06" width="356.388" height="143.149">
+					<graph width="356.388" height="143.149" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="2" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="activate_surge_strategy_1"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="238" x="565.36" y="1286.08" width="270.37" height="143.095">
+					<graph width="270.37" height="143.095" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="activate_surge_strategy_2"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="239" x="1229.83" y="1284.74" width="286.347" height="142.451">
+					<graph width="286.347" height="142.451" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="activate_surge_strategy_4"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="240" x="171.478" y="1442.88" width="340.343" height="202.315">
+					<graph width="340.343" height="202.315" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" pen_style="dashed" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="strategy_1_activation_threshold"/>
+						</plot>
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="available_ICU_nurses"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux color="#AA0000" font_color="#AA0000" x="838.63" y="612.482" name="threshold strategy 1"/>
+				<connector uid="249" angle="147.916">
+					<from>threshold_strategy_1</from>
+					<to>activate_surge_strategy_1</to>
+				</connector>
+				<aux x="72.5" y="1530.13" name="strategy 1 activation threshold"/>
+				<connector uid="250" angle="288.435">
+					<from>
+						<alias uid="251"/>
+					</from>
+					<to>strategy_1_activation_threshold</to>
+				</connector>
+				<connector uid="254" angle="42.5805">
+					<from>
+						<alias uid="255"/>
+					</from>
+					<to>strategy_1_activation_threshold</to>
+				</connector>
 				<alias font_style="italic" uid="90" x="1331.14" y="266.737" width="18" height="18">
 					<of>total_ICU_nurses_needed_for_incoming_patients</of>
 				</alias>
@@ -8376,6 +8446,12 @@ Nurses require PPE</text_box>
 				</alias>
 				<alias font_style="italic" label_side="top" uid="233" x="93.5" y="1068.97" width="18" height="18">
 					<of>available_ICU_nurses</of>
+				</alias>
+				<alias color="#AA0000" font_style="italic" font_color="#AA0000" uid="251" x="75.1667" y="1469.33" width="18" height="18">
+					<of>threshold_strategy_1</of>
+				</alias>
+				<alias color="#00AA00" font_style="italic" font_color="#00AA00" uid="255" x="81.5" y="1582.67" width="18" height="18">
+					<of>max_available_ICU_nurses</of>
 				</alias>
 			</view>
 		</views>
@@ -11329,6 +11405,14 @@ Simply put, the percentage of the population that acquired the disease during an
 				<doc>A relative measure of mobility with respect to the mobility level in peace time. In the absence of interventions, this index is equal to one. In the presence of mobility interventions (lockdown, social distancing) this index is less than one.</doc>
 				<units>Dimensionless</units>
 			</aux>
+			<aux name="deaths in ICU" access="input">
+				<doc>Patients dying in ICU per time period</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Patients/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11413,7 +11497,7 @@ Simply put, the percentage of the population that acquired the disease during an
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="895.455" y="20" width="904.375" height="250" minimized="true">
+				<stacked_container uid="1" x="56.9165" y="14.1667" width="904.375" height="250" minimized="true">
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
@@ -11705,6 +11789,9 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[o]"/>
 						</item>
 						<item>
+							<entity name="Hospital.deaths_in_ICU[*]"/>
+						</item>
+						<item>
 							<entity name="Hospital.Total_ICU_admissions[y]"/>
 						</item>
 						<item>
@@ -11917,6 +12004,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="559.274" y="137" name="Contact tracing capacity"/>
 				<aux font_style="italic" font_weight="bold" x="679.357" y="145" name="Testing capacity"/>
 				<aux font_style="italic" font_weight="bold" x="805.5" y="145" name="Mobility index"/>
+				<aux font_style="italic" font_weight="bold" x="1210" y="1325" name="deaths in ICU"/>
+				<text_box text_align="center" font_size="10pt" uid="111" x="1121.61" y="1357.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
 			</view>
 		</views>
 	</model>
