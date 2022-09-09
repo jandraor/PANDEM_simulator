@@ -166,4 +166,29 @@ function(req, res) {
   sim_results
 }
 
+#* @get /contacts
+#* @serializer unboxedJSON
+function(req, res) {
+
+  user_args      <- req$args
+  country_code   <- user_args$country_code
+  pop_young      <- as.numeric(user_args$pop_young)
+  pop_adult      <- as.numeric(user_args$pop_adult)
+  contact_matrix <- get_contact_matrix(country_code, pop_young, pop_adult)
+
+  if(class(contact_matrix) == "character") {
+
+    error_msg  <- contact_matrix
+    res$status <- 400
+
+    res$body <- jsonlite::toJSON(auto_unbox = TRUE, list(
+      status  = 400,
+      message = error_msg
+    ))
+
+    return(res)
+  }
+
+  contact_matrix
+}
 
