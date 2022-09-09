@@ -173,8 +173,8 @@ function(req, res) {
   user_args      <- req$args
   country_code   <- user_args$country_code
   pop_young      <- as.numeric(user_args$pop_young)
-  pop_adult      <- as.numeric(user_args$pop_adult)
-  contact_matrix <- get_contact_matrix(country_code, pop_young, pop_adult)
+  pop_old        <- as.numeric(user_args$pop_old)
+  contact_matrix <- get_contact_matrix(country_code, pop_young, pop_old)
 
   if(class(contact_matrix) == "character") {
 
