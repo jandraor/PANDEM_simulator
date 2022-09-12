@@ -12042,6 +12042,12 @@ Simply put, the percentage of the population that acquired the disease during an
 						<item>
 							<entity name="Mobility.Mobility_index"/>
 						</item>
+						<item>
+							<entity name="Testing.Confirmed_cases[y]"/>
+						</item>
+						<item>
+							<entity name="Testing.Confirmed_cases[o]"/>
+						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
