@@ -2,10 +2,10 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1" uses_submodels=""/>
-		<name>model_05_WIP</name>
+		<name>model_05</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.0.2" isee:build_number="2725" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.00555556" isee:restore_on_start="false" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -24,7 +24,7 @@
 			<elem name="oo"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="map" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -115,8 +115,12 @@
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
+				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
 				<connect to="Tracing.switch_contact_tracing" from="Inputs_Epi.switch_contact_tracing"/>
 				<connect2 to="Tracing.switch_contact_tracing" from="Inputs_Epi.switch_contact_tracing"/>
+				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
+				<connect2 to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
 				<connect to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
 				<connect2 to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
 				<connect to="Vaccines.switch_vaccines" from="Inputs_Epi.switch_vaccines"/>
@@ -277,6 +281,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
+				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
+				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
@@ -289,6 +295,8 @@
 				<connect2 to="PANDEM2_Outputs.available_nurses" from="Hospital_Resources.available_nurses"/>
 				<connect to="PANDEM2_Outputs.Beds" from="Hospital_Resources.Beds"/>
 				<connect2 to="PANDEM2_Outputs.Beds" from="Hospital_Resources.Beds"/>
+				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
+				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Contact_tracing_capacity" from="Tracing.Contact_tracing_capacity"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
@@ -327,8 +335,6 @@
 				<connect2 to="PANDEM2_Outputs.In_ICU_Overflow" from="Hospital.In_ICU_Overflow"/>
 				<connect to="PANDEM2_Outputs.In_Ward_Overflow" from="Hospital.In_Ward_Overflow"/>
 				<connect2 to="PANDEM2_Outputs.In_Ward_Overflow" from="Hospital.In_Ward_Overflow"/>
-				<connect to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
-				<connect2 to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
@@ -448,6 +454,8 @@
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
+				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
+				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
@@ -488,12 +496,16 @@
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
+				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
-				<connect to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
-				<connect2 to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
+				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
+				<connect2 to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
 				<connect to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.test_isolate_compliance"/>
@@ -844,7 +856,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1026,6 +1038,8 @@
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
+				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
+				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="Testing.initial_testing_capacity" from="Inputs_Epi.initial_testing_capacity"/>
@@ -1066,18 +1080,22 @@
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
+				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
 				<connect to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
-				<connect to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
-				<connect2 to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
 				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
 				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
 				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
 				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
+				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
+				<connect2 to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
 				<connect to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.test_isolate_compliance"/>
@@ -1514,7 +1532,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1551,9 +1569,9 @@
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<module label_side="center" x="57.626" y="47.5" width="79.375" height="45" name="EPI"/>
+				<module label_side="center" x="54.501" y="44.375" width="79.375" height="45" name="EPI"/>
 				<module label_side="center" x="236.875" y="70" name="Hospital"/>
-				<connector uid="1" isee:thickness="2" angle="0" isee:autocreated="true">
+				<connector uid="1" isee:thickness="2" angle="358.745" isee:autocreated="true">
 					<from>EPI</from>
 					<to>Hospital</to>
 				</connector>
@@ -1596,6 +1614,8 @@
 				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 			<module name="Testing" isee:label="">
+				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
+				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to='"Within-host_profile".detection_rate' from="Testing.theta"/>
@@ -1662,6 +1682,8 @@
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 			</module>
 			<module name="Within-host\nprofile" isee:label="">
+				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
+				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
@@ -1670,8 +1692,6 @@
 				<connect2 to="Testing.Converter_1" from='"Within-host_profile".E'/>
 				<connect to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
-				<connect to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
-				<connect2 to="PANDEM2_Outputs.Incidence_by_age" from='"Within-host_profile".Incidence_by_age'/>
 				<connect to="Tracing.Converter_1" from='"Within-host_profile".N'/>
 				<connect2 to="Tracing.Converter_1" from='"Within-host_profile".N'/>
 				<connect to="Testing.Converter_3" from='"Within-host_profile".par_omega'/>
@@ -1694,6 +1714,10 @@
 				<connect2 to='"Within-host_profile".Converter_3' from="Tracing.par_rho"/>
 				<connect to='"Within-host_profile".Converter_4' from="Tracing.effective_contacts"/>
 				<connect2 to='"Within-host_profile".Converter_4' from="Tracing.effective_contacts"/>
+				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
+				<connect2 to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
 				<connect to='"Within-host_profile".detection_rate' from="Testing.theta"/>
 				<connect2 to='"Within-host_profile".detection_rate' from="Testing.theta"/>
 				<connect to='"Within-host_profile".kappa' from="Mobility.k"/>
@@ -1752,7 +1776,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1826,6 +1850,16 @@
 					<from>&quot;Within-host_profile&quot;</from>
 					<to>Vaccines</to>
 				</connector>
+				<stacked_container uid="9" x="568" y="386" width="516" height="398">
+					<graph width="516" height="398" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Testing.immediate_testing[*]"/>
+						</plot>
+						<plot color="fuchsia" pen_style="dotted" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Actual_cases[*]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
 		</views>
 	</model>
@@ -2144,7 +2178,7 @@ ELSE 0</eqn>
 				<eqn>Converter_3 * Converter_2 * Converter_1</eqn>
 				<units>people/day</units>
 			</aux>
-			<aux name="actual testing">
+			<aux name="immediate testing">
 				<doc>Number of tested people given supply &amp; demand.</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -2177,7 +2211,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>IF Td = 0 THEN 0  ELSE actual_testing/Td</eqn>
+				<eqn>IF Td = 0 THEN 0  ELSE immediate_testing/Td</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="tau T">
@@ -2216,6 +2250,54 @@ ELSE 0</eqn>
 				<doc>The maximum number of tests that can be run in a day by the public health system.</doc>
 				<eqn>Ts</eqn>
 				<units>People/day</units>
+			</aux>
+			<stock name="Testing backlog">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>increase_backlog</inflow>
+				<outflow>decrease_backlog</outflow>
+				<units>People</units>
+			</stock>
+			<flow name="increase\nbacklog">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>gap</eqn>
+				<units>people/day</units>
+			</flow>
+			<flow name="decrease backlog">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>test_backlog</eqn>
+				<units>people/day</units>
+			</flow>
+			<aux name="gap">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Td - immediate_testing</eqn>
+				<units>people/day</units>
+			</aux>
+			<aux name="excess supply">
+				<eqn>MAX(Ts - SUM(immediate_testing),  0)</eqn>
+				<units>people/day</units>
+			</aux>
+			<aux name="test backlog">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>ALLOCATE(excess_supply, Age, Testing_backlog, priority,0)</eqn>
+				<units>people/day</units>
+			</aux>
+			<aux name="Confirmed cases" access="output">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>immediate_testing + decrease_backlog</eqn>
+				<units>people/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -2264,7 +2346,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="16" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2301,8 +2383,17 @@ ELSE 0</eqn>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="982.833" y="237.667" width="350" height="250">
-					<graph width="350" height="250" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				<stacked_container uid="1" x="982.833" y="237.667" width="350" height="250" visible_index="1">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="gap[*]"/>
+						</plot>
+					</graph>
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Testing_backlog[*]"/>
+						</plot>
+					</graph>
 				</stacked_container>
 				<flow label_side="top" x="318.834" y="175.167" name="Adjust T">
 					<pts>
@@ -2326,15 +2417,15 @@ ELSE 0</eqn>
 					<to>Adjust_T</to>
 				</connector>
 				<aux label_side="center" x="475.833" y="441" name="Td"/>
-				<aux x="408.666" y="441" name="actual testing"/>
+				<aux x="408.666" y="441" name="immediate testing"/>
 				<connector uid="5" angle="180">
 					<from>Td</from>
-					<to>actual_testing</to>
+					<to>immediate_testing</to>
 				</connector>
 				<aux label_side="top" x="335.666" y="441" name="priority"/>
 				<connector uid="6" angle="0">
 					<from>priority</from>
-					<to>actual_testing</to>
+					<to>immediate_testing</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="475.833" y="508" name="Converter 1"/>
 				<aux font_style="italic" font_weight="bold" label_side="right" x="561" y="441" name="Converter 2"/>
@@ -2357,7 +2448,7 @@ ELSE 0</eqn>
 					<to>theta</to>
 				</connector>
 				<connector uid="11" angle="263.256">
-					<from>actual_testing</from>
+					<from>immediate_testing</from>
 					<to>theta</to>
 				</connector>
 				<aux x="317.666" y="326" name="tau T"/>
@@ -2372,7 +2463,7 @@ ELSE 0</eqn>
 				</connector>
 				<connector uid="17" angle="270">
 					<from>Ts</from>
-					<to>actual_testing</to>
+					<to>immediate_testing</to>
 				</connector>
 				<connector uid="18" angle="270.633">
 					<from>T</from>
@@ -2406,8 +2497,96 @@ ELSE 0</eqn>
 					</from>
 					<to>Testing_capacity</to>
 				</connector>
+				<stock x="621.5" y="181.667" width="45" height="35" name="Testing backlog"/>
+				<flow label_side="top" x="565.25" y="201" name="increase\nbacklog">
+					<pts>
+						<pt x="497" y="201"/>
+						<pt x="621.5" y="201"/>
+					</pts>
+				</flow>
+				<flow label_side="top" x="721.25" y="199" name="decrease backlog">
+					<pts>
+						<pt x="666.5" y="199"/>
+						<pt x="788" y="199"/>
+					</pts>
+				</flow>
+				<aux label_side="top" x="484.833" y="344" name="gap"/>
+				<connector uid="28" angle="81.8322">
+					<from>Td</from>
+					<to>gap</to>
+				</connector>
+				<connector uid="29" angle="68.9215">
+					<from>immediate_testing</from>
+					<to>gap</to>
+				</connector>
+				<connector uid="30" angle="55.8706">
+					<from>gap</from>
+					<to>increase_backlog</to>
+				</connector>
+				<aux x="579" y="317" name="excess supply"/>
+				<connector uid="31" angle="3.02455">
+					<from>Ts</from>
+					<to>excess_supply</to>
+				</connector>
+				<connector uid="32" angle="36.0539">
+					<from>immediate_testing</from>
+					<to>excess_supply</to>
+				</connector>
+				<aux x="721.25" y="261" name="test backlog"/>
+				<connector uid="33" angle="90">
+					<from>test_backlog</from>
+					<to>decrease_backlog</to>
+				</connector>
+				<connector uid="34" angle="14.0362">
+					<from>excess_supply</from>
+					<to>test_backlog</to>
+				</connector>
+				<connector uid="35" angle="313.777">
+					<from>Testing_backlog</from>
+					<to>test_backlog</to>
+				</connector>
+				<connector uid="36" angle="186.71">
+					<from>
+						<alias uid="37"/>
+					</from>
+					<to>test_backlog</to>
+				</connector>
+				<stacked_container uid="38" x="1042" y="923" visible_index="1">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="T"/>
+						</plot>
+					</graph>
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Confirmed_cases[*]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="735" y="657" name="Confirmed cases"/>
+				<connector uid="40" angle="353.66">
+					<from>
+						<alias uid="39"/>
+					</from>
+					<to>Confirmed_cases</to>
+				</connector>
+				<connector uid="41" angle="177.614">
+					<from>
+						<alias uid="42"/>
+					</from>
+					<to>Confirmed_cases</to>
+				</connector>
 				<alias font_style="italic" uid="26" x="80" y="655" width="18" height="18">
 					<of>Ts</of>
+				</alias>
+				<alias font_style="italic" uid="37" x="797" y="252" width="18" height="18">
+					<of>priority</of>
+				</alias>
+				<alias font_style="italic" uid="39" x="628" y="648" width="18" height="18">
+					<of>immediate_testing</of>
+				</alias>
+				<alias font_style="italic" uid="42" x="822" y="648" width="18" height="18">
+					<of>decrease_backlog</of>
 				</alias>
 			</view>
 		</views>
@@ -3395,7 +3574,7 @@ ELSE 0</eqn>
 			</aux>
 			<aux name="upsilon" access="output">
 				<doc>Probability of Infection</doc>
-				<eqn>0.1</eqn>
+				<eqn>0.1 * (1 - Converter_5 * Converter_6)</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="par omega" access="output">
@@ -3587,13 +3766,19 @@ Simply put, the percentage of the population that acquired the disease during an
 				<eqn>0.5</eqn>
 				<units>Dimensionless</units>
 			</aux>
-			<aux name="Incidence by age" access="output">
+			<aux name="Actual cases" access="output">
 				<doc>New infections per day by age group.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>C_in</eqn>
 				<units>People/day</units>
+			</aux>
+			<aux name="Converter 5" access="input">
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Converter 6" access="input">
+				<units>Dimensionless</units>
 			</aux>
 		</variables>
 		<views>
@@ -3642,7 +3827,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="200" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="1.66667" isee:scroll_y="546.667" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -3843,8 +4028,8 @@ Simply put, the percentage of the population that acquired the disease during an
 					<from>kappa</from>
 					<to>beta_contacts</to>
 				</connector>
-				<aux x="190.833" y="952.667" name="upsilon"/>
-				<connector uid="16" angle="357.477">
+				<aux x="180" y="955.667" name="upsilon"/>
+				<connector uid="16" angle="0">
 					<from>upsilon</from>
 					<to>beta_contacts</to>
 				</connector>
@@ -4216,12 +4401,22 @@ Simply put, the percentage of the population that acquired the disease during an
 					<from>test_isolate_compliance</from>
 					<to>par_mu_T</to>
 				</connector>
-				<aux x="398.333" y="1168.33" name="Incidence by age"/>
+				<aux x="398.333" y="1168.33" name="Actual cases"/>
 				<connector uid="96" angle="0">
 					<from>
 						<alias uid="97"/>
 					</from>
-					<to>Incidence_by_age</to>
+					<to>Actual_cases</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="106" y="886" name="Converter 5"/>
+				<connector uid="98" angle="313.868">
+					<from>Converter_5</from>
+					<to>upsilon</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="88" y="955.667" name="Converter 6"/>
+				<connector uid="99" angle="0">
+					<from>Converter_6</from>
+					<to>upsilon</to>
 				</connector>
 				<alias font_style="italic" label_side="bottom" uid="6" x="832.187" y="203" width="51.25" height="14">
 					<shape type="name_only"/>
@@ -9311,8 +9506,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.lockdown_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.lockdown_start_time"/>
+				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
+				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
 				<connect to="Tracing.switch_contact_tracing" from="Inputs_Epi.switch_contact_tracing"/>
 				<connect2 to="Tracing.switch_contact_tracing" from="Inputs_Epi.switch_contact_tracing"/>
+				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
+				<connect2 to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
 				<connect to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
 				<connect2 to="Testing.switch_test_isolate" from="Inputs_Epi.switch_test_isolate"/>
 				<connect to="Vaccines.switch_vaccines" from="Inputs_Epi.switch_vaccines"/>
@@ -9535,7 +9734,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9930,7 +10129,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="580.625" isee:scroll_y="208.75" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="565" isee:scroll_y="208.75" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -10061,12 +10260,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="testing long-term capacity" access="output">
 				<doc>Long-term testing capacity.</doc>
-				<eqn>239119</eqn>
+				<eqn>500000</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="initial testing capacity" access="output">
 				<doc>Initial testing capacity.</doc>
-				<eqn>53454</eqn>
+				<eqn>50000</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="testing capacity growth rate" access="output">
@@ -10083,6 +10282,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<doc>Time at which mobility restrictions start.</doc>
 				<eqn>0</eqn>
 				<units>Days</units>
+			</aux>
+			<aux name="switch mask wearing" access="output">
+				<doc>Mask-wearing switch.</doc>
+				<eqn>0</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="mask wearing effect" access="output">
+				<doc>This policy parameter represents the efficacy of introducing a mask-wearing policy in the population. In this context, efficacy refers to the reduction in the probability of infection after contact between two individuals. This parameter takes values between 0 and 1 (or 0% and 100%).</doc>
+				<eqn>0</eqn>
+				<units>Dimensionless</units>
 			</aux>
 		</variables>
 		<views>
@@ -10168,26 +10377,28 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux x="127.5" y="123.75" name="switch test isolate"/>
-				<aux x="259.375" y="123.125" name="switch vaccines"/>
-				<aux label_side="bottom" x="257.5" y="399.375" name="vaccine availability"/>
-				<aux x="371.875" y="123.125" name="switch contact tracing"/>
-				<aux x="476.875" y="465" name="lockdown severity"/>
-				<aux x="370" y="399.375" name="contact tracing availability"/>
-				<aux x="368.75" y="465" name="contact tracing effectiveness"/>
-				<aux x="256.25" y="465" name="vaccine efficacy"/>
-				<aux x="259.375" y="181.875" name="initial vaccination capacity"/>
-				<aux x="371.875" y="178.125" name="initial contact tracing capacity"/>
-				<aux x="259.375" y="252.5" name="vaccination capacity growth rate"/>
-				<aux x="257.5" y="330.625" name="vaccination long-term capacity"/>
-				<aux x="370" y="255.625" name="contact tracing capacity growth rate"/>
-				<aux x="371.875" y="326.875" name="contact tracing long-term capacity"/>
-				<aux x="127.5" y="465.625" name="test isolate compliance"/>
-				<aux label_side="bottom" x="127.5" y="331.25" name="testing long-term capacity"/>
-				<aux x="127.5" y="182.5" name="initial testing capacity"/>
-				<aux x="127.5" y="256.25" name="testing capacity growth rate"/>
-				<aux x="130.625" y="400" name="testing availability"/>
-				<aux x="476.875" y="399.375" name="lockdown start time"/>
+				<aux x="196.875" y="130.625" name="switch test isolate"/>
+				<aux x="328.75" y="130" name="switch vaccines"/>
+				<aux label_side="bottom" x="326.875" y="406.25" name="vaccine availability"/>
+				<aux x="441.25" y="130" name="switch contact tracing"/>
+				<aux x="546.25" y="471.875" name="lockdown severity"/>
+				<aux x="439.375" y="406.25" name="contact tracing availability"/>
+				<aux x="438.125" y="471.875" name="contact tracing effectiveness"/>
+				<aux x="325.625" y="471.875" name="vaccine efficacy"/>
+				<aux x="328.75" y="188.75" name="initial vaccination capacity"/>
+				<aux x="441.25" y="185" name="initial contact tracing capacity"/>
+				<aux x="328.75" y="259.375" name="vaccination capacity growth rate"/>
+				<aux x="326.875" y="337.5" name="vaccination long-term capacity"/>
+				<aux x="439.375" y="262.5" name="contact tracing capacity growth rate"/>
+				<aux x="441.25" y="333.75" name="contact tracing long-term capacity"/>
+				<aux x="196.875" y="472.5" name="test isolate compliance"/>
+				<aux label_side="bottom" x="196.875" y="338.125" name="testing long-term capacity"/>
+				<aux x="196.875" y="189.375" name="initial testing capacity"/>
+				<aux x="196.875" y="263.125" name="testing capacity growth rate"/>
+				<aux x="200" y="406.875" name="testing availability"/>
+				<aux x="546.25" y="406.25" name="lockdown start time"/>
+				<aux x="78.125" y="130" name="switch mask wearing"/>
+				<aux x="78.125" y="189.375" name="mask wearing effect"/>
 			</view>
 		</views>
 	</model>
@@ -11369,8 +11580,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
-			<aux name="Incidence by age" access="input">
-				<doc>New infections per day by age group.</doc>
+			<aux name="Actual cases" access="input">
+				<doc>New infections per day by age group. This indicator is the number of new cases that actually occur in the population &amp; differs from confirmed cases.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11412,6 +11623,13 @@ Simply put, the percentage of the population that acquired the disease during an
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients/day</units>
+			</aux>
+			<aux name="Confirmed cases" access="input">
+				<doc>Cases detected by the surveillance system via testing.</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<units>people/day</units>
 			</aux>
 		</variables>
 		<views>
@@ -11460,7 +11678,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11693,10 +11911,10 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name='"Within-host_profile".Attack_rate_by_age[o]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Incidence_by_age[y]'/>
+							<entity name='"Within-host_profile".Actual_cases[y]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Incidence_by_age[o]'/>
+							<entity name='"Within-host_profile".Actual_cases[o]'/>
 						</item>
 						<item>
 							<entity name="Hospital.total_in_hospital[y]"/>
@@ -11997,7 +12215,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="107" x="132.905" y="775.707" width="164.286" height="38.961">The number of physical ward beds supported by available nurses</text_box>
 				<text_box text_align="center" font_size="10pt" uid="108" x="322.905" y="775.707" width="164.286" height="58.626">The number of staffed ward beds needed to meet current demand (includes patients waiting for ward and in ward overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="109" x="509.715" y="765.875" width="164.286" height="71.46">The gap in staffed ward beds, comparing available staffed beds plus expected beds freed with patients waiting for a bed plus patients in ward overflow</text_box>
-				<aux font_style="italic" font_weight="bold" x="69.9165" y="130" name="Incidence by age"/>
+				<aux font_style="italic" font_weight="bold" x="69.9165" y="137" name="Actual cases"/>
 				<aux font_style="italic" font_weight="bold" x="177" y="133" name="Attack rate"/>
 				<aux font_style="italic" font_weight="bold" x="294.75" y="133" name="Attack rate by age"/>
 				<aux font_style="italic" font_weight="bold" x="429.875" y="137" name="Vaccination capacity"/>
@@ -12006,6 +12224,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="805.5" y="145" name="Mobility index"/>
 				<aux font_style="italic" font_weight="bold" x="1210" y="1325" name="deaths in ICU"/>
 				<text_box text_align="center" font_size="10pt" uid="111" x="1121.61" y="1357.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
+				<aux font_style="italic" font_weight="bold" x="69.9165" y="195" name="Confirmed cases"/>
 			</view>
 		</views>
 	</model>
