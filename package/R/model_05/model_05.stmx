@@ -5,7 +5,7 @@
 		<name>model_05</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.1" isee:build_number="2776" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.00555556" isee:restore_on_start="false" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -241,6 +241,8 @@
 				<connect2 to="Hospital_Resources.proportion_of_ICU_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ICU_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
+				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
+				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect2 to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
@@ -335,6 +337,10 @@
 				<connect2 to="PANDEM2_Outputs.In_ICU_Overflow" from="Hospital.In_ICU_Overflow"/>
 				<connect to="PANDEM2_Outputs.In_Ward_Overflow" from="Hospital.In_Ward_Overflow"/>
 				<connect2 to="PANDEM2_Outputs.In_Ward_Overflow" from="Hospital.In_Ward_Overflow"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
@@ -411,6 +417,8 @@
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_gap" from="Hospital_Resources.staffed_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
+				<connect to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
+				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
@@ -421,6 +429,14 @@
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
@@ -678,6 +694,14 @@
 				<connect2 to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
 				<connect2 to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.max_available_nurses" from="Hospital_Resources.max_available_nurses"/>
@@ -706,8 +730,14 @@
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_gap" from="Hospital_Resources.staffed_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
+				<connect to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
+				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
@@ -738,6 +768,8 @@
 				<connect2 to="Hospital_Resources.proportion_of_ICU_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ICU_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
+				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
+				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
 				<connect2 to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
 				<connect to="Hospital_Resources.reduced_nurses_per_bed_ratio" from="Inputs_Hospital_resource_params.reduced_nurses_per_bed_ratio"/>
@@ -856,12 +888,14 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -987,7 +1021,9 @@
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1140,6 +1176,10 @@
 				<connect2 to="PANDEM2_Outputs.moving_to_ICU_overflow" from="Hospital.moving_to_ICU_overflow"/>
 				<connect to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
 				<connect2 to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
+				<connect to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
+				<connect2 to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
+				<connect to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
+				<connect2 to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
 				<connect to="Hospital_Resources.Patients_In_ICU_Bed_1" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect2 to="Hospital_Resources.Patients_In_ICU_Bed_1" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect to="Hospital_Resources.Patients_In_Ward_Bed" from="Hospital.Patients_In_Ward_Bed"/>
@@ -1318,6 +1358,14 @@
 				<connect2 to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
 				<connect2 to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
+				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.max_available_nurses" from="Hospital_Resources.max_available_nurses"/>
@@ -1350,8 +1398,14 @@
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_gap" from="Hospital_Resources.staffed_ward_beds_gap"/>
 				<connect to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
+				<connect to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
+				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
@@ -1376,6 +1430,10 @@
 				<connect2 to="Hospital_Resources.In_Ward_Overflow_1" from="Hospital.In_Ward_Overflow"/>
 				<connect to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
 				<connect2 to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+				<connect to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
+				<connect2 to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
+				<connect to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
+				<connect2 to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
 				<connect to="Hospital_Resources.nurses_per_bed" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect2 to="Hospital_Resources.nurses_per_bed" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect to="Hospital_Resources.nurses_per_bed_3" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
@@ -1410,6 +1468,8 @@
 				<connect2 to="Hospital_Resources.proportion_of_ICU_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ICU_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
+				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
+				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
 				<connect2 to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
 				<connect to="Hospital_Resources.reduced_nurses_per_bed_ratio" from="Inputs_Hospital_resource_params.reduced_nurses_per_bed_ratio"/>
@@ -1532,12 +1592,14 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1776,12 +1838,14 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1999,7 +2063,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -2351,7 +2417,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -2497,7 +2565,7 @@ ELSE 0</eqn>
 					</from>
 					<to>Testing_capacity</to>
 				</connector>
-				<stock x="621.5" y="181.667" width="45" height="35" name="Testing backlog"/>
+				<stock x="644" y="199.167" name="Testing backlog"/>
 				<flow label_side="top" x="565.25" y="201" name="increase\nbacklog">
 					<pts>
 						<pt x="497" y="201"/>
@@ -2806,7 +2874,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -3151,7 +3221,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -3832,7 +3904,9 @@ Simply put, the percentage of the population that acquired the disease during an
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5294,7 +5368,7 @@ overflow_to_ICU_transfers</eqn>
 				<eqn>total_deaths+Patients_Discharged</eqn>
 				<units>People</units>
 			</aux>
-			<stock name="No limit ICU">
+			<stock name="No limit ICU" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -5403,7 +5477,7 @@ overflow_to_ICU_transfers</eqn>
 				<eqn>0.5</eqn>
 				<units>Staff/ICU Bed</units>
 			</aux>
-			<stock name="No limit ward">
+			<stock name="No limit ward" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -5594,12 +5668,14 @@ delay_before_hospitalisation</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="105" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="420" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7143,22 +7219,22 @@ ICU_beds_supported_by_available_nurses)</eqn>
 			</aux>
 			<aux name="max available nurses" access="output" isee:autocreated="true">
 				<doc>Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</doc>
-				<eqn>ward_nurses_per_1K_1 * SUM(Population_size) / 1000 * proportion_of_nurses_available_for_pandemic</eqn>
+				<eqn>total_nurses *  proportion_of_nurses_available_for_pandemic</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="max available ICU nurses" access="output" isee:autocreated="true">
 				<doc>Total ICU nurses employed and available for care of pandemic patients, assuming none are absent</doc>
-				<eqn>ICU_nurses_per_100K_1 * SUM(Population_size) / 100000 * proportion_of_ICU_nurses_available_for_pandemic</eqn>
+				<eqn>total_ICU_nurses * proportion_of_ICU_nurses_available_for_pandemic</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="max available beds" access="output" isee:autocreated="true">
-				<doc>Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</doc>
-				<eqn>ward_beds_per_1K_1 * SUM(Population_size) / 1000 * proportion_of_beds_available_for_pandemic_1</eqn>
+				<doc>Total general ward beds available for pandemic patients</doc>
+				<eqn>total_beds * proportion_of_beds_available_for_pandemic_1</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="max available ICU beds" access="output" isee:autocreated="true">
-				<doc>Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</doc>
-				<eqn>ICU_beds_per_100K_1 * SUM(Population_size) / 100000 * proportion_of_ICU_beds_available_for_pandemic_1</eqn>
+				<doc>Total ICU beds available for pandemic patients</doc>
+				<eqn>total_ICU_beds * proportion_of_ICU_beds_available_for_pandemic_1</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<stock name="Beds" access="output" isee:autocreated="true">
@@ -7219,6 +7295,8 @@ ICU_beds_supported_by_available_nurses)</eqn>
 				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
 				<connect to="Hospital_Resources.max_ICU_beds_supported_by_available_ventilators" from="Ventilators.max_ICU_beds_supported_by_available_ventilators"/>
 				<connect2 to="max_ICU_beds_supported_by_available_ventilators" from="Ventilators.max_ICU_beds_supported_by_available_ventilators"/>
+				<connect to="Hospital_Resources.total_ICU_beds_supported_by_all_ventilators" from="Ventilators.total_ICU_beds_supported_by_all_ventilators"/>
+				<connect2 to="total_ICU_beds_supported_by_all_ventilators" from="Ventilators.total_ICU_beds_supported_by_all_ventilators"/>
 				<connect to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
 				<connect2 to="PANDEM2_Outputs.ventilators_available" from="Ventilators.ventilators_available"/>
 				<connect to="PANDEM2_Outputs.ventilators_in_stock" from="Ventilators.ventilators_in_stock"/>
@@ -7479,12 +7557,12 @@ ICU_Nurses_at_work
 				<units>dmnl</units>
 			</aux>
 			<aux name="ICU Nurses at work" access="output" isee:autocreated="true">
-				<doc>ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
+				<doc>ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</doc>
 				<eqn>ICU_Nurses - absent_ICU_nurses</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent ICU nurses" access="output" isee:autocreated="true">
-				<doc>ICU nurses absent due to infection (if staff absenteeism option is set)</doc>
+				<doc>ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>ICU_Nurses * i[o] * PPE_protection_factor * risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
 				<units>Staff</units>
 			</aux>
@@ -7528,13 +7606,16 @@ nurses_at_work
 				<units>Staff</units>
 			</aux>
 			<aux name="nurses at work" access="output" isee:autocreated="true">
-				<doc>Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
+				<doc>Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</doc>
 				<eqn>Nurses - absent_nurses</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent nurses" access="output" isee:autocreated="true">
-				<doc>Nurses absent due to infection (if staff absenteeism option is set)</doc>
-				<eqn>Nurses * i[o] * PPE_protection_factor * risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
+				<doc>Nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
+				<eqn>Nurses * 
+i[o] * 
+PPE_protection_factor * 
+risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="nurses per bed 4" access="input">
@@ -7737,6 +7818,109 @@ ELSE
 				<eqn>threshold_strategy_1 * max_available_ICU_nurses</eqn>
 				<units>ICU Nurses</units>
 			</aux>
+			<aux name="total beds" access="output" isee:autocreated="true">
+				<doc>Total general ward beds available for all hospital patients</doc>
+				<eqn>ward_beds_per_1K_1 * SUM(Population_size) / 1000</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total ICU beds" access="output" isee:autocreated="true">
+				<doc>Total ICU beds available for care of all hospital patients</doc>
+				<eqn>ICU_beds_per_100K_1 * SUM(Population_size) / 100000</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="total nurses" access="output" isee:autocreated="true">
+				<doc>Total general ward nurses employed and available for care of all hospital patients, assuming none are absent</doc>
+				<eqn>ward_nurses_per_1K_1 * SUM(Population_size) / 1000</eqn>
+				<units>Staff</units>
+			</aux>
+			<aux name="total ICU nurses" access="output" isee:autocreated="true">
+				<doc>Total ICU nurses employed and available for care of all hospital patients, assuming none are absent</doc>
+				<eqn>ICU_nurses_per_100K_1 * SUM(Population_size) / 100000</eqn>
+				<units>Staff</units>
+			</aux>
+			<aux name="total initial ward bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(total_beds, 
+total_nurses / nurses_per_bed_4)</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total initial ICU bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(
+MIN(
+total_ICU_beds,  total_ICU_beds_supported_by_all_ventilators), 
+total_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="total ICU beds supported by\nall ventilators" access="input">
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="initial pandemic ward bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(max_available_beds, 
+max_available_nurses / nurses_per_bed_4)</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="initial pandemic ICU bed\ncapacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(
+MIN(
+max_available_ICU_beds,  total_ICU_beds_supported_by_all_ventilators * proportion_of_ventilators_available_for_pandemic), 
+max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="proportion of ventilators available for pandemic" access="input">
+				<eqn>0.5</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="increased demand for ward beds" access="output" isee:autocreated="true">
+				<doc>The fractional increase in demand for ward beds compared to the normal total capacity in the hospital</doc>
+				<eqn>(SUM(No_limit_ward) /
+total_initial_ward_bed_capacity) /
+patients_per_ward_bed</eqn>
+				<units>dmnl</units>
+			</aux>
+			<stock name="No limit ward" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>Patients</units>
+			</stock>
+			<stock name="No limit ICU" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>Patients</units>
+			</stock>
+			<aux name="increased demand for ICU" access="output" isee:autocreated="true">
+				<doc>The fractional increase in demand for ICU beds compared to the normal total capacity in the hospital</doc>
+				<eqn>(SUM(No_limit_ICU) /
+total_initial_ICU_bed_capacity) /
+patients_per_ICU_bed_1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="combined stress level">
+				<eqn>increased_demand_for_ward_beds * 10 + increased_demand_for_ICU</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="stress code" access="output" isee:autocreated="true">
+				<doc>Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</doc>
+				<eqn>IF combined_stress_level &lt; 0.6
+THEN 0
+ELSE
+IF combined_stress_level &lt; 2
+THEN 1
+ELSE
+IF combined_stress_level &lt; 4
+THEN 2
+ELSE 3</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -7784,12 +7968,14 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="304.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7821,36 +8007,20 @@ ELSE
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" x="412.625" y="421.911" name="staffed ward beds available"/>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="501.81" y="764.515" width="18" height="18" name="staffed equipped ICU beds available"/>
-				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1158.14" y="1134.57" name="max available nurses"/>
-				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1237.64" y="1134.57" name="max available ICU nurses"/>
-				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1158.14" y="955.706" name="max available beds"/>
-				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1237.64" y="955.706" name="max available ICU beds"/>
-				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="133.667" y="396.375" width="44.2857" height="24.2857" name="Beds"/>
-				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="300.208" y="731" width="63.5714" height="21.4286" name="ICU Beds"/>
-				<aux font_style="italic" font_weight="bold" x="1198.48" y="1032.98" name="Population size"/>
-				<connector uid="32" angle="106.314">
-					<from>Population_size</from>
-					<to>max_available_beds</to>
-				</connector>
-				<connector uid="33" angle="84.9869">
-					<from>Population_size</from>
-					<to>max_available_ICU_beds</to>
-				</connector>
-				<connector uid="34" angle="267.797">
-					<from>Population_size</from>
-					<to>max_available_ICU_nurses</to>
-				</connector>
-				<connector uid="35" angle="266.634">
-					<from>Population_size</from>
-					<to>max_available_nurses</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1092.42" y="918.181" name="proportion of beds\navailable for pandemic 1"/>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1313.14" y="918.181" name="proportion of ICU beds\navailable for pandemic 1"/>
-				<aux font_style="italic" font_weight="bold" x="1092.42" y="1180.47" name="proportion of nurses\navailable for pandemic"/>
-				<aux font_style="italic" font_weight="bold" x="1313.14" y="1180.47" name="proportion of ICU nurses\navailable for pandemic"/>
-				<connector uid="36" angle="1.56569">
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" x="452.625" y="573.578" name="staffed ward beds available"/>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="550.81" y="925.182" name="staffed equipped ICU beds available"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1192.31" y="1337.9" name="max available nurses"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1276.81" y="1337.9" name="max available ICU nurses"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1192.31" y="1079.87" name="max available beds"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1280.97" y="1079.87" name="max available ICU beds"/>
+				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="173.667" y="548.042" width="44.2857" height="24.2857" name="Beds"/>
+				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="340.208" y="882.667" width="63.5714" height="21.4286" name="ICU Beds"/>
+				<aux font_style="italic" font_weight="bold" x="1236.81" y="1190.48" name="Population size"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1130.75" y="1042.35" name="proportion of beds\navailable for pandemic 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1342.31" y="1045.36" name="proportion of ICU beds\navailable for pandemic 1"/>
+				<aux font_style="italic" font_weight="bold" x="1131.59" y="1376.3" name="proportion of nurses\navailable for pandemic"/>
+				<aux font_style="italic" font_weight="bold" x="1352.31" y="1376.3" name="proportion of ICU nurses\navailable for pandemic"/>
+				<connector uid="36" angle="6.16152">
 					<from>proportion_of_beds_available_for_pandemic_1</from>
 					<to>max_available_beds</to>
 				</connector>
@@ -7858,7 +8028,7 @@ ELSE
 					<from>proportion_of_ICU_beds_available_for_pandemic_1</from>
 					<to>max_available_ICU_beds</to>
 				</connector>
-				<connector uid="39" angle="345.892">
+				<connector uid="39" angle="3.5481">
 					<from>proportion_of_nurses_available_for_pandemic</from>
 					<to>max_available_nurses</to>
 				</connector>
@@ -7866,32 +8036,16 @@ ELSE
 					<from>proportion_of_ICU_nurses_available_for_pandemic</from>
 					<to>max_available_ICU_nurses</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1092.42" y="1001.76" name="ward beds per 1K 1"/>
-				<aux font_style="italic" font_weight="bold" x="1313.14" y="1001.76" name="ICU beds per 100K 1"/>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1092.42" y="1098.01" name="ward nurses per 1K 1"/>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1313.14" y="1093.48" name="ICU nurses per 100K 1"/>
-				<connector uid="41" angle="3.79316">
-					<from>ward_beds_per_1K_1</from>
-					<to>max_available_beds</to>
-				</connector>
-				<connector uid="42" angle="0.147832">
-					<from>ward_nurses_per_1K_1</from>
-					<to>max_available_nurses</to>
-				</connector>
-				<connector uid="43" angle="168.308">
-					<from>ICU_beds_per_100K_1</from>
-					<to>max_available_ICU_beds</to>
-				</connector>
-				<connector uid="44" angle="192.679">
-					<from>ICU_nurses_per_100K_1</from>
-					<to>max_available_ICU_nurses</to>
-				</connector>
-				<module color="white" background="#55AA7F" font_color="white" label_side="center" x="105.893" y="800.804" name="Ventilators"/>
-				<aux color="#FF007F" font_color="#FF007F" label_side="top" x="315.767" y="125.678" name="extra staff needed for\noverflow patients"/>
-				<aux label_side="left" label_angle="225" x="297.767" y="250.428" name="occupied ward beds"/>
-				<aux color="blue" label_side="right" x="206.577" y="333.946" name="available beds"/>
-				<aux background="white" label_side="left" x="347.006" y="626.048" name="occupied ICU beds"/>
-				<aux color="blue" label_side="top" x="407.815" y="709.832" name="available ICU beds"/>
+				<aux font_style="italic" font_weight="bold" x="1139.08" y="1168.43" name="ward beds per 1K 1"/>
+				<aux font_style="italic" font_weight="bold" x="1342.31" y="1159.26" name="ICU beds per 100K 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1134.92" y="1250.98" name="ward nurses per 1K 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1351.47" y="1250.98" name="ICU nurses per 100K 1"/>
+				<module color="white" background="#55AA7F" font_color="white" label_side="center" x="145.893" y="952.471" name="Ventilators"/>
+				<aux color="#FF007F" font_color="#FF007F" label_side="top" x="355.767" y="277.345" name="extra staff needed for\noverflow patients"/>
+				<aux label_side="left" label_angle="225" x="337.767" y="402.095" name="occupied ward beds"/>
+				<aux color="blue" label_side="right" x="246.577" y="485.613" name="available beds"/>
+				<aux background="white" label_side="left" x="387.006" y="777.715" name="occupied ICU beds"/>
+				<aux color="blue" label_side="top" x="447.815" y="861.499" name="available ICU beds"/>
 				<connector uid="47" angle="265.923">
 					<from>occupied_ICU_beds</from>
 					<to>available_ICU_beds</to>
@@ -7900,17 +8054,17 @@ ELSE
 					<from>occupied_ward_beds</from>
 					<to>available_beds</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="98.3924" y="126.116" width="126.339" height="21.875" name="In Ward Overflow 1"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="138.392" y="277.783" width="126.339" height="21.875" name="In Ward Overflow 1"/>
 				<connector uid="54" angle="350.657">
 					<from>In_Ward_Overflow_1</from>
 					<to>extra_staff_needed_for_overflow_patients</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="421.517" y="139.553" name="nurses per bed"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="461.517" y="291.22" name="nurses per bed"/>
 				<connector uid="55" angle="190.886">
 					<from>nurses_per_bed</from>
 					<to>extra_staff_needed_for_overflow_patients</to>
 				</connector>
-				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="right" x="297.767" y="178.878" name="patients per ward bed"/>
+				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="right" x="337.767" y="330.545" name="patients per ward bed"/>
 				<connector uid="56" angle="115.208">
 					<from>patients_per_ward_bed</from>
 					<to>extra_staff_needed_for_overflow_patients</to>
@@ -7919,7 +8073,7 @@ ELSE
 					<from>patients_per_ward_bed</from>
 					<to>occupied_ward_beds</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="96.9524" y="184.089" width="138.125" height="20.8929" name="Patients In Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="136.952" y="335.756" width="138.125" height="20.8929" name="Patients In Ward Bed"/>
 				<connector uid="58" angle="3.48357">
 					<from>Patients_In_Ward_Bed</from>
 					<to>occupied_ward_beds</to>
@@ -7928,17 +8082,17 @@ ELSE
 					<from>Beds</from>
 					<to>available_beds</to>
 				</connector>
-				<text_box font_size="14pt" border_width="thin" border_style="solid" uid="62" x="14.0126" y="11.2723" width="437.243" height="20.5849">Hospital Resources: Available staffed ward beds and ICU beds</text_box>
-				<text_box font_style="italic" uid="63" x="14.9961" y="40.2977" width="356.521" height="50.1483">Ward beds require physical beds plus nurses.
+				<text_box font_size="14pt" border_width="thin" border_style="solid" uid="62" x="15.6793" y="12.1056" width="437.243" height="20.5849">Hospital Resources: Available staffed ward beds and ICU beds</text_box>
+				<text_box font_style="italic" uid="63" x="16.6628" y="41.131" width="356.521" height="50.1483">Ward beds require physical beds plus nurses.
 ICU beds require physical ICU beds, ICU nurses, and ventilators
 Nurses require PPE</text_box>
-				<module color="white" background="#55AA7F" font_color="white" label_side="center" x="1605.28" y="287.929" name="PPE"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="172.444" y="544.535" width="137.143" height="27.8571" name="Patients In ICU Bed 1"/>
+				<module color="white" background="#55AA7F" font_color="white" label_side="center" x="1645.28" y="439.596" name="PPE"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="212.444" y="696.202" width="137.143" height="27.8571" name="Patients In ICU Bed 1"/>
 				<connector uid="64" angle="359.357">
 					<from>Patients_In_ICU_Bed_1</from>
 					<to>occupied_ICU_beds</to>
 				</connector>
-				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="left" x="274.286" y="665" name="patients per ICU bed 1"/>
+				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="left" x="314.286" y="816.667" name="patients per ICU bed 1"/>
 				<connector uid="65" angle="0.000818546">
 					<from>patients_per_ICU_bed_1</from>
 					<to>occupied_ICU_beds</to>
@@ -7951,18 +8105,18 @@ Nurses require PPE</text_box>
 					<from>occupied_ICU_beds</from>
 					<to>Ventilators</to>
 				</connector>
-				<aux background="blue" label_side="top" x="266.357" y="905.174" name="staffed equipped ICU beds needed"/>
-				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" x="412.625" y="976.417" name="patients per ICU bed 2"/>
+				<aux background="blue" label_side="top" x="306.357" y="1056.84" name="staffed equipped ICU beds needed"/>
+				<aux color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" x="452.625" y="1128.08" name="patients per ICU bed 2"/>
 				<connector uid="72" angle="165.964">
 					<from>patients_per_ICU_bed_2</from>
 					<to>staffed_equipped_ICU_beds_needed</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="354.958" y="866.174" width="105.714" height="30" name="Patients Waiting for ICU 1"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="394.958" y="1017.84" width="105.714" height="30" name="Patients Waiting for ICU 1"/>
 				<connector uid="73" angle="198.402">
 					<from>Patients_Waiting_for_ICU_1</from>
 					<to>staffed_equipped_ICU_beds_needed</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="357.262" y="921.071" width="124.286" height="22.8571" name="In ICU Overflow 1"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="397.262" y="1072.74" width="124.286" height="22.8571" name="In ICU Overflow 1"/>
 				<connector uid="74" angle="184.479">
 					<from>In_ICU_Overflow_1</from>
 					<to>staffed_equipped_ICU_beds_needed</to>
@@ -7971,43 +8125,43 @@ Nurses require PPE</text_box>
 					<from>staffed_equipped_ICU_beds_needed</from>
 					<to>Ventilators</to>
 				</connector>
-				<aux label_side="bottom" x="303.375" y="1208.35" name="total ICU nurses needed for incoming patients"/>
+				<aux label_side="bottom" x="343.375" y="1360.02" name="total ICU nurses needed for incoming patients"/>
 				<connector uid="77" angle="318.902">
 					<from>staffed_equipped_ICU_beds_needed</from>
 					<to>total_ICU_nurses_needed_for_incoming_patients</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="243.119" y="1148.02" width="18" height="18" name="ICU nurses per bed 1"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="292.119" y="1308.69" name="ICU nurses per bed 1"/>
 				<connector uid="78" angle="293.456">
 					<from>ICU_nurses_per_bed_1</from>
 					<to>total_ICU_nurses_needed_for_incoming_patients</to>
 				</connector>
-				<aux color="blue" label_side="top" x="743.964" y="885.742" name="staffed ward beds needed"/>
-				<aux label_side="bottom" x="602.066" y="1210.02" name="total nurses needed for incoming patients"/>
-				<connector uid="82" angle="299.337">
+				<aux color="blue" label_side="top" x="783.964" y="1037.41" name="staffed ward beds needed"/>
+				<aux label_side="bottom" x="642.066" y="1361.69" name="total nurses needed for incoming patients"/>
+				<connector uid="82" angle="294.98">
 					<from>staffed_ward_beds_needed</from>
 					<to>total_nurses_needed_for_incoming_patients</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="829.881" y="856.19" width="123.571" height="32.8571" name="Patients Waiting for Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="869.881" y="1007.86" width="123.571" height="32.8571" name="Patients Waiting for Ward Bed"/>
 				<connector uid="84" angle="185.077">
 					<from>Patients_Waiting_for_Ward_Bed</from>
 					<to>staffed_ward_beds_needed</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="830.596" y="907.619" width="122.143" height="27.1429" name="In Ward Overflow"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="870.596" y="1059.29" width="122.143" height="27.1429" name="In Ward Overflow"/>
 				<connector uid="85" angle="175.621">
 					<from>In_Ward_Overflow</from>
 					<to>staffed_ward_beds_needed</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="862.024" y="967.264" name="patients per ward bed 2"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="902.024" y="1118.93" name="patients per ward bed 2"/>
 				<connector uid="86" angle="173.634">
 					<from>patients_per_ward_bed_2</from>
 					<to>staffed_ward_beds_needed</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="right" x="580.996" y="1142.64" name="nurses per bed 3"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="right" x="620.996" y="1294.31" name="nurses per bed 3"/>
 				<connector uid="87" angle="325.764">
 					<from>nurses_per_bed_3</from>
 					<to>total_nurses_needed_for_incoming_patients</to>
 				</connector>
-				<aux background="blue" x="1416.48" y="303.801" name="all nurses requiring PPE"/>
+				<aux background="blue" x="1456.48" y="455.468" name="all nurses requiring PPE"/>
 				<connector uid="89" angle="11.0921">
 					<from>
 						<alias uid="90"/>
@@ -8020,8 +8174,8 @@ Nurses require PPE</text_box>
 					</from>
 					<to>all_nurses_requiring_PPE</to>
 				</connector>
-				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1348.42" y="218.285" name="max nurses supported by available PPE"/>
-				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1299.31" y="250.428" name="ICU nurses prioritised for PPE"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1388.42" y="369.952" name="max nurses supported by available PPE"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1339.31" y="402.095" name="ICU nurses prioritised for PPE"/>
 				<connector uid="95" angle="175.883">
 					<from>
 						<alias uid="90"/>
@@ -8032,7 +8186,7 @@ Nurses require PPE</text_box>
 					<from>ICU_nurses_prioritised_for_PPE</from>
 					<to>max_nurses_supported_by_available_PPE</to>
 				</connector>
-				<aux color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" label_side="top" x="1448.48" y="178.878" name="max staff supported\nby available PPE 1"/>
+				<aux color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" label_side="top" x="1488.48" y="330.545" name="max staff supported\nby available PPE 1"/>
 				<connector uid="99" angle="118.898" isee:autocreated="true">
 					<from>PPE</from>
 					<to>max_staff_supported_by_available_PPE_1</to>
@@ -8045,16 +8199,16 @@ Nurses require PPE</text_box>
 					<from>max_staff_supported_by_available_PPE_1</from>
 					<to>ICU_nurses_prioritised_for_PPE</to>
 				</connector>
-				<aux label_side="right" x="1130.24" y="387.661" name="PPE protection factor"/>
-				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="912.774" y="567.428" width="94.1667" height="24.2857" name="ICU Nurses"/>
-				<aux label_side="top" x="414.667" y="523.581" name="occupied ICU nurses"/>
-				<aux label_side="top" x="671.024" y="535.535" name="available ICU nurses"/>
+				<aux label_side="right" x="1170.24" y="539.328" name="PPE protection factor"/>
+				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="952.774" y="719.095" width="94.1667" height="24.2857" name="ICU Nurses"/>
+				<aux label_side="top" x="454.667" y="675.248" name="occupied ICU nurses"/>
+				<aux label_side="top" x="711.024" y="687.202" name="available ICU nurses"/>
 				<connector uid="102" angle="27.3683">
 					<from>occupied_ICU_nurses</from>
 					<to>available_ICU_nurses</to>
 				</connector>
-				<aux label_side="bottom" x="885.297" y="417.244" name="risk to heathcare workers"/>
-				<aux label_side="top" x="871.834" y="535.535" name="ICU Nurses at work"/>
+				<aux label_side="bottom" x="925.297" y="568.911" name="risk to heathcare workers"/>
+				<aux label_side="top" x="911.834" y="687.202" name="ICU Nurses at work"/>
 				<connector uid="106" angle="174.307">
 					<from>ICU_Nurses</from>
 					<to>ICU_Nurses_at_work</to>
@@ -8067,8 +8221,8 @@ Nurses require PPE</text_box>
 					<from>ICU_Nurses_at_work</from>
 					<to>available_ICU_nurses</to>
 				</connector>
-				<aux label_side="top" x="959.857" y="515.581" name="absent ICU nurses"/>
-				<connector uid="109" angle="89.3483">
+				<aux label_side="top" x="999.857" y="667.248" name="absent ICU nurses"/>
+				<connector uid="109" angle="90.0003">
 					<from>ICU_Nurses</from>
 					<to>absent_ICU_nurses</to>
 				</connector>
@@ -8084,27 +8238,27 @@ Nurses require PPE</text_box>
 					<from>absent_ICU_nurses</from>
 					<to>ICU_Nurses_at_work</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="453.589" y="659.048" name="ICU nurses per bed 2"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="493.589" y="810.715" name="ICU nurses per bed 2"/>
 				<connector uid="116" angle="148.861">
 					<from>ICU_nurses_per_bed_2</from>
 					<to>occupied_ICU_nurses</to>
 				</connector>
-				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="967.357" y="385.911" name="simulate staff absenteeism"/>
+				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="1007.36" y="537.578" name="simulate staff absenteeism"/>
 				<connector uid="117" angle="310.365">
 					<from>simulate_staff_absenteeism</from>
 					<to>absent_ICU_nurses</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1045.54" y="361.608" name="i"/>
+				<aux font_style="italic" font_weight="bold" x="1085.54" y="513.275" name="i"/>
 				<connector uid="118" angle="281.352">
 					<from>i</from>
 					<to>absent_ICU_nurses</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="1200" y="353.037" name="increased risk to staff\nif PPE use reduced 1"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="1231" y="495.704" width="18" height="18" name="increased risk to staff\nif PPE use reduced 1"/>
 				<connector uid="121" angle="187.833">
 					<from>increased_risk_to_staff_if_PPE_use_reduced_1</from>
 					<to>PPE_protection_factor</to>
 				</connector>
-				<text_box font_style="italic" font_size="10pt" uid="122" x="968.857" y="104.392" width="167.738" height="31.7381">Note: Within-host_profile.i = Disease prevalence (in adults)</text_box>
+				<text_box font_style="italic" font_size="10pt" uid="122" x="1008.86" y="256.059" width="167.738" height="31.7381">Note: Within-host_profile.i = Disease prevalence (in adults)</text_box>
 				<connector uid="123" angle="81.0841">
 					<from>occupied_ICU_beds</from>
 					<to>occupied_ICU_nurses</to>
@@ -8121,14 +8275,14 @@ Nurses require PPE</text_box>
 					</from>
 					<to>ICU_nurses_prioritised_for_PPE</to>
 				</connector>
-				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="920.792" y="185.267" width="84.0179" height="24.0179" name="Nurses"/>
-				<aux x="385.524" y="216.5" name="occupied nurses"/>
-				<aux label_side="top" x="602.91" y="216.5" name="available nurses"/>
+				<stock color="#00AA00" font_color="#00AA00" label_side="center" x="960.792" y="336.934" width="84.0179" height="24.0179" name="Nurses"/>
+				<aux x="425.524" y="368.167" name="occupied nurses"/>
+				<aux label_side="top" x="642.91" y="368.167" name="available nurses"/>
 				<connector uid="128" angle="11.254">
 					<from>occupied_nurses</from>
 					<to>available_nurses</to>
 				</connector>
-				<aux label_side="bottom" x="867.297" y="227.442" name="nurses at work"/>
+				<aux label_side="bottom" x="907.297" y="379.109" name="nurses at work"/>
 				<connector uid="129" angle="197.529">
 					<from>Nurses</from>
 					<to>nurses_at_work</to>
@@ -8141,7 +8295,7 @@ Nurses require PPE</text_box>
 					<from>nurses_at_work</from>
 					<to>available_nurses</to>
 				</connector>
-				<aux label_side="top" x="959.857" y="275.737" name="absent nurses"/>
+				<aux label_side="top" x="999.857" y="427.404" name="absent nurses"/>
 				<connector uid="132" angle="267.851">
 					<from>Nurses</from>
 					<to>absent_nurses</to>
@@ -8154,7 +8308,7 @@ Nurses require PPE</text_box>
 					<from>occupied_ward_beds</from>
 					<to>occupied_nurses</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="338.613" y="335.037" name="nurses per bed 4"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="378.613" y="486.704" name="nurses per bed 4"/>
 				<connector uid="135" angle="130.06">
 					<from>nurses_per_bed_4</from>
 					<to>occupied_nurses</to>
@@ -8185,26 +8339,23 @@ Nurses require PPE</text_box>
 					<from>all_nurses_requiring_PPE</from>
 					<to>PPE</to>
 				</connector>
-				<numeric_display color="white" font_color="#00AA00" uid="143" x="523.39" y="15.4228" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="white" font_color="#00AA00" uid="143" x="635.89" y="77.9228" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="max_available_nurses"/>
 				</numeric_display>
-				<numeric_display color="white" font_color="#00AA00" uid="144" x="523.143" y="51.4433" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="white" font_color="#00AA00" uid="144" x="1111.48" y="78.9433" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Beds"/>
 				</numeric_display>
-				<numeric_display color="white" font_color="#00AA00" uid="145" x="737.824" y="17.1368" width="248.612" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="white" font_color="#00AA00" uid="145" x="850.324" y="79.6368" width="248.612" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="max_available_ICU_nurses"/>
 				</numeric_display>
-				<numeric_display color="white" font_color="#00AA00" uid="146" x="737.99" y="50.3271" width="249.182" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="white" font_color="#00AA00" uid="146" x="1326.32" y="79.4938" width="249.182" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="ICU_Beds"/>
 				</numeric_display>
-				<numeric_display color="white" font_color="#00AA00" uid="147" x="1004.81" y="18.1903" width="202.268" height="26.23" title="Population [y]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Inputs_Data.Population_size[y]"/>
-				</numeric_display>
-				<numeric_display color="white" font_color="#00AA00" uid="148" x="1004.81" y="50.3271" width="202.268" height="26.23" title="Population[o]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="white" font_color="#00AA00" uid="147" x="850.13" y="7.13677" width="202.268" height="26.23" title="Population [y]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Data.Population_size[o]"/>
 				</numeric_display>
-				<text_box font_style="italic" font_size="10pt" uid="149" x="488.571" y="98.4544" width="427.644" height="54.4471">Simplifying assumption: overflow patients have separate unspecified staff, for now. The need for staff to cover overflow is an implication of hospital managers&apos; reporting that such patients are cared for despite not having a ward bed. Previously, they occupied staff nurses, but when overflow rates were high this distorted results, causing many unused beds at peak of wave.</text_box>
-				<aux label_side="left" x="603.214" y="296.453" name="available nurses supported\nby available PPE"/>
+				<text_box font_style="italic" font_size="10pt" uid="149" x="528.571" y="250.121" width="427.644" height="54.4471">Simplifying assumption: overflow patients have separate unspecified staff, for now. The need for staff to cover overflow is an implication of hospital managers&apos; reporting that such patients are cared for despite not having a ward bed. Previously, they occupied staff nurses, but when overflow rates were high this distorted results, causing many unused beds at peak of wave.</text_box>
+				<aux label_side="left" x="643.214" y="448.12" name="available nurses supported\nby available PPE"/>
 				<connector uid="150" angle="180">
 					<from>
 						<alias uid="151"/>
@@ -8219,22 +8370,22 @@ Nurses require PPE</text_box>
 					<from>occupied_nurses</from>
 					<to>available_nurses_supported_by_available_PPE</to>
 				</connector>
-				<aux color="#AA007F" font_color="#AA007F" label_side="top" x="725.399" y="250.428" name="activate surge strategy 2"/>
-				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="743.399" y="333.946" name="strategy 2 reduce\nnurse-to-patient ratio"/>
+				<aux color="#AA007F" font_color="#AA007F" label_side="top" x="765.399" y="402.095" name="activate surge strategy 2"/>
+				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="773.399" y="495.275" name="strategy 2 reduce\nnurse-to-patient ratio"/>
 				<connector uid="154" angle="340.401">
 					<from>available_nurses</from>
 					<to>activate_surge_strategy_2</to>
 				</connector>
-				<connector uid="155" angle="57.8873">
+				<connector uid="155" angle="142.08">
 					<from>&quot;strategy_2_reduce_nurse-to-patient_ratio&quot;</from>
 					<to>activate_surge_strategy_2</to>
 				</connector>
-				<aux color="#00AA00" font_color="#00AA00" label_side="top" x="483.12" y="361.608" name="beds supported by\navailable nurses"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="top" x="523.12" y="513.275" name="beds supported by\navailable nurses"/>
 				<connector uid="158" angle="324.674">
 					<from>nurses_per_bed_4</from>
 					<to>beds_supported_by_available_nurses</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="412.625" y="296.453" name="reduced nurses per bed ratio"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="452.625" y="448.12" name="reduced nurses per bed ratio"/>
 				<connector uid="159" angle="285.506">
 					<from>reduced_nurses_per_bed_ratio</from>
 					<to>beds_supported_by_available_nurses</to>
@@ -8257,9 +8408,9 @@ Nurses require PPE</text_box>
 					<from>available_beds</from>
 					<to>staffed_ward_beds_available</to>
 				</connector>
-				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="87.9524" y="315.946" name="strategy 4 increase bed capacity"/>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="177.25" y="450.75" name="proportion of beds\navailable for pandemic"/>
-				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="274.286" y="425" name="surge capacity bed increase"/>
+				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="127.952" y="467.613" name="strategy 4 increase bed capacity"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="217.25" y="602.417" name="proportion of beds\navailable for pandemic"/>
+				<aux color="#AA007F" font_style="italic" font_weight="bold" font_color="#AA007F" x="314.286" y="576.667" name="surge capacity bed increase"/>
 				<connector uid="164" angle="51.3402">
 					<from>proportion_of_beds_available_for_pandemic</from>
 					<to>available_beds</to>
@@ -8268,7 +8419,7 @@ Nurses require PPE</text_box>
 					<from>surge_capacity_bed_increase</from>
 					<to>available_beds</to>
 				</connector>
-				<aux color="#AA007F" font_color="#AA007F" label_side="top" x="124.667" y="276.464" name="activate surge strategy 4"/>
+				<aux color="#AA007F" font_color="#AA007F" label_side="top" x="164.667" y="428.131" name="activate surge strategy 4"/>
 				<connector uid="167" angle="70.5359">
 					<from>Beds</from>
 					<to>activate_surge_strategy_4</to>
@@ -8293,7 +8444,7 @@ Nurses require PPE</text_box>
 					<from>activate_surge_strategy_2</from>
 					<to>available_nurses_supported_by_available_PPE</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1402.5" y="413.333" name="activate surge strategy 3"/>
+				<aux font_style="italic" font_weight="bold" x="1442.5" y="565" name="activate surge strategy 3"/>
 				<connector uid="174" angle="237.984" isee:autocreated="true">
 					<from>PPE</from>
 					<to>activate_surge_strategy_3</to>
@@ -8302,15 +8453,15 @@ Nurses require PPE</text_box>
 					<from>activate_surge_strategy_3</from>
 					<to>PPE_protection_factor</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1635" y="227.442" name="PPE gap"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1675" y="379.109" name="PPE gap"/>
 				<connector uid="176" angle="63.833" isee:autocreated="true">
 					<from>PPE</from>
 					<to>PPE_gap</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="172.5" y="1010.98" name="expected ICU beds freed"/>
-				<aux color="red" font_color="red" x="675.267" y="949.264" name="staffed ward beds gap"/>
-				<aux color="red" font_color="red" label_side="left" x="516.33" y="1154.31" name="nurses gap"/>
-				<aux label_side="right" x="587.167" y="1085.5" name="expected nurses freed"/>
+				<aux font_style="italic" font_weight="bold" x="212.5" y="1162.65" name="expected ICU beds freed"/>
+				<aux color="red" font_color="red" x="715.267" y="1100.93" name="staffed ward beds gap"/>
+				<aux color="red" font_color="red" label_side="left" x="556.33" y="1305.98" name="nurses gap"/>
+				<aux label_side="right" x="627.167" y="1237.17" name="expected nurses freed"/>
 				<connector uid="180" angle="201.578">
 					<from>expected_nurses_freed</from>
 					<to>nurses_gap</to>
@@ -8337,7 +8488,7 @@ Nurses require PPE</text_box>
 					</from>
 					<to>staffed_ward_beds_gap</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="569.167" y="1008.76" name="expected beds freed 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="609.167" y="1160.43" name="expected beds freed 1"/>
 				<connector uid="188" angle="344.988">
 					<from>expected_beds_freed_1</from>
 					<to>staffed_ward_beds_gap</to>
@@ -8358,7 +8509,7 @@ Nurses require PPE</text_box>
 					<from>available_ICU_beds</from>
 					<to>staffed_equipped_ICU_beds_available</to>
 				</connector>
-				<aux color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" label_side="top" x="291.208" y="832.304" name="max ICU beds supported by available ventilators"/>
+				<aux color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" label_side="top" x="331.208" y="983.971" name="max ICU beds supported by available ventilators"/>
 				<connector uid="193" angle="339.693" isee:autocreated="true">
 					<from>Ventilators</from>
 					<to>max_ICU_beds_supported_by_available_ventilators</to>
@@ -8367,9 +8518,9 @@ Nurses require PPE</text_box>
 					<from>max_ICU_beds_supported_by_available_ventilators</from>
 					<to>staffed_equipped_ICU_beds_available</to>
 				</connector>
-				<aux color="#00AA00" font_color="#00AA00" label_side="bottom" x="642.738" y="700.234" name="ICU beds supported by available nurses"/>
-				<aux color="#AA007F" background="white" font_color="#AA007F" label_side="top" x="787.428" y="583.358" name="activate surge strategy 1"/>
-				<aux label_side="left" label_angle="135" x="719.247" y="636.501" name="ICU nurses supported\nby available PPE"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="bottom" x="682.738" y="851.901" name="ICU beds supported by available nurses"/>
+				<aux color="#AA007F" background="white" font_color="#AA007F" label_side="top" x="827.428" y="735.025" name="activate surge strategy 1"/>
+				<aux label_side="left" label_angle="135" x="759.247" y="788.168" name="ICU nurses supported\nby available PPE"/>
 				<connector uid="196" angle="192.793">
 					<from>ICU_nurses_supported_by_available_PPE</from>
 					<to>ICU_beds_supported_by_available_nurses</to>
@@ -8392,12 +8543,12 @@ Nurses require PPE</text_box>
 					<from>ICU_nurses_per_bed_2</from>
 					<to>ICU_beds_supported_by_available_nurses</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="501.81" y="592.358" width="18" height="18" name="reduced ICU nurses per bed ratio 1"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="550.81" y="753.025" name="reduced ICU nurses per bed ratio 1"/>
 				<connector uid="204" angle="291.397">
 					<from>reduced_ICU_nurses_per_bed_ratio_1</from>
 					<to>ICU_beds_supported_by_available_nurses</to>
 				</connector>
-				<aux color="#AA0000" font_style="italic" font_weight="bold" font_color="#AA0000" x="954.464" y="630.482" name="strategy 1 reduce\nICU-nurse-to-patient ratio"/>
+				<aux color="#AA0000" font_style="italic" font_weight="bold" font_color="#AA0000" x="994.464" y="782.149" name="strategy 1 reduce\nICU-nurse-to-patient ratio"/>
 				<connector uid="205" angle="139.292">
 					<from>&quot;strategy_1_reduce_ICU-nurse-to-patient_ratio&quot;</from>
 					<to>activate_surge_strategy_1</to>
@@ -8424,21 +8575,21 @@ Nurses require PPE</text_box>
 					</from>
 					<to>ICU_nurses_supported_by_available_PPE</to>
 				</connector>
-				<stacked_container uid="212" x="1122.48" y="450.569" width="275" height="182.343">
+				<stacked_container uid="212" x="1162.48" y="602.236" width="275" height="182.343">
 					<graph width="275" height="182.343" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="staffed_ward_beds_gap"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="213" x="1403.86" y="449.83" width="274.14" height="183.822">
+				<stacked_container uid="213" x="1443.86" y="601.497" width="274.14" height="183.822">
 					<graph width="274.14" height="183.822" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="nurses_gap"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux x="1566.52" y="953.05" name="absenteeism rate"/>
+				<aux x="1877.35" y="884.717" name="absenteeism rate"/>
 				<connector uid="214" angle="91.4519">
 					<from>
 						<alias uid="215"/>
@@ -8463,16 +8614,16 @@ Nurses require PPE</text_box>
 					</from>
 					<to>absenteeism_rate</to>
 				</connector>
-				<stacked_container uid="222" x="1434.83" y="1047.73" width="274.14" height="183.822">
+				<stacked_container uid="222" x="1745.66" y="979.397" width="274.14" height="183.822">
 					<graph width="274.14" height="183.822" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_title="%" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="absenteeism_rate"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux color="red" font_color="red" x="211.982" y="961.75" name="staffed equipped ICU beds gap"/>
-				<aux color="red" font_color="red" label_side="left" x="154.5" y="1128.97" name="ICU nurses gap"/>
-				<aux label_side="right" x="193.982" y="1077.97" name="expected ICU nurses freed"/>
+				<aux color="red" font_color="red" x="242.982" y="1104.42" width="18" height="18" name="staffed equipped ICU beds gap"/>
+				<aux color="red" font_color="red" label_side="left" x="194.5" y="1280.64" name="ICU nurses gap"/>
+				<aux label_side="right" x="233.982" y="1229.64" name="expected ICU nurses freed"/>
 				<connector uid="223" angle="232.254">
 					<from>expected_ICU_nurses_freed</from>
 					<to>ICU_nurses_gap</to>
@@ -8515,49 +8666,49 @@ Nurses require PPE</text_box>
 					</from>
 					<to>ICU_nurses_gap</to>
 				</connector>
-				<stacked_container uid="234" x="1122.48" y="637.734" width="275" height="185.57">
+				<stacked_container uid="234" x="1162.48" y="789.401" width="275" height="185.57">
 					<graph width="275" height="185.57" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="staffed_equipped_ICU_beds_gap"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="235" x="1403.86" y="639.482" width="274.14" height="183.822">
+				<stacked_container uid="235" x="1443.86" y="791.149" width="274.14" height="183.822">
 					<graph width="274.14" height="183.822" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="ICU_nurses_gap"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="236" x="892.86" y="1285.9" width="270.37" height="143.464">
+				<stacked_container uid="236" x="932.86" y="1437.57" width="270.37" height="143.464">
 					<graph width="270.37" height="143.464" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="PPE.activate_surge_strategy_3"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="237" x="158.872" y="1286.06" width="356.388" height="143.149">
+				<stacked_container uid="237" x="198.872" y="1437.73" width="356.388" height="143.149">
 					<graph width="356.388" height="143.149" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="2" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="activate_surge_strategy_1"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="238" x="565.36" y="1286.08" width="270.37" height="143.095">
+				<stacked_container uid="238" x="605.36" y="1437.75" width="270.37" height="143.095">
 					<graph width="270.37" height="143.095" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="activate_surge_strategy_2"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="239" x="1229.83" y="1284.74" width="286.347" height="142.451">
+				<stacked_container uid="239" x="1269.83" y="1436.41" width="286.347" height="142.451">
 					<graph width="286.347" height="142.451" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="activate_surge_strategy_4"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="240" x="171.478" y="1442.88" width="340.343" height="202.315">
+				<stacked_container uid="240" x="211.478" y="1594.55" width="340.343" height="202.315">
 					<graph width="340.343" height="202.315" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" pen_style="dashed" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="strategy_1_activation_threshold"/>
@@ -8567,12 +8718,12 @@ Nurses require PPE</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux color="#AA0000" font_color="#AA0000" x="838.63" y="612.482" name="threshold strategy 1"/>
+				<aux color="#AA0000" font_color="#AA0000" x="878.63" y="764.149" name="threshold strategy 1"/>
 				<connector uid="249" angle="147.916">
 					<from>threshold_strategy_1</from>
 					<to>activate_surge_strategy_1</to>
 				</connector>
-				<aux x="72.5" y="1530.13" name="strategy 1 activation threshold"/>
+				<aux x="112.5" y="1681.8" name="strategy 1 activation threshold"/>
 				<connector uid="250" angle="288.435">
 					<from>
 						<alias uid="251"/>
@@ -8585,68 +8736,313 @@ Nurses require PPE</text_box>
 					</from>
 					<to>strategy_1_activation_threshold</to>
 				</connector>
-				<alias font_style="italic" uid="90" x="1331.14" y="266.737" width="18" height="18">
+				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1196.47" y="1124.75" name="total beds"/>
+				<connector uid="256" angle="357.027">
+					<from>ward_beds_per_1K_1</from>
+					<to>total_beds</to>
+				</connector>
+				<connector uid="257" angle="167.02">
+					<from>Population_size</from>
+					<to>total_beds</to>
+				</connector>
+				<connector uid="258" angle="84.4592">
+					<from>total_beds</from>
+					<to>max_available_beds</to>
+				</connector>
+				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1275.97" y="1124.75" name="total ICU beds"/>
+				<connector uid="259" angle="179.565">
+					<from>ICU_beds_per_100K_1</from>
+					<to>total_ICU_beds</to>
+				</connector>
+				<connector uid="260" angle="63.9058">
+					<from>Population_size</from>
+					<to>total_ICU_beds</to>
+				</connector>
+				<connector uid="261" angle="102.599">
+					<from>total_ICU_beds</from>
+					<to>max_available_ICU_beds</to>
+				</connector>
+				<aux color="#00AA00" font_color="#00AA00" label_side="left" x="1192.31" y="1294.31" name="total nurses"/>
+				<connector uid="262" angle="341.113">
+					<from>ward_nurses_per_1K_1</from>
+					<to>total_nurses</to>
+				</connector>
+				<connector uid="263" angle="225.856">
+					<from>Population_size</from>
+					<to>total_nurses</to>
+				</connector>
+				<connector uid="264" angle="284.137">
+					<from>total_nurses</from>
+					<to>max_available_nurses</to>
+				</connector>
+				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="1276.81" y="1294.31" name="total ICU nurses"/>
+				<connector uid="265" angle="308.356">
+					<from>Population_size</from>
+					<to>total_ICU_nurses</to>
+				</connector>
+				<connector uid="266" angle="182.813">
+					<from>ICU_nurses_per_100K_1</from>
+					<to>total_ICU_nurses</to>
+				</connector>
+				<connector uid="267" angle="253.698">
+					<from>total_ICU_nurses</from>
+					<to>max_available_ICU_nurses</to>
+				</connector>
+				<numeric_display color="white" font_color="#00AA00" uid="268" x="635.89" y="44.5894" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_nurses"/>
+				</numeric_display>
+				<numeric_display color="white" font_color="#00AA00" uid="269" x="850.324" y="46.3034" width="248.612" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_ICU_nurses"/>
+				</numeric_display>
+				<numeric_display color="white" font_color="#00AA00" uid="270" x="635.643" y="7.13677" width="202.268" height="26.23" title="Population [y]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Inputs_Data.Population_size[y]"/>
+				</numeric_display>
+				<numeric_display color="white" font_color="#00AA00" uid="271" x="1111.48" y="43.9437" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_beds"/>
+				</numeric_display>
+				<numeric_display color="white" font_color="#00AA00" uid="272" x="1326.32" y="44.4933" width="249.182" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_ICU_beds"/>
+				</numeric_display>
+				<text_box font_style="italic" text_align="right" uid="273" x="488.787" y="49.9527" width="137.5" height="15.5035">All beds and nurses:</text_box>
+				<text_box font_style="italic" text_align="right" uid="274" x="431.922" y="83.286" width="193.333" height="15.5035">Proportion available for pandemic:</text_box>
+				<text_box font_style="italic" text_align="right" uid="275" x="542.372" y="12.5" width="82.248" height="15.5035">Population:</text_box>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="1067.54" y="1208.48" name="total initial ward bed capacity"/>
+				<connector uid="277" angle="77.3777">
+					<from>
+						<alias uid="276"/>
+					</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<connector uid="278" angle="166.926">
+					<from>total_beds</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<connector uid="279" angle="196.703">
+					<from>total_nurses</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="280" x="463.667" y="122.453" width="157.523" height="31.3368">Initial total capacity (assuming no staff absent):</text_box>
+				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="281" x="657.857" y="122.453" width="132.32" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
+				<numeric_display color="white" font_color="blue" uid="282" x="809.357" y="125.006" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_initial_ward_bed_capacity"/>
+				</numeric_display>
+				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="283" x="1072.04" y="122.036" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
+				<numeric_display color="white" font_color="blue" uid="284" x="1249.83" y="125.006" width="323.436" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_initial_ICU_bed_capacity"/>
+				</numeric_display>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="1452.36" y="1199.17" name="total initial ICU bed capacity"/>
+				<connector uid="285" angle="19.8754">
+					<from>total_ICU_beds</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="286" angle="208.15">
+					<from>
+						<alias uid="287"/>
+					</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="288" angle="349.142">
+					<from>total_ICU_nurses</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1498.67" y="1250.98" name="total ICU beds supported by\nall ventilators"/>
+				<connector uid="289" color="#FFFDEB" font_color="#FFFDEB" angle="224.562" isee:autocreated="true">
+					<from>Ventilators</from>
+					<to>total_ICU_beds_supported_by_all_ventilators</to>
+				</connector>
+				<connector uid="290" angle="184.134">
+					<from>total_ICU_beds_supported_by_all_ventilators</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="291" x="396.006" y="163.286" width="228.518" height="31.3368">Initial capacity allocated to pandemic care (assuming no staff absent):</text_box>
+				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="292" x="654.524" y="163.286" width="138.986" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
+				<numeric_display color="white" font_color="blue" uid="293" x="809.69" y="165.839" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="initial_pandemic_ward_bed_capacity"/>
+				</numeric_display>
+				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="294" x="1075.37" y="162.869" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
+				<numeric_display color="white" font_color="blue" uid="295" x="1249.49" y="165.839" width="324.116" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="initial_pandemic_ICU_bed_capacity"/>
+				</numeric_display>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="896.63" y="1230.5" name="initial pandemic ward bed capacity"/>
+				<connector uid="296" angle="180.998">
+					<from>max_available_beds</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<connector uid="297" angle="208.63">
+					<from>max_available_nurses</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<connector uid="298" angle="199.601">
+					<from>
+						<alias uid="276"/>
+					</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="1608.78" y="1190.48" name="initial pandemic ICU bed\ncapacity"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1675.83" y="1250.98" name="proportion of ventilators available for pandemic"/>
+				<connector uid="299" angle="359.177">
+					<from>total_ICU_beds_supported_by_all_ventilators</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="300" angle="165.764">
+					<from>proportion_of_ventilators_available_for_pandemic</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="301" angle="19.9479">
+					<from>max_available_ICU_beds</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="302" angle="336.717">
+					<from>max_available_ICU_nurses</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="303" angle="5.92206">
+					<from>
+						<alias uid="287"/>
+					</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<aux label_side="left" x="1829.16" y="284.5" name="increased demand for ward beds"/>
+				<connector uid="309" angle="109.255">
+					<from>
+						<alias uid="310"/>
+					</from>
+					<to>increased_demand_for_ward_beds</to>
+				</connector>
+				<text_box font_style="italic" uid="316" x="1621" y="21.9492" width="193.333" height="15.5035">Indicator of stress on routine care:</text_box>
+				<text_box font_style="italic" uid="317" x="1619.99" y="46.2898" width="362.347" height="154.839">In normal times, staffed ward beds are not empty, they are occupied by non-pandemic (routine) patients (utilisation levels are often high e.g. 90%, and in this calculation a simplifying assumption of 100% is made). Pandemic patients are additional patients. These will displace routine patients, e.g. by cancellation of routine procedures to make room for them. The increase in demand for ward beds (compared to normal total capacity) serves as indicator of stress on both ward bed supply and on routine patient care. Calculation of ward bed demand takes into account all who require a bed, including those in ward overflow.</text_box>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1747" y="217.917" width="128.333" height="24.1667" name="No limit ward"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="2056.66" y="217.5" width="130.833" height="25" name="No limit ICU"/>
+				<connector uid="324" angle="252.568">
+					<from>No_limit_ward</from>
+					<to>increased_demand_for_ward_beds</to>
+				</connector>
+				<text_box font_style="italic" uid="325" x="2000.33" y="62.4862" width="351.007" height="122.446">In normal times, staffed ICU beds are occupied by non-pandemic patients who require critical care. Pandemic patients are additional patients. Since critical patient care cannot be postponed, ICU capacity is increased by various means, including repurposing wards and nurses. The increase in demand for ICU beds (compared to normal capacity) serves as an indicator of stress on ICU. Calculation of ICU demand takes into account both ICU occupancy and those who are denied an ICU bed.</text_box>
+				<aux label_side="left" x="2135.83" y="280.261" name="increased demand for ICU"/>
+				<connector uid="327" angle="242.411">
+					<from>No_limit_ICU</from>
+					<to>increased_demand_for_ICU</to>
+				</connector>
+				<connector uid="328" angle="115.383">
+					<from>
+						<alias uid="326"/>
+					</from>
+					<to>increased_demand_for_ICU</to>
+				</connector>
+				<text_box font_style="italic" uid="329" x="2002" y="21.9492" width="193.333" height="15.5035">Indicator of stress on ICU:</text_box>
+				<connector uid="330" angle="152.176">
+					<from>
+						<alias uid="331"/>
+					</from>
+					<to>increased_demand_for_ward_beds</to>
+				</connector>
+				<connector uid="333" angle="161.667">
+					<from>
+						<alias uid="332"/>
+					</from>
+					<to>increased_demand_for_ICU</to>
+				</connector>
+				<text_box font_style="italic" uid="334" x="1792.17" y="483.949" width="278.83" height="15.5035">Overall indicator of stress on hospital care:</text_box>
+				<text_box font_style="italic" uid="335" x="1791.16" y="508.29" width="488.506" height="130.576">When there is additional demand for both ward beds and ICU beds, the combination provides a loosely defined categorical overall stress level, 0, 1, 2, 3 and 4.
+0 = No stress; extra demand can be managed with existing resources
+1 = Some routine services postponed
+2 = Only most critical services available, with decreased quality of care
+3 = No more planned work can be delayed. Life-or-death protocols invoked for critical patients.
+The equation needs refining after end user interviews.</text_box>
+				<aux label_side="top" x="2000.83" y="361.109" name="combined stress level"/>
+				<connector uid="336" angle="316.482">
+					<from>increased_demand_for_ward_beds</from>
+					<to>combined_stress_level</to>
+				</connector>
+				<connector uid="337" angle="235.62">
+					<from>increased_demand_for_ICU</from>
+					<to>combined_stress_level</to>
+				</connector>
+				<aux color="red" font_color="red" x="2000.83" y="427.404" name="stress code"/>
+				<connector uid="338" angle="275.355">
+					<from>combined_stress_level</from>
+					<to>stress_code</to>
+				</connector>
+				<alias font_style="italic" uid="90" x="1371.14" y="418.404" width="18" height="18">
 					<of>total_ICU_nurses_needed_for_incoming_patients</of>
 				</alias>
-				<alias font_style="italic" uid="93" x="1474.14" y="326.037" width="18" height="18">
+				<alias font_style="italic" uid="93" x="1514.14" y="477.704" width="18" height="18">
 					<of>total_nurses_needed_for_incoming_patients</of>
 				</alias>
-				<alias font_style="italic" uid="125" x="1459.14" y="227.285" width="18" height="18">
+				<alias font_style="italic" uid="125" x="1499.14" y="378.952" width="18" height="18">
 					<of>occupied_ICU_nurses</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="127" x="1246.7" y="204.982" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="127" x="1286.7" y="356.649" width="18" height="18">
 					<of>available_ICU_nurses</of>
 				</alias>
-				<alias font_style="italic" uid="137" x="1522.14" y="284.737" width="18" height="18">
+				<alias font_style="italic" uid="137" x="1562.14" y="436.404" width="18" height="18">
 					<of>occupied_nurses</of>
 				</alias>
-				<alias color="#00AA00" font_style="italic" font_color="#00AA00" uid="151" x="652.125" y="287.453" width="18" height="18">
+				<alias color="#00AA00" font_style="italic" font_color="#00AA00" uid="151" x="692.125" y="439.12" width="18" height="18">
 					<of>max_nurses_supported_by_available_PPE</of>
 				</alias>
-				<alias color="#AA007F" font_style="italic" font_color="#AA007F" uid="157" x="557.91" y="396.661" width="18" height="18">
+				<alias color="#AA007F" font_style="italic" font_color="#AA007F" uid="157" x="597.91" y="548.328" width="18" height="18">
 					<of>activate_surge_strategy_2</of>
 				</alias>
-				<alias font_style="italic" font_weight="bold" uid="177" x="84.3333" y="934.75" width="18" height="18">
+				<alias font_style="italic" font_weight="bold" uid="177" x="124.333" y="1086.42" width="18" height="18">
 					<of>PPE_gap</of>
 				</alias>
-				<alias color="#00AA00" background="white" font_style="italic" font_color="#00AA00" label_side="top" uid="178" x="629.066" y="894.206" width="18" height="18">
+				<alias color="#00AA00" background="white" font_style="italic" font_color="#00AA00" label_side="top" uid="178" x="669.066" y="1045.87" width="18" height="18">
 					<of>staffed_ward_beds_available</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="182" x="489.33" y="1086.75" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="182" x="529.33" y="1238.42" width="18" height="18">
 					<of>available_nurses</of>
 				</alias>
-				<alias uid="185" x="571.996" y="924.722" width="18" height="18">
+				<alias uid="185" x="611.996" y="1076.39" width="18" height="18">
 					<of>PPE_gap</of>
 				</alias>
-				<alias color="#AA007F" background="white" font_style="italic" font_color="#AA007F" uid="201" x="736" y="717.848" width="18" height="18">
+				<alias color="#AA007F" background="white" font_style="italic" font_color="#AA007F" uid="201" x="776" y="869.515" width="18" height="18">
 					<of>activate_surge_strategy_1</of>
 				</alias>
-				<alias color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" uid="211" x="773.5" y="655.167" width="18" height="18">
+				<alias color="#00AA00" font_style="italic" font_weight="bold" font_color="#00AA00" uid="211" x="813.5" y="806.834" width="18" height="18">
 					<of>max_staff_supported_by_available_PPE_1</of>
 				</alias>
-				<alias font_style="italic" label_side="center" uid="215" x="1468.65" y="1000.68" width="65.5179" height="19.6429">
+				<alias font_style="italic" label_side="center" uid="215" x="1779.48" y="932.347" width="65.5179" height="19.6429">
 					<of>Nurses</of>
 				</alias>
-				<alias font_style="italic" label_side="center" uid="217" x="1586.52" y="999.36" width="77" height="22.2857">
+				<alias font_style="italic" label_side="center" uid="217" x="1897.35" y="931.027" width="77" height="22.2857">
 					<of>ICU_Nurses</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="219" x="1488" y="887.5" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="219" x="1798.83" y="819.167" width="18" height="18">
 					<of>absent_nurses</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="221" x="1622.16" y="887.5" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="221" x="1932.99" y="819.167" width="18" height="18">
 					<of>absent_ICU_nurses</of>
 				</alias>
-				<alias color="#00AA00" background="white" font_style="italic" font_color="#00AA00" label_side="top" uid="224" x="145.5" y="910.264" width="18" height="18">
+				<alias color="#00AA00" background="white" font_style="italic" font_color="#00AA00" label_side="top" uid="224" x="185.5" y="1061.93" width="18" height="18">
 					<of>staffed_equipped_ICU_beds_available</of>
 				</alias>
-				<alias font_style="italic" label_side="top" uid="233" x="93.5" y="1068.97" width="18" height="18">
+				<alias font_style="italic" label_side="top" uid="233" x="133.5" y="1220.64" width="18" height="18">
 					<of>available_ICU_nurses</of>
 				</alias>
-				<alias color="#AA0000" font_style="italic" font_color="#AA0000" uid="251" x="75.1667" y="1469.33" width="18" height="18">
+				<alias color="#AA0000" font_style="italic" font_color="#AA0000" uid="251" x="115.167" y="1621" width="18" height="18">
 					<of>threshold_strategy_1</of>
 				</alias>
-				<alias color="#00AA00" font_style="italic" font_color="#00AA00" uid="255" x="81.5" y="1582.67" width="18" height="18">
+				<alias color="#00AA00" font_style="italic" font_color="#00AA00" uid="255" x="121.5" y="1734.34" width="18" height="18">
 					<of>max_available_ICU_nurses</of>
+				</alias>
+				<alias color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" uid="276" x="998.357" y="1249.75" width="18" height="18">
+					<of>nurses_per_bed_4</of>
+				</alias>
+				<alias color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" uid="287" x="1479.34" y="1150.26" width="18" height="18">
+					<of>ICU_nurses_per_bed_2</of>
+				</alias>
+				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" label_side="bottom" uid="310" x="1798.83" y="328.166" width="18" height="18">
+					<of>total_initial_ward_bed_capacity</of>
+				</alias>
+				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" label_side="bottom" uid="326" x="2175" y="305.166" width="18" height="18">
+					<of>total_initial_ICU_bed_capacity</of>
+				</alias>
+				<alias color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="top" uid="331" x="1910.17" y="272.667" width="18" height="18">
+					<of>patients_per_ward_bed</of>
+				</alias>
+				<alias color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="top" uid="332" x="2231.83" y="271.261" width="18" height="18">
+					<of>patients_per_ICU_bed_1</of>
 				</alias>
 			</view>
 		</views>
@@ -8905,7 +9301,9 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -9225,8 +9623,7 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 			</aux>
 			<aux name="ventilators in stock" access="output" isee:autocreated="true">
 				<doc>Mechanical ventilators in stock and available for pandemic use</doc>
-				<eqn>ventilators_per_100K* 
-(SUM(Population_size) / 100000) * proportion_of_ventilators_available_for_pandemic_1</eqn>
+				<eqn>total_ventilators * proportion_of_ventilators_available_for_pandemic_1</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="occupied ICU beds" access="input">
@@ -9262,6 +9659,17 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 			</aux>
 			<aux name="staffed equipped ICU beds needed" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="total ventilators" access="output" isee:autocreated="true">
+				<doc>Mechanical ventilators available for all purposes in the hospital</doc>
+				<eqn>ventilators_per_100K* 
+(SUM(Population_size) / 100000)</eqn>
+				<units>Ventilators</units>
+			</aux>
+			<aux name="total ICU beds supported by\nall ventilators" access="output" isee:autocreated="true">
+				<doc>Total ICU beds supported by all ventilators in the hospital (given that not all ICU patients require a ventilator)</doc>
+				<eqn>(total_ventilators / fraction_ICU_patients_requiring_ventilator) / ventilators_per_ICU_bed</eqn>
 				<units>ICU Beds</units>
 			</aux>
 		</variables>
@@ -9316,7 +9724,9 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -9348,7 +9758,7 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux label_side="top" x="312.833" y="507.851" name="ventilators per ICU bed"/>
+				<aux label_side="top" x="259.195" y="527.833" name="ventilators per ICU bed"/>
 				<aux label_side="bottom" x="510.847" y="258.458" name="ventilators in use"/>
 				<text_box font_size="10pt" uid="1" x="11.0417" y="31.1725" width="516.666" height="82.857">Assumption is that a ventilator is in use while an ICU bed is occupied, and is released when a patient leaves ICU. Assumption that ventilators are only used in ICU.
 Decision not to use a stock-and-flow structure because ventilators have a life of ten years if properly maintained: https://www.fiercebiotech.com/medtech/as-ventilators-become-crucial-repair-roadblocks-remain) so stock is only disposed of very slowly, as is reordering to make up the loss.
@@ -9360,7 +9770,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<to>ventilators_available</to>
 				</connector>
 				<aux x="780.013" y="333.268" name="ventilators needed for incoming ICU patients"/>
-				<aux color="#00AA00" font_color="#00AA00" x="187.985" y="520.458" name="max ICU beds supported by available ventilators"/>
+				<aux color="#00AA00" font_color="#00AA00" label_side="bottom" x="170.485" y="527.333" name="max ICU beds supported by available ventilators"/>
 				<connector uid="3" angle="345.243">
 					<from>
 						<alias uid="4"/>
@@ -9376,12 +9786,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<from>expected_ventilators_freed</from>
 					<to>gap_in_ventilators</to>
 				</connector>
-				<connector uid="7" angle="17.5924">
-					<from>
-						<alias uid="8"/>
-					</from>
-					<to>max_ICU_beds_supported_by_available_ventilators</to>
-				</connector>
 				<connector uid="9" angle="263.04">
 					<from>ventilators_available</from>
 					<to>gap_in_ventilators</to>
@@ -9395,7 +9799,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<entity name="ventilators_in_stock"/>
 				</numeric_display>
 				<text_box font_weight="bold" uid="18" x="12.5179" y="8.4345" width="88.3333" height="17.4286">Ventilators</text_box>
-				<connector uid="29" angle="204.966">
+				<connector uid="29" angle="198.484">
 					<from>ventilators_per_ICU_bed</from>
 					<to>max_ICU_beds_supported_by_available_ventilators</to>
 				</connector>
@@ -9404,21 +9808,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<from>occupied_ICU_beds</from>
 					<to>ventilators_in_use</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="135.57" y="258.458" name="proportion of ventilators\navailable for pandemic 1"/>
-				<connector uid="31" angle="345.586">
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="241.195" y="308.125" name="proportion of ventilators\navailable for pandemic 1"/>
+				<connector uid="31" angle="16.3096">
 					<from>proportion_of_ventilators_available_for_pandemic_1</from>
 					<to>ventilators_in_stock</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="220.625" y="333.268" name="Population size"/>
-				<connector uid="32" angle="19.2179">
-					<from>Population_size</from>
-					<to>ventilators_in_stock</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="205.985" y="204.375" name="ventilators per 100K"/>
-				<connector uid="33" angle="279.543">
-					<from>ventilators_per_100K</from>
-					<to>ventilators_in_stock</to>
-				</connector>
+				<aux font_style="italic" font_weight="bold" x="109.32" y="276.458" name="Population size"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="109.32" y="186.875" name="ventilators per 100K"/>
 				<connector uid="34" angle="179.231">
 					<from>
 						<alias uid="35"/>
@@ -9455,8 +9851,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<from>expected_ICU_beds_freed</from>
 					<to>expected_ventilators_freed</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="252.5" y="461.875" name="fraction ICU patients requiring ventilator"/>
-				<connector uid="43" angle="245.821">
+				<aux font_style="italic" font_weight="bold" label_side="top" x="259.195" y="466.875" name="fraction ICU patients requiring ventilator"/>
+				<connector uid="43" angle="195.945">
 					<from>fraction_ICU_patients_requiring_ventilator</from>
 					<to>max_ICU_beds_supported_by_available_ventilators</to>
 				</connector>
@@ -9472,15 +9868,57 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<alias font_style="italic" label_side="top" uid="4" x="123.106" y="457.902" width="18" height="18">
+				<aux label_side="top" x="187.985" y="235.333" name="total ventilators"/>
+				<connector uid="46" angle="293.403">
+					<from>ventilators_per_100K</from>
+					<to>total_ventilators</to>
+				</connector>
+				<connector uid="47" angle="7.77342">
+					<from>Population_size</from>
+					<to>total_ventilators</to>
+				</connector>
+				<connector uid="48" angle="312.602">
+					<from>total_ventilators</from>
+					<to>ventilators_in_stock</to>
+				</connector>
+				<connector uid="7" angle="17.5924">
+					<from>
+						<alias uid="8"/>
+					</from>
+					<to>max_ICU_beds_supported_by_available_ventilators</to>
+				</connector>
+				<aux color="#00AA00" font_color="#00AA00" x="345.36" y="527.833" name="total ICU beds supported by\nall ventilators"/>
+				<connector uid="49" angle="205.019">
+					<from>
+						<alias uid="50"/>
+					</from>
+					<to>total_ICU_beds_supported_by_all_ventilators</to>
+				</connector>
+				<connector uid="51" angle="336.529">
+					<from>ventilators_per_ICU_bed</from>
+					<to>total_ICU_beds_supported_by_all_ventilators</to>
+				</connector>
+				<connector uid="52" angle="340.346">
+					<from>fraction_ICU_patients_requiring_ventilator</from>
+					<to>total_ICU_beds_supported_by_all_ventilators</to>
+				</connector>
+				<numeric_display color="white" uid="53" x="586.708" y="20.3334" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_ventilators"/>
+				</numeric_display>
+				<text_box font_style="italic" font_size="10pt" uid="54" x="800.547" y="55.2066" width="193.333" height="15.5035">(available for pandemic)</text_box>
+				<text_box font_style="italic" font_size="10pt" uid="55" x="800.547" y="24.5817" width="193.333" height="15.5035">(available for all purposes)</text_box>
+				<alias font_style="italic" label_side="top" uid="4" x="105.606" y="464.777" width="18" height="18">
 					<of>ventilators_available</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="8" x="82.3195" y="493.958" width="18" height="18">
+				<alias color="blue" background="white" font_style="italic" uid="8" x="64.8195" y="500.833" width="18" height="18">
 					<shape type="circle" radius="18"/>
 					<of>expected_ventilators_freed</of>
 				</alias>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" label_side="top" uid="35" x="673.93" y="204.5" width="18" height="18">
 					<of>ventilators_per_ICU_bed</of>
+				</alias>
+				<alias font_style="italic" label_side="top" uid="50" x="387.875" y="482.833" width="18" height="18">
+					<of>total_ventilators</of>
 				</alias>
 			</view>
 		</views>
@@ -9656,6 +10094,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Hospital_Resources.proportion_of_ICU_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ICU_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
+				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
+				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect2 to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Hospital_Resources.reduced_ICU_nurses_per_bed_ratio_1" from="Inputs_Hospital_resource_params.reduced_ICU_nurses_per_bed_ratio"/>
@@ -9734,12 +10174,14 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10045,7 +10487,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="ICU beds per 100K" access="output" isee:autocreated="true">
 				<doc>ICU beds per 100 thousand population, for all purposes.</doc>
-				<eqn>120</eqn>
+				<eqn>150</eqn>
 				<units>ICU Beds/people</units>
 			</aux>
 			<aux name="ward nurses per 1K" access="output" isee:autocreated="true">
@@ -10060,7 +10502,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="ventilators per 100K" access="output" isee:autocreated="true">
 				<doc>Ventilators per 100 thousand population</doc>
-				<eqn>70</eqn>
+				<eqn>75</eqn>
 				<units>Ventilators/people</units>
 			</aux>
 			<aux name="Age specific contact rates" access="output">
@@ -10134,7 +10576,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10260,12 +10704,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="testing long-term capacity" access="output">
 				<doc>Long-term testing capacity.</doc>
-				<eqn>500000</eqn>
+				<eqn>239119</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="initial testing capacity" access="output">
 				<doc>Initial testing capacity.</doc>
-				<eqn>50000</eqn>
+				<eqn>53454</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="testing capacity growth rate" access="output">
@@ -10345,7 +10789,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10619,7 +11065,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10819,12 +11267,14 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10968,7 +11418,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11016,7 +11468,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 		<variables>
 			<aux name="simulate staff absenteeism" access="output" isee:autocreated="true">
 				<doc>Whether to include staff absenteeism in the model (i.e. factor in pandemic infections in staff leading to absence)</doc>
-				<eqn>1</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="simulate interruption in PPE supply" access="output" isee:autocreated="true">
@@ -11076,7 +11528,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11394,12 +11848,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent nurses" access="input">
-				<doc>Nurses absent due to infection (if staff absenteeism option is set)</doc>
+				<doc>Nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="nurses at work" access="input">
-				<doc>Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
+				<doc>Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11429,12 +11883,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent ICU nurses" access="input">
-				<doc>ICU nurses absent due to infection (if staff absenteeism option is set)</doc>
+				<doc>ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="ICU Nurses at work" access="input">
-				<doc>ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</doc>
+				<doc>ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -11631,6 +12085,41 @@ Simply put, the percentage of the population that acquired the disease during an
 				</dimensions>
 				<units>people/day</units>
 			</aux>
+			<aux name="total initial staffed\nward beds available for all" access="input">
+				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total initial staffed\nward beds available for pandemic" access="input">
+				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total initial staffed\nequipped ICU beds available for all" access="input">
+				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="total initial staffed\nequipped ICU beds available for pandemic" access="input">
+				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="increased demand for ward beds" access="input">
+				<doc>The fractional increase in demand for ward beds compared to the normal total capacity in the hospital</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="increased demand for ICU" access="input">
+				<doc>The fractional increase in demand for ICU beds compared to the normal total capacity in the hospital</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="stress code" access="input">
+				<doc>Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11678,12 +12167,14 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11719,6 +12210,75 @@ Simply put, the percentage of the population that acquired the disease during an
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
+							<entity name='"Within-host_profile".Actual_cases[y]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Actual_cases[o]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Attack_rate'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Attack_rate_by_age[y]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Attack_rate_by_age[o]'/>
+						</item>
+						<item>
+							<entity name="Vaccines.Vaccination_capacity"/>
+						</item>
+						<item>
+							<entity name="Tracing.Contact_tracing_capacity"/>
+						</item>
+						<item>
+							<entity name="Testing.Testing_capacity"/>
+						</item>
+						<item>
+							<entity name="Mobility.Mobility_index"/>
+						</item>
+						<item>
+							<entity name="Testing.Confirmed_cases[y]"/>
+						</item>
+						<item>
+							<entity name="Testing.Confirmed_cases[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_in_hospital[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_in_hospital[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_discharges[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_discharges[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_discharges[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ICU_discharges[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.deaths_in_hospital[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.deaths_in_hospital[o]"/>
+						</item>
+						<item>
 							<entity name="Hospital_Resources.Beds"/>
 						</item>
 						<item>
@@ -11729,6 +12289,18 @@ Simply put, the percentage of the population that acquired the disease during an
 						</item>
 						<item>
 							<entity name="Hospital.expected_beds_freed"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_Ward_Overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_Ward_Overflow[o]"/>
 						</item>
 						<item>
 							<entity name="Hospital.physical_ward_beds_needed"/>
@@ -11771,6 +12343,15 @@ Simply put, the percentage of the population that acquired the disease during an
 						</item>
 						<item>
 							<entity name="Hospital_Resources.staffed_ward_beds_gap"/>
+						</item>
+						<item>
+							<entity name="Hospital.ward_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.ward_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ward_overflow[y]"/>
 						</item>
 						<item>
 							<entity name="Hospital_Resources.ICU_Beds"/>
@@ -11857,6 +12438,93 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="PPE.interrupted_PPE_supply"/>
 						</item>
 						<item>
+							<entity name="Hospital.moving_to_ward_overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Patients_Waiting_for_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_ICU_Overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.In_ICU_Overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ICU_overflow[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.moving_to_ICU_overflow[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.deaths_in_ICU[*]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_ICU_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_ICU_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_Ward_Bed[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_needed_Ward_Bed[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_Ward_admissions[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Total_Ward_admissions[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_deaths[y]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_deaths[o]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.total_initial_ward_bed_capacity"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.increased_demand_for_ward_beds"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.increased_demand_for_ICU"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.stress_code"/>
+						</item>
+						<item>
 							<entity name="Hospital.peak_ICU_demand"/>
 						</item>
 						<item>
@@ -11891,162 +12559,6 @@ Simply put, the percentage of the population that acquired the disease during an
 						</item>
 						<item>
 							<entity name="Hospital_Resources.activate_surge_strategy_4"/>
-						</item>
-						<item>
-							<entity name="Testing.Testing_capacity"/>
-						</item>
-						<item>
-							<entity name="Tracing.Contact_tracing_capacity"/>
-						</item>
-						<item>
-							<entity name="Vaccines.Vaccination_capacity"/>
-						</item>
-						<item>
-							<entity name='"Within-host_profile".Attack_rate'/>
-						</item>
-						<item>
-							<entity name='"Within-host_profile".Attack_rate_by_age[y]'/>
-						</item>
-						<item>
-							<entity name='"Within-host_profile".Attack_rate_by_age[o]'/>
-						</item>
-						<item>
-							<entity name='"Within-host_profile".Actual_cases[y]'/>
-						</item>
-						<item>
-							<entity name='"Within-host_profile".Actual_cases[o]'/>
-						</item>
-						<item>
-							<entity name="Hospital.total_in_hospital[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.total_in_hospital[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admissions[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admissions[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_discharges[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_discharges[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_admissions[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_admissions[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_discharges[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ICU_discharges[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.deaths_in_hospital[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.deaths_in_hospital[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_Ward_Overflow[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_Ward_Overflow[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ward_admissions[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.ward_admissions[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.moving_to_ward_overflow[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.moving_to_ward_overflow[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_ICU[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Patients_Waiting_for_ICU[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_ICU_Overflow[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.In_ICU_Overflow[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_ICU[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_ICU[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.moving_to_ICU_overflow[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.moving_to_ICU_overflow[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.deaths_in_ICU[*]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_ICU_admissions[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_ICU_admissions[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_Ward_Bed[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_needed_Ward_Bed[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_Ward_admissions[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Total_Ward_admissions[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[o]"/>
-						</item>
-						<item>
-							<entity name="Hospital.total_deaths[y]"/>
-						</item>
-						<item>
-							<entity name="Hospital.total_deaths[o]"/>
-						</item>
-						<item>
-							<entity name="Mobility.Mobility_index"/>
-						</item>
-						<item>
-							<entity name="Testing.Confirmed_cases[y]"/>
-						</item>
-						<item>
-							<entity name="Testing.Confirmed_cases[o]"/>
 						</item>
 					</table>
 				</stacked_container>
@@ -12108,36 +12620,36 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="44" x="735.774" y="1352.86" width="176.786" height="52.0477">Patients waiting for an ICU bed who cannot get access to one (does not include patients currently in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="45" x="925.774" y="1357.86" width="176.786" height="42.0489">Patients at risk of dying because they cannot access an ICU bed in this time period</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="46" x="45.055" y="1588.64" width="252.409" height="18.5711">Totals (cumulative - see end of run figures):</text_box>
-				<text_box font_style="italic" uid="47" x="107.916" y="1804.52" width="1251.67" height="32.5129">Calculations of peak daily demand for ICU and ward are made by treating all resources as unlimited, allowing admission of all patients needing ICU or a ward beds without the complication of overflows. The required peak capacity of beds, nurses, ventilators and PPE can be calculated from these peak daily figures.</text_box>
+				<text_box font_style="italic" uid="47" x="110.916" y="2284.52" width="1251.67" height="32.5129">Calculations of peak daily demand for ICU and ward are made by treating all resources as unlimited, allowing admission of all patients needing ICU or a ward beds without the complication of overflows. The required peak capacity of beds, nurses, ventilators and PPE can be calculated from these peak daily figures.</text_box>
 				<text_box text_align="center" uid="48" x="106.606" y="1685.22" width="164.286" height="71.8327">Total of all patients who needed ICU during current run (from admissions and transfers from ward and overflow)</text_box>
 				<text_box text_align="center" uid="49" x="306.252" y="1685.22" width="164.286" height="54.9994">Total number of patients who were admitted to ICU</text_box>
 				<text_box text_align="center" uid="50" x="491.416" y="1689.05" width="184.523" height="64.1661">Total of all patients who needed a ward bed during current run (from admissions and transfers from ICU)</text_box>
 				<text_box text_align="center" uid="51" x="702.887" y="1689.05" width="164.286" height="64.1661">Total number of patients who were admitted to wards (from admissions and transfers from ICU)</text_box>
 				<text_box text_align="center" uid="52" x="934.117" y="1685.22" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
 				<text_box text_align="center" uid="53" x="1134.27" y="1688" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
-				<text_box text_align="center" uid="54" x="117.44" y="1906.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</text_box>
-				<text_box text_align="center" uid="55" x="297.464" y="1906.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU beds required</text_box>
-				<text_box text_align="center" uid="56" x="471.372" y="1906.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</text_box>
-				<text_box text_align="center" uid="57" x="651.607" y="1906.56" width="164.286" height="82.4994">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</text_box>
-				<text_box text_align="center" uid="58" x="827.656" y="1906.56" width="164.286" height="92.85">If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</text_box>
-				<text_box text_align="center" uid="59" x="1002.11" y="1906.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of ward beds required</text_box>
-				<text_box text_align="center" uid="60" x="1183.11" y="1906.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</text_box>
-				<text_box text_align="center" uid="61" x="1377.61" y="1906.56" width="164.286" height="107.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="45.5099" y="1770.95" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
+				<text_box text_align="center" uid="54" x="120.44" y="2386.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</text_box>
+				<text_box text_align="center" uid="55" x="300.464" y="2386.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU beds required</text_box>
+				<text_box text_align="center" uid="56" x="474.372" y="2386.56" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</text_box>
+				<text_box text_align="center" uid="57" x="654.607" y="2386.56" width="164.286" height="82.4994">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</text_box>
+				<text_box text_align="center" uid="58" x="830.656" y="2386.56" width="164.286" height="92.85">If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</text_box>
+				<text_box text_align="center" uid="59" x="1005.11" y="2386.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of ward beds required</text_box>
+				<text_box text_align="center" uid="60" x="1186.11" y="2386.56" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</text_box>
+				<text_box text_align="center" uid="61" x="1380.61" y="2386.56" width="164.286" height="107.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="48.5099" y="2250.95" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="123.749" y="1640.21" width="127" height="25" name="Total needed ICU"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="314.357" y="1637.71" width="154" height="28" name="Total ICU admissions"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="508.178" y="1637.21" width="151" height="29" name="Total needed Ward Bed"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="712.5" y="1637.71" width="157" height="35" name="Total Ward admissions"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="951.76" y="1638.71" width="129" height="33" name="Potential deaths due to lack of ICU"/>
 				<aux font_style="italic" font_weight="bold" x="1216.41" y="1655.21" name="total deaths"/>
-				<aux font_style="italic" font_weight="bold" x="195.208" y="1867.42" name="peak ICU demand"/>
-				<aux font_style="italic" font_weight="bold" x="379.607" y="1866.8" name="peak demand ICU beds"/>
-				<aux font_style="italic" font_weight="bold" x="544.515" y="1858.42" width="16.75" height="16.75" name="peak demand ICU nurses"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="734" y="1866.8" name="peak demand ventilators"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="909.799" y="1869.59" name="peak ward demand"/>
-				<aux font_style="italic" font_weight="bold" x="1084.25" y="1869.59" name="peak demand ward beds"/>
-				<aux font_style="italic" font_weight="bold" x="1265.25" y="1869.59" name="peak demand nurses"/>
-				<aux font_style="italic" font_weight="bold" x="1459.75" y="1866.8" name="peak demand PPE"/>
+				<aux font_style="italic" font_weight="bold" x="198.208" y="2347.42" name="peak ICU demand"/>
+				<aux font_style="italic" font_weight="bold" x="382.607" y="2346.8" name="peak demand ICU beds"/>
+				<aux font_style="italic" font_weight="bold" x="547.515" y="2338.42" width="16.75" height="16.75" name="peak demand ICU nurses"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="737" y="2346.8" name="peak demand ventilators"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="912.799" y="2349.59" name="peak ward demand"/>
+				<aux font_style="italic" font_weight="bold" x="1087.25" y="2349.59" name="peak demand ward beds"/>
+				<aux font_style="italic" font_weight="bold" x="1268.25" y="2349.59" name="peak demand nurses"/>
+				<aux font_style="italic" font_weight="bold" x="1462.75" y="2346.8" name="peak demand PPE"/>
 				<aux font_style="italic" font_weight="bold" x="380.25" y="466.667" name="occupied ward beds"/>
 				<text_box text_align="center" font_size="10pt" uid="63" x="303.75" y="514.04" width="144.643" height="38.961">Total ward beds occupied by patients</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="160.625" y="837.335" width="140" height="32" name="ICU Beds"/>
@@ -12152,8 +12664,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="1258.33" y="610" name="total nurses needed for incoming patients"/>
 				<aux font_style="italic" font_weight="bold" x="1610" y="606.667" name="extra staff needed for overflow patients"/>
 				<text_box text_align="center" font_size="10pt" uid="68" x="134.405" y="639.016" width="164.286" height="54.5472">Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</text_box>
-				<text_box text_align="center" font_size="10pt" uid="69" x="312.768" y="639.016" width="164.286" height="54.5472">Nurses absent due to infection (if staff absenteeism option is set)</text_box>
-				<text_box text_align="center" font_size="10pt" uid="70" x="479.643" y="642.349" width="164.286" height="54.5472">Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="69" x="312.768" y="639.016" width="164.286" height="54.5472">Nurses absent due to infection (if staff absenteeism option is set) or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="70" x="479.643" y="642.349" width="164.286" height="54.5472">ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</text_box>
 				<text_box text_align="center" font_size="10pt" uid="71" x="656.31" y="647.349" width="164.286" height="63.651">Total general nurses occupied with caring for patients in wards, calculated on the basis of number of occupied beds and nurse-to-patient ratio</text_box>
 				<text_box text_align="center" font_size="10pt" uid="72" x="839.404" y="652.349" width="164.286" height="63.651">Nurses not occupied with patients nor absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="73" x="1174.64" y="658.182" width="164.286" height="63.651">Number of ward nurses needed to meet demand (for patients waiting for ward and in ward overflow) at the normal nurse-to-patient ratio</text_box>
@@ -12165,8 +12677,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="935.833" y="996.667" name="available ICU nurses"/>
 				<aux font_style="italic" font_weight="bold" x="1280.83" y="999.167" name="total ICU nurses needed for incoming patients"/>
 				<text_box text_align="center" font_size="10pt" uid="77" x="134.405" y="1048.21" width="164.286" height="38.961">Total ICU nurses employed and available for care of pandemic patients, assuming none are absent</text_box>
-				<text_box text_align="center" font_size="10pt" uid="78" x="315.357" y="1048.21" width="164.286" height="38.961">ICU nurses absent due to infection (if staff absenteeism option is set)</text_box>
-				<text_box text_align="center" font_size="10pt" uid="79" x="502.024" y="1048.21" width="164.286" height="51.461">ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="78" x="315.357" y="1048.21" width="164.286" height="38.961">ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="79" x="502.024" y="1048.21" width="164.286" height="51.461">ICU nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="80" x="680.357" y="1048.21" width="164.286" height="72.461">Total ICU nurses occupied with caring for patients in ICU wards, calculated on the basis of number of occupied ICU beds and ICU nurse-to-patient ratio</text_box>
 				<text_box text_align="center" font_size="10pt" uid="81" x="853.69" y="1048.21" width="164.286" height="51.461">ICU nurses not occupied with patients nor absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="82" x="1198.69" y="1047.38" width="164.286" height="51.461">Number of ICU nurses needed to meet demand (for patients waiting for ICU and in ICU overflow) at the normal ICU nurse-to-patient ratio</text_box>
@@ -12206,15 +12718,15 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="99" x="137.44" y="1365.78" width="176.786" height="52.0477">The number of ICU ward beds supported by available ICU nurses and ventilators</text_box>
 				<text_box text_align="center" font_size="10pt" uid="100" x="337.44" y="1365.78" width="176.786" height="64.5477">The number of staffed ICU beds needed to meet current demand (includes patients waiting for ICU and in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="101" x="535.714" y="1359.53" width="176.786" height="77.0477">The gap in staffed ICU beds, comparing available staffed ICU beds plus expected ICU beds freed with patients waiting for ICU plus patients in ICU overflow</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="102" x="45.497" y="2003.24" width="148.242" height="18.5711">Active surge strategies:</text_box>
-				<text_box text_align="center" uid="103" x="114.156" y="2080.47" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="104" x="684.274" y="2084.47" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="105" x="393.156" y="2084.47" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="106" x="975.61" y="2087.47" width="260.286" height="71.3294">Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</text_box>
-				<aux font_style="italic" font_weight="bold" x="232.214" y="2039.5" name="activate surge strategy 1"/>
-				<aux font_style="italic" font_weight="bold" x="513.309" y="2039.5" name="activate surge strategy 2"/>
-				<aux font_style="italic" font_weight="bold" x="806.167" y="2046.25" name="activate surge strategy 3"/>
-				<aux font_style="italic" font_weight="bold" x="1105.75" y="2046.25" name="activate surge strategy 4"/>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="102" x="48.497" y="2483.24" width="148.242" height="18.5711">Active surge strategies:</text_box>
+				<text_box text_align="center" uid="103" x="117.156" y="2560.47" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="104" x="687.274" y="2564.47" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="105" x="396.156" y="2564.47" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="106" x="978.61" y="2567.47" width="260.286" height="71.3294">Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</text_box>
+				<aux font_style="italic" font_weight="bold" x="235.214" y="2519.5" name="activate surge strategy 1"/>
+				<aux font_style="italic" font_weight="bold" x="516.309" y="2519.5" name="activate surge strategy 2"/>
+				<aux font_style="italic" font_weight="bold" x="809.167" y="2526.25" name="activate surge strategy 3"/>
+				<aux font_style="italic" font_weight="bold" x="1108.75" y="2526.25" name="activate surge strategy 4"/>
 				<aux font_style="italic" font_weight="bold" x="216.548" y="725" name="staffed ward beds available"/>
 				<aux font_style="italic" font_weight="bold" x="404.166" y="725" name="staffed ward beds needed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="725" name="staffed ward beds gap"/>
@@ -12231,6 +12743,24 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="1210" y="1325" name="deaths in ICU"/>
 				<text_box text_align="center" font_size="10pt" uid="111" x="1121.61" y="1357.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="195" name="Confirmed cases"/>
+				<aux font_style="italic" font_weight="bold" x="212" y="1868" name="total initial staffed\nward beds available for all"/>
+				<aux font_style="italic" font_weight="bold" x="404.607" y="1868" name="total initial staffed\nward beds available for pandemic"/>
+				<aux font_style="italic" font_weight="bold" x="602.833" y="1868" name="total initial staffed\nequipped ICU beds available for all"/>
+				<text_box font_style="italic" uid="112" x="109.916" y="1813.52" width="1251.67" height="32.5129">These figures show the initial total capacity for staffed ward beds and ICU beds taking into account all the hospital resources, and the capacity set aside for pandemic use. Ward bed calculations take into account physical ward beds and nurses, and ICU beds take into account physical ICU beds, ICU nurses and ventilators. PPE is assumed to be sufficient to supply the staff, and all staff are assumed to be at work.</text_box>
+				<text_box text_align="center" uid="113" x="119.44" y="1915.56" width="164.286" height="75.35">The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="114" x="47.5099" y="1779.95" width="576.728" height="18.5711">Initial capacity for staffed ward and ICU beds (these figures will not change during the run):</text_box>
+				<text_box text_align="center" uid="115" x="322.464" y="1922.56" width="164.286" height="75.35">The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box text_align="center" uid="116" x="520.69" y="1922.56" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box text_align="center" uid="117" x="718.857" y="1922.56" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
+				<aux font_style="italic" font_weight="bold" x="801" y="1868" name="total initial staffed\nequipped ICU beds available for pandemic"/>
+				<aux font_style="italic" font_weight="bold" x="204" y="2107" name="increased demand for ward beds"/>
+				<aux font_style="italic" font_weight="bold" x="392" y="2107" name="increased demand for ICU"/>
+				<aux font_style="italic" font_weight="bold" x="565" y="2107" name="stress code"/>
+				<text_box font_style="italic" uid="118" x="115.916" y="2049.52" width="1251.67" height="32.5129">Additional demand for ward and ICU beds stresses the hospital system. Calculation of stress code is subject to refinement after discussions with end users.</text_box>
+				<text_box text_align="center" uid="119" x="125.44" y="2151.56" width="164.286" height="75.35">The fractional increase in demand for ward beds compared to the normal total capacity in the hospital</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="120" x="53.5099" y="2015.95" width="219.728" height="18.5711">Stress indicators:</text_box>
+				<text_box text_align="center" uid="121" x="310.086" y="2154.56" width="164.286" height="75.35">The fractional increase in demand for ICU beds compared to the normal total capacity in the hospital</text_box>
+				<text_box text_align="center" uid="122" x="482.857" y="2154.56" width="164.286" height="75.35">Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</text_box>
 			</view>
 		</views>
 	</model>
@@ -12260,7 +12790,9 @@ Simply put, the percentage of the population that acquired the disease during an
 				<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="45" height="35"/>
 				</stock>
-				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+					<shape type="circle" radius="18"/>
+				</flow>
 				<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
 				<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="55" height="45"/>
