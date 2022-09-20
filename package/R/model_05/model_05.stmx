@@ -341,6 +341,10 @@
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
 				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
@@ -429,14 +433,10 @@
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
 				<connect2 to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
@@ -698,10 +698,10 @@
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
 				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.max_available_nurses" from="Hospital_Resources.max_available_nurses"/>
@@ -734,10 +734,10 @@
 				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
@@ -1362,10 +1362,10 @@
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ICU" from="Hospital_Resources.increased_demand_for_ICU"/>
 				<connect to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.increased_demand_for_ward_beds" from="Hospital_Resources.increased_demand_for_ward_beds"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_pandemic" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ICU_bed_capacity" from="Hospital_Resources.initial_pandemic_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.initial_pandemic_ward_bed_capacity" from="Hospital_Resources.initial_pandemic_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.max_available_ICU_nurses" from="Hospital_Resources.max_available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.max_available_nurses" from="Hospital_Resources.max_available_nurses"/>
@@ -1402,10 +1402,10 @@
 				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_equipped_ICU_beds_available_for_all" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
-				<connect to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
-				<connect2 to="PANDEM2_Outputs.total_initial_staffed_ward_beds_available_for_all" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
+				<connect to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
+				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
@@ -1631,9 +1631,9 @@
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<module label_side="center" x="54.501" y="44.375" width="79.375" height="45" name="EPI"/>
+				<module label_side="center" x="53.251" y="26.25" width="79.375" height="45" name="EPI"/>
 				<module label_side="center" x="236.875" y="70" name="Hospital"/>
-				<connector uid="1" isee:thickness="2" angle="358.745" isee:autocreated="true">
+				<connector uid="1" isee:thickness="2" angle="351.602" isee:autocreated="true">
 					<from>EPI</from>
 					<to>Hospital</to>
 				</connector>
@@ -5668,7 +5668,7 @@ delay_before_hospitalisation</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="420" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -7838,36 +7838,8 @@ ELSE
 				<eqn>ICU_nurses_per_100K_1 * SUM(Population_size) / 100000</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="total initial ward bed capacity" access="output" isee:autocreated="true">
-				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>MIN(total_beds, 
-total_nurses / nurses_per_bed_4)</eqn>
-				<units>Beds</units>
-			</aux>
-			<aux name="total initial ICU bed capacity" access="output" isee:autocreated="true">
-				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>MIN(
-MIN(
-total_ICU_beds,  total_ICU_beds_supported_by_all_ventilators), 
-total_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
-				<units>ICU Beds</units>
-			</aux>
 			<aux name="total ICU beds supported by\nall ventilators" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>ICU Beds</units>
-			</aux>
-			<aux name="initial pandemic ward bed capacity" access="output" isee:autocreated="true">
-				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>MIN(max_available_beds, 
-max_available_nurses / nurses_per_bed_4)</eqn>
-				<units>Beds</units>
-			</aux>
-			<aux name="initial pandemic ICU bed\ncapacity" access="output" isee:autocreated="true">
-				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>MIN(
-MIN(
-max_available_ICU_beds,  total_ICU_beds_supported_by_all_ventilators * proportion_of_ventilators_available_for_pandemic), 
-max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="proportion of ventilators available for pandemic" access="input">
@@ -7921,6 +7893,34 @@ THEN 2
 ELSE 3</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="total initial ward bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(total_beds, 
+total_nurses / nurses_per_bed_4)</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="initial pandemic ward bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(max_available_beds, 
+max_available_nurses / nurses_per_bed_4)</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total initial ICU bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(
+MIN(
+total_ICU_beds,  total_ICU_beds_supported_by_all_ventilators), 
+total_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="initial pandemic ICU bed capacity" access="output" isee:autocreated="true">
+				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>MIN(
+MIN(
+max_available_ICU_beds,  total_ICU_beds_supported_by_all_ventilators * proportion_of_ventilators_available_for_pandemic), 
+max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
+				<units>ICU Beds</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -7968,7 +7968,7 @@ ELSE 3</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="304.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="237.5" isee:scroll_y="300" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8806,109 +8806,23 @@ Nurses require PPE</text_box>
 				<text_box font_style="italic" text_align="right" uid="273" x="488.787" y="49.9527" width="137.5" height="15.5035">All beds and nurses:</text_box>
 				<text_box font_style="italic" text_align="right" uid="274" x="431.922" y="83.286" width="193.333" height="15.5035">Proportion available for pandemic:</text_box>
 				<text_box font_style="italic" text_align="right" uid="275" x="542.372" y="12.5" width="82.248" height="15.5035">Population:</text_box>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="1067.54" y="1208.48" name="total initial ward bed capacity"/>
-				<connector uid="277" angle="77.3777">
-					<from>
-						<alias uid="276"/>
-					</from>
-					<to>total_initial_ward_bed_capacity</to>
-				</connector>
-				<connector uid="278" angle="166.926">
-					<from>total_beds</from>
-					<to>total_initial_ward_bed_capacity</to>
-				</connector>
-				<connector uid="279" angle="196.703">
-					<from>total_nurses</from>
-					<to>total_initial_ward_bed_capacity</to>
-				</connector>
 				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="280" x="463.667" y="122.453" width="157.523" height="31.3368">Initial total capacity (assuming no staff absent):</text_box>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="281" x="657.857" y="122.453" width="132.32" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="282" x="809.357" y="125.006" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_initial_ward_bed_capacity"/>
-				</numeric_display>
+				<numeric_display color="white" font_color="blue" uid="282" x="809.357" y="125.006" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="283" x="1072.04" y="122.036" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="284" x="1249.83" y="125.006" width="323.436" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_initial_ICU_bed_capacity"/>
-				</numeric_display>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="1452.36" y="1199.17" name="total initial ICU bed capacity"/>
-				<connector uid="285" angle="19.8754">
-					<from>total_ICU_beds</from>
-					<to>total_initial_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="286" angle="208.15">
-					<from>
-						<alias uid="287"/>
-					</from>
-					<to>total_initial_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="288" angle="349.142">
-					<from>total_ICU_nurses</from>
-					<to>total_initial_ICU_bed_capacity</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1498.67" y="1250.98" name="total ICU beds supported by\nall ventilators"/>
+				<numeric_display color="white" font_color="blue" uid="284" x="1249.83" y="125.006" width="323.436" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1523.14" y="1261.75" name="total ICU beds supported by\nall ventilators"/>
 				<connector uid="289" color="#FFFDEB" font_color="#FFFDEB" angle="224.562" isee:autocreated="true">
 					<from>Ventilators</from>
 					<to>total_ICU_beds_supported_by_all_ventilators</to>
 				</connector>
-				<connector uid="290" angle="184.134">
-					<from>total_ICU_beds_supported_by_all_ventilators</from>
-					<to>total_initial_ICU_bed_capacity</to>
-				</connector>
 				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="291" x="396.006" y="163.286" width="228.518" height="31.3368">Initial capacity allocated to pandemic care (assuming no staff absent):</text_box>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="292" x="654.524" y="163.286" width="138.986" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="293" x="809.69" y="165.839" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="initial_pandemic_ward_bed_capacity"/>
-				</numeric_display>
+				<numeric_display color="white" font_color="blue" uid="293" x="809.69" y="165.839" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="294" x="1075.37" y="162.869" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="295" x="1249.49" y="165.839" width="324.116" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="initial_pandemic_ICU_bed_capacity"/>
-				</numeric_display>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="896.63" y="1230.5" name="initial pandemic ward bed capacity"/>
-				<connector uid="296" angle="180.998">
-					<from>max_available_beds</from>
-					<to>initial_pandemic_ward_bed_capacity</to>
-				</connector>
-				<connector uid="297" angle="208.63">
-					<from>max_available_nurses</from>
-					<to>initial_pandemic_ward_bed_capacity</to>
-				</connector>
-				<connector uid="298" angle="199.601">
-					<from>
-						<alias uid="276"/>
-					</from>
-					<to>initial_pandemic_ward_bed_capacity</to>
-				</connector>
-				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="1608.78" y="1190.48" name="initial pandemic ICU bed\ncapacity"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1675.83" y="1250.98" name="proportion of ventilators available for pandemic"/>
-				<connector uid="299" angle="359.177">
-					<from>total_ICU_beds_supported_by_all_ventilators</from>
-					<to>initial_pandemic_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="300" angle="165.764">
-					<from>proportion_of_ventilators_available_for_pandemic</from>
-					<to>initial_pandemic_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="301" angle="19.9479">
-					<from>max_available_ICU_beds</from>
-					<to>initial_pandemic_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="302" angle="336.717">
-					<from>max_available_ICU_nurses</from>
-					<to>initial_pandemic_ICU_bed_capacity</to>
-				</connector>
-				<connector uid="303" angle="5.92206">
-					<from>
-						<alias uid="287"/>
-					</from>
-					<to>initial_pandemic_ICU_bed_capacity</to>
-				</connector>
+				<numeric_display color="white" font_color="blue" uid="295" x="1249.49" y="165.839" width="324.116" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1720" y="1250.98" name="proportion of ventilators available for pandemic"/>
 				<aux label_side="left" x="1829.16" y="284.5" name="increased demand for ward beds"/>
-				<connector uid="309" angle="109.255">
-					<from>
-						<alias uid="310"/>
-					</from>
-					<to>increased_demand_for_ward_beds</to>
-				</connector>
 				<text_box font_style="italic" uid="316" x="1621" y="21.9492" width="193.333" height="15.5035">Indicator of stress on routine care:</text_box>
 				<text_box font_style="italic" uid="317" x="1619.99" y="46.2898" width="362.347" height="154.839">In normal times, staffed ward beds are not empty, they are occupied by non-pandemic (routine) patients (utilisation levels are often high e.g. 90%, and in this calculation a simplifying assumption of 100% is made). Pandemic patients are additional patients. These will displace routine patients, e.g. by cancellation of routine procedures to make room for them. The increase in demand for ward beds (compared to normal total capacity) serves as indicator of stress on both ward bed supply and on routine patient care. Calculation of ward bed demand takes into account all who require a bed, including those in ward overflow.</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="1747" y="217.917" width="128.333" height="24.1667" name="No limit ward"/>
@@ -8921,12 +8835,6 @@ Nurses require PPE</text_box>
 				<aux label_side="left" x="2135.83" y="280.261" name="increased demand for ICU"/>
 				<connector uid="327" angle="242.411">
 					<from>No_limit_ICU</from>
-					<to>increased_demand_for_ICU</to>
-				</connector>
-				<connector uid="328" angle="115.383">
-					<from>
-						<alias uid="326"/>
-					</from>
 					<to>increased_demand_for_ICU</to>
 				</connector>
 				<text_box font_style="italic" uid="329" x="2002" y="21.9492" width="193.333" height="15.5035">Indicator of stress on ICU:</text_box>
@@ -8962,6 +8870,90 @@ The equation needs refining after end user interviews.</text_box>
 				<connector uid="338" angle="275.355">
 					<from>combined_stress_level</from>
 					<to>stress_code</to>
+				</connector>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="1046.74" y="1211.64" name="total initial ward bed capacity"/>
+				<connector uid="342" angle="169.896">
+					<from>total_beds</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<connector uid="343" angle="198.196">
+					<from>total_nurses</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<connector uid="344" angle="28.5099">
+					<from>
+						<alias uid="276"/>
+					</from>
+					<to>total_initial_ward_bed_capacity</to>
+				</connector>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="left" x="896.63" y="1219.17" name="initial pandemic ward bed capacity"/>
+				<connector uid="345" angle="172.896">
+					<from>max_available_beds</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<connector uid="346" angle="204.366">
+					<from>max_available_nurses</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<connector uid="347" angle="186.534">
+					<from>
+						<alias uid="276"/>
+					</from>
+					<to>initial_pandemic_ward_bed_capacity</to>
+				</connector>
+				<connector uid="348" angle="117.699">
+					<from>
+						<alias uid="349"/>
+					</from>
+					<to>increased_demand_for_ward_beds</to>
+				</connector>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" label_side="right" x="1470.34" y="1215.34" name="total initial ICU bed capacity"/>
+				<connector uid="350" angle="9.67575">
+					<from>total_ICU_beds</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="351" angle="144.677">
+					<from>total_ICU_beds_supported_by_all_ventilators</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="352" angle="333.837">
+					<from>total_ICU_nurses</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="353" angle="180.288">
+					<from>
+						<alias uid="287"/>
+					</from>
+					<to>total_initial_ICU_bed_capacity</to>
+				</connector>
+				<aux color="#00AA00" background="#00AA00" font_color="#00AA00" x="1650" y="1193.64" name="initial pandemic ICU bed capacity"/>
+				<connector uid="354" angle="358.859">
+					<from>max_available_ICU_beds</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="355" angle="12.5671">
+					<from>total_ICU_beds_supported_by_all_ventilators</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="356" angle="191.996">
+					<from>proportion_of_ventilators_available_for_pandemic</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="357" angle="340.774">
+					<from>max_available_ICU_nurses</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="358" angle="8.4935">
+					<from>
+						<alias uid="287"/>
+					</from>
+					<to>initial_pandemic_ICU_bed_capacity</to>
+				</connector>
+				<connector uid="359" angle="73.6861">
+					<from>
+						<alias uid="360"/>
+					</from>
+					<to>increased_demand_for_ICU</to>
 				</connector>
 				<alias font_style="italic" uid="90" x="1371.14" y="418.404" width="18" height="18">
 					<of>total_ICU_nurses_needed_for_incoming_patients</of>
@@ -9029,20 +9021,20 @@ The equation needs refining after end user interviews.</text_box>
 				<alias color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" uid="276" x="998.357" y="1249.75" width="18" height="18">
 					<of>nurses_per_bed_4</of>
 				</alias>
-				<alias color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" uid="287" x="1479.34" y="1150.26" width="18" height="18">
+				<alias color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" uid="287" x="1499.14" y="1163.48" width="18" height="18">
 					<of>ICU_nurses_per_bed_2</of>
-				</alias>
-				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" label_side="bottom" uid="310" x="1798.83" y="328.166" width="18" height="18">
-					<of>total_initial_ward_bed_capacity</of>
-				</alias>
-				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" label_side="bottom" uid="326" x="2175" y="305.166" width="18" height="18">
-					<of>total_initial_ICU_bed_capacity</of>
 				</alias>
 				<alias color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="top" uid="331" x="1910.17" y="272.667" width="18" height="18">
 					<of>patients_per_ward_bed</of>
 				</alias>
 				<alias color="#AAAAFF" font_style="italic" font_weight="bold" font_color="#AAAAFF" label_side="top" uid="332" x="2231.83" y="271.261" width="18" height="18">
 					<of>patients_per_ICU_bed_1</of>
+				</alias>
+				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" uid="349" x="1830.17" y="333.5" width="18" height="18">
+					<of>total_initial_ward_bed_capacity</of>
+				</alias>
+				<alias color="#00AA00" background="#00AA00" font_style="italic" font_color="#00AA00" uid="360" x="2157.67" y="338.649" width="18" height="18">
+					<of>total_initial_ICU_bed_capacity</of>
 				</alias>
 			</view>
 		</views>
@@ -11468,7 +11460,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 		<variables>
 			<aux name="simulate staff absenteeism" access="output" isee:autocreated="true">
 				<doc>Whether to include staff absenteeism in the model (i.e. factor in pandemic infections in staff leading to absence)</doc>
-				<eqn>0</eqn>
+				<eqn>1</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="simulate interruption in PPE supply" access="output" isee:autocreated="true">
@@ -12085,26 +12077,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				</dimensions>
 				<units>people/day</units>
 			</aux>
-			<aux name="total initial staffed\nward beds available for all" access="input">
-				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Beds</units>
-			</aux>
-			<aux name="total initial staffed\nward beds available for pandemic" access="input">
-				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Beds</units>
-			</aux>
-			<aux name="total initial staffed\nequipped ICU beds available for all" access="input">
-				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>ICU Beds</units>
-			</aux>
-			<aux name="total initial staffed\nequipped ICU beds available for pandemic" access="input">
-				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>ICU Beds</units>
-			</aux>
 			<aux name="increased demand for ward beds" access="input">
 				<doc>The fractional increase in demand for ward beds compared to the normal total capacity in the hospital</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
@@ -12119,6 +12091,26 @@ Simply put, the percentage of the population that acquired the disease during an
 				<doc>Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
+			</aux>
+			<aux name="total initial ward bed capacity" access="input">
+				<doc>The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="initial pandemic ward bed capacity" access="input">
+				<doc>The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Beds</units>
+			</aux>
+			<aux name="total initial ICU bed capacity" access="input">
+				<doc>The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
+			</aux>
+			<aux name="initial pandemic ICU bed capacity" access="input">
+				<doc>The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>ICU Beds</units>
 			</aux>
 		</variables>
 		<views>
@@ -12167,7 +12159,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12743,16 +12735,12 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="1210" y="1325" name="deaths in ICU"/>
 				<text_box text_align="center" font_size="10pt" uid="111" x="1121.61" y="1357.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="195" name="Confirmed cases"/>
-				<aux font_style="italic" font_weight="bold" x="212" y="1868" name="total initial staffed\nward beds available for all"/>
-				<aux font_style="italic" font_weight="bold" x="404.607" y="1868" name="total initial staffed\nward beds available for pandemic"/>
-				<aux font_style="italic" font_weight="bold" x="602.833" y="1868" name="total initial staffed\nequipped ICU beds available for all"/>
 				<text_box font_style="italic" uid="112" x="109.916" y="1813.52" width="1251.67" height="32.5129">These figures show the initial total capacity for staffed ward beds and ICU beds taking into account all the hospital resources, and the capacity set aside for pandemic use. Ward bed calculations take into account physical ward beds and nurses, and ICU beds take into account physical ICU beds, ICU nurses and ventilators. PPE is assumed to be sufficient to supply the staff, and all staff are assumed to be at work.</text_box>
 				<text_box text_align="center" uid="113" x="119.44" y="1915.56" width="164.286" height="75.35">The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="114" x="47.5099" y="1779.95" width="576.728" height="18.5711">Initial capacity for staffed ward and ICU beds (these figures will not change during the run):</text_box>
 				<text_box text_align="center" uid="115" x="322.464" y="1922.56" width="164.286" height="75.35">The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
 				<text_box text_align="center" uid="116" x="520.69" y="1922.56" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
 				<text_box text_align="center" uid="117" x="718.857" y="1922.56" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
-				<aux font_style="italic" font_weight="bold" x="801" y="1868" name="total initial staffed\nequipped ICU beds available for pandemic"/>
 				<aux font_style="italic" font_weight="bold" x="204" y="2107" name="increased demand for ward beds"/>
 				<aux font_style="italic" font_weight="bold" x="392" y="2107" name="increased demand for ICU"/>
 				<aux font_style="italic" font_weight="bold" x="565" y="2107" name="stress code"/>
@@ -12761,6 +12749,15 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="120" x="53.5099" y="2015.95" width="219.728" height="18.5711">Stress indicators:</text_box>
 				<text_box text_align="center" uid="121" x="310.086" y="2154.56" width="164.286" height="75.35">The fractional increase in demand for ICU beds compared to the normal total capacity in the hospital</text_box>
 				<text_box text_align="center" uid="122" x="482.857" y="2154.56" width="164.286" height="75.35">Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</text_box>
+				<text_box text_align="center" uid="123" x="938.44" y="1918.56" width="418.226" height="75.35">[1] &quot;total_initial_staffed\\nward_beds_available_for_all&quot;
+[1] &quot;total_initial_staffed\\nward_beds_available_for_pandemic&quot;
+[1] &quot;total_initial_staffed\\nequipped_ICU_beds_available_for_all&quot;
+[1] &quot;total_initial_staffed\\nequipped_ICU_beds_available_for_pandemic&quot;
+</text_box>
+				<aux font_style="italic" font_weight="bold" x="201.583" y="1870" name="total initial ward bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="404.607" y="1870" name="initial pandemic ward bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="591.858" y="1870" name="total initial ICU bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="791" y="1870" name="initial pandemic ICU bed capacity"/>
 			</view>
 		</views>
 	</model>
