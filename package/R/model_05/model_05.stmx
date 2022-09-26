@@ -7968,7 +7968,7 @@ max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="237.5" isee:scroll_y="300" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8808,9 +8808,13 @@ Nurses require PPE</text_box>
 				<text_box font_style="italic" text_align="right" uid="275" x="542.372" y="12.5" width="82.248" height="15.5035">Population:</text_box>
 				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="280" x="463.667" y="122.453" width="157.523" height="31.3368">Initial total capacity (assuming no staff absent):</text_box>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="281" x="657.857" y="122.453" width="132.32" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="282" x="809.357" y="125.006" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="white" font_color="blue" uid="282" x="809.357" y="125.006" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_initial_ward_bed_capacity"/>
+				</numeric_display>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="283" x="1072.04" y="122.036" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="284" x="1249.83" y="125.006" width="323.436" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="white" font_color="blue" uid="284" x="1249.83" y="125.006" width="323.436" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="total_initial_ICU_bed_capacity"/>
+				</numeric_display>
 				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1523.14" y="1261.75" name="total ICU beds supported by\nall ventilators"/>
 				<connector uid="289" color="#FFFDEB" font_color="#FFFDEB" angle="224.562" isee:autocreated="true">
 					<from>Ventilators</from>
@@ -8818,9 +8822,13 @@ Nurses require PPE</text_box>
 				</connector>
 				<text_box font_style="italic" text_align="right" border_color="blue" border_width="0.6" border_style="solid" uid="291" x="396.006" y="163.286" width="228.518" height="31.3368">Initial capacity allocated to pandemic care (assuming no staff absent):</text_box>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="292" x="654.524" y="163.286" width="138.986" height="31.3368">Staffed ward beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="293" x="809.69" y="165.839" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="white" font_color="blue" uid="293" x="809.69" y="165.839" width="259.277" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="initial_pandemic_ward_bed_capacity"/>
+				</numeric_display>
 				<text_box font_style="italic" text_align="right" font_color="blue" font_size="11pt" border_color="blue" border_width="0.6" uid="294" x="1075.37" y="162.869" width="153.618" height="32.1702">Staffed equipped ICU beds (assuming enough PPE)</text_box>
-				<numeric_display color="white" font_color="blue" uid="295" x="1249.49" y="165.839" width="324.116" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="white" font_color="blue" uid="295" x="1249.49" y="165.839" width="324.116" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="initial_pandemic_ICU_bed_capacity"/>
+				</numeric_display>
 				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1720" y="1250.98" name="proportion of ventilators available for pandemic"/>
 				<aux label_side="left" x="1829.16" y="284.5" name="increased demand for ward beds"/>
 				<text_box font_style="italic" uid="316" x="1621" y="21.9492" width="193.333" height="15.5035">Indicator of stress on routine care:</text_box>
@@ -12159,7 +12167,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="575.833" isee:scroll_y="1650" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12749,11 +12757,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="120" x="53.5099" y="2015.95" width="219.728" height="18.5711">Stress indicators:</text_box>
 				<text_box text_align="center" uid="121" x="310.086" y="2154.56" width="164.286" height="75.35">The fractional increase in demand for ICU beds compared to the normal total capacity in the hospital</text_box>
 				<text_box text_align="center" uid="122" x="482.857" y="2154.56" width="164.286" height="75.35">Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</text_box>
-				<text_box text_align="center" uid="123" x="938.44" y="1918.56" width="418.226" height="75.35">[1] &quot;total_initial_staffed\\nward_beds_available_for_all&quot;
-[1] &quot;total_initial_staffed\\nward_beds_available_for_pandemic&quot;
-[1] &quot;total_initial_staffed\\nequipped_ICU_beds_available_for_all&quot;
-[1] &quot;total_initial_staffed\\nequipped_ICU_beds_available_for_pandemic&quot;
-</text_box>
 				<aux font_style="italic" font_weight="bold" x="201.583" y="1870" name="total initial ward bed capacity"/>
 				<aux font_style="italic" font_weight="bold" x="404.607" y="1870" name="initial pandemic ward bed capacity"/>
 				<aux font_style="italic" font_weight="bold" x="591.858" y="1870" name="total initial ICU bed capacity"/>
