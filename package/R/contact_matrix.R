@@ -1,4 +1,4 @@
-get_contact_matrix <- function(country_code, pop_young, pop_old) {
+get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
 
   polymod       <- socialmixr::polymod
   country_names <- socialmixr::survey_countries(polymod)
@@ -13,12 +13,10 @@ get_contact_matrix <- function(country_code, pop_young, pop_old) {
     return(msg)
   }
 
-  age_limits <- c(0, 20)
+  age_limits <- c(0, 20, 40)
 
   pop_df <- data.frame(lower.age.limit = age_limits,
-                       population = c(pop_young, pop_old))
-
-  print(pop_df)
+                       population = c(pop_a, pop_b, pop_c))
 
   cm_object <- socialmixr::contact_matrix(socialmixr::polymod,
                                           age.limits = age_limits,
@@ -31,7 +29,9 @@ get_contact_matrix <- function(country_code, pop_young, pop_old) {
 
   contact_list <- as.list(contact_matrix)
 
-  names(contact_list) <- c("yy", "oy", "yo", "oo")
+  names(contact_list) <- c("aa", "ba", "ca",
+                           "ab", "bb", "bc",
+                           "ac", "bc", "cc")
 
   contact_list
 }

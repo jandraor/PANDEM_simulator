@@ -5,7 +5,7 @@
 		<name>model_05</name>
 		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.1" isee:build_number="2776" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.00555556" isee:restore_on_start="false" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -14,14 +14,20 @@
 	</sim_specs>
 	<dimensions>
 		<dim name="Age">
-			<elem name="y"/>
-			<elem name="o"/>
+			<elem name="a"/>
+			<elem name="b"/>
+			<elem name="c"/>
 		</dim>
 		<dim name="Contacts">
-			<elem name="yy"/>
-			<elem name="yo"/>
-			<elem name="oy"/>
-			<elem name="oo"/>
+			<elem name="aa"/>
+			<elem name="ab"/>
+			<elem name="ac"/>
+			<elem name="ba"/>
+			<elem name="bb"/>
+			<elem name="bc"/>
+			<elem name="ca"/>
+			<elem name="cb"/>
+			<elem name="cc"/>
 		</dim>
 	</dimensions>
 	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
@@ -888,14 +894,12 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" isee:scroll_y="18.125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1021,9 +1025,7 @@
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1592,14 +1594,12 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1633,7 +1633,7 @@
 				</style>
 				<module label_side="center" x="53.251" y="26.25" width="79.375" height="45" name="EPI"/>
 				<module label_side="center" x="236.875" y="70" name="Hospital"/>
-				<connector uid="1" isee:thickness="2" angle="351.602" isee:autocreated="true">
+				<connector uid="1" isee:thickness="2" angle="354.979" isee:autocreated="true">
 					<from>EPI</from>
 					<to>Hospital</to>
 				</connector>
@@ -1838,14 +1838,12 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -2058,14 +2056,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="230" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -2257,7 +2253,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>0.5</eqn>
+				<eqn>1/3</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Converter 1" access="input">
@@ -2412,14 +2408,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="1" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -2666,11 +2660,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn> (effective_contacts[yy]  + effective_contacts[yo]) / Converter_1[y]</eqn>
+				<element subscript="a">
+					<eqn> (effective_contacts[aa]  + effective_contacts[ab] + effective_contacts[ac]) / Converter_1[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>(effective_contacts[oy] + effective_contacts[oo]) / Converter_1[o]</eqn>
+				<element subscript="b">
+					<eqn> (effective_contacts[ba]  + effective_contacts[bb] + effective_contacts[bc]) / Converter_1[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn> (effective_contacts[ca]  + effective_contacts[cb] + effective_contacts[cc]) / Converter_1[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -2679,11 +2676,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>(1 - Converter_2) * (traced_contacts[yy]  + traced_contacts[yo]) / Converter_1[y]</eqn>
+				<element subscript="a">
+					<eqn>(1 - Converter_2) * (traced_contacts[aa]  + traced_contacts[ab] + traced_contacts[ac]) / Converter_1[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>(1- Converter_2) *(traced_contacts[oy] + traced_contacts[oo]) / Converter_1[o]</eqn>
+				<element subscript="b">
+					<eqn>(1 - Converter_2) * (traced_contacts[ba]  + traced_contacts[bb] + traced_contacts[bc]) / Converter_1[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>(1 - Converter_2) * (traced_contacts[ca]  + traced_contacts[cb] + traced_contacts[cc]) / Converter_1[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -2717,17 +2717,32 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
-				<element subscript="yy">
-					<eqn>Converter_3[yy] * Converter_4[y]</eqn>
+				<element subscript="aa">
+					<eqn>Converter_3[aa] * Converter_4[a]</eqn>
 				</element>
-				<element subscript="yo">
-					<eqn>Converter_3[yo] * Converter_4[o]</eqn>
+				<element subscript="ab">
+					<eqn>Converter_3[ab] * Converter_4[b]</eqn>
 				</element>
-				<element subscript="oy">
-					<eqn>Converter_3[oy] * Converter_4[y]</eqn>
+				<element subscript="ac">
+					<eqn>Converter_3[ac] * Converter_4[c]</eqn>
 				</element>
-				<element subscript="oo">
-					<eqn>Converter_3[oo] * Converter_4[o]</eqn>
+				<element subscript="ba">
+					<eqn>Converter_3[ba] * Converter_4[a]</eqn>
+				</element>
+				<element subscript="bb">
+					<eqn>Converter_3[bb] * Converter_4[b]</eqn>
+				</element>
+				<element subscript="bc">
+					<eqn>Converter_3[bc] * Converter_4[c]</eqn>
+				</element>
+				<element subscript="ca">
+					<eqn>Converter_3[ca] * Converter_4[a]</eqn>
+				</element>
+				<element subscript="cb">
+					<eqn>Converter_3[cb] * Converter_4[b]</eqn>
+				</element>
+				<element subscript="cc">
+					<eqn>Converter_3[cc] * Converter_4[c]</eqn>
 				</element>
 				<units>People/day</units>
 			</aux>
@@ -2744,7 +2759,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
-				<eqn>0.25</eqn>
+				<eqn>1/9</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective contacts" access="output">
@@ -2869,14 +2884,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_rows="2" isee:scroll_y="68" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_rows="2" isee:scroll_y="151" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -3132,7 +3145,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>0.5</eqn>
+				<eqn>1/3</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="Vs">
@@ -3216,14 +3229,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="289.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="138.75" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -3380,11 +3391,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>N[y] - 1</eqn>
+				<element subscript="a">
+					<eqn>N[a] - 1</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>N[o]</eqn>
+				<element subscript="b">
+					<eqn>N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>N[c]</eqn>
 				</element>
 				<inflow>SQ_to_S</inflow>
 				<outflow>S_to_E</outflow>
@@ -3519,11 +3533,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>par_eta * (beta_contacts[yy] * A[y] + beta_contacts[yo] * A[o]) / N[y]</eqn>
+				<element subscript="a">
+					<eqn>par_eta * (beta_contacts[aa] * A[a] + beta_contacts[ab] * A[b] + beta_contacts[ac] * A[c]) / N[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>par_eta * (beta_contacts[oy] * A[y] + beta_contacts[oo] * A[o]) / N[o]</eqn>
+				<element subscript="b">
+					<eqn>par_eta * (beta_contacts[ba] * A[a] + beta_contacts[bb] * A[b] + beta_contacts[bc] * A[c]) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>par_eta * (beta_contacts[ca] * A[a] + beta_contacts[cb] * A[b] + beta_contacts[cc] * A[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -3605,10 +3622,13 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>1</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="c">
 					<eqn>0</eqn>
 				</element>
 				<inflow>C_in</inflow>
@@ -3717,10 +3737,13 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>1</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="c">
 					<eqn>0</eqn>
 				</element>
 				<inflow>E_to_PU</inflow>
@@ -3737,11 +3760,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>(beta_contacts[yy] * PU[y] + beta_contacts[yo] * PU[o]) / N[y]</eqn>
+				<element subscript="a">
+					<eqn>(beta_contacts[aa] * PU[a] + beta_contacts[ab] * PU[b] + beta_contacts[ac] * PU[c]) / N[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>(beta_contacts[oy] * PU[y] + beta_contacts[oo] * PU[o]) / N[o]</eqn>
+				<element subscript="b">
+					<eqn>(beta_contacts[ba] * PU[a] + beta_contacts[bb] * PU[b] + beta_contacts[bc] * PU[c]) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>(beta_contacts[ca] * PU[a] + beta_contacts[cb] * PU[b] + beta_contacts[cc] * PU[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -3750,11 +3776,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>(beta_contacts[yy] * IU[y] + beta_contacts[yo] * IU[o]) / N[y]</eqn>
+				<element subscript="a">
+					<eqn>(beta_contacts[aa] * IU[a] + beta_contacts[ab] * IU[b]  + beta_contacts[ac] * IU[c]) / N[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>(beta_contacts[oy] * IU[y] + beta_contacts[oo] * IU[o]) / N[o]</eqn>
+				<element subscript="b">
+					<eqn>(beta_contacts[ba] * IU[a] + beta_contacts[bb] * IU[b]  + beta_contacts[bc] * IU[c]) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>(beta_contacts[ca] * IU[a] + beta_contacts[cb] * IU[b]  + beta_contacts[cc] * IU[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -3783,11 +3812,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>((beta_contacts[yy] * PD[y] - Converter_4[yy]) + (beta_contacts[yo] * PD[o] - Converter_4[yo])) / N[y]</eqn>
+				<element subscript="a">
+					<eqn>((beta_contacts[aa] * PD[a] - Converter_4[aa]) + (beta_contacts[ab] * PD[b] - Converter_4[ab]) + (beta_contacts[ac] * PD[c] - Converter_4[ac])) / N[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>((beta_contacts[oy] * PD[y] - Converter_4[oy]) + (beta_contacts[oo] * PD[o] - Converter_4[oo])) / N[o]</eqn>
+				<element subscript="b">
+					<eqn>((beta_contacts[ba] * PD[a] - Converter_4[ba]) + (beta_contacts[bb] * PD[b] - Converter_4[bb]) + (beta_contacts[bc] * PD[c] - Converter_4[bc])) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>((beta_contacts[ca] * PD[a] - Converter_4[ca]) + (beta_contacts[cb] * PD[b] - Converter_4[cb]) + (beta_contacts[cc] * PD[c] - Converter_4[cc])) / N[a]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -3802,11 +3834,14 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
-					<eqn>par_mu_T * (beta_contacts[yy] * ID[y] + beta_contacts[yo] * ID[o]) / N[y]</eqn>
+				<element subscript="a">
+					<eqn>par_mu_T * (beta_contacts[aa] * ID[a] + beta_contacts[ab] * ID[b] + beta_contacts[ac] * ID[c]) / N[a]</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>par_mu_T * (beta_contacts[oy] * ID[y] + beta_contacts[oo] * ID[o]) / N[o]</eqn>
+				<element subscript="b">
+					<eqn>par_mu_T * (beta_contacts[ba] * ID[a] + beta_contacts[bb] * ID[b] + beta_contacts[bc] * ID[c]) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>par_mu_T * (beta_contacts[ca] * ID[a] + beta_contacts[cb] * ID[b] + beta_contacts[cc] * ID[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -3899,14 +3934,12 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="1.66667" isee:scroll_y="546.667" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5668,14 +5701,12 @@ delay_before_hospitalisation</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5732,10 +5763,10 @@ delay_before_hospitalisation</eqn>
 					</pts>
 				</flow>
 				<numeric_display uid="16" x="1903.39" y="615.115" width="185.51" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_Admissions[y]"/>
+					<entity name="Total_Admissions[a]"/>
 				</numeric_display>
 				<numeric_display uid="17" x="1903.39" y="645.115" width="185.51" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_Admissions[o]"/>
+					<entity name="Total_Admissions[b]"/>
 				</numeric_display>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="40.8075" y="310.529" name="PD to ID"/>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="112.563" y="309" width="18" height="18" name="PU to IU"/>
@@ -6396,7 +6427,7 @@ delay_before_hospitalisation</eqn>
 					<to>moving_to_ward_overflow</to>
 				</connector>
 				<numeric_display color="#FFFF7F" uid="218" x="669.973" y="1870.38" width="247.027" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_denied_Ward_Bed[y]"/>
+					<entity name="Total_denied_Ward_Bed[a]"/>
 				</numeric_display>
 				<text_box font_style="italic" uid="219" x="662.067" y="1942.41" width="270.646" height="62.1913">These patients will be treated in emergency depts etc, causing overcrowding and less than ideal conditions for patients and staff. Patient outcomes unchanged though in this model.</text_box>
 				<stock label_side="center" x="782.5" y="1188.66" width="125" height="31" name="Total needed Ward Bed"/>
@@ -6420,7 +6451,7 @@ delay_before_hospitalisation</eqn>
 				</connector>
 				<text_box font_weight="bold" font_size="16pt" uid="224" x="644.417" y="1067.92" width="202.827" height="23">Ward Bed demand</text_box>
 				<numeric_display color="#FFFF7F" uid="225" x="657.591" y="1258.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_needed_Ward_Bed[y]"/>
+					<entity name="Total_needed_Ward_Bed[a]"/>
 				</numeric_display>
 				<text_box font_style="italic" text_decoration="underline" uid="226" x="661.166" y="1349.66" width="258.834" height="23.0064">With current resource levels:</text_box>
 				<stock label_side="center" x="792.5" y="1440.09" width="111" height="30" name="Total Ward admissions"/>
@@ -6443,7 +6474,7 @@ delay_before_hospitalisation</eqn>
 					<to>admitted_to_ward</to>
 				</connector>
 				<numeric_display color="#FFFF7F" uid="231" x="667.545" y="1498.09" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_Ward_admissions[y]"/>
+					<entity name="Total_Ward_admissions[a]"/>
 				</numeric_display>
 				<aux x="831" y="1624.26" name="max constrained ward occupancy"/>
 				<connector uid="232" angle="8.27433">
@@ -6458,13 +6489,13 @@ delay_before_hospitalisation</eqn>
 				<text_box font_style="italic" uid="235" x="667.973" y="1660.83" width="258.834" height="32.5129">With current resource limits, peak ward occupancy would be:</text_box>
 				<text_box font_style="italic" font_weight="bold" font_size="14pt" uid="236" x="646.132" y="1092.92" width="138.827" height="23">Limited resources:</text_box>
 				<numeric_display color="#FFFF7F" uid="237" x="657.591" y="1288.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_needed_Ward_Bed[o]"/>
+					<entity name="Total_needed_Ward_Bed[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFFF7F" uid="238" x="667.545" y="1529.09" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_Ward_admissions[o]"/>
+					<entity name="Total_Ward_admissions[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFFF7F" uid="239" x="669.973" y="1901.38" width="247.027" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_denied_Ward_Bed[o]"/>
+					<entity name="Total_denied_Ward_Bed[b]"/>
 				</numeric_display>
 				<stock label_side="center" x="231.959" y="1753.19" width="94.2857" height="27.1429" name="Total denied ICU"/>
 				<flow x="171.372" y="1767.83" name="moving to ICU overflow">
@@ -6481,10 +6512,10 @@ delay_before_hospitalisation</eqn>
 				</connector>
 				<text_box font_weight="bold" font_size="16pt" uid="242" x="36.132" y="1072.92" width="138.827" height="23">ICU Bed demand</text_box>
 				<numeric_display color="#FFAA7F" uid="243" x="100.139" y="1856.55" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_denied_ICU[y]"/>
+					<entity name="Total_denied_ICU[a]"/>
 				</numeric_display>
 				<numeric_display color="#FFAA7F" uid="244" x="103.139" y="1981.38" width="200" height="37" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Potential_deaths_due_to_lack_of_ICU[y]"/>
+					<entity name="Potential_deaths_due_to_lack_of_ICU[a]"/>
 				</numeric_display>
 				<stock label_side="center" x="167.667" y="1201.7" width="111" height="32" name="Total needed ICU"/>
 				<flow x="127.417" y="1219.83" name="needing ICU">
@@ -6512,7 +6543,7 @@ delay_before_hospitalisation</eqn>
 					<to>needing_ICU</to>
 				</connector>
 				<numeric_display color="#FFAA7F" uid="251" x="78.1397" y="1267.25" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_needed_ICU[y]"/>
+					<entity name="Total_needed_ICU[a]"/>
 				</numeric_display>
 				<aux x="261.571" y="1585.38" name="max constrained ICU occupancy"/>
 				<connector uid="252" angle="11.8644">
@@ -6535,7 +6566,7 @@ delay_before_hospitalisation</eqn>
 					<to>admitted_to_ICU</to>
 				</connector>
 				<numeric_display color="#FFAA7F" uid="256" x="79.977" y="1488.92" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_ICU_admissions[y]"/>
+					<entity name="Total_ICU_admissions[a]"/>
 				</numeric_display>
 				<text_box font_style="italic" uid="257" x="82.305" y="1927.25" width="258.834" height="44.39">Most or all of these patients are at risk of dying (unless hospital system adapts by reducing nurse-to-patient ratio etc)</text_box>
 				<text_box font_style="italic" uid="258" x="79.305" y="1806.25" width="258.834" height="44.39">Note that the model allows for some patients to be denied ICU more than once, so they may be counted more than once here:</text_box>
@@ -6546,16 +6577,16 @@ delay_before_hospitalisation</eqn>
 				<text_box font_style="italic" uid="261" x="60.973" y="1617.83" width="258.834" height="32.5129">With current resource limits, peak occupancy in ICU would be:</text_box>
 				<text_box font_style="italic" font_weight="bold" font_size="14pt" uid="262" x="36.132" y="1095.92" width="138.827" height="23">Limited resources:</text_box>
 				<numeric_display color="#FFAA7F" uid="263" x="78.1437" y="1300.41" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_needed_ICU[o]"/>
+					<entity name="Total_needed_ICU[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFAA7F" uid="264" x="79.977" y="1522.09" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_ICU_admissions[o]"/>
+					<entity name="Total_ICU_admissions[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFAA7F" uid="265" x="100.139" y="1890.38" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Total_denied_ICU[o]"/>
+					<entity name="Total_denied_ICU[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFAA7F" uid="266" x="103.139" y="2026.38" width="200" height="37" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Potential_deaths_due_to_lack_of_ICU[o]"/>
+					<entity name="Potential_deaths_due_to_lack_of_ICU[b]"/>
 				</numeric_display>
 				<aux label_side="right" x="951.645" y="336" name="priority ward"/>
 				<connector uid="268" angle="197.615">
@@ -6643,22 +6674,22 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					<to>total_recovered</to>
 				</connector>
 				<numeric_display uid="286" x="1887.9" y="823.95" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_recovered[o]"/>
+					<entity name="total_recovered[b]"/>
 				</numeric_display>
 				<numeric_display uid="287" x="1887.9" y="788.55" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_recovered[y]"/>
+					<entity name="total_recovered[a]"/>
 				</numeric_display>
 				<numeric_display uid="288" x="1701.38" y="1510.03" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_deaths[y]"/>
+					<entity name="total_deaths[a]"/>
 				</numeric_display>
 				<numeric_display uid="289" x="1701.38" y="1547.03" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="total_deaths[o]"/>
+					<entity name="total_deaths[b]"/>
 				</numeric_display>
 				<numeric_display uid="290" x="1919.9" y="1510.03" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Patients_Discharged[y]"/>
+					<entity name="Patients_Discharged[a]"/>
 				</numeric_display>
 				<numeric_display uid="291" x="1919.9" y="1547.03" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Patients_Discharged[o]"/>
+					<entity name="Patients_Discharged[b]"/>
 				</numeric_display>
 				<connector uid="292" angle="13.2405">
 					<from>
@@ -6754,7 +6785,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					<to>expected_ICU_deaths</to>
 				</connector>
 				<numeric_display color="#FFAA7F" border_color="blue" uid="335" x="367.674" y="1972.38" width="221.232" height="29.33" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="No_limit_ICU_deaths[y]"/>
+					<entity name="No_limit_ICU_deaths[a]"/>
 				</numeric_display>
 				<connector uid="337" angle="238.059">
 					<from>
@@ -6795,7 +6826,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					<to>died_in_ICU</to>
 				</connector>
 				<numeric_display color="#FFAA7F" border_color="blue" uid="346" x="368.145" y="2010.38" width="221.232" height="29.33" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="No_limit_ICU_deaths[o]"/>
+					<entity name="No_limit_ICU_deaths[b]"/>
 				</numeric_display>
 				<aux font_style="italic" font_weight="bold" x="407.75" y="1677.09" name="fraction ICU patients requiring ventilator 1"/>
 				<connector uid="347" angle="5.30332">
@@ -6884,7 +6915,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					</pts>
 				</flow>
 				<numeric_display color="#FFFF7F" border_color="blue" uid="375" x="983.67" y="1940.38" width="221.232" height="29.33" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="No_limit_ward_deaths[y]"/>
+					<entity name="No_limit_ward_deaths[a]"/>
 				</numeric_display>
 				<connector uid="376" angle="0">
 					<from>
@@ -6950,7 +6981,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					<to>peak_demand_nurses</to>
 				</connector>
 				<numeric_display color="#FFFF7F" border_color="blue" uid="392" x="983.967" y="1977.38" width="221.232" height="29.33" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="No_limit_ward_deaths[o]"/>
+					<entity name="No_limit_ward_deaths[b]"/>
 				</numeric_display>
 				<aux label_side="top" x="1520" y="1781" name="peak demand all nurses"/>
 				<aux color="#AA0000" font_color="#AA0000" x="1592" y="1799" name="peak demand PPE"/>
@@ -7563,7 +7594,7 @@ ICU_Nurses_at_work
 			</aux>
 			<aux name="absent ICU nurses" access="output" isee:autocreated="true">
 				<doc>ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
-				<eqn>ICU_Nurses * i[o] * PPE_protection_factor * risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
+				<eqn>ICU_Nurses * i[c] * PPE_protection_factor * risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="ICU nurses per bed 2" access="input">
@@ -7613,7 +7644,7 @@ nurses_at_work
 			<aux name="absent nurses" access="output" isee:autocreated="true">
 				<doc>Nurses absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>Nurses * 
-i[o] * 
+i[c] * 
 PPE_protection_factor * 
 risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
 				<units>Staff</units>
@@ -7973,9 +8004,7 @@ max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -8352,7 +8381,7 @@ Nurses require PPE</text_box>
 					<entity name="ICU_Beds"/>
 				</numeric_display>
 				<numeric_display color="white" font_color="#00AA00" uid="147" x="850.13" y="7.13677" width="202.268" height="26.23" title="Population [y]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Inputs_Data.Population_size[o]"/>
+					<entity name="Inputs_Data.Population_size[b]"/>
 				</numeric_display>
 				<text_box font_style="italic" font_size="10pt" uid="149" x="528.571" y="250.121" width="427.644" height="54.4471">Simplifying assumption: overflow patients have separate unspecified staff, for now. The need for staff to cover overflow is an implication of hospital managers&apos; reporting that such patients are cared for despite not having a ward bed. Previously, they occupied staff nurses, but when overflow rates were high this distorted results, causing many unused beds at peak of wave.</text_box>
 				<aux label_side="left" x="643.214" y="448.12" name="available nurses supported\nby available PPE"/>
@@ -8795,7 +8824,7 @@ Nurses require PPE</text_box>
 					<entity name="total_ICU_nurses"/>
 				</numeric_display>
 				<numeric_display color="white" font_color="#00AA00" uid="270" x="635.643" y="7.13677" width="202.268" height="26.23" title="Population [y]" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Inputs_Data.Population_size[y]"/>
+					<entity name="Inputs_Data.Population_size[a]"/>
 				</numeric_display>
 				<numeric_display color="white" font_color="#00AA00" uid="271" x="1111.48" y="43.9437" width="202.61" height="26.23" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="total_beds"/>
@@ -9301,9 +9330,7 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -9724,9 +9751,7 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10174,14 +10199,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10223,25 +10246,25 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<table width="628.75" height="250" isee:export_name="PANDEM2 Inputs" isee:mark_for_export="true">
 						<item type="time"/>
 						<item>
-							<entity name="Inputs_Data.Age_specific_contact_rates[yy]"/>
+							<entity name="Inputs_Data.Age_specific_contact_rates[aa]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Age_specific_contact_rates[yo]"/>
+							<entity name="Inputs_Data.Age_specific_contact_rates[ab]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Age_specific_contact_rates[oy]"/>
+							<entity name="Inputs_Data.Age_specific_contact_rates[ac]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Age_specific_contact_rates[oo]"/>
+							<entity name="Inputs_Data.Age_specific_contact_rates[ba]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Data.ICU_beds_per_100K"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Population_size[y]"/>
+							<entity name="Inputs_Data.Population_size[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Population_size[o]"/>
+							<entity name="Inputs_Data.Population_size[b]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Data.ventilators_per_100K"/>
@@ -10319,76 +10342,76 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Inputs_Hospital_patient_params.delay_before_hospitalisation"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[y]"/>
+							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[o]"/>
+							<entity name="Inputs_Hospital_patient_params.Denied_ICU_fatality_rate[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.fraction_ICU[y]"/>
+							<entity name="Inputs_Hospital_patient_params.fraction_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.fraction_ICU[o]"/>
+							<entity name="Inputs_Hospital_patient_params.fraction_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[y]"/>
+							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[o]"/>
+							<entity name="Inputs_Hospital_patient_params.fraction_ward_to_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[y]"/>
+							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[o]"/>
+							<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[b]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Hospital_patient_params.ICU_admission_delay"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[y]"/>
+							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[o]"/>
+							<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[b]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Hospital_patient_params.LOS_Denied_ICU"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ICU[y]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ICU[o]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[y]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[o]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ICU_deaths[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward[y]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward[o]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[y]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[o]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_before_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[y]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[o]"/>
+							<entity name="Inputs_Hospital_patient_params.LOS_ward_deaths[b]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[y]"/>
+							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[a]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[o]"/>
+							<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[b]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
@@ -10472,11 +10495,14 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>15811520</eqn>
 				</element>
-				<element subscript="o">
-					<eqn>67972425</eqn>
+				<element subscript="b">
+					<eqn>20249381</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>47723044</eqn>
 				</element>
 				<units>People</units>
 			</aux>
@@ -10510,17 +10536,32 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
-				<element subscript="yy">
+				<element subscript="aa">
 					<eqn>4.397531</eqn>
 				</element>
-				<element subscript="yo">
-					<eqn>1.086448</eqn>
+				<element subscript="ab">
+					<eqn>1.501641</eqn>
 				</element>
-				<element subscript="oy">
-					<eqn>4.670549</eqn>
+				<element subscript="ac">
+					<eqn>0.9011921</eqn>
 				</element>
-				<element subscript="oo">
-					<eqn>6.332184</eqn>
+				<element subscript="ba">
+					<eqn>1.923111</eqn>
+				</element>
+				<element subscript="bb">
+					<eqn>4.224684</eqn>
+				</element>
+				<element subscript="bc">
+					<eqn>1.5197979</eqn>
+				</element>
+				<element subscript="ca">
+					<eqn>2.720019</eqn>
+				</element>
+				<element subscript="cb">
+					<eqn>3.581807</eqn>
+				</element>
+				<element subscript="cc">
+					<eqn>4.0740072</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -10571,14 +10612,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="565" isee:scroll_y="208.75" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="290.625" isee:scroll_y="208.75" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10789,9 +10828,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -10855,10 +10892,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.028</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.024</eqn>
 				</element>
 				<units>dmnl</units>
@@ -10868,10 +10906,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>7.6</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>7.6</eqn>
 				</element>
 				<units>Days</units>
@@ -10881,10 +10920,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>4</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>4</eqn>
 				</element>
 				<units>Days</units>
@@ -10899,10 +10939,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>9.4</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>9.4</eqn>
 				</element>
 				<units>Days</units>
@@ -10912,10 +10953,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>7</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>7</eqn>
 				</element>
 				<units>Days</units>
@@ -10925,10 +10967,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.045</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.045</eqn>
 				</element>
 				<units>dmnl</units>
@@ -10938,10 +10981,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.5</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.5</eqn>
 				</element>
 				<units>dmnl</units>
@@ -10956,10 +11000,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.9</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.9</eqn>
 				</element>
 				<units>dmnl</units>
@@ -10969,10 +11014,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.08</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.08</eqn>
 				</element>
 				<units>dmnl</units>
@@ -10982,10 +11028,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>0.1</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>0.1</eqn>
 				</element>
 				<units>dmnl</units>
@@ -11000,10 +11047,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<element subscript="y">
+				<element subscript="a">
 					<eqn>11</eqn>
 				</element>
-				<element subscript="o">
+				<element subscript="b"/>
+				<element subscript="c">
 					<eqn>11</eqn>
 				</element>
 				<units>Days</units>
@@ -11065,9 +11113,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11272,9 +11318,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11418,9 +11462,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11528,9 +11570,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -12172,9 +12212,7 @@ Simply put, the percentage of the population that acquired the disease during an
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -12210,19 +12248,19 @@ Simply put, the percentage of the population that acquired the disease during an
 					<table width="904.375" height="250" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
-							<entity name='"Within-host_profile".Actual_cases[y]'/>
+							<entity name='"Within-host_profile".Actual_cases[a]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Actual_cases[o]'/>
+							<entity name='"Within-host_profile".Actual_cases[b]'/>
 						</item>
 						<item>
 							<entity name='"Within-host_profile".Attack_rate'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Attack_rate_by_age[y]'/>
+							<entity name='"Within-host_profile".Attack_rate_by_age[a]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Attack_rate_by_age[o]'/>
+							<entity name='"Within-host_profile".Attack_rate_by_age[b]'/>
 						</item>
 						<item>
 							<entity name="Vaccines.Vaccination_capacity"/>
@@ -12237,46 +12275,46 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="Mobility.Mobility_index"/>
 						</item>
 						<item>
-							<entity name="Testing.Confirmed_cases[y]"/>
+							<entity name="Testing.Confirmed_cases[a]"/>
 						</item>
 						<item>
-							<entity name="Testing.Confirmed_cases[o]"/>
+							<entity name="Testing.Confirmed_cases[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.total_in_hospital[y]"/>
+							<entity name="Hospital.total_in_hospital[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.total_in_hospital[o]"/>
+							<entity name="Hospital.total_in_hospital[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.hospital_admissions[y]"/>
+							<entity name="Hospital.hospital_admissions[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.hospital_admissions[o]"/>
+							<entity name="Hospital.hospital_admissions[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.hospital_discharges[y]"/>
+							<entity name="Hospital.hospital_discharges[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.hospital_discharges[o]"/>
+							<entity name="Hospital.hospital_discharges[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.ICU_admissions[y]"/>
+							<entity name="Hospital.ICU_admissions[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.ICU_admissions[o]"/>
+							<entity name="Hospital.ICU_admissions[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.ICU_discharges[y]"/>
+							<entity name="Hospital.ICU_discharges[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.ICU_discharges[o]"/>
+							<entity name="Hospital.ICU_discharges[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.deaths_in_hospital[y]"/>
+							<entity name="Hospital.deaths_in_hospital[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.deaths_in_hospital[o]"/>
+							<entity name="Hospital.deaths_in_hospital[b]"/>
 						</item>
 						<item>
 							<entity name="Hospital_Resources.Beds"/>
@@ -12291,16 +12329,16 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="Hospital.expected_beds_freed"/>
 						</item>
 						<item>
-							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[y]"/>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[o]"/>
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.In_Ward_Overflow[y]"/>
+							<entity name="Hospital.In_Ward_Overflow[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.In_Ward_Overflow[o]"/>
+							<entity name="Hospital.In_Ward_Overflow[b]"/>
 						</item>
 						<item>
 							<entity name="Hospital.physical_ward_beds_needed"/>
@@ -12345,13 +12383,13 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="Hospital_Resources.staffed_ward_beds_gap"/>
 						</item>
 						<item>
-							<entity name="Hospital.ward_admissions[y]"/>
+							<entity name="Hospital.ward_admissions[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.ward_admissions[o]"/>
+							<entity name="Hospital.ward_admissions[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.moving_to_ward_overflow[y]"/>
+							<entity name="Hospital.moving_to_ward_overflow[a]"/>
 						</item>
 						<item>
 							<entity name="Hospital_Resources.ICU_Beds"/>
@@ -12438,70 +12476,70 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="PPE.interrupted_PPE_supply"/>
 						</item>
 						<item>
-							<entity name="Hospital.moving_to_ward_overflow[o]"/>
+							<entity name="Hospital.moving_to_ward_overflow[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Patients_Waiting_for_ICU[y]"/>
+							<entity name="Hospital.Patients_Waiting_for_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Patients_Waiting_for_ICU[o]"/>
+							<entity name="Hospital.Patients_Waiting_for_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.In_ICU_Overflow[y]"/>
+							<entity name="Hospital.In_ICU_Overflow[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.In_ICU_Overflow[o]"/>
+							<entity name="Hospital.In_ICU_Overflow[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[y]"/>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[o]"/>
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.moving_to_ICU_overflow[y]"/>
+							<entity name="Hospital.moving_to_ICU_overflow[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.moving_to_ICU_overflow[o]"/>
+							<entity name="Hospital.moving_to_ICU_overflow[b]"/>
 						</item>
 						<item>
 							<entity name="Hospital.deaths_in_ICU[*]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_needed_ICU[y]"/>
+							<entity name="Hospital.Total_needed_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_needed_ICU[o]"/>
+							<entity name="Hospital.Total_needed_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_ICU_admissions[o]"/>
+							<entity name="Hospital.Total_ICU_admissions[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_ICU_admissions[y]"/>
+							<entity name="Hospital.Total_ICU_admissions[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_needed_Ward_Bed[y]"/>
+							<entity name="Hospital.Total_needed_Ward_Bed[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_needed_Ward_Bed[o]"/>
+							<entity name="Hospital.Total_needed_Ward_Bed[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_Ward_admissions[y]"/>
+							<entity name="Hospital.Total_Ward_admissions[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Total_Ward_admissions[o]"/>
+							<entity name="Hospital.Total_Ward_admissions[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[y]"/>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[o]"/>
+							<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.total_deaths[y]"/>
+							<entity name="Hospital.total_deaths[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.total_deaths[o]"/>
+							<entity name="Hospital.total_deaths[b]"/>
 						</item>
 						<item>
 							<entity name="Hospital_Resources.total_initial_ward_bed_capacity"/>
@@ -12790,9 +12828,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="45" height="35"/>
 				</stock>
-				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-					<shape type="circle" radius="18"/>
-				</flow>
+				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 				<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
 				<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="55" height="45"/>
