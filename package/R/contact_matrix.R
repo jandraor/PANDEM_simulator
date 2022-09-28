@@ -30,7 +30,7 @@ get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
   contact_list <- as.list(contact_matrix)
 
   names(contact_list) <- c("aa", "ba", "ca",
-                           "ab", "bb", "bc",
+                           "ab", "bb", "cb",
                            "ac", "bc", "cc")
 
   contact_list
