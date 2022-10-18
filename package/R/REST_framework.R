@@ -204,7 +204,7 @@ function(req, res) {
   pop_b          <- as.numeric(user_args$pop_b)
   pop_c          <- as.numeric(user_args$pop_c)
 
-  R0_val <- estimate_R0(par_upsilon, country_code, pop_a, pop_b, pop_c)
+  R0_val <- estimate_R0(prob_inf, country_code, pop_a, pop_b, pop_c)
 
   list(R0 = R0_val)
 }
