@@ -193,3 +193,19 @@ function(req, res) {
   contact_matrix
 }
 
+#* @get /R0
+#* @serializer unboxedJSON
+function(req, res) {
+
+  user_args      <- req$args
+  country_code   <- user_args$country_code
+  prob_inf       <- as.numeric(user_args$prob_inf)
+  pop_a          <- as.numeric(user_args$pop_a)
+  pop_b          <- as.numeric(user_args$pop_b)
+  pop_c          <- as.numeric(user_args$pop_c)
+
+  R0_val <- estimate_R0(par_upsilon, country_code, pop_a, pop_b, pop_c)
+
+  list(R0 = R0_val)
+}
+
