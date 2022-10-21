@@ -30,7 +30,7 @@
 			<elem name="cc"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="map" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -317,8 +317,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
 				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
-				<connect to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
-				<connect2 to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
+				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
+				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
@@ -455,8 +455,8 @@
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
 				<connect2 to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
-				<connect to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
-				<connect2 to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
+				<connect to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
+				<connect2 to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
 				<connect to="PANDEM2_Outputs.staffed_equipped_ICU_beds_available" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect2 to="PANDEM2_Outputs.staffed_equipped_ICU_beds_available" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect to="PANDEM2_Outputs.staffed_equipped_ICU_beds_gap" from="Hospital_Resources.staffed_equipped_ICU_beds_gap"/>
@@ -574,8 +574,8 @@
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.test_isolate_compliance"/>
 				<connect2 to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.test_isolate_compliance"/>
-				<connect to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
-				<connect2 to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
+				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
+				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
@@ -644,8 +644,8 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
-				<connect2 to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
+				<connect to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
+				<connect2 to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
@@ -1212,10 +1212,10 @@
 				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate_by_age'/>
 				<connect to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
+				<connect to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect2 to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
+				<connect2 to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
 				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
 				<connect2 to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
 				<connect to='"Within-host_profile".Converter_6' from="Inputs_Epi.switch_mask_wearing"/>
@@ -1226,8 +1226,8 @@
 				<connect2 to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.test_isolate_compliance"/>
 			</module>
 			<module name="Hospital" isee:label="">
-				<connect to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
-				<connect2 to="PANDEM2_Outputs.Antiviral_treatments_administered" from="Hospital.Antiviral_treatments_administered"/>
+				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
+				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect to="PANDEM2_Outputs.deaths_in_hospital" from="Hospital.deaths_in_hospital"/>
@@ -1328,8 +1328,8 @@
 				<connect2 to="PANDEM2_Outputs.physical_ward_beds_needed" from="Hospital.physical_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
-				<connect2 to="PANDEM2_Outputs.Previous_strain_vaccines_administered" from="Hospital.Previous_strain_vaccines_administered"/>
+				<connect to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
+				<connect2 to="PANDEM2_Outputs.Previous_vaccines_administered" from="Hospital.Previous_vaccines_administered"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
@@ -1420,14 +1420,14 @@
 				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
 				<connect to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect2 to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
 				<connect to="Hospital.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect2 to="Hospital.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect to="Hospital.proportion_of_morgue_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_morgue_capacity_available_for_pandemic"/>
 				<connect2 to="Hospital.proportion_of_morgue_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_morgue_capacity_available_for_pandemic"/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
+				<connect to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect2 to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
+				<connect2 to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
 				<connect to="Hospital.staffed_equipped_ICU_beds_available_1" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect2 to="Hospital.staffed_equipped_ICU_beds_available_1" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect to="Hospital.staffed_ward_beds_available_1" from="Hospital_Resources.staffed_ward_beds_available"/>
@@ -1890,12 +1890,12 @@
 				<connect2 to="Testing.Converter_2" from='"Within-host_profile".par_sigma'/>
 				<connect to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
 				<connect2 to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
 				<connect to="Vaccines.Stock_1" from='"Within-host_profile".S'/>
 				<connect2 to="Vaccines.Stock_1" from='"Within-host_profile".S'/>
+				<connect to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect2 to="Hospital.S_to_E" from='"Within-host_profile".S_to_E'/>
+				<connect to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
+				<connect2 to="Hospital.S_to_II" from='"Within-host_profile".S_to_II'/>
 				<connect to="Tracing.Converter_2" from='"Within-host_profile".upsilon'/>
 				<connect2 to="Tracing.Converter_2" from='"Within-host_profile".upsilon'/>
 				<connect to='"Within-host_profile".Converter_2' from="Vaccines.psi"/>
@@ -3590,7 +3590,7 @@ ELSE 0</eqn>
 				<outflow>A_to_R</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="S to E">
+			<flow name="S to E" access="output" isee:autocreated="true">
 				<doc>Infection rate</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -3708,7 +3708,7 @@ ELSE 0</eqn>
 				<eqn>par_xi * SQ</eqn>
 				<units>people/day</units>
 			</flow>
-			<flow name="S to II">
+			<flow name="S to II" access="output" isee:autocreated="true">
 				<doc>Isolation of infected individuals</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -4072,7 +4072,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="198.333" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4758,12 +4758,12 @@ Simply put, the percentage of the population that acquired the disease during an
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
-			<flow name="developing symptoms">
+			<flow name="becoming infected">
 				<doc>Infected people (detected or undetected) who are developing symptoms</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>PD_to_ID + PU_to_IU</eqn>
+				<eqn>S_to_E + S_to_II</eqn>
 				<non_negative/>
 				<units>people/day</units>
 			</flow>
@@ -4786,31 +4786,17 @@ Simply put, the percentage of the population that acquired the disease during an
 				<non_negative/>
 				<units>people/day</units>
 			</flow>
-			<aux name="PD to ID" access="input">
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>people/day</units>
-			</aux>
-			<aux name="PU to IU" access="input">
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>people/day</units>
-			</aux>
 			<aux name="delay before hospitalisation" access="input">
 				<eqn>7</eqn>
 				<units>Days</units>
 			</aux>
-			<stock name="Symptomatic">
-				<doc>Infectious individuals, detected or undetected, who have developed symptoms</doc>
+			<stock name="Infected">
+				<doc>Infected individuals</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
-				<inflow>developing_symptoms</inflow>
+				<inflow>becoming_infected</inflow>
 				<outflow>hospitalisations</outflow>
 				<outflow>not_hospitalised</outflow>
 				<non_negative/>
@@ -4821,7 +4807,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(Symptomatic * hospitalisation_fraction) /
+				<eqn>(Infected * hospitalisation_fraction) /
 delay_before_hospitalisation</eqn>
 				<non_negative/>
 				<units>people/day</units>
@@ -5923,16 +5909,6 @@ ELSE
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
-			<stock name="Antiviral treatments\nadministered" access="output" isee:autocreated="true">
-				<doc>Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>0</eqn>
-				<inflow>antiviral_treatments_given</inflow>
-				<non_negative/>
-				<units>Treatments</units>
-			</stock>
 			<flow name="antiviral treatments given">
 				<dimensions>
 					<dim name="Age"/>
@@ -5946,7 +5922,7 @@ ELSE
 				<eqn>1</eqn>
 				<units>Treatments/Patient</units>
 			</aux>
-			<flow name="previous strain vaccines given">
+			<flow name="previous vaccines given">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -5954,16 +5930,6 @@ ELSE
 				<non_negative/>
 				<units>Treatments/Days</units>
 			</flow>
-			<stock name="Previous strain vaccines\nadministered" access="output" isee:autocreated="true">
-				<doc>Previous strain vaccines administered to patients in ICU (whole treatments, whether one or more doses)</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>0</eqn>
-				<inflow>previous_strain_vaccines_given</inflow>
-				<non_negative/>
-				<units>Treatments</units>
-			</stock>
 			<aux name="morgue capacity" access="input">
 				<eqn>3000</eqn>
 				<units>Patients</units>
@@ -6005,11 +5971,45 @@ ELSE
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(Symptomatic *
+				<eqn>(Infected *
 (1 - hospitalisation_fraction)) /delay_before_hospitalisation</eqn>
 				<non_negative/>
 				<units>People/day</units>
 			</flow>
+			<aux name="S to II" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>people/day</units>
+			</aux>
+			<aux name="S to E" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>people/day</units>
+			</aux>
+			<stock name="Antivirals administered" access="output" isee:autocreated="true">
+				<doc>Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>antiviral_treatments_given</inflow>
+				<non_negative/>
+				<units>Treatments</units>
+			</stock>
+			<stock name="Previous vaccines administered" access="output" isee:autocreated="true">
+				<doc>Previous strain vaccines administered to patients in ICU (whole treatments, whether one or more doses)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>previous_vaccines_given</inflow>
+				<non_negative/>
+				<units>Treatments</units>
+			</stock>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -6057,7 +6057,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="728" isee:scroll_y="187" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6097,7 +6097,7 @@ ELSE
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
 				<stock label_side="center" x="361.363" y="359.602" width="70.3333" height="32.6667" name="Admissions"/>
-				<flow label_side="bottom" x="107.281" y="375" name="developing symptoms">
+				<flow label_side="bottom" x="107.281" y="375" name="becoming infected">
 					<pts>
 						<pt x="45" y="375"/>
 						<pt x="169.563" y="375"/>
@@ -6126,21 +6126,11 @@ ELSE
 				<numeric_display uid="17" x="2173.39" y="216.115" width="185.51" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Total_Admissions[b]"/>
 				</numeric_display>
-				<aux color="blue" font_style="italic" font_weight="bold" label_side="top" x="75.8075" y="308.1" name="PD to ID"/>
-				<aux color="blue" font_style="italic" font_weight="bold" label_side="top" x="148.563" y="308.1" name="PU to IU"/>
-				<connector uid="18" angle="265.914">
-					<from>PD_to_ID</from>
-					<to>developing_symptoms</to>
-				</connector>
-				<connector uid="19" angle="282.198">
-					<from>PU_to_IU</from>
-					<to>developing_symptoms</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" x="341.145" y="513.115" name="delay before hospitalisation"/>
-				<stock label_side="center" x="169.563" y="356.417" width="89.875" height="33.25" name="Symptomatic"/>
-				<flow x="304.4" y="375.619" name="hospitalisations">
+				<aux font_style="italic" font_weight="bold" x="337.145" y="513.115" name="delay before hospitalisation"/>
+				<stock label_side="center" x="169.563" y="356.417" width="68.875" height="34.25" name="Infected"/>
+				<flow x="293.9" y="375.619" name="hospitalisations">
 					<pts>
-						<pt x="259.438" y="375.619"/>
+						<pt x="238.438" y="375.619"/>
 						<pt x="361.363" y="375.619"/>
 					</pts>
 				</flow>
@@ -6149,10 +6139,10 @@ ELSE
 					<to>hospitalisations</to>
 				</connector>
 				<connector uid="23" angle="296.908">
-					<from>Symptomatic</from>
+					<from>Infected</from>
 					<to>hospitalisations</to>
 				</connector>
-				<aux color="blue" font_style="italic" font_weight="bold" label_side="bottom" x="301.132" y="438.725" name="hospitalisation fraction"/>
+				<aux color="blue" font_style="italic" font_weight="bold" label_side="bottom" x="293.9" y="435.95" name="hospitalisation fraction"/>
 				<stock label_side="center" x="662.31" y="638.605" width="147.024" height="38.6904" name="Patients Waiting for ICU"/>
 				<flow x="523.655" y="656.521" name="require ICU bed">
 					<pts>
@@ -7624,11 +7614,10 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					</from>
 					<to>overflow_to_ICU_transfers</to>
 				</connector>
-				<stock label_side="center" x="2243.51" y="614.5" width="106" height="39" name="Antiviral treatments\nadministered"/>
-				<flow x="2176.76" y="635" name="antiviral treatments given">
+				<flow x="2179.75" y="635" name="antiviral treatments given">
 					<pts>
 						<pt x="2110" y="635"/>
-						<pt x="2243.51" y="635"/>
+						<pt x="2249.5" y="635"/>
 					</pts>
 				</flow>
 				<connector uid="512" angle="340.145">
@@ -7644,33 +7633,32 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<to>antiviral_treatments_given</to>
 				</connector>
 				<aux color="#AAAAFF" font_color="#AAAAFF" label_side="left" x="2148" y="710.596" name="treatments per patient"/>
-				<connector uid="515" angle="69.1743">
+				<connector uid="515" angle="67.2178">
 					<from>treatments_per_patient</from>
 					<to>antiviral_treatments_given</to>
 				</connector>
-				<flow x="2175.26" y="835" name="previous strain vaccines given">
+				<flow x="2181.33" y="835" name="previous vaccines given">
 					<pts>
 						<pt x="2107" y="835"/>
-						<pt x="2243.51" y="835"/>
+						<pt x="2255.66" y="835"/>
 					</pts>
 				</flow>
 				<connector uid="518" angle="348.197">
 					<from>
 						<alias uid="516"/>
 					</from>
-					<to>previous_strain_vaccines_given</to>
+					<to>previous_vaccines_given</to>
 				</connector>
-				<connector uid="519" angle="233.669">
+				<connector uid="519" angle="237.361">
 					<from>
 						<alias uid="517"/>
 					</from>
-					<to>previous_strain_vaccines_given</to>
+					<to>previous_vaccines_given</to>
 				</connector>
 				<connector uid="520" angle="299.037">
 					<from>treatments_per_patient</from>
-					<to>previous_strain_vaccines_given</to>
+					<to>previous_vaccines_given</to>
 				</connector>
-				<stock label_side="center" x="2243.51" y="813.5" width="128" height="35" name="Previous strain vaccines\nadministered"/>
 				<aux font_style="italic" font_weight="bold" font_color="#00AA00" label_side="right" x="2315" y="1253.35" name="morgue capacity"/>
 				<aux font_style="italic" font_weight="bold" label_side="right" x="2365.05" y="1222.35" name="proportion of morgue capacity\navailable for pandemic"/>
 				<aux label_side="top" x="2297" y="1192.14" name="available morgue spaces"/>
@@ -7711,10 +7699,10 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>In_morgues</from>
 					<to>unoccupied_morgue_spaces</to>
 				</connector>
-				<flow x="214.5" y="474.834" name="not hospitalised">
+				<flow x="204" y="475.333" name="not hospitalised">
 					<pts>
-						<pt x="214.5" y="389.667"/>
-						<pt x="214.5" y="581"/>
+						<pt x="204" y="390.667"/>
+						<pt x="204" y="581"/>
 					</pts>
 				</flow>
 				<connector uid="530" angle="51.7167">
@@ -7730,9 +7718,21 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<to>not_hospitalised</to>
 				</connector>
 				<connector uid="533" angle="289.082">
-					<from>Symptomatic</from>
+					<from>Infected</from>
 					<to>not_hospitalised</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="149" y="308.1" name="S to II"/>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="51.995" y="299.1" width="18" height="18" name="S to E"/>
+				<connector uid="534" angle="276.738">
+					<from>S_to_E</from>
+					<to>becoming_infected</to>
+				</connector>
+				<connector uid="535" angle="272.3">
+					<from>S_to_II</from>
+					<to>becoming_infected</to>
+				</connector>
+				<stock label_side="center" x="2249.5" y="620.5" width="131" height="29" name="Antivirals administered"/>
+				<stock label_side="center" x="2255.66" y="817.875" width="176" height="31" name="Previous vaccines administered"/>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" label_side="top" uid="88" x="1309.11" y="223" width="18" height="18">
 					<of>patients_per_ward_bed</of>
 				</alias>
@@ -11522,7 +11522,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="150" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11806,7 +11806,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 	<model name="Inputs_Hospital_patient_params">
 		<variables>
 			<aux name="hospitalisation fraction" access="output" isee:autocreated="true">
-				<doc>Proportion of symptomatic infected people, whether detected or undetected, who are hospitalised</doc>
+				<doc>Proportion of infected people, whether detected or undetected, who are hospitalised</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -11997,8 +11997,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Days</units>
 			</aux>
 			<aux name="delay before hospitalisation" access="output" isee:autocreated="true">
-				<doc>The average delay between symptom onset and hospitalisation</doc>
-				<eqn>4</eqn>
+				<doc>The average delay between becoming infected and hospitalisation</doc>
+				<eqn>12</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="ward fatality rate antivirals" access="output" isee:autocreated="true">
@@ -12314,12 +12314,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="antiviral capacity" access="output" isee:autocreated="true">
 				<doc>Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</doc>
-				<eqn>0.5</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="previous strain\nvaccine capacity" access="output" isee:autocreated="true">
 				<doc>Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</doc>
-				<eqn>0.3</eqn>
+				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="threshold number\nof beds blocked by deceased" access="output" isee:autocreated="true">
@@ -12328,7 +12328,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Patients</units>
 			</aux>
 			<aux name="proportion of physicians\navailable for pandemic" access="output" isee:autocreated="true">
-				<doc>Proportion of ICU nurses available for care of pandemic patients</doc>
+				<doc>Proportion of physicians available for care of pandemic patients</doc>
 				<eqn>0.5</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -13271,24 +13271,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<stock name="Antiviral treatments\nadministered" access="input">
-				<doc>Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>0</eqn>
-				<non_negative/>
-				<units>Treatments</units>
-			</stock>
-			<stock name="Previous strain vaccines\nadministered" access="input">
-				<doc>Previous strain vaccines administered to patients in ICU (whole treatments, whether one or more doses)</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>0</eqn>
-				<non_negative/>
-				<units>Treatments</units>
-			</stock>
 			<stock name="In morgues" access="input">
 				<doc>Normal hospital morgue spaces occupied by deceased patients</doc>
 				<eqn>0</eqn>
@@ -13300,6 +13282,24 @@ Simply put, the percentage of the population that acquired the disease during an
 				<eqn>0</eqn>
 				<non_negative/>
 				<units>People</units>
+			</stock>
+			<stock name="Antivirals administered" access="input">
+				<doc>Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>Treatments</units>
+			</stock>
+			<stock name="Previous vaccines administered" access="input">
+				<doc>Previous strain vaccines administered to patients in ICU (whole treatments, whether one or more doses)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>Treatments</units>
 			</stock>
 		</variables>
 		<views>
@@ -13348,7 +13348,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="5" isee:scroll_y="2185.71" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13727,22 +13727,22 @@ Simply put, the percentage of the population that acquired the disease during an
 							<entity name="Hospital.In_temporary_morgues"/>
 						</item>
 						<item>
-							<entity name="Hospital.Antiviral_treatments_administered[a]"/>
+							<entity name="Hospital.Antivirals_administered[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Antiviral_treatments_administered[b]"/>
+							<entity name="Hospital.Antivirals_administered[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Antiviral_treatments_administered[c]"/>
+							<entity name="Hospital.Antivirals_administered[c]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Previous_strain_vaccines_administered[a]"/>
+							<entity name="Hospital.Previous_vaccines_administered[a]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Previous_strain_vaccines_administered[b]"/>
+							<entity name="Hospital.Previous_vaccines_administered[b]"/>
 						</item>
 						<item>
-							<entity name="Hospital.Previous_strain_vaccines_administered[c]"/>
+							<entity name="Hospital.Previous_vaccines_administered[c]"/>
 						</item>
 						<item>
 							<entity name="Hospital.Total_needed_ICU[a]"/>
@@ -14068,8 +14068,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="129" x="311.768" y="1197.81" width="164.286" height="46.961">Physicians absent due to infection (if staff absenteeism option is set) or burnout</text_box>
 				<aux font_style="italic" font_weight="bold" x="587.858" y="1139" name="physicians at work"/>
 				<text_box text_align="center" font_size="10pt" uid="130" x="505.715" y="1188.81" width="164.286" height="64.9646">Hospital physicians at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="346.69" y="1898.31" width="149" height="36" name="Antiviral treatments\nadministered"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="542.142" y="1899.31" width="171" height="34" name="Previous strain vaccines\nadministered"/>
 				<text_box uid="131" x="53.511" y="1899.81" width="200.596" height="45.9994">Therapeutic treatments
 (for totals see end of run figures)</text_box>
 				<text_box text_align="center" uid="132" x="339.047" y="1957.81" width="164.286" height="76.6627">Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</text_box>
@@ -14078,6 +14076,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<stock font_style="italic" font_weight="bold" label_side="center" x="751.417" y="1748.33" width="160.833" height="25" name="In temporary morgues"/>
 				<text_box text_align="center" uid="135" x="334.262" y="1787.98" width="164.286" height="51.496">Normal hospital morgue spaces occupied by deceased patients</text_box>
 				<text_box text_align="center" uid="136" x="744.381" y="1787.14" width="164.286" height="53.996">Deceased patients in temporary morgues, e.g. mobile refrigerated trailer units</text_box>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="375.237" y="1900.36" width="93.5714" height="36.4286" name="Antivirals administered"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="552.406" y="1901.07" width="138.571" height="35" name="Previous vaccines administered"/>
 			</view>
 		</views>
 	</model>
