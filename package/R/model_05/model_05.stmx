@@ -4072,7 +4072,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="198.333" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="197.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5545,22 +5545,22 @@ overflow_to_ICU_transfers</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="peak ICU demand" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</doc>
+				<doc>Highest estimated ICU demand in a single day</doc>
 				<eqn>MAXIMUM(SUM(No_limit_ICU))</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand ICU nurses" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</doc>
+				<doc>Highest estimated number of ICU nurses required in a single day</doc>
 				<eqn>(peak_ICU_demand * ICU_nurses_per_bed_1) / patients_per_ICU_bed</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand ventilators" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</doc>
+				<doc>Highest estimated number of ventilators required for ICU patients in a single day</doc>
 				<eqn>(peak_ICU_demand * fraction_ICU_patients_requiring_ventilator_1) * ventilators_per_ICU_bed_1 / patients_per_ICU_bed</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="peak demand ICU beds" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of physical ICU beds required</doc>
+				<doc>Highest estimated number of physical ICU beds required a single day</doc>
 				<eqn>peak_ICU_demand / patients_per_ICU_bed</eqn>
 				<units>ICU Beds</units>
 			</aux>
@@ -5655,17 +5655,17 @@ overflow_to_ICU_transfers</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="peak ward demand" access="output" isee:autocreated="true">
-				<doc>If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</doc>
+				<doc>Highest estimated demand for ward beds in a single day</doc>
 				<eqn>MAXIMUM(SUM(No_limit_ward))</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand nurses" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</doc>
+				<doc>Highest estimated number of ward nurses required a single day</doc>
 				<eqn>(peak_ward_demand * nurses_per_bed_1) / patients_per_ward_bed</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand ward beds" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of physical ward beds required</doc>
+				<doc>Highest estimated number of physical ward beds required a single day</doc>
 				<eqn>peak_ward_demand / patients_per_ward_bed</eqn>
 				<units>Beds</units>
 			</aux>
@@ -5740,7 +5740,7 @@ fraction_ward_to_ICU_3)
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand PPE" access="output" isee:autocreated="true">
-				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</doc>
+				<doc>Highest estimated number of PPE sets required in a single day by nursing staff (both ward and ICU nurses)</doc>
 				<eqn>peak_demand_all_nurses * PPE_per_staff_per_day_1</eqn>
 				<units>PPE Sets</units>
 			</aux>
@@ -5757,7 +5757,12 @@ fraction_ward_to_ICU_3)
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(earlier_strain_vaccine_capacity * ICU_fatality_rate_vaccines) + ((1-earlier_strain_vaccine_capacity) * ICU_fatality_rate)</eqn>
+				<eqn>{ Average of relative proportions of.. }
+{ Patients given vaccines who have reduced rates.. }
+(earlier_strain_vaccine_capacity * ICU_fatality_rate * (1 + ICU_fatality_rate_vaccines)) 
++
+{ .. and patients not given vaccines who have normal rates}
+((1-earlier_strain_vaccine_capacity) * ICU_fatality_rate)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="earlier strain vaccine capacity" access="input">
@@ -5769,14 +5774,19 @@ fraction_ward_to_ICU_3)
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective ward fatality rate">
 				<doc>Average ward fatality rate adjusted to take into account use of therapeutic antivirals </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(antiviral_capacity * ward_fatality_rate_antivirals) + ((1-antiviral_capacity) * ward_fatality_rate)</eqn>
+				<eqn>{ Average of relative proportions of.. }
+{ Patients given antivirals who have reduced rates.. }
+(antiviral_capacity * ward_fatality_rate * (1 + ward_fatality_rate_antivirals)) 
++
+{ .. and patients not given antivirals who have normal rates}
+((1-antiviral_capacity) * ward_fatality_rate)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="antiviral capacity" access="input">
@@ -5788,18 +5798,19 @@ fraction_ward_to_ICU_3)
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective LOS ward">
 				<doc>Average LOS in ward adjusted to take into account use of therapeutic antivirals </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>IF switch = 1 THEN
-(antiviral_capacity * LOS_ward_antivirals) +
-((1-antiviral_capacity) * LOS_ward_2)
-ELSE {for testing}
-LOS_ward_2</eqn>
+				<eqn>{ Average of relative proportions of.. }
+{ Patients given antivirals who have reduced LOS.. }
+(antiviral_capacity * LOS_ward_2 * (1 + LOS_ward_antivirals)) 
++
+{ .. and patients not given antivirals who have normal LOS }
+((1-antiviral_capacity) * LOS_ward_2)</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="LOS ward antivirals" access="input">
@@ -5807,13 +5818,17 @@ LOS_ward_2</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Days</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective LOS ICU">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(earlier_strain_vaccine_capacity * LOS_ICU_vaccines) +
+				<eqn>{ Average of relative proportions of.. }
+{ Patients given vaccines who have reduced LOS.. }
+(earlier_strain_vaccine_capacity * LOS_ICU * (1 + LOS_ICU_vaccines)) 
++
+{ .. and patients not given vaccines who have normal LOS }
 ((1-earlier_strain_vaccine_capacity) * LOS_ICU)</eqn>
 				<units>Days</units>
 			</aux>
@@ -5822,12 +5837,7 @@ LOS_ward_2</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Days</units>
-			</aux>
-			<aux name="switch">
-				<doc>Switch on or off the reduction in LOS ward when using antivirals (for testing)</doc>
-				<eqn>1</eqn>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<stock name="Deceased patients\nin hospital beds">
 				<doc>Patients in hospital beds who have died and need to be moved to morgue</doc>
@@ -5899,7 +5909,12 @@ ELSE
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(antiviral_capacity * fraction_ward_to_ICU_antivirals) + ((1-antiviral_capacity) * fraction_ward_to_ICU_2)</eqn>
+				<eqn>{ Average of relative proportions of.. }
+{ Patients given antivirals who have reduced rates.. }
+(antiviral_capacity * fraction_ward_to_ICU_2 * (1 + fraction_ward_to_ICU_antivirals)) 
++
+{ .. and patients not given antivirals who have normal rates}
+((1-antiviral_capacity) * fraction_ward_to_ICU_2)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="fraction ward to ICU antivirals" access="input">
@@ -5907,7 +5922,7 @@ ELSE
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<flow name="antiviral treatments given">
 				<dimensions>
@@ -6057,7 +6072,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="728" isee:scroll_y="187" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6886,7 +6901,7 @@ ELSE
 					<entity name="Potential_deaths_due_to_lack_of_ICU[b]"/>
 				</numeric_display>
 				<aux label_side="right" x="1008.65" y="336" name="priority ward"/>
-				<connector uid="268" angle="218.596">
+				<connector uid="268" angle="218.593">
 					<from>priority_ward</from>
 					<to>ward_admissions</to>
 				</connector>
@@ -7039,7 +7054,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 				</numeric_display>
 				<text_box font_style="italic" uid="323" x="363.166" y="1543.3" width="125.168" height="22.0833">This would require:</text_box>
 				<aux color="#AA0000" font_color="#AA0000" label_side="right" x="510.374" y="1666.05" name="peak demand ICU nurses"/>
-				<aux color="#AA0000" font_color="#AA0000" label_side="left" x="457" y="1636.42" name="peak demand ventilators"/>
+				<aux color="#AA0000" font_color="#AA0000" label_side="left" x="459.29" y="1636.42" name="peak demand ventilators"/>
 				<connector uid="324" angle="208.115">
 					<from>
 						<alias uid="325"/>
@@ -7486,11 +7501,6 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 					<to>effective_LOS_ICU</to>
 				</connector>
 				<text_box font_weight="bold" uid="458" x="1709" y="397" width="238" height="26">Therapeutic antivirals and vaccines:</text_box>
-				<aux label_side="right" x="2016" y="588" name="switch"/>
-				<connector uid="459" angle="177.635">
-					<from>switch</from>
-					<to>effective_LOS_ward</to>
-				</connector>
 				<text_box font_weight="bold" uid="460" x="1765.75" y="944.061" width="179.147" height="23">Morgue capacity:</text_box>
 				<stock label_side="center" x="1911.5" y="1068.07" width="103" height="31" name="Deceased patients\nin hospital beds"/>
 				<flow label_side="top" x="1851.25" y="1085" name="hospital fatalities">
@@ -8719,7 +8729,7 @@ max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent physicians" access="output" isee:autocreated="true">
-				<doc>Physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
+				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>Physicians * 
 i[c] * 
 effective_PPE_protection_factor * 
@@ -8778,7 +8788,7 @@ risk_to_heathcare_workers * simulate_staff_absenteeism</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="545" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="545" isee:scroll_y="700" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11811,13 +11821,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.026</eqn>
+					<eqn>0.02</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.03</eqn>
+					<eqn>0.3</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.018</eqn>
+					<eqn>0.17</eqn>
 				</element>
 				<units>dmnl</units>
 			</aux>
@@ -11827,13 +11837,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>7</eqn>
+					<eqn>19</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>8.5</eqn>
+					<eqn>12</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>7.6</eqn>
+					<eqn>14.5</eqn>
 				</element>
 				<units>Days</units>
 			</aux>
@@ -11843,13 +11853,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>4</eqn>
+					<eqn>5.5</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>6</eqn>
+					<eqn>7.6</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>4</eqn>
+					<eqn>13.2</eqn>
 				</element>
 				<units>Days</units>
 			</aux>
@@ -11864,13 +11874,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>9.4</eqn>
+					<eqn>14</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>11.4</eqn>
+					<eqn>8</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>8.4</eqn>
+					<eqn>12</eqn>
 				</element>
 				<units>Days</units>
 			</aux>
@@ -11896,13 +11906,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.035</eqn>
+					<eqn>0</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.065</eqn>
+					<eqn>0.05</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.025</eqn>
+					<eqn>0.01</eqn>
 				</element>
 				<units>dmnl</units>
 			</aux>
@@ -11912,13 +11922,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.3</eqn>
+					<eqn>0</eqn>
 				</element>
 				<element subscript="b">
 					<eqn>0.55</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.25</eqn>
+					<eqn>0.45</eqn>
 				</element>
 				<units>dmnl</units>
 			</aux>
@@ -11949,13 +11959,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.09</eqn>
+					<eqn>0.01</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.1</eqn>
+					<eqn>0.04</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.05</eqn>
+					<eqn>0.02</eqn>
 				</element>
 				<units>dmnl</units>
 			</aux>
@@ -11965,13 +11975,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.07</eqn>
+					<eqn>0</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.12</eqn>
+					<eqn>0.13</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.05</eqn>
+					<eqn>0.03</eqn>
 				</element>
 				<units>dmnl</units>
 			</aux>
@@ -11986,13 +11996,13 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>8</eqn>
+					<eqn>5</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>11</eqn>
+					<eqn>12</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>7</eqn>
+					<eqn>10</eqn>
 				</element>
 				<units>Days</units>
 			</aux>
@@ -12002,68 +12012,68 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Days</units>
 			</aux>
 			<aux name="ward fatality rate antivirals" access="output" isee:autocreated="true">
-				<doc>Proportion of ward patients given timely therapeutic antiviral treatment who die</doc>
+				<doc>The expected reduction in the proportion of ward patients who die, if they are given timely antiviral treatment</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.028</eqn>
+					<eqn>-0.05</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.052</eqn>
+					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.02</eqn>
+					<eqn>-0.2</eqn>
 				</element>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="ICU fatality rate vaccines" access="output" isee:autocreated="true">
-				<doc>Proportion of ICU patients given existing vaccines for earlier strains who die</doc>
+				<doc>The expected reduction in the proportion of ICU patients who die, if they are given existing vaccines for earlier strains</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.24</eqn>
+					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.44</eqn>
+					<eqn>-0.2</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.2</eqn>
+					<eqn>-0.1</eqn>
 				</element>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="LOS ward antivirals" access="output" isee:autocreated="true">
-				<doc>Average length of stay in ward bed for ward patients given timely therapeutic antiviral treatment</doc>
+				<doc>The expected reduction in average length of stay in ward bed for ward patients given timely antiviral treatment</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>3.2</eqn>
+					<eqn>-0.05</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>4.8</eqn>
+					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>3.2</eqn>
+					<eqn>-0.2</eqn>
 				</element>
-				<units>Days</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="LOS ICU vaccines" access="output" isee:autocreated="true">
-				<doc>Average length of stay in ICU bed for ICU patients given vaccine for earlier strains</doc>
+				<doc>The expected reduction in average length of stay in ICU bed for ICU patients given vaccine for earlier strains</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>6.4</eqn>
+					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>8.8</eqn>
+					<eqn>-0.2</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>5.6</eqn>
+					<eqn>-0.1</eqn>
 				</element>
-				<units>Days</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="LOS morgue" access="output" isee:autocreated="true">
 				<doc>Average length of stay of a body in hospital morgue</doc>
@@ -12071,20 +12081,20 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>Days</units>
 			</aux>
 			<aux name="fraction ward to ICU antivirals" access="output" isee:autocreated="true">
-				<doc>Fraction of patients in wards who were treated with antivirals and later require ICU</doc>
+				<doc>The expected reduction in the fraction of patients in wards who later require ICU, if they were treated with antivirals</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>0.06</eqn>
+					<eqn>-0.1</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>0.1</eqn>
+					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>0.04</eqn>
+					<eqn>-0.2</eqn>
 				</element>
-				<units>dmnl</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="LOS temporary morgue" access="output" isee:autocreated="true">
 				<doc>Average length of stay of a body in a temporary morgue</doc>
@@ -12207,19 +12217,18 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="15" x="40.1141" y="435.783" width="164.286" height="39.4286">Proportion of ward patients who die</text_box>
 				<aux font_color="#55AAFF" label_side="top" x="292.032" y="69.6043" name="delay before hospitalisation"/>
 				<text_box text_align="center" font_size="10pt" uid="16" x="207.083" y="96.461" width="164.286" height="49.4292">The average delay between symptom onset and hospitalisation</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="892.76" y="420.712" name="ward fatality rate antivirals"/>
-				<text_box text_align="center" font_size="10pt" uid="17" x="810.615" y="448.908" width="164.286" height="50.4286">Proportion of ward patients given timely antiviral treatment who die</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="1084.76" y="422.712" name="ICU fatality rate vaccines"/>
-				<text_box text_align="center" font_size="10pt" uid="18" x="1002.62" y="450.908" width="164.286" height="50.4286">Proportion of ICU patients given existing vaccines for earlier strains who die</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="886.515" y="191.194" name="LOS ward antivirals"/>
-				<text_box text_align="center" font_size="10pt" uid="20" x="804.375" y="218.194" width="164.286" height="64.4286">Average length of stay in ward bed for ward patients given timely antiviral treatment</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="1072.66" y="191.902" name="LOS ICU vaccines"/>
-				<text_box text_align="center" font_size="10pt" uid="21" x="990.52" y="218.479" width="164.286" height="52.8583">Average length of stay in ICU bed for ICU patients given vaccine for earlier strains</text_box>
-				<text_box font_weight="bold" font_size="10pt" uid="22" x="817.375" y="306.125" width="357" height="63">These are new - waiting to hear back from RKI, we may end up using variables to indicate percentage decrease for all cohorts together. Current test data reduced all by 20%.</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="641.51" y="408.212" name="ward fatality rate antivirals"/>
+				<text_box text_align="center" font_size="10pt" uid="17" x="559.365" y="436.408" width="164.286" height="50.4286">The expected reduction in the proportion of ward patients who die, if they are given timely antiviral treatment</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="833.51" y="410.212" name="ICU fatality rate vaccines"/>
+				<text_box text_align="center" font_size="10pt" uid="18" x="751.37" y="438.408" width="164.286" height="50.4286">The expected reduction in the proportion of ICU patients who die, if they are given existing vaccines for earlier strains</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="835.265" y="184.319" name="LOS ward antivirals"/>
+				<text_box text_align="center" font_size="10pt" uid="20" x="753.125" y="208.319" width="164.286" height="64.4286">The expected reduction in average length of stay in ward bed for ward patients given timely antiviral treatment</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="1012.41" y="176.027" width="18" height="18" name="LOS ICU vaccines"/>
+				<text_box text_align="center" font_size="10pt" uid="21" x="939.27" y="208.604" width="164.286" height="52.8583">The expected reduction in average length of stay in ICU bed for ICU patients given vaccine for earlier strains</text_box>
 				<aux font_color="#55AAFF" label_side="top" x="124.375" y="503.89" name="LOS morgue"/>
 				<text_box text_align="center" font_size="10pt" uid="23" x="42.232" y="530.604" width="164.286" height="39.4286">Average length of stay of a body in a morgue</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="893.94" y="553.193" name="fraction ward to ICU antivirals"/>
-				<text_box text_align="center" font_size="10pt" uid="24" x="804.375" y="584.336" width="179.136" height="53.4286">Fraction of patients in wards who were treated with antivirals and later require ICU</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="1018.94" y="410.212" name="fraction ward to ICU antivirals"/>
+				<text_box text_align="center" font_size="10pt" uid="24" x="929.375" y="438.711" width="179.136" height="53.4286">The expected reduction in the fraction of patients in wards who later require ICU, if they were treated with antivirals</text_box>
 				<aux font_color="#55AAFF" label_side="top" x="294.25" y="505.89" name="LOS temporary morgue"/>
 				<text_box text_align="center" font_size="10pt" uid="25" x="212.107" y="532.604" width="164.286" height="39.4286">Average length of stay of a body in a temporary morgue</text_box>
 			</view>
@@ -12913,42 +12922,42 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<units>People</units>
 			</aux>
 			<aux name="peak ICU demand" access="input">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</doc>
+				<doc>Highest estimated ICU demand in a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand ICU beds" access="input">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of physical ICU beds required</doc>
+				<doc>Highest estimated number of physical ICU beds required a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>ICU Beds</units>
 			</aux>
 			<aux name="peak demand ICU nurses" access="input">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</doc>
+				<doc>Highest estimated number of ICU nurses required in a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand ventilators" access="input">
-				<doc>If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</doc>
+				<doc>Highest estimated number of ventilators required for ICU patients in a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
 			<aux name="peak ward demand" access="input">
-				<doc>If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</doc>
+				<doc>Highest estimated demand for ward beds in a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Patients</units>
 			</aux>
 			<aux name="peak demand ward beds" access="input">
-				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of physical ward beds required</doc>
+				<doc>Highest estimated number of physical ward beds required a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Beds</units>
 			</aux>
 			<aux name="peak demand nurses" access="input">
-				<doc>If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</doc>
+				<doc>Highest estimated number of ward nurses required a single day</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak demand PPE" access="input">
-				<doc>If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</doc>
+				<doc>Highest estimated number of PPE sets required in a single day by nursing staff (both ward and ICU nurses)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>PPE Sets</units>
 			</aux>
@@ -13262,7 +13271,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<units>Staff</units>
 			</aux>
 			<aux name="absent physicians" access="input">
-				<doc>Physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
+				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
@@ -13348,7 +13357,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="5" isee:scroll_y="2000" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13922,14 +13931,14 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="51" x="718.72" y="2133.88" width="164.286" height="64.1661">Total number of patients who were admitted to wards (from admissions and transfers from ICU)</text_box>
 				<text_box text_align="center" uid="52" x="949.95" y="2130.05" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
 				<text_box text_align="center" uid="53" x="1150.1" y="2132.83" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
-				<text_box text_align="center" uid="54" x="136.273" y="2831.39" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak ICU occupancy (demand) to plan for</text_box>
-				<text_box text_align="center" uid="55" x="316.297" y="2831.39" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of physical ICU beds required</text_box>
-				<text_box text_align="center" uid="56" x="490.205" y="2831.39" width="164.286" height="75.35">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ICU nurses required</text_box>
-				<text_box text_align="center" uid="57" x="670.44" y="2831.39" width="164.286" height="82.4994">If all patients requiring ICU could be admitted (unlimited resources), then this would be the peak number of ventilators required</text_box>
-				<text_box text_align="center" uid="58" x="846.489" y="2831.39" width="164.286" height="92.85">If all patients requiring a ward bed could be admitted (unlimited resources), then this would be the peak ward occupancy (demand) to plan for</text_box>
-				<text_box text_align="center" uid="59" x="1020.94" y="2831.39" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of physical ward beds required</text_box>
-				<text_box text_align="center" uid="60" x="1201.94" y="2831.39" width="164.286" height="82.4994">If all patients requiring ward beds could be admitted (unlimited resources), then this would be the peak number of nurses required</text_box>
-				<text_box text_align="center" uid="61" x="1396.44" y="2831.39" width="164.286" height="107.85">If all patients requiring ward and ICU beds could be admitted (unlimited resources), then this would be the peak number of PPE sets required in a single day for ward and ICU nurses</text_box>
+				<text_box text_align="center" uid="54" x="136.273" y="2831.39" width="164.286" height="75.35">Highest estimated ICU demand in a single day</text_box>
+				<text_box text_align="center" uid="55" x="316.297" y="2831.39" width="164.286" height="75.35">Highest estimated number of physical ICU beds required a single day</text_box>
+				<text_box text_align="center" uid="56" x="490.205" y="2831.39" width="164.286" height="75.35">Highest estimated number of ICU nurses required in a single day</text_box>
+				<text_box text_align="center" uid="57" x="670.44" y="2831.39" width="164.286" height="82.4994">Highest estimated number of ventilators required for ICU patients in a single day</text_box>
+				<text_box text_align="center" uid="58" x="846.489" y="2831.39" width="164.286" height="92.85">Highest estimated demand for ward beds in a single day</text_box>
+				<text_box text_align="center" uid="59" x="1020.94" y="2831.39" width="164.286" height="82.4994">Highest estimated number of physical ward beds required a single day</text_box>
+				<text_box text_align="center" uid="60" x="1201.94" y="2831.39" width="164.286" height="82.4994">Highest estimated number of ward nurses required a single day</text_box>
+				<text_box text_align="center" uid="61" x="1396.44" y="2831.39" width="164.286" height="107.85">Highest estimated number of PPE sets required in a single day by nursing staff (both ward and ICU nurses)</text_box>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="64.3432" y="2695.78" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="139.582" y="2085.04" width="127" height="25" name="Total needed ICU"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="330.19" y="2082.54" width="154" height="28" name="Total ICU admissions"/>
