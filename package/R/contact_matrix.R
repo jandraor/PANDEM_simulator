@@ -13,7 +13,7 @@ get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
     return(msg)
   }
 
-  age_limits <- c(0, 20, 40)
+  age_limits <- c(0, 25, 50)
 
   pop_df <- data.frame(lower.age.limit = age_limits,
                        population = c(pop_a, pop_b, pop_c))
