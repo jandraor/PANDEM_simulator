@@ -1,7 +1,7 @@
 Inputs_Epi.switch_mask_wearing	0
 Inputs_Epi.mask_wearing_effect	0.1
 Inputs_Epi.mask_wearing_start	10
-Inputs_Epi.switch_test_isolate	1
+Inputs_Epi.switch_test_isolate	0
 Inputs_Epi.switch_vaccines	0
 Inputs_Epi.switch_contact_tracing	0
 Inputs_Epi.initial_testing_capacity	53454
