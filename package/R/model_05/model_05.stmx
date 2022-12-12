@@ -327,6 +327,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
 				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
+				<connect to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
@@ -367,8 +369,8 @@
 				<connect2 to="PANDEM2_Outputs.extra_staff_needed_for_overflow_patients" from="Hospital_Resources.extra_staff_needed_for_overflow_patients"/>
 				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
 				<connect2 to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
-				<connect to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
-				<connect2 to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
+				<connect to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
+				<connect2 to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
 				<connect to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect2 to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect to="PANDEM2_Outputs.ICU_admissions" from="Hospital.ICU_admissions"/>
@@ -377,6 +379,8 @@
 				<connect2 to="PANDEM2_Outputs.ICU_Beds" from="Hospital_Resources.ICU_Beds"/>
 				<connect to="PANDEM2_Outputs.ICU_discharges" from="Hospital.ICU_discharges"/>
 				<connect2 to="PANDEM2_Outputs.ICU_discharges" from="Hospital.ICU_discharges"/>
+				<connect to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect2 to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
@@ -407,6 +411,10 @@
 				<connect2 to="PANDEM2_Outputs.moving_to_ICU_overflow" from="Hospital.moving_to_ICU_overflow"/>
 				<connect to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
 				<connect2 to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
+				<connect to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect2 to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
 				<connect to="PANDEM2_Outputs.nurses_at_work" from="Hospital_Resources.nurses_at_work"/>
 				<connect2 to="PANDEM2_Outputs.nurses_at_work" from="Hospital_Resources.nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.nurses_gap" from="Hospital_Resources.nurses_gap"/>
@@ -495,6 +503,8 @@
 				<connect2 to="PANDEM2_Outputs.Total_confirmed_cases" from="Testing.Total_confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
@@ -513,6 +523,10 @@
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
 				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
@@ -527,6 +541,8 @@
 				<connect2 to="PANDEM2_Outputs.ventilators_needed_for_incoming_ICU_patients" from="Ventilators.ventilators_needed_for_incoming_ICU_patients"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
+				<connect to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 			</module>
 			<module name="Documentation" isee:label=""/>
 			<module name="Model" isee:label="">
@@ -620,8 +636,8 @@
 				<connect2 to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
 				<connect to="PANDEM2_Outputs.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
-				<connect to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
-				<connect2 to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
+				<connect to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
+				<connect2 to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
 				<connect to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect2 to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect to="PANDEM2_Outputs.ICU_admissions" from="Hospital.ICU_admissions"/>
@@ -640,6 +656,10 @@
 				<connect2 to="PANDEM2_Outputs.moving_to_ICU_overflow" from="Hospital.moving_to_ICU_overflow"/>
 				<connect to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
 				<connect2 to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
+				<connect to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect2 to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_ICU" from="Hospital.Patients_Waiting_for_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Patients_Waiting_for_ICU" from="Hospital.Patients_Waiting_for_ICU"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_Ward_Bed" from="Hospital.Patients_Waiting_for_Ward_Bed"/>
@@ -680,6 +700,8 @@
 				<connect2 to="PANDEM2_Outputs.Total_Admissions" from="Hospital.Total_Admissions"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
@@ -688,6 +710,10 @@
 				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
 				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
@@ -790,6 +816,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_2" from="Hospital_Resources.activate_surge_strategy_2"/>
 				<connect to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
+				<connect to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.available_nurses" from="Hospital_Resources.available_nurses"/>
@@ -804,6 +832,8 @@
 				<connect2 to="PANDEM2_Outputs.extra_staff_needed_for_overflow_patients" from="Hospital_Resources.extra_staff_needed_for_overflow_patients"/>
 				<connect to="PANDEM2_Outputs.ICU_Beds" from="Hospital_Resources.ICU_Beds"/>
 				<connect2 to="PANDEM2_Outputs.ICU_Beds" from="Hospital_Resources.ICU_Beds"/>
+				<connect to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect2 to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
@@ -862,6 +892,8 @@
 				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect2 to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
@@ -1482,7 +1514,9 @@ What measures, in both public health and hospital management, would be most effe
 				<numeric_display color="white" font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="720.475" y="127.767" width="324.48" height="28.5" isee:immediately_update_on_user_input="true" title="50+" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Data.Population_size[c]"/>
 				</numeric_display>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.722" y="490.571" width="346.5" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.722" y="490.571" width="346.5" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -1907,14 +1941,14 @@ expected peak demand: ICU</text_box>
 				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="160.571" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.Total_Admissions[SUM]"/>
 				</numeric_display>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="1.7" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="309.429" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needing ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="1.7" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="309.429" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.Total_needed_ICU[SUM]"/>
 				</numeric_display>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="508.071" height="54.6667">Expected Demand Totals</text_box>
 				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="273.429" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ICU admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.Total_ICU_admissions[SUM]"/>
 				</numeric_display>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="236.182" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needing ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="236.182" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
 				</numeric_display>
 				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="158.571" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
@@ -2318,7 +2352,7 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				</stacked_container>
 				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="465.722" y="55.571" width="554" height="36.86" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
 				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="466.158" y="100" width="551.128" height="36.86" isee:immediately_update_on_user_input="true" title="Total unable to access ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Hospital.total_denied_ward_bed_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ward_bed"/>
 				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
@@ -2471,7 +2505,9 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				<text_box x="166.363" y="452.449" width="38.1818" height="26.1818">&lt;25</text_box>
 				<text_box x="293.636" y="452.449" width="38.1818" height="26.1818">50+</text_box>
 				<text_box x="230" y="452.449" width="38.1818" height="26.1818">25-49</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="465.876" y="164.023" width="470.282" height="40.95" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="465.876" y="164.023" width="470.282" height="40.95" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<stacked_container x="409.1" y="279.31" width="341.864" height="238.182" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="341.864" height="238.182" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Potential deaths from lack of ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -2482,7 +2518,9 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				<isee:shape background="#0055FF" transparent_background="false" x="376.722" y="165.165" width="68.833" height="38.6667" kind="arrow" direction="east" curvature="none"/>
 				<isee:shape background="#0055FF" transparent_background="false" x="571.782" y="218.81" width="47.5" height="49.9999" kind="arrow" direction="south" curvature="none"/>
 				<text_box font_color="#AAAA7F" font_size="24pt" x="633.32" y="228.171" width="208.964" height="31.2779">High fatality rates</text_box>
-				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="764.258" y="342.206" width="259.398" height="87.4206" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="764.258" y="342.206" width="259.398" height="87.4206" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -3889,7 +3927,7 @@ Surge strategy 4: Increase bed capacity
 					</actions>
 				</button>
 				<isee:annotation background="#FFAA00" font_color="white" font_size="20pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="20pt" launcher_label="Click for insight" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="782.216" y="418.216" width="134.5" height="71.5">
-					<popup x="192.309" y="382.035" width="568.212" height="166.741">
+					<popup x="201.595" y="351.321" width="568.212" height="166.741">
 						<text>This strategy should increase the number of ICU beds supported by available nurses (top graph). But that doesn&apos;t always mean an increase in ICU capacity, because the effect will be limited by physical ICU bed capacity (ICU beds and ventilators). This explains why sometimes this strategy does not produce the expected reduction in the total denied ICU.</text>
 					</popup>
 				</isee:annotation>
@@ -4155,7 +4193,7 @@ Surge strategy 4: Increase bed capacity
 					</graph>
 				</stacked_container>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="140" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="56.7778" width="909.864" height="89.076">End of presentation</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="106.4" y="190.347" width="619.2" height="89.8855">
@@ -4173,7 +4211,7 @@ We welcome your feedback and suggestions.</text_box>
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="140" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="492" height="54.6667">Stress indicators</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="78.11" y="112.889" width="947.464" height="41.3331">The fatality rates for patients unable to access ICU can be adjusted</text_box>
@@ -4220,7 +4258,7 @@ We welcome your feedback and suggestions.</text_box>
 					<image width="477" height="414" size_to_parent="true">data:image/png;base64,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EWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKV7YknTAYiI4koh7Jfj4A/lRBRDpiMQEVF1YemeiGAAgJqOQUQUR6I6bDqDjVi6JyCqbwIomc5BRBRDIYB/MR3CRizdE1CRfwZLl4joVJQg+H9Mh7ARS/fE/gVHv60REdHkhADeMB3CRizdE/tHcNIlIjoV/wbFy6ZD2IilewKh47zI5REiokkrAdhZGkn8wXQQG7F0T+Dfvf3//pOE+n8DeNd0FiKiGHkHwP+659/mD5gOYiOW7gm8sOrjI6HjfAfAm6azEBHFyC7R8O+wSnhPzHGwdE+imHb/AcDPAPzFdBYiohh4E4of+O3Nr5sOYiuWbhmJsNQNoGA6BxGR9RQvvTvjjK2mY9iMpVtGfsV/CABkAPimsxARWewfnIRueHXpv/9X00FsxtKdgKDN+wEU3wLw3wCMmM5DRGSRIwB+pyLdheVNvzYdxnYs3Qk6Q9/tgWIDgLdMZyEisoVC+qFY4yRKf2c6SxywdCfolRV//ecaZ7gPiq8B+N/BiZeIprdDAHZA8PS7M874hb+smTecTgDPjJ2E3emL3wDwrJv190PwjqpcLtCZAM4Ev8AQUfUbAfBvAP6skBcQ4rniCvf/Mh0qTli6p0CS4W+khP0hnI9DcDUU/wOA2aZzERFNJYUcEOgLIvqLUJzfvlP60AHTmeKGpXsKRpdR/Hm5vf+SxEheoC8A+A8AzlXI+QL97wB8GEAdgITBqEREp2IYR2+Q+hMUByH4JxH9Zw1lNxz8VyQ0378sxeXkU8DSPQ370hf9C1R/c+E3X32lZmi4OaGluVAsUMiFAj0Pir9SkVkCrQdPLDpdAq4m0OT9EYCaDhEjAsEgFH8EcAiKfxboXoW8Eqrz+pEP1xX23/GRI6ZDxtn/B1JsKxWiumXcAAAAAElFTkSuQmCC</image>
 				</button>
 				<isee:annotation background="#FFAA00" font_color="white" font_size="20pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="20pt" launcher_label="Click for insight" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="430.632" y="478.017" width="134.5" height="71.5">
-					<popup x="274.578" y="200.517" width="487.392" height="250.854">
+					<popup x="274.578" y="194.456" width="487.392" height="250.854">
 						<text>Reducing fatality rates does not always reduce potential deaths as much as might be expected. This is because where there is a lack of ICU capacity surviving patients may be denied ICU again and remain at risk (in the model, after surviving one day they return to waiting status). ICU capacity must also be increased to see the benefit. Alternatives to ICU such as enhanced ward beds or high-flow nasal cannula oxygen could also reduce potential deaths, but these are not currently modelled.</text>
 					</popup>
 				</isee:annotation>
@@ -4348,16 +4386,16 @@ We welcome your feedback and suggestions.</text_box>
 					<image width="477" height="414" size_to_parent="true">data:image/png;base64,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EWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKV7YknTAYiI4koh7Jfj4A/lRBRDpiMQEVF1YemeiGAAgJqOQUQUR6I6bDqDjVi6JyCqbwIomc5BRBRDIYB/MR3CRizdE1CRfwZLl4joVJQg+H9Mh7ARS/fE/gVHv60REdHkhADeMB3CRizdE/tHcNIlIjoV/wbFy6ZD2IilewKh47zI5REiokkrAdhZGkn8wXQQG7F0T+Dfvf3//pOE+n8DeNd0FiKiGHkHwP+659/mD5gOYiOW7gm8sOrjI6HjfAfAm6azEBHFyC7R8O+wSnhPzHGwdE+imHb/AcDPAPzFdBYiohh4E4of+O3Nr5sOYiuWbhmJsNQNoGA6BxGR9RQvvTvjjK2mY9iMpVtGfsV/CABkAPimsxARWewfnIRueHXpv/9X00FsxtKdgKDN+wEU3wLw3wCMmM5DRGSRIwB+pyLdheVNvzYdxnYs3Qk6Q9/tgWIDgLdMZyEisoVC+qFY4yRKf2c6SxywdCfolRV//ecaZ7gPiq8B+N/BiZeIprdDAHZA8PS7M874hb+smTecTgDPjJ2E3emL3wDwrJv190PwjqpcLtCZAM4Ev8AQUfUbAfBvAP6skBcQ4rniCvf/Mh0qTli6p0CS4W+khP0hnI9DcDUU/wOA2aZzERFNJYUcEOgLIvqLUJzfvlP60AHTmeKGpXsKRpdR/Hm5vf+SxEheoC8A+A8AzlXI+QL97wB8GEAdgITBqEREp2IYR2+Q+hMUByH4JxH9Zw1lNxz8VyQ0378sxeXkU8DSPQ370hf9C1R/c+E3X32lZmi4OaGluVAsUMiFAj0Pir9SkVkCrQdPLDpdAq4m0OT9EYCaDhEjAsEgFH8EcAiKfxboXoW8Eqrz+pEP1xX23/GRI6ZDxtn/B1JsKxWiumXcAAAAAElFTkSuQmCC</image>
 				</button>
 				<numeric_display color="#AAAA00" font_size="24pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" x="635.372" y="46.778" width="391.108" height="40.6667" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Hospital.total_denied_ward_bed_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ward_bed"/>
 				</numeric_display>
 				<stacked_container x="605.069" y="87.444" width="308.714" height="216.111" z_index="1">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="308.714" height="216.111" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Total denied ward bed (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Hospital.total_denied_ward_bed_all_ages"/>
+							<entity name="Hospital.total_unable_to_access_ward_bed"/>
 							<isee:data name="Baseline"/>
 						</plot>
 						<plot color="blue" title="Latest run" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="Hospital.total_denied_ward_bed_all_ages"/>
+							<entity name="Hospital.total_unable_to_access_ward_bed"/>
 						</plot>
 					</graph>
 				</stacked_container>
@@ -4374,7 +4412,7 @@ We welcome your feedback and suggestions.</text_box>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="638.122" y="303.555" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
-					<entity name="Hospital.total_denied_ICU_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ICU"/>
 				</numeric_display>
 				<numeric_display color="#AAAA00" font_size="18pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="913.783" y="87.4447" width="112.286" height="61.2323" isee:conditional_entity="Hospital.compare_runs" title="Baseline" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.baseline_total_denied_ward_bed"/>
@@ -4448,7 +4486,7 @@ We welcome your feedback and suggestions.</text_box>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="633.274" y="131.797" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
-					<entity name="Hospital.total_denied_ICU_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ICU"/>
 				</numeric_display>
 				<numeric_display color="#AAAA00" font_size="18pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="914.935" y="174.187" width="112.286" height="61.2323" isee:conditional_entity="Hospital.compare_runs" title="Baseline" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
@@ -4520,17 +4558,17 @@ However, an increase in ICU nurse absenteeism due to burnout can partly offset t
 				<stacked_container x="68.9554" y="295.238" width="276.956" height="203.916" z_index="1">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="276.956" height="203.916" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Total denied ICU (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Hospital.total_denied_ICU_all_ages"/>
+							<entity name="Hospital.total_unable_to_access_ICU"/>
 							<isee:data name="Baseline"/>
 						</plot>
 						<plot color="blue" title="Latest run" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="Hospital.total_denied_ICU_all_ages"/>
+							<entity name="Hospital.total_unable_to_access_ICU"/>
 						</plot>
 					</graph>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="85.001" y="246.979" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
-					<entity name="Hospital.total_denied_ICU_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ICU"/>
 				</numeric_display>
 				<numeric_display color="#AAAA00" font_size="18pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="366.662" y="289.369" width="112.286" height="61.2323" isee:conditional_entity="Hospital.compare_runs" title="Baseline" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
@@ -4614,7 +4652,7 @@ However, an increase in nurse absenteeism due to burnout can partly offset the b
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="72.0846" y="243.854" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
-					<entity name="Hospital.total_denied_ward_bed_all_ages"/>
+					<entity name="Hospital.total_unable_to_access_ward_bed"/>
 				</numeric_display>
 				<numeric_display color="#AAAA00" font_size="18pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="353.746" y="286.244" width="112.286" height="61.2323" isee:conditional_entity="Hospital.compare_runs" title="Baseline" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1"/>
@@ -4937,7 +4975,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 					<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[c]"/>
 				</numeric_display>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="140" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="415.222" height="48.6112">Initial resource data</text_box>
 				<isee:shape background="#0055FF" transparent_background="false" x="526.53" y="299.742" width="58.1111" height="38.6667" kind="arrow" direction="east" curvature="none"/>
@@ -5013,7 +5051,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 				<text_box font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="627.56" y="118.33" width="382.728" height="38">Calculated for the country:</text_box>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="83.6206" y="421.705" width="528.789" height="67.0909">Note: changing these values does not create a new baseline run</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="140" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="56.6667" width="481.333" height="54.6667">PPE: Unfinished page</text_box>
 				<stacked_container x="80.2214" y="227.166" width="369.113" height="241.112" z_index="1">
@@ -5346,8 +5384,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
 				<connect to="Ventilators.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
 				<connect2 to="Ventilators.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
-				<connect to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
-				<connect2 to="PANDEM2_Outputs.hospital_admisions" from="Hospital.hospital_admisions"/>
+				<connect to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
+				<connect2 to="PANDEM2_Outputs.hospital_admissions" from="Hospital.hospital_admissions"/>
 				<connect to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect2 to="PANDEM2_Outputs.hospital_discharges" from="Hospital.hospital_discharges"/>
 				<connect to="PANDEM2_Outputs.ICU_admissions" from="Hospital.ICU_admissions"/>
@@ -5372,6 +5410,10 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.moving_to_ICU_overflow" from="Hospital.moving_to_ICU_overflow"/>
 				<connect to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
 				<connect2 to="PANDEM2_Outputs.moving_to_ward_overflow" from="Hospital.moving_to_ward_overflow"/>
+				<connect to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect2 to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
+				<connect to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
 				<connect to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
 				<connect2 to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
 				<connect to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
@@ -5432,6 +5474,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.Total_Admissions" from="Hospital.Total_Admissions"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
+				<connect to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
+				<connect2 to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
 				<connect to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_ICU_admissions" from="Hospital.Total_ICU_admissions"/>
 				<connect to="PANDEM2_Outputs.total_in_hospital" from="Hospital.total_in_hospital"/>
@@ -5440,6 +5484,10 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.Total_needed_ICU" from="Hospital.Total_needed_ICU"/>
 				<connect to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
+				<connect to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
+				<connect2 to="PANDEM2_Outputs.total_unable_to_access_ward_bed" from="Hospital.total_unable_to_access_ward_bed"/>
 				<connect to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_Ward_admissions" from="Hospital.Total_Ward_admissions"/>
 				<connect to="PANDEM2_Outputs.ward_admissions" from="Hospital.ward_admissions"/>
@@ -5584,6 +5632,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_4" from="Hospital_Resources.activate_surge_strategy_4"/>
 				<connect to="Hospital.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
 				<connect2 to="Hospital.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
+				<connect to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.all_nurses_absenteeism_rate" from="Hospital_Resources.all_nurses_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.available_nurses" from="Hospital_Resources.available_nurses"/>
@@ -5604,6 +5654,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.ICU_Beds" from="Hospital_Resources.ICU_Beds"/>
 				<connect to="Hospital.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
 				<connect2 to="Hospital.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
+				<connect to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ICU_nurse_absenteeism_rate" from="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect2 to="PANDEM2_Outputs.ICU_Nurses_at_work" from="Hospital_Resources.ICU_Nurses_at_work"/>
 				<connect to="PANDEM2_Outputs.ICU_nurses_gap" from="Hospital_Resources.ICU_nurses_gap"/>
@@ -5672,6 +5724,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect to="Hospital.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect2 to="Hospital.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect2 to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect2 to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect to="Hospital_Resources.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
@@ -9601,7 +9655,7 @@ expected_ICU_beds_freed_by_deaths) / per_day</eqn>
 				<units>Patients</units>
 			</stock>
 			<flow name="needing bed">
-				<doc>Patients who need a ward bed</doc>
+				<doc>Patients who need a ward bed (on admission or after a stay in ICU)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -10477,20 +10531,20 @@ ELSE 1</eqn>
 				<non_negative/>
 				<units>People/day</units>
 			</flow>
-			<aux name="total denied ward bed all ages">
+			<aux name="total unable to access ward bed" access="output" isee:autocreated="true">
 				<doc>Total denied a ward bed in all age groups</doc>
 				<eqn>SUM(Total_denied_Ward_Bed)</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="baseline total\ndenied ward bed">
 				<doc>Baseline total denied ward bed for comparison with current run</doc>
-				<eqn>HISTORY(total_denied_ward_bed_all_ages,  STOPTIME,  1)
+				<eqn>HISTORY(total_unable_to_access_ward_bed,  STOPTIME,  1)
 { 1 refers to the first active run shown in Data Manager,  which should be the baseline run }</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="current total\ndenied ward bed">
 				<doc>Current run total denied ward bed for comparison with baseline</doc>
-				<eqn>HISTORY(total_denied_ward_bed_all_ages,  STOPTIME,  0)
+				<eqn>HISTORY(total_unable_to_access_ward_bed,  STOPTIME,  0)
 { 0 refers to current run, which will be the latest run or the baseline run since only 2 runs are being saved }</eqn>
 				<units>People</units>
 			</aux>
@@ -10504,20 +10558,20 @@ ELSE 1</eqn>
 				<eqn>delta_total_denied_ward_bed/baseline_total_denied_ward_bed*100</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="total denied ICU all ages">
+			<aux name="total unable to access ICU" access="output" isee:autocreated="true">
 				<doc>Total denied ICU in all age groups</doc>
 				<eqn>SUM(Total_denied_ICU)</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="baseline total\ndenied ICU">
 				<doc>Baseline total denied ICU for comparison with current run</doc>
-				<eqn>HISTORY(total_denied_ICU_all_ages,  STOPTIME,  1)
+				<eqn>HISTORY(total_unable_to_access_ICU,  STOPTIME,  1)
 { 1 refers to the first active run shown in Data Manager,  which should be the baseline run }</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="current total\ndenied ICU">
 				<doc>Current run total denied ICU for comparison with baseline</doc>
-				<eqn>HISTORY(total_denied_ICU_all_ages,  STOPTIME,  0)
+				<eqn>HISTORY(total_unable_to_access_ICU,  STOPTIME,  0)
 { 0 refers to current run, which will be the latest run or the baseline run since only 2 runs are being saved }</eqn>
 				<units>People</units>
 			</aux>
@@ -10680,7 +10734,7 @@ ELSE 1</eqn>
 				<eqn>absent_nurses + absent_ICU_nurses</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="total expected deaths">
+			<aux name="total expected deaths" access="output" isee:autocreated="true">
 				<doc>Total deaths expected according to normal fatality rates, not including additional potential deaths from lack of ICU capacity</doc>
 				<eqn>total_ward_deaths + total_ICU_deaths</eqn>
 				<units>People</units>
@@ -10801,7 +10855,7 @@ ELSE 1</eqn>
 				<eqn>delta_peak_nurse_absenteeism_rate = 0</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="hospital admisions" access="output" isee:autocreated="true">
+			<aux name="hospital admissions" access="output" isee:autocreated="true">
 				<doc>Symptomatic people who have developed serious symptoms and are being admitted to hospital</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -10886,6 +10940,22 @@ ELSE 1</eqn>
 				<eqn>SUM(Total_confirmed_cases_1)</eqn>
 				<units>People</units>
 			</aux>
+			<aux name="need ICU" access="output" isee:autocreated="true">
+				<doc>All patients who require an ICU bed - on admission and for ward and overflow transfers</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>needing_ICU</eqn>
+				<units>People/day</units>
+			</aux>
+			<aux name="need ward bed" access="output" isee:autocreated="true">
+				<doc>Patients who need a ward bed (on admission or after a stay in ICU)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>needing_bed</eqn>
+				<units>people/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -10933,7 +11003,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="4" isee:page_rows="5" isee:scroll_x="1053" isee:scroll_y="527" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="4" isee:page_rows="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11623,7 +11693,7 @@ ELSE 1</eqn>
 					<to>needing_bed</to>
 				</connector>
 				<text_box font_weight="bold" font_size="16pt" uid="224" x="644.417" y="1067.92" width="202.827" height="23">Ward Bed demand</text_box>
-				<numeric_display color="#FFFF7F" uid="225" x="657.591" y="1258.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#FFFF7F" uid="225" x="657.591" y="1276.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Total_needed_Ward_Bed[a]"/>
 				</numeric_display>
 				<text_box font_style="italic" text_decoration="underline" uid="226" x="661.166" y="1371.66" width="258.834" height="23.0064">With current resource levels:</text_box>
@@ -11661,7 +11731,7 @@ ELSE 1</eqn>
 				</numeric_display>
 				<text_box font_style="italic" uid="235" x="667.973" y="1718.83" width="258.834" height="32.5129">With current resource limits, peak ward occupancy would be:</text_box>
 				<text_box font_style="italic" font_weight="bold" font_size="14pt" uid="236" x="646.132" y="1092.92" width="138.827" height="23">Limited resources:</text_box>
-				<numeric_display color="#FFFF7F" uid="237" x="657.591" y="1288.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#FFFF7F" uid="237" x="657.591" y="1306.14" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Total_needed_Ward_Bed[b]"/>
 				</numeric_display>
 				<numeric_display color="#FFFF7F" uid="238" x="667.545" y="1551.09" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
@@ -11691,10 +11761,10 @@ ELSE 1</eqn>
 					<entity name="Potential_deaths_due_to_lack_of_ICU[a]"/>
 				</numeric_display>
 				<stock label_side="center" x="167.667" y="1201.7" width="111" height="32" name="Total needed ICU"/>
-				<flow x="127.417" y="1219.83" name="needing ICU">
+				<flow x="127.417" y="1222.35" name="needing ICU">
 					<pts>
-						<pt x="87.1667" y="1219.83"/>
-						<pt x="167.667" y="1219.83"/>
+						<pt x="87.1667" y="1222.35"/>
+						<pt x="167.667" y="1222.35"/>
 					</pts>
 				</flow>
 				<connector uid="245" angle="347.14">
@@ -12236,7 +12306,7 @@ Note: Smoothing over 5 days was necessary to avoid Patient in Ward Bed going ove
 				<numeric_display color="#FFFF7F" border_color="blue" uid="419" x="983.967" y="2013.38" width="221.232" height="29.33" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="No_limit_ward_deaths[c]"/>
 				</numeric_display>
-				<numeric_display color="#FFFF7F" uid="420" x="657.591" y="1319.41" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#FFFF7F" uid="420" x="657.591" y="1337.41" width="215.909" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Total_needed_Ward_Bed[c]"/>
 				</numeric_display>
 				<numeric_display color="#FFFF7F" uid="421" x="667.545" y="1581.77" width="200" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
@@ -12853,21 +12923,21 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>Total_ICU_transfers</from>
 					<to>current_total_ward_to_ICU_transfers</to>
 				</connector>
-				<aux label_side="right" x="2618.26" y="2226.55" name="total denied ward bed all ages"/>
+				<aux label_side="right" x="2618.26" y="2226.55" name="total unable to access ward bed"/>
 				<connector uid="612" angle="327.848">
 					<from>
 						<alias uid="611"/>
 					</from>
-					<to>total_denied_ward_bed_all_ages</to>
+					<to>total_unable_to_access_ward_bed</to>
 				</connector>
 				<aux label_side="left" x="2576.67" y="2267.74" name="baseline total\ndenied ward bed"/>
 				<connector uid="613" angle="226.105">
-					<from>total_denied_ward_bed_all_ages</from>
+					<from>total_unable_to_access_ward_bed</from>
 					<to>baseline_total_denied_ward_bed</to>
 				</connector>
 				<aux label_side="right" x="2669.66" y="2267.74" name="current total\ndenied ward bed"/>
 				<connector uid="614" angle="1.42251">
-					<from>total_denied_ward_bed_all_ages</from>
+					<from>total_unable_to_access_ward_bed</from>
 					<to>current_total_denied_ward_bed</to>
 				</connector>
 				<aux x="2629.5" y="2287.33" name="delta total denied ward bed"/>
@@ -12888,15 +12958,15 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>delta_total_denied_ward_bed</from>
 					<to>percentage_change_total_denied_ward_bed</to>
 				</connector>
-				<aux label_side="right" x="2350.26" y="2222.39" name="total denied ICU all ages"/>
+				<aux label_side="right" x="2350.26" y="2222.39" name="total unable to access ICU"/>
 				<aux label_side="left" x="2308.67" y="2263.58" name="baseline total\ndenied ICU"/>
 				<connector uid="619" angle="226.105">
-					<from>total_denied_ICU_all_ages</from>
+					<from>total_unable_to_access_ICU</from>
 					<to>baseline_total_denied_ICU</to>
 				</connector>
 				<aux label_side="right" x="2401.66" y="2263.58" name="current total\ndenied ICU"/>
 				<connector uid="620" angle="1.42251">
-					<from>total_denied_ICU_all_ages</from>
+					<from>total_unable_to_access_ICU</from>
 					<to>current_total_denied_ICU</to>
 				</connector>
 				<aux x="2361.5" y="2283.17" name="delta total denied ICU"/>
@@ -12921,7 +12991,7 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>
 						<alias uid="626"/>
 					</from>
-					<to>total_denied_ICU_all_ages</to>
+					<to>total_unable_to_access_ICU</to>
 				</connector>
 				<aux color="#FFAA7F" font_color="#FFAA7F" x="2926.92" y="1767.5" name="deaths down"/>
 				<aux color="#FFAA7F" font_color="#FFAA7F" x="2877" y="1795.47" name="deaths up"/>
@@ -13208,10 +13278,10 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>all_nurses_absenteeism_rate</from>
 					<to>peak_nurse_absenteeism_rate</to>
 				</connector>
-				<aux font_color="#FFAA00" x="352.363" y="307" name="hospital admisions"/>
+				<aux font_color="#FFAA00" x="352.363" y="307" name="hospital admissions"/>
 				<connector uid="694" angle="359.378">
 					<from>hospitalisations</from>
-					<to>hospital_admisions</to>
+					<to>hospital_admissions</to>
 				</connector>
 				<text_box font_weight="bold" font_color="#FFAA00" font_size="10pt" uid="695" x="397.591" y="256.986" width="239.847" height="81.2565">End Nov 2022: Flows for output require a Stella simulator workaround: create a variable from the flow and output that. Otherwise values were not output in JSON response. Original flow renamed to &apos;.. flow&apos; to preserve output variable name. Affects 10 outputs variables</text_box>
 				<aux font_color="#FFAA00" label_side="left" x="648.591" y="923.228" name="at risk of dying from lack of ICU"/>
@@ -13269,6 +13339,30 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>Total_confirmed_cases_1</from>
 					<to>total_confirmed_cases_all_ages</to>
 				</connector>
+				<aux font_color="#FFAA00" x="37" y="1257.35" name="need ICU"/>
+				<connector uid="711" angle="230.835">
+					<from>needing_ICU</from>
+					<to>need_ICU</to>
+				</connector>
+				<aux font_color="#FFAA00" x="679" y="1240.35" name="need ward bed"/>
+				<connector uid="712" angle="229.96">
+					<from>needing_bed</from>
+					<to>need_ward_bed</to>
+				</connector>
+				<stacked_container uid="713" x="526" y="2248.58">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" pen_style="dot_dashed" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="need_ICU[*]"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="714" x="903" y="2248.58">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="#008F44" pen_style="dashed" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="need_ward_bed[*]"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" label_side="top" uid="88" x="1309.11" y="223" width="18" height="18">
 					<of>patients_per_ward_bed</of>
 				</alias>
@@ -14297,7 +14391,7 @@ max_available_ICU_nurses / ICU_nurses_per_bed_2)</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="absent physicians" access="output" isee:autocreated="true">
-				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
+				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set)</doc>
 				<eqn>Physicians * 
 i[c] * 
 effective_PPE_protection_factor * 
@@ -14411,7 +14505,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="1476.67" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="255" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -18947,11 +19041,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
 			</aux>
-			<aux name="absent physicians" access="input">
-				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set) or burnout</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Staff</units>
-			</aux>
 			<aux name="physicians at work" access="input">
 				<doc>Hospital physicians at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
@@ -19010,14 +19099,6 @@ Simply put, the percentage of the population that acquired the disease during an
 				<doc>ICU nurses absent because of infection or burnout (if staff absenteeism option is set)</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
-			</aux>
-			<aux name="hospital admisions" access="input">
-				<doc>Symptomatic people who have developed serious symptoms and are being admitted to hospital</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>People/day</units>
 			</aux>
 			<aux name="ICU admissions" access="input">
 				<doc>Patients being admitted to ICU</doc>
@@ -19112,6 +19193,65 @@ Simply put, the percentage of the population that acquired the disease during an
 				</dimensions>
 				<units>People</units>
 			</aux>
+			<aux name="need ICU" access="input">
+				<doc>All patients who require an ICU bed - on admission and for ward and overflow transfers</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People/day</units>
+			</aux>
+			<aux name="total expected deaths" access="input">
+				<doc>Total deaths expected according to normal fatality rates, not including additional potential deaths from lack of ICU capacity</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People</units>
+			</aux>
+			<aux name="ward nurse absenteeism rate" access="input">
+				<doc>Percentage of ward nurses who are absent through either infection or burnout</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="ICU nurse absenteeism rate" access="input">
+				<doc>Percentage of ICU nurses who are absent through either infection or burnout</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="all nurses absenteeism rate" access="input">
+				<doc>Percentage of all nurses who are absent through either infection or burnout</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="total unable to access ward bed" access="input">
+				<doc>Total denied a ward bed in all age groups</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People</units>
+			</aux>
+			<aux name="total unable to access ICU" access="input">
+				<doc>Total denied ICU in all age groups</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People</units>
+			</aux>
+			<aux name="absent physicians" access="input">
+				<doc>Hospital physicians absent due to infection (if staff absenteeism option is set)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Staff</units>
+			</aux>
+			<aux name="need ward bed" access="input">
+				<doc>Patients who need a ward bed (on admission or after a stay in ICU)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>people/day</units>
+			</aux>
+			<aux name="hospital admissions" access="input">
+				<doc>Symptomatic people who have developed serious symptoms and are being admitted to hospital</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -19159,7 +19299,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19198,7 +19338,7 @@ Simply put, the percentage of the population that acquired the disease during an
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="34.9165" y="11.1393" width="2011.04" height="174.167" minimized="true" name="OUTPUTS">
+				<stacked_container uid="1" x="34.9165" y="9.3794" width="2011.04" height="174.167" minimized="true" name="OUTPUTS">
 					<table width="2011.04" height="174.167" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
@@ -19260,15 +19400,6 @@ Simply put, the percentage of the population that acquired the disease during an
 						</item>
 						<item>
 							<entity name="Hospital.total_in_hospital[c]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admisions[a]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admisions[b]"/>
-						</item>
-						<item>
-							<entity name="Hospital.hospital_admisions[c]"/>
 						</item>
 						<item>
 							<entity name="Hospital.hospital_discharges[a]"/>
@@ -19422,9 +19553,6 @@ Simply put, the percentage of the population that acquired the disease during an
 						</item>
 						<item>
 							<entity name="Hospital_Resources.max_available_physicians"/>
-						</item>
-						<item>
-							<entity name="Hospital_Resources.absent_physicians"/>
 						</item>
 						<item>
 							<entity name="Hospital_Resources.physicians_at_work"/>
@@ -19699,6 +19827,54 @@ Simply put, the percentage of the population that acquired the disease during an
 						<item>
 							<entity name="Testing.Total_confirmed_cases[c]"/>
 						</item>
+						<item>
+							<entity name="Hospital.need_ICU[a]"/>
+						</item>
+						<item>
+							<entity name="Hospital.need_ICU[b]"/>
+						</item>
+						<item>
+							<entity name="Hospital.need_ICU[c]"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_expected_deaths"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.ICU_nurse_absenteeism_rate"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.all_nurses_absenteeism_rate"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_unable_to_access_ward_bed"/>
+						</item>
+						<item>
+							<entity name="Hospital.total_unable_to_access_ICU"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.absent_physicians"/>
+						</item>
+						<item>
+							<entity name="Hospital.need_ward_bed[a]"/>
+						</item>
+						<item>
+							<entity name="Hospital.need_ward_bed[b]"/>
+						</item>
+						<item>
+							<entity name="Hospital.need_ward_bed[c]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[a]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[b]"/>
+						</item>
+						<item>
+							<entity name="Hospital.hospital_admissions[c]"/>
+						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
@@ -19708,10 +19884,10 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="15" x="383.899" y="327.307" width="164.286" height="63.39">Patients discharged from hospital, from wards and ward overflows. (Note that patients discharged from ICU will go to wards and later will be discharged from there)</text_box>
 				<aux font_style="italic" font_weight="bold" x="107.292" y="294.167" name="total in hospital"/>
 				<text_box text_align="center" font_size="10pt" uid="16" x="25.1487" y="327.307" width="164.286" height="50.265">Total number of patients in hospital in all wards, waiting for wards, and in overflows</text_box>
-				<text_box text_align="center" font_size="10pt" uid="17" x="568.274" y="327.307" width="164.286" height="63.39">Patients being admitted to ICU</text_box>
-				<text_box text_align="center" font_size="10pt" uid="18" x="763.899" y="327.307" width="164.286" height="63.39">Patients being transferred from ICU to ward</text_box>
-				<aux font_style="italic" font_weight="bold" x="1024.79" y="294.167" name="deaths in hospital"/>
-				<text_box text_align="center" font_size="10pt" uid="19" x="942.649" y="327.307" width="164.286" height="63.39">Patient deaths in wards, ICU or overflows (includes potential deaths from lack of ICU)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="17" x="722.441" y="327.307" width="155.346" height="36.7233">Patients being admitted to ICU</text_box>
+				<text_box text_align="center" font_size="10pt" uid="18" x="881.399" y="326.474" width="164.286" height="38.39">Patients being transferred from ICU to ward</text_box>
+				<aux font_style="italic" font_weight="bold" x="1133.12" y="293.334" name="deaths in hospital"/>
+				<text_box text_align="center" font_size="10pt" uid="19" x="1050.98" y="326.474" width="164.286" height="47.5567">Patient deaths in wards, ICU or overflows (includes potential deaths from lack of ICU)</text_box>
 				<aux font_style="italic" font_weight="bold" x="711.375" y="470.625" name="expected beds freed"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="867.25" y="458.292" width="103" height="33" name="Patients Waiting for Ward Bed"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="1036.86" y="457.792" width="128" height="34" name="In Ward Overflow"/>
@@ -19757,8 +19933,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="49" x="322.085" y="2130.05" width="164.286" height="54.9994">Total number of patients who were admitted to ICU</text_box>
 				<text_box text_align="center" uid="50" x="507.249" y="2133.88" width="184.523" height="64.1661">Total of all patients who needed a ward bed during current run (from admissions and transfers from ICU)</text_box>
 				<text_box text_align="center" uid="51" x="718.72" y="2133.88" width="164.286" height="64.1661">Total number of patients who were admitted to wards (from admissions and transfers from ICU)</text_box>
-				<text_box text_align="center" uid="52" x="949.95" y="2130.05" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
-				<text_box text_align="center" uid="53" x="1150.1" y="2132.83" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
+				<text_box text_align="center" uid="52" x="914.117" y="2130.05" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
+				<text_box text_align="center" uid="53" x="1094.27" y="2130.33" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
 				<text_box text_align="center" uid="54" x="136.273" y="2831.39" width="164.286" height="75.35">Highest estimated ICU demand in a single day</text_box>
 				<text_box text_align="center" uid="55" x="316.297" y="2831.39" width="164.286" height="75.35">Highest estimated number of physical ICU beds required a single day</text_box>
 				<text_box text_align="center" uid="56" x="490.205" y="2831.39" width="164.286" height="75.35">Highest estimated number of ICU nurses required in a single day</text_box>
@@ -19772,8 +19948,8 @@ Simply put, the percentage of the population that acquired the disease during an
 				<stock font_style="italic" font_weight="bold" label_side="center" x="330.19" y="2082.54" width="154" height="28" name="Total ICU admissions"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="524.011" y="2082.04" width="151" height="29" name="Total needed Ward Bed"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="728.333" y="2082.54" width="157" height="35" name="Total Ward admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="967.593" y="2083.54" width="129" height="33" name="Potential deaths due to lack of ICU"/>
-				<aux font_style="italic" font_weight="bold" x="1232.24" y="2096.54" name="total deaths"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="931.76" y="2083.54" width="129" height="33" name="Potential deaths due to lack of ICU"/>
+				<aux font_style="italic" font_weight="bold" x="1176.41" y="2094.04" name="total deaths"/>
 				<aux font_style="italic" font_weight="bold" x="214.041" y="2792.25" name="peak ICU demand"/>
 				<aux font_style="italic" font_weight="bold" x="398.44" y="2791.63" name="peak demand ICU beds"/>
 				<aux font_style="italic" font_weight="bold" x="563.348" y="2783.25" width="16.75" height="16.75" name="peak demand ICU nurses"/>
@@ -19796,7 +19972,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<aux font_style="italic" font_weight="bold" x="1610" y="606.667" name="extra staff needed for overflow patients"/>
 				<text_box text_align="center" font_size="10pt" uid="68" x="134.405" y="639.016" width="164.286" height="54.5472">Total general ward nurses employed and available for care of pandemic patients, assuming none are absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="69" x="312.768" y="639.016" width="164.286" height="54.5472">Ward nurses absent because of infection or burnout (if staff absenteeism option is set)</text_box>
-				<text_box text_align="center" font_size="10pt" uid="70" x="479.643" y="642.349" width="164.286" height="54.5472">ICU nurses absent due to infection (if staff absenteeism option is set) or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="70" x="479.643" y="642.349" width="164.286" height="54.5472">Nurses at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="71" x="656.31" y="647.349" width="164.286" height="63.651">Total general nurses occupied with caring for patients in wards, calculated on the basis of number of occupied beds and nurse-to-patient ratio</text_box>
 				<text_box text_align="center" font_size="10pt" uid="72" x="839.404" y="652.349" width="164.286" height="63.651">Nurses not occupied with patients nor absent</text_box>
 				<text_box text_align="center" font_size="10pt" uid="73" x="1174.64" y="658.182" width="164.286" height="63.651">Number of ward nurses needed to meet demand (for patients waiting for ward and in ward overflow) at the normal nurse-to-patient ratio</text_box>
@@ -19863,7 +20039,7 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" font_size="10pt" uid="107" x="132.905" y="775.707" width="164.286" height="38.961">The number of physical ward beds supported by available nurses</text_box>
 				<text_box text_align="center" font_size="10pt" uid="108" x="322.905" y="775.707" width="164.286" height="58.626">The number of staffed ward beds needed to meet current demand (includes patients waiting for ward and in ward overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="109" x="509.715" y="765.875" width="164.286" height="71.46">The gap in staffed ward beds, comparing available staffed beds plus expected beds freed with patients waiting for a bed plus patients in ward overflow</text_box>
-				<aux font_style="italic" font_weight="bold" x="69.9165" y="137" name="Actual cases"/>
+				<aux font_style="italic" font_weight="bold" x="69.9165" y="133" name="Actual cases"/>
 				<aux font_style="italic" font_weight="bold" x="177" y="133" name="Attack rate"/>
 				<aux font_style="italic" font_weight="bold" x="294.75" y="133" name="Attack rate by age"/>
 				<aux font_style="italic" font_weight="bold" x="429.875" y="137" name="Vaccination capacity"/>
@@ -19892,10 +20068,9 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="124" x="150.107" y="1798.81" width="164.286" height="35.6627">Deceased patients being moved to morgue</text_box>
 				<text_box text_align="center" uid="126" x="508.227" y="1798.81" width="226.929" height="78.996">Where unusually high mortality rates overwhelm regular mortuary services, surplus bodies may be moved to temporary morgues such as refrigerated trucks to prevent bed blocking in hospitals</text_box>
 				<aux font_style="italic" font_weight="bold" x="215.548" y="1139.81" name="max available physicians"/>
-				<aux font_style="italic" font_weight="bold" x="393.167" y="1139.81" name="absent physicians"/>
 				<text_box uid="128" x="33.5708" y="1142.81" width="79.358" height="45.9994">Physicians</text_box>
 				<text_box text_align="center" font_size="10pt" uid="127" x="133.405" y="1194.81" width="164.286" height="44.9682">Total hospital physicians employed and available for care of pandemic patients, assuming none are absent</text_box>
-				<text_box text_align="center" font_size="10pt" uid="129" x="311.768" y="1197.81" width="164.286" height="46.961">Physicians absent due to infection (if staff absenteeism option is set) or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="129" x="311.768" y="1197.81" width="164.286" height="46.961">Physicians absent due to infection (if staff absenteeism option is set)</text_box>
 				<aux font_style="italic" font_weight="bold" x="587.858" y="1139" name="physicians at work"/>
 				<text_box text_align="center" font_size="10pt" uid="130" x="505.715" y="1188.81" width="164.286" height="64.9646">Hospital physicians at work and available for the pandemic (not absent because of infection, if staff absenteeism is modelled, or burnout)</text_box>
 				<text_box uid="131" x="53.511" y="1899.81" width="200.596" height="45.9994">Therapeutic treatments
@@ -19909,13 +20084,12 @@ Simply put, the percentage of the population that acquired the disease during an
 				<stock font_style="italic" font_weight="bold" label_side="center" x="375.237" y="1900.36" width="93.5714" height="36.4286" name="Antivirals administered"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="552.406" y="1901.07" width="138.571" height="35" name="Previous vaccines administered"/>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="194.167" name="Total cases"/>
-				<aux font_style="italic" font_weight="bold" x="1389.86" y="2092.54" name="Total Admissions"/>
-				<text_box text_align="center" uid="137" x="1319.27" y="2132.83" width="164.286" height="54.9994">Cumulative total of all patients admitted to hospital</text_box>
+				<aux font_style="italic" font_weight="bold" x="1334.03" y="2090.04" name="Total Admissions"/>
+				<text_box text_align="center" uid="137" x="1263.44" y="2130.33" width="164.286" height="54.9994">Cumulative total of all patients admitted to hospital</text_box>
 				<aux font_style="italic" font_weight="bold" x="393.875" y="592" name="absent nurses"/>
 				<aux font_style="italic" font_weight="bold" x="397.5" y="1002.5" name="absent ICU nurses"/>
-				<aux font_style="italic" font_weight="bold" x="279.214" y="292.167" name="hospital admisions"/>
-				<aux font_style="italic" font_weight="bold" x="649.167" y="287.5" name="ICU admissions"/>
-				<aux font_style="italic" font_weight="bold" x="841.667" y="296.667" name="ICU discharges"/>
+				<aux font_style="italic" font_weight="bold" x="807.096" y="294.167" name="ICU admissions"/>
+				<aux font_style="italic" font_weight="bold" x="959.167" y="295.834" name="ICU discharges"/>
 				<aux font_style="italic" font_weight="bold" x="762.5" y="735.833" name="ward admissions"/>
 				<aux font_style="italic" font_weight="bold" x="979.25" y="735.833" name="moving to ward overflow"/>
 				<aux font_style="italic" font_weight="bold" x="827.5" y="1452.5" name="moving to ICU overflow"/>
@@ -19935,15 +20109,29 @@ Simply put, the percentage of the population that acquired the disease during an
 				<text_box text_align="center" uid="144" x="778.548" y="2593.56" width="164.286" height="75.35">The peak value of the pandemic demand for ICU beds, expressed as a multiple of total normal ICU capacity.</text_box>
 				<aux font_style="italic" font_weight="bold" x="854.167" y="2547.66" name="peak ICU demand factor"/>
 				<aux font_style="italic" font_weight="bold" x="294.75" y="200.833" name="Total confirmed cases"/>
+				<aux font_style="italic" font_weight="bold" x="633.643" y="294.167" name="need ICU"/>
+				<text_box text_align="center" font_size="10pt" uid="145" x="560.774" y="327.307" width="155.346" height="50.265">All patients who require an ICU bed - on admission and for ward and overflow transfers</text_box>
+				<aux font_style="italic" font_weight="bold" x="1314.88" y="295.834" name="total expected deaths"/>
+				<text_box text_align="center" font_size="10pt" uid="146" x="1232.73" y="326.474" width="164.286" height="58.39">Total deaths expected according to normal fatality rates, not including additional potential deaths from lack of ICU capacity</text_box>
+				<aux font_style="italic" font_weight="bold" x="1786.67" y="608.333" name="ward nurse absenteeism rate"/>
+				<aux font_style="italic" font_weight="bold" x="1646.67" y="1003.33" name="ICU nurse absenteeism rate"/>
+				<aux font_style="italic" font_weight="bold" x="1955" y="608.333" name="all nurses absenteeism rate"/>
+				<text_box text_align="center" font_size="10pt" uid="147" x="1704.52" y="652.349" width="164.286" height="63.651">Percentage of ward nurses who are absent through either infection or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="148" x="1872.85" y="652.349" width="164.286" height="63.651">Percentage of all nurses who are absent through either infection or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="149" x="1572.02" y="1047.12" width="164.286" height="63.651">Percentage of ICU nurses who are absent through either infection or burnout</text_box>
+				<text_box text_align="center" font_size="10pt" uid="150" x="1421" y="326.474" width="164.286" height="58.39">Patients who need a ward bed (on admission or after a stay in ICU)</text_box>
+				<aux font_style="italic" font_weight="bold" x="1517.5" y="2090.04" name="total unable to access ward bed"/>
+				<aux font_style="italic" font_weight="bold" x="1677.5" y="2090.04" name="total unable to access ICU"/>
+				<text_box text_align="center" uid="151" x="1435.36" y="2131.16" width="164.286" height="54.9994">Total denied a ward bed in all age groups</text_box>
+				<text_box text_align="center" uid="152" x="1602.33" y="2131.16" width="164.286" height="54.9994">Total denied ICU in all age groups</text_box>
+				<aux font_style="italic" font_weight="bold" x="397.025" y="1139.81" name="absent physicians"/>
+				<aux font_style="italic" font_weight="bold" x="1496.9" y="293.334" name="need ward bed"/>
+				<aux font_style="italic" font_weight="bold" x="287.857" y="296.429" name="hospital admissions"/>
 			</view>
 		</views>
 	</model>
 	<isee:controls>
-		<isee:control priority="interactive" name='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"' value="1"/>
-		<isee:control priority="interactive" name='Inputs_Hospital_surge_strategies."strategy_2_reduce_nurse-to-patient_ratio"' value="1"/>
-		<isee:control priority="interactive" name="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift" value="1"/>
 		<isee:control priority="interactive" name="Inputs_Hospital_surge_strategies.strategy_4_increase_bed_capacity" value="1"/>
-		<isee:control priority="interactive" name="Inputs_Modelling_options.simulate_interruption_in_PPE_supply" value="1"/>
 	</isee:controls>
 	<macro name="MAXIMUM">
 		<eqn>maximum</eqn>
