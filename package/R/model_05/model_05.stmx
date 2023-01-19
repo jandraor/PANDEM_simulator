@@ -5,7 +5,7 @@
 		<name>model_05</name>
 		<uuid>6f814554-d331-4214-9ea0-4d7153be1488</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.2" isee:build_number="2856" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -36,7 +36,7 @@
 			<elem name="cc"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="1" keep="false" rifp="true"/>
+	<isee:prefs saved_runs="1" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -347,8 +347,8 @@
 				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
-				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
+				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
+				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect2 to="PANDEM2_Outputs.available_ICU_nurses" from="Hospital_Resources.available_ICU_nurses"/>
 				<connect to="PANDEM2_Outputs.available_nurses" from="Hospital_Resources.available_nurses"/>
@@ -626,8 +626,8 @@
 				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
-				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
-				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
+				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
+				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to='"Within-host_profile".Converter_10' from="Inputs_Epi.isolation_start"/>
@@ -1074,12 +1074,14 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1124,7 +1126,7 @@
 					<to>PANDEM2_Outputs</to>
 				</connector>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" home_view="true" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="200" home_view="true" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="74.7778" width="923.425" height="54.1961">The Epi + Resources Model Interface: Contents</text_box>
 				<text_box font_color="#AAAA7F" font_size="28pt" x="168.243" y="226.21" width="747.192" height="343.606">Introduction
@@ -1219,7 +1221,7 @@ Section 9: Surge strategies</text_box>
 				<text_box font_weight="bold" text_align="center" font_color="#AAAA7F" font_size="20pt" x="950" y="371.273" width="97" height="79.2778">Continue to next page</text_box>
 				<text_box font_weight="bold" font_color="#AAAA7F" font_size="26pt" x="84.6111" y="178.474" width="617.5" height="45.71">or move directly to a section in this list:</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="73.7778" width="976.844" height="54.6667">Introduction: Instructions</text_box>
 				<text_box font_weight="bold" font_color="#AAAA7F" font_size="26pt" x="299.882" y="211.916" width="536.141" height="240.996">You can change model settings and click &apos;Run&apos; to see results. Your changes will be retained as you move through the pages.
@@ -1284,7 +1286,7 @@ If at any time you want to change all the settings back to the model defaults (t
 				<isee:shape background="#AAAA7F" border_width="thin" border_style="none" transparent_background="false" x="829.08" y="464.412" width="21.333" height="60.1714" kind="arrow" direction="south" curvature="none"/>
 				<text_box font_weight="bold" text_align="center" font_color="#AAAA7F" font_size="20pt" x="781.497" y="407.773" width="116.5" height="48.7778">Sometimes available</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="72.78" width="599.344" height="54.6667">Introduction: Scenario</text_box>
 				<text_box font_color="#AAAA7F" font_size="22pt" x="91.478" y="210.298" width="860.415" height="55.6953">Country: Germany, population 83 million. The course of the disease and hospital resources are modelled at the country level.</text_box>
@@ -1312,7 +1314,7 @@ Can current hospital resource capacity be expected to cope with the anticipated 
 
 What measures, in both public health and hospital management, would be most effective in containing the pandemic and the surge of demand on resources?</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="200" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="72.78" width="815.84" height="54.6667">Introduction: Timeline of interventions</text_box>
 				<graphics_frame fill="none" x="55.1738" y="225.123" width="615.5" height="364.5">
@@ -1345,7 +1347,7 @@ What measures, in both public health and hospital management, would be most effe
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="200" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="90.2778" width="965.864" height="65.076">1: What is the simulated course of the pandemic?</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="160.871" y="184.847" width="269.787" height="186.34">Key indicators:
@@ -1386,7 +1388,7 @@ What measures, in both public health and hospital management, would be most effe
 				<isee:shape background="#0055FF" border_width="thin" border_style="none" transparent_background="false" x="658.658" y="225.432" width="49.333" height="16.1667" kind="arrow" direction="west" curvature="none"/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="20pt" border_color="blue" border_width="2" border_style="solid" x="735.945" y="182.822" width="251.026" height="78.092">In all graphs, you can drag the mouse over the graph line to see values</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="200" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="60.7778" width="671.364" height="57.576">Key indicators: Actual cases</text_box>
 				<stacked_container x="65.3386" y="192.831" width="496.636" height="343.682" z_index="-3">
@@ -1524,7 +1526,9 @@ What measures, in both public health and hospital management, would be most effe
 				</stacked_container>
 				<stacked_container x="550.762" y="180.571" width="369.318" height="296.742" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="369.318" height="296.742" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Hospitalisations (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.hospital_admissions_flow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<text_box x="237.545" y="515.176" width="38.1818" height="26.1818">&lt;25</text_box>
@@ -1542,7 +1546,9 @@ What measures, in both public health and hospital management, would be most effe
 				<numeric_display color="white" font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="720.475" y="127.767" width="324.48" height="28.5" isee:immediately_update_on_user_input="true" title="50+" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Data.Population_size[c]"/>
 				</numeric_display>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.722" y="490.571" width="346.5" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.722" y="490.571" width="346.5" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -1612,7 +1618,9 @@ What measures, in both public health and hospital management, would be most effe
 				</button>
 				<stacked_container x="555.44" y="171.04" width="314.564" height="270.682" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="314.564" height="270.682" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Deaths in hospital (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.deaths_in_hospital[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 			</view>
@@ -1801,7 +1809,7 @@ What measures, in both public health and hospital management, would be most effe
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_size="28pt" x="83.1662" y="258.667" width="339.889" height="44.112">Expected peak demand:</text_box>
 				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="418.278" y="395.334" width="198.332" height="62" isee:immediately_update_on_user_input="true" title="Beds" retain_ending_value="true" isee:navigate_to="false" show_name="true">
@@ -1875,7 +1883,7 @@ expected peak demand: Ward beds</text_box>
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="630" height="113.167">Planned pandemic capacity vs 
 expected peak demand: ICU</text_box>
@@ -1955,16 +1963,32 @@ expected peak demand: ICU</text_box>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
-				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="574.722" y="470.333" width="450" height="49" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="160.571" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="1.7" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="309.429" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="574.722" y="470.333" width="450" height="49" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.total_deaths[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="160.571" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="1.7" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="309.429" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="508.071" height="54.6667">Expected Demand Totals</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="273.429" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ICU admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="236.182" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="158.571" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="273.429" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ICU admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_ICU_admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="83.222" y="236.182" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.722" y="158.571" width="450" height="49" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Ward_admissions[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="572.484" y="109.794" width="350.841" height="41.3331">With limited resources:</text_box>
-				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="574.976" y="330.773" width="445.492" height="49" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="574.158" y="216" width="447.128" height="49" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="574.976" y="330.773" width="445.492" height="49" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="574.158" y="216" width="447.128" height="49" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_Ward_Bed[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -1981,7 +2005,9 @@ expected peak demand: ICU</text_box>
 						<action target="previous_page">navigate</action>
 					</actions>
 				</button>
-				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="576.493" y="390.324" width="444.458" height="69.5" isee:immediately_update_on_user_input="true" title="Total potential deaths from lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="576.493" y="390.324" width="444.458" height="69.5" isee:immediately_update_on_user_input="true" title="Total potential deaths from lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<numeric_display color="yellow" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="83.222" y="384.429" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total expected deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.total_expected_deaths"/>
 				</numeric_display>
@@ -1996,12 +2022,16 @@ expected peak demand: ICU</text_box>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="56.6667" width="541.111" height="59.222">Expected patient flows</text_box>
 				<stacked_container x="382.083" y="364.63" width="279.944" height="219.444" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="279.944" height="219.444" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="In ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.Patients_In_ICU_Bed[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<stacked_container x="384.194" y="140.91" width="275.723" height="223.723">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="275.723" height="223.723" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="In ward bed" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.Patients_In_Ward_Bed[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
@@ -2013,22 +2043,30 @@ expected peak demand: ICU</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" x="78.484" y="108.577" width="540.363" height="32.3331">Graphs show figures for patients of all ages</text_box>
 				<stacked_container x="85.5835" y="364.63" width="279.944" height="219.444" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="279.944" height="219.444" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Waiting for ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.Patients_Waiting_for_ICU[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<stacked_container x="87.694" y="140.91" width="275.723" height="223.723">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="275.723" height="223.723" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Waiting for ward bed" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.Patients_Waiting_for_Ward_Bed[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<stacked_container x="671.694" y="140.91" width="275.723" height="223.723">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="275.723" height="223.723" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="In ward overflow" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.In_Ward_Overflow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<stacked_container x="671.694" y="364.63" width="275.723" height="223.723">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="275.723" height="223.723" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Unable to access ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot color="red" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.moving_to_ICU_overflow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<button background="#AAAA7F" font_weight="bold" font_color="#0055FF" font_size="36pt" border_color="#0055FF" corner_radius="7" isee:flat="true" label="&gt;" isee:tooltip="Next page" x="993.5" y="536.513" width="36.5" height="30">
@@ -2318,7 +2356,9 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				</stacked_container>
 				<stacked_container x="402.777" y="147.131" width="342" height="205.682" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="342" height="205.682" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Ward admissions (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.ward_admissions_flow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<text_box x="165.045" y="429.676" width="38.1818" height="26.1818">&lt;25</text_box>
@@ -2333,10 +2373,14 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				</stacked_container>
 				<stacked_container x="723.821" y="147.131" width="330.485" height="205.682" z_index="-3">
 					<graph font_color="red" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="330.485" height="205.682" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Unable to access ward bed" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.unable_to_access_ward_bed[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="465.722" y="55.571" width="554" height="36.86" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="465.722" y="55.571" width="554" height="36.86" isee:immediately_update_on_user_input="true" title="Total ward admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Ward_admissions[SUM]"/>
+				</numeric_display>
 				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="466.158" y="100" width="551.128" height="36.86" isee:immediately_update_on_user_input="true" title="Total unable to access ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.total_unable_to_access_ward_bed"/>
 				</numeric_display>
@@ -2370,7 +2414,9 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				</stacked_container>
 				<stacked_container x="383.909" y="153.943" width="325.368" height="199.182" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="325.368" height="199.182" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="ICU admissions (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="#0055FF" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.ICU_admissions_flow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<text_box x="167.09" y="396.312" width="38.1818" height="26.1818">&lt;25</text_box>
@@ -2383,11 +2429,17 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 						</plot>
 					</graph>
 				</stacked_container>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="577.722" y="51.429" width="475" height="35.5" isee:immediately_update_on_user_input="true" title="Total ICU admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="579.976" y="95.0659" width="470.492" height="35.5" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="577.722" y="51.429" width="475" height="35.5" isee:immediately_update_on_user_input="true" title="Total ICU admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_ICU_admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="579.976" y="95.0659" width="470.492" height="35.5" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<stacked_container x="683.215" y="155.381" width="342" height="205.682" z_index="-3">
 					<graph font_color="red" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="342" height="205.682" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Unable to access ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot isee:immediately_update_on_user_input="true" color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.unable_to_access_ICU[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="18.6111" y="23.7778" width="42.5" height="34">
@@ -2449,7 +2501,9 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				<text_box x="251.818" y="460.813" width="38.1818" height="26.1818">25-49</text_box>
 				<stacked_container x="520.888" y="159.131" width="420.045" height="307.273" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="420.045" height="307.273" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="4" title="Total in ward overflows" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.unable_to_access_ward_bed[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<isee:shape background="#0055FF" transparent_background="false" x="403.505" y="298.475" width="113.333" height="38.6667" kind="arrow" direction="east" curvature="none"/>
@@ -2485,16 +2539,22 @@ Nurses also require PPE (pages considering PPE will be added in future).</text_b
 				<text_box x="166.363" y="452.449" width="38.1818" height="26.1818">&lt;25</text_box>
 				<text_box x="293.636" y="452.449" width="38.1818" height="26.1818">50+</text_box>
 				<text_box x="230" y="452.449" width="38.1818" height="26.1818">25-49</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="465.876" y="164.023" width="470.282" height="40.95" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="465.876" y="164.023" width="470.282" height="40.95" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<stacked_container x="410.312" y="279.31" width="341.864" height="238.182" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="341.864" height="238.182" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Potential deaths from lack of ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU_flow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<isee:shape background="#0055FF" transparent_background="false" x="376.722" y="165.165" width="68.833" height="38.6667" kind="arrow" direction="east" curvature="none"/>
 				<isee:shape background="#0055FF" transparent_background="false" x="571.782" y="218.81" width="47.5" height="49.9999" kind="arrow" direction="south" curvature="none"/>
 				<text_box font_color="#AAAA7F" font_size="24pt" x="633.32" y="228.171" width="208.964" height="31.2779">High fatality rates</text_box>
-				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="764.258" y="342.206" width="259.398" height="87.4206" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_style="italic" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="764.258" y="342.206" width="259.398" height="87.4206" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -2564,7 +2624,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Segoe UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:12pt; font-style:italic; color:#000000;&quot;&gt;total normal ICU capacity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</text_box>
-				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="78.11" y="112.889" width="947.464" height="41.3331">Estimated increase in demand on resources and overall stress code</text_box>
+				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" x="78.11" y="112.889" width="929.888" height="41.3331">Estimated scale of pandemic-related demand on resources &amp; overall stress code</text_box>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="20pt" x="92.8384" y="399.394" width="637.579" height="163.991">Expected demand for ward beds and ICU beds arising from the pandemic compared to normal total capacity in hospitals and expressed as multipliers. E.g. if &apos;pandemic demand for ICU&apos; peaks at 2, this means the pandemic demand is expected to peak at twice the normal ICU capacity. Note: This pandemic demand is in addition to routine demand. Pandemic patients are additional patients and will tend to displace routine patients and procedures.</text_box>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
@@ -2647,11 +2707,21 @@ p, li { white-space: pre-wrap; }
 					<entity name="Inputs_Hospital_patient_params.hospitalisation_fraction[c]"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
-				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.total_deaths[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<isee:shape background="#0055FF" transparent_background="false" x="513.358" y="191.241" width="48.7875" height="27.9118" kind="arrow" direction="east" curvature="none"/>
 				<text_box background="white" font_weight="bold" text_align="center" font_color="red" font_size="32pt" border_color="red" border_width="thin" border_style="solid" x="520.002" y="397.795" width="35.5" height="36.5">!</text_box>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
@@ -2715,11 +2785,21 @@ p, li { white-space: pre-wrap; }
 						<action target="previous_page">navigate</action>
 					</actions>
 				</button>
-				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.total_deaths[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
@@ -2765,11 +2845,21 @@ p, li { white-space: pre-wrap; }
 						<action target="previous_page">navigate</action>
 					</actions>
 				</button>
-				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="yellow" font_color="red" font_size="24pt" border_color="red" border_width="thick" isee:show_divider="false" isee:show_bounding_box="true" x="572.369" y="457.913" width="450" height="62" title="Total deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.total_deaths[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="174.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.278" y="313.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="243.995" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.369" y="385.045" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
@@ -2798,11 +2888,15 @@ p, li { white-space: pre-wrap; }
 					<reset_to after="never">0</reset_to>
 				</slider>
 				<isee:shape background="#0055FF" transparent_background="false" x="512.858" y="368.741" width="48.7875" height="27.9118" kind="arrow" direction="east" curvature="none"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.071" y="282.495" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="572.778" y="352.222" width="450" height="86.5" isee:immediately_update_on_user_input="true" title="Total ward and overflow deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.071" y="282.495" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="572.071" y="349.798" width="450" height="86.5" isee:immediately_update_on_user_input="true" title="Total ward and overflow deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.total_ward_deaths"/>
 				</numeric_display>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.071" y="212.697" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.071" y="212.697" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="20pt" x="576.055" y="455.222" width="443.446" height="67.3331">Model assumption: same (ward fatality) rates apply to overflow patients</text_box>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
@@ -2847,12 +2941,20 @@ p, li { white-space: pre-wrap; }
 					<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[c]"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
-				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="189.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="265.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.869" y="412.545" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAAA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="572.571" y="189.197" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total admissions" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_Admissions[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="false" x="573.278" y="265.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="574.869" y="412.545" width="450" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<isee:shape background="#0055FF" transparent_background="false" x="515.858" y="355.766" width="48.7875" height="27.9118" kind="arrow" direction="east" curvature="none"/>
 				<text_box background="white" font_weight="bold" text_align="center" font_color="red" font_size="32pt" border_color="red" border_width="thin" border_style="solid" x="522.502" y="425.295" width="35.5" height="36.5">!</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.369" y="338.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="ICU deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="573.369" y="338.722" width="450" height="62" isee:immediately_update_on_user_input="true" title="ICU deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.ICU_Deaths[SUM]"/>
+				</numeric_display>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
 						<action target="interface:0">navigate</action>
@@ -2872,7 +2974,7 @@ p, li { white-space: pre-wrap; }
 				</button>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="481.317" y="493.94" width="458.208" height="97.0604">NB: Changes made in this section were for experimentation only and will be cleared when moving to next page</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="91.2778" width="585.364" height="56.076">7 Public health measures</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="106.4" y="178.347" width="900.018" height="308.401">Early adoption of public health measures can have a dramatic effect on reducing cases, hospitalisations and deaths, and therefore also reducing demand for hospital resources.
@@ -2901,7 +3003,7 @@ p, li { white-space: pre-wrap; }
 				</button>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="109.802" y="498.183" width="829.723" height="75.2422">Note: Changes made to model defaults up until this section were for experimentation only and will be cleared when moving to next page</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="525.207" height="56.4849">Effect of testing</text_box>
 				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="81.5758" y="115.545" width="474.899" height="45.95" title="Testing on or off" show_name="true">
@@ -2965,7 +3067,15 @@ p, li { white-space: pre-wrap; }
 					</graph>
 				</stacked_container>
 				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
@@ -3014,7 +3124,7 @@ p, li { white-space: pre-wrap; }
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="525.207" height="56.4849">Effect of isolation</text_box>
 				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="80.9697" y="133.121" width="474.899" height="45.95" title="Isolation on or off" show_name="true">
@@ -3053,9 +3163,6 @@ p, li { white-space: pre-wrap; }
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
 						</plot>
 					</graph>
-				</stacked_container>
-				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
@@ -3108,6 +3215,17 @@ p, li { white-space: pre-wrap; }
 						<text>Isolation requires testing to be turned on, otherwise the simulation cannot demonstrate an effect</text>
 					</popup>
 				</isee:annotation>
+				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
@@ -3176,9 +3294,6 @@ p, li { white-space: pre-wrap; }
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
-				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
 					<entity name="Hospital.current_attack_rate_percent"/>
@@ -3230,8 +3345,19 @@ p, li { white-space: pre-wrap; }
 						<text>Contact tracing requires testing and isolation to be turned on, otherwise the simulation cannot demonstrate an effect</text>
 					</popup>
 				</isee:annotation>
+				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="448.889" height="54.6667">Effect of mask wearing</text_box>
 				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="81.2199" y="185.745" width="334.78" height="64" title="Mask wearing on or off" show_name="true">
@@ -3273,9 +3399,6 @@ p, li { white-space: pre-wrap; }
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
 						</plot>
 					</graph>
-				</stacked_container>
-				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
@@ -3333,6 +3456,17 @@ p, li { white-space: pre-wrap; }
 						<action target="previous_page">navigate</action>
 					</actions>
 				</button>
+				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
@@ -3379,9 +3513,6 @@ p, li { white-space: pre-wrap; }
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
 						</plot>
 					</graph>
-				</stacked_container>
-				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
@@ -3447,8 +3578,19 @@ p, li { white-space: pre-wrap; }
 					<entity name="Inputs_Epi.start_school_closures"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
+				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.78" width="420.707" height="54.6667">Effect of vaccination</text_box>
 				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="80.6667" y="119.796" width="299.278" height="37.7492" title="Vaccines on or off" show_name="true">
@@ -3504,9 +3646,6 @@ p, li { white-space: pre-wrap; }
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
 						</plot>
 					</graph>
-				</stacked_container>
-				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
-					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" isee:points_only="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
 				</stacked_container>
 				<numeric_display color="#AAAA00" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="644.122" y="312.055" width="394.608" height="42.6667" isee:immediately_update_on_user_input="true" title="Attack rate" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<format precision="0.1" display_as="percent"/>
@@ -3582,8 +3721,19 @@ p, li { white-space: pre-wrap; }
 Vaccination applied late, without NPIs, will do little to reduce the total cases. NPIs applied without vaccination will only delay the outbreak. Effective control requires both: NPIs first, and then vaccination when ready.</text>
 					</popup>
 				</isee:annotation>
+				<stacked_container x="612.319" y="360.314" width="292.714" height="216.728" z_index="1">
+					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Attack rate (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+							<isee:data name="Baseline"/>
+						</plot>
+						<plot color="blue" title="Current" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="50.6111" y="98.7778" width="909.864" height="61.076">8 Therapeutic interventions</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="105.374" y="159.834" width="907.518" height="331.061">Therapeutic interventions can reduce severity of patient outcomes.
@@ -3612,14 +3762,16 @@ Vaccination applied late, without NPIs, will do little to reduce the total cases
 				</button>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="106.772" y="498.183" width="829.723" height="75.2422">Note: Changes made to model defaults up until this section were for experimentation only and will be cleared when moving to next page</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<slider font_size="24pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="200" x="87.9145" y="204.085" width="412" height="78" increment="0.1" min="0" max="1" title="Antiviral capacity" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Hospital_resource_params.antiviral_capacity"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="451.143" height="91.9252">Effect of therapeutic antivirals</text_box>
-				<numeric_display color="#55AA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="26.7321" y="485.545" width="360.755" height="62" isee:immediately_update_on_user_input="true" title="Antiviral treatments administered" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#55AA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="26.7321" y="485.545" width="360.755" height="62" isee:immediately_update_on_user_input="true" title="Antiviral treatments administered" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Antivirals_administered[SUM]"/>
+				</numeric_display>
 				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="57.0715" y="240.833">
 					<popup x="54.0715" y="267.365" width="429.635" height="74.3571">
 						<text>Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</text>
@@ -3708,7 +3860,9 @@ Vaccination applied late, without NPIs, will do little to reduce the total cases
 					<entity name="Hospital.percentage_change_total_ward_to_ICU_transfers"/>
 				</numeric_display>
 				<isee:shape border_color="#AAAA00" border_width="4" corner_radius="5" x="921.593" y="223.422" width="112" height="45.354" isee:conditional_entity="Hospital.compare_runs" kind="rectangle"/>
-				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="27.1935" y="419.102" width="359.833" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAFFFF" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="27.1935" y="419.102" width="359.833" height="62" isee:immediately_update_on_user_input="true" title="Total needed ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_Ward_Bed[SUM]"/>
+				</numeric_display>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="928.077" y="231.826" width="26.383" height="28.5106" isee:conditional_entity="Hospital.ICU_transfers_down" kind="arrow" direction="south" curvature="none"/>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="928.077" y="231.826" width="26.383" height="28.5106" isee:conditional_entity="Hospital.ICU_transfers_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="937.801" y="229.847" width="22.159" height="32.4686" isee:conditional_entity="Hospital.ICU_transfers_unchanged">=</text_box>
@@ -3736,13 +3890,17 @@ Vaccination applied late, without NPIs, will do little to reduce the total cases
 					<reset_to after="never">0</reset_to>
 				</slider>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="850" height="54.6667">Effect of previous strain vaccines</text_box>
-				<numeric_display color="#55AA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="53.8268" y="454.957" width="381.83" height="62" isee:immediately_update_on_user_input="true" title="Previous strain vaccines administered" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#55AA7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="53.8268" y="454.957" width="381.83" height="62" isee:immediately_update_on_user_input="true" title="Previous strain vaccines administered" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Previous_vaccines_administered[SUM]"/>
+				</numeric_display>
 				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="99.1111" y="200.365">
 					<popup x="82.8839" y="238.789" width="463.572" height="79.8541">
 						<text>Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</text>
 					</popup>
 				</isee:annotation>
-				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="52.3984" y="382.217" width="384.687" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" border_color="red" border_width="2" isee:show_divider="false" isee:show_bounding_box="true" x="52.3984" y="382.217" width="384.687" height="62" isee:immediately_update_on_user_input="true" title="Total needed ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_needed_ICU[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="78.11" y="112.889" width="481.731" height="41.3331">Proportion of ICU patients treated:</text_box>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
@@ -3814,7 +3972,7 @@ Vaccination applied late, without NPIs, will do little to reduce the total cases
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="51.1111" y="94.7778" width="909.864" height="65.576">9 Surge strategies</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="106.4" y="190.347" width="753.518" height="272.34">These are turned on or off before the start of the run and invoked automatically only if and when the relevant resources run low.
@@ -3842,7 +4000,7 @@ Surge strategy 4: Increase bed capacity
 				</button>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="109.802" y="499.395" width="829.723" height="75.2422">Note: Changes made to model defaults up until this section were for experimentation only and will be cleared when moving to next page</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<button background="#0055FF" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="" isee:tooltip="" x="250.222" y="473.889" width="168.444" height="74.4444">
 					<actions>
@@ -3859,9 +4017,13 @@ Surge strategy 4: Increase bed capacity
 					<entity name='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"'/>
 					<reset_to after="never">0</reset_to>
 				</switch>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="696.726" y="332.59" width="341.188" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="696.726" y="332.59" width="341.188" height="62" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" x="78.11" y="170.945" width="551.668" height="124.334">Increase the number of patients looked after by each nurse. Only invoked if ICU nurse capacity is low. The risks are decreased standards of care and increased risk of staff absenteeism.</text_box>
-				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="694.93" y="282.182" width="337.674" height="42.81" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="694.93" y="282.182" width="337.674" height="42.81" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<numeric_input font_size="24pt" input_width="80" x="84.934" y="335.494" width="455.744" height="59.732" min="0" title="Normal ICU nurses per bed" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 					<reset_to after="never">0</reset_to>
@@ -3921,7 +4083,7 @@ Surge strategy 4: Increase bed capacity
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="622.33" y="333.862" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="632.054" y="331.883" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ICU_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<button background="#0055FF" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="" isee:tooltip="" x="243.722" y="503.389" width="168.444" height="74.4444">
 					<actions>
@@ -3957,7 +4119,9 @@ Surge strategy 4: Increase bed capacity
 						</plot>
 					</graph>
 				</stacked_container>
-				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="642.748" y="358.712" width="387.628" height="58.3636" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="643.673" y="360.526" width="387.628" height="58.3636" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_Ward_Bed[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" x="78.11" y="161.4" width="564.638" height="128.743">Increase the number of patients looked after by each nurse. Only invoked if ward nurse capacity is low. The risks are decreased standards of care (not modelled) &amp; increased risk of staff burnout.</text_box>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
 					<actions>
@@ -3999,7 +4163,7 @@ Surge strategy 4: Increase bed capacity
 					</popup>
 				</isee:annotation>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<button background="#0055FF" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="" isee:tooltip="" x="246.722" y="503.889" width="168.444" height="74.4444">
 					<actions>
@@ -4088,7 +4252,7 @@ Surge strategy 4: Increase bed capacity
 					</popup>
 				</isee:annotation>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<button background="#0055FF" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="" isee:tooltip="" x="296.722" y="486.889" width="168.444" height="74.4444">
 					<actions>
@@ -4109,7 +4273,9 @@ Surge strategy 4: Increase bed capacity
 					<entity name="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 					<reset_to after="never">0</reset_to>
 				</numeric_input>
-				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="654.824" y="475.637" width="374.901" height="39.4944" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="654.824" y="475.637" width="374.901" height="39.4944" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_Ward_Bed[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="78.11" y="168.166" width="550.604" height="136.722">Allocate more of the total physical ward beds for pandemic use. Only invoked if capacity is low. The cost is impact on routine care (not modelled).</text_box>
 				<stacked_container x="579.322" y="27.484" width="275.39" height="210.223">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="275.39" height="210.223" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Physical ward beds gap" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
@@ -4188,7 +4354,7 @@ We welcome your feedback and suggestions.</text_box>
 					</actions>
 				</button>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="492" height="54.6667">Stress indicators</text_box>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="78.11" y="112.889" width="947.464" height="41.3331">The fatality rates for patients unable to access ICU can be adjusted</text_box>
@@ -4214,12 +4380,18 @@ We welcome your feedback and suggestions.</text_box>
 						<action>restore_all</action>
 					</actions>
 				</button>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="top" x="161.833" y="478.324" width="237.869" height="70.8863" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="79.3764" y="177.91" width="318.782" height="67.4545" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="top" x="161.833" y="478.324" width="237.869" height="70.8863" isee:immediately_update_on_user_input="true" title="Total potential deaths" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" label_side="top" x="79.3764" y="177.91" width="318.782" height="67.4545" isee:immediately_update_on_user_input="true" title="Total unable to access ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<isee:shape background="#0055FF" transparent_background="false" x="332.017" y="275.126" width="59.5" height="189.216" kind="arrow" direction="south" curvature="none"/>
 				<stacked_container x="6.835" y="269.535" width="315.364" height="193.398" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="none" isee:hide_border="true" axis_label_font_size="14pt" width="315.364" height="193.398" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Potential deaths from lack of ICU" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true"/>
+						<plot color="red" isee:include_in_legend="false" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.at_risk_of_dying_from_lack_of_ICU_flow[SUM]"/>
+						</plot>
 					</graph>
 				</stacked_container>
 				<button border_width="thin" border_style="none" transparent="true" isee:flat="true" label="" isee:tooltip="" x="17.6111" y="23.7778" width="42.5" height="34">
@@ -4326,7 +4498,9 @@ We welcome your feedback and suggestions.</text_box>
 						<action target="interface:14">navigate</action>
 					</actions>
 				</button>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="198.018" y="264.135" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="198.018" y="264.135" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="121.451" y="271.196" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_up" kind="arrow" direction="north" curvature="none"/>
 				<isee:shape border_color="#AAAA00" border_width="4" corner_radius="5" x="89.1179" y="264.291" width="93.7452" height="70.6481" isee:conditional_entity="Hospital.compare_runs" kind="rectangle"/>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="121.451" y="271.196" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_down" kind="arrow" direction="south" curvature="none"/>
@@ -4336,10 +4510,12 @@ We welcome your feedback and suggestions.</text_box>
 				</numeric_display>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="131.175" y="269.217" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ICU_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box z_index="2" font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="549.177" height="55.4849">Further impacts of antivirals</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="210.018" y="396.635" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="210.018" y="396.635" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="22pt" x="102.61" y="122.775" width="473.112" height="136.499">By reducing LOS for ward patients, pressure on ward capacity is reduced. Fewer patients will be unable to access ward beds. This will also reduce strain on patients and staff dealing with ward overflows.</text_box>
 				<button background="#55AA7F" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="Return to overview.." isee:tooltip="" x="277.895" y="478.77" width="274.423" height="65.5">
 					<actions>
@@ -4422,10 +4598,12 @@ We welcome your feedback and suggestions.</text_box>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="133.239" y="400.529" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="142.963" y="398.55" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ICU_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="876.449" height="60.9287">Further impacts of previous strain vaccines</text_box>
-				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="692.654" y="435.014" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#FFFF7F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="false" x="692.654" y="435.014" width="345.972" height="67.868" isee:immediately_update_on_user_input="true" title="Potential deaths due to lack of ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Potential_deaths_due_to_lack_of_ICU[SUM]"/>
+				</numeric_display>
 				<text_box font_style="italic" font_weight="bold" font_color="#AAAA7F" font_size="24pt" x="105.64" y="128.29" width="441.612" height="153.027">By reducing LOS for ICU patients, ICU beds will become available again sooner, relieving pressure on ICU capacity. Fewer patients will be unable to access ICU beds.</text_box>
 				<button background="#55AA7F" font_color="white" font_size="28pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" label="Return to overview.." isee:tooltip="" x="112.895" y="365.77" width="274.423" height="65.5">
 					<actions>
@@ -4479,7 +4657,7 @@ We welcome your feedback and suggestions.</text_box>
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="922.459" y="326.309" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="932.183" y="324.33" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ICU_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box z_index="2" font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="658.899" height="99.0043">Analysis of Surge strategy 1: Reduce ICU nurse-to-patient ratio</text_box>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="18pt" x="116.728" y="156.782" width="618.564" height="81.008">If ICU nurses treat more patients, as long as there are enough ICU beds and ventilators available, the total denied ICU should decrease.
@@ -4574,7 +4752,7 @@ However, an increase in ICU nurse absenteeism due to burnout can partly offset t
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="372.762" y="424.491" width="26.383" height="28.5106" isee:conditional_entity="Hospital.denied_ICU_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="382.486" y="422.512" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ICU_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box z_index="2" font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="658.899" height="99.0043">Analysis of Surge strategy 2: Reduce nurse-to-patient ratio</text_box>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="18pt" x="116.728" y="156.782" width="569.664" height="81.008">If ward nurses treat more patients, as long as there are enough physical beds available, the total denied ward bed should decrease.
@@ -4607,6 +4785,7 @@ However, an increase in nurse absenteeism due to burnout can partly offset the b
 				<stacked_container x="73.2226" y="292.113" width="259.773" height="197.316" z_index="1">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="259.773" height="197.316" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Total denied ward (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Hospital.Total_denied_Ward_Bed[SUM]"/>
 							<isee:data name="Baseline"/>
 						</plot>
 						<plot isee:immediately_update_on_user_input="true" color="blue" title="Latest run" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true"/>
@@ -4667,7 +4846,7 @@ However, an increase in nurse absenteeism due to burnout can partly offset the b
 				<isee:shape background="red" border_width="thin" border_style="none" transparent_background="false" x="362.683" y="421.441" width="26.383" height="31.0771" isee:conditional_entity="Hospital.denied_ward_bed_up" kind="arrow" direction="north" curvature="none"/>
 				<text_box font_weight="bold" font_color="red" font_size="36pt" x="372.407" y="422.029" width="22.159" height="29.4816" isee:conditional_entity="Hospital.denied_ward_bed_unchanged">=</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box z_index="2" font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="608.783" height="99.0043">Analysis of Surge strategy 3:
 Reduce PPE per shift</text_box>
@@ -4723,8 +4902,12 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 						<text>The increase in staff absenteeism due to a higher risk of infection can even lead to a decrease in bed capacity. A better strategy is to increase PPE stockpiles in advance, to cushion the effects of possible interruptions in supply.</text>
 					</popup>
 				</isee:annotation>
-				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="201.294" y="306.174" width="335.507" height="75.0153" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
-				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="201.445" y="393.121" width="337.674" height="42.81" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true"/>
+				<numeric_display color="#AAFFFF" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="201.294" y="306.174" width="335.507" height="75.0153" isee:immediately_update_on_user_input="true" title="Total denied ward bed" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_Ward_Bed[SUM]"/>
+				</numeric_display>
+				<numeric_display color="#FFFF7F" font_style="italic" font_color="#00007F" font_size="24pt" isee:show_divider="false" isee:show_bounding_box="true" label_side="left" x="201.445" y="393.121" width="337.674" height="42.81" isee:immediately_update_on_user_input="true" title="Total denied ICU" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<entity name="Hospital.Total_denied_ICU[SUM]"/>
+				</numeric_display>
 				<numeric_display z_index="-2" color="white" font_size="20pt" isee:show_bounding_box="false" label_side="top" x="106.203" y="392.949" width="84.548" height="45.8793" isee:conditional_entity="Hospital.compare_runs" title="% change" retain_ending_value="true" isee:navigate_to="false" show_name="false">
 					<format precision="0.1" display_as="percent"/>
 					<entity name="Hospital.percentage_change_total_denied_ICU"/>
@@ -4752,7 +4935,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 				<text_box z_index="-4" font_style="italic" text_align="center" font_color="red" font_size="36pt" x="77.8795" y="199.994" width="33.1091" height="49.4965">_</text_box>
 				<text_box x="694.825" y="71.5152" width="41.2121" height="107.697"> </text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<slider font_size="20pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="160" x="83.8889" y="278.94" width="342.83" height="55.5" increment="0.01" min="-0.5" max="0" title="Age &lt; 25" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Hospital_patient_params.LOS_ward_antivirals[a]"/>
@@ -4855,7 +5038,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 					<entity name="Inputs_Hospital_patient_params.ward_fatality_rate[c]"/>
 				</numeric_display>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<slider font_size="20pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="160" x="163.889" y="278.94" width="342.83" height="55.5" increment="0.01" min="-0.5" max="0" title="Age &lt; 25" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Hospital_patient_params.LOS_ICU_vaccines[a]"/>
@@ -4933,7 +5116,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 					<entity name="Inputs_Hospital_patient_params.ICU_fatality_rate[c]"/>
 				</numeric_display>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="415.222" height="48.6112">Initial resource data</text_box>
 				<isee:shape background="#0055FF" transparent_background="false" x="526.53" y="299.742" width="58.1111" height="38.6667" kind="arrow" direction="east" curvature="none"/>
@@ -5009,7 +5192,7 @@ However, an increased risk of infection in nurses can partly or wholly offset th
 				<text_box font_weight="bold" font_color="#AAAA7F" font_size="28pt" x="627.56" y="118.33" width="382.728" height="38">Calculated for the country:</text_box>
 				<text_box font_style="italic" font_color="#AAAA7F" font_size="26pt" x="83.6206" y="421.705" width="528.789" height="67.0909">Note: changing these values does not create a new baseline run</text_box>
 			</view>
-			<view background="white" page_width="1066" page_height="600" zoom="165" type="interface">
+			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="56.6667" width="481.333" height="54.6667">PPE: Unfinished page</text_box>
 				<stacked_container x="80.2214" y="227.166" width="369.113" height="241.112" z_index="1">
@@ -5187,7 +5370,9 @@ If the .isdb file was previously deleted, then any charts using variables from B
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5298,8 +5483,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
-				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
-				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
+				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
+				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect2 to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
@@ -5882,12 +6067,14 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6052,8 +6239,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
-				<connect to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
-				<connect2 to="PANDEM2_Outputs.Attack_rate_by_age" from='"Within-host_profile".Attack_rate'/>
+				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
+				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect2 to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
@@ -6156,12 +6343,14 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6423,7 +6612,9 @@ ELSE 1</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6832,7 +7023,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7314,7 +7507,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7614,6 +7809,7 @@ ELSE 0</eqn>
 				<units>people/day</units>
 			</aux>
 			<aux name="Vaccination" access="output">
+				<doc>Vaccination rate</doc>
 				<dimensions>
 					<dim name="Age_out"/>
 				</dimensions>
@@ -7714,12 +7910,14 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -8478,12 +8676,14 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="150" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11176,12 +11376,14 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="1228" isee:scroll_y="983" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="1228" isee:scroll_y="983" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -14686,7 +14888,9 @@ ELSE
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16215,7 +16419,9 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16637,7 +16843,9 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17130,7 +17338,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17553,7 +17763,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17802,7 +18014,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18206,7 +18420,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18454,7 +18670,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18609,7 +18827,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18717,7 +18937,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19162,13 +19384,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				</dimensions>
 				<units>People/day</units>
 			</aux>
-			<aux name="Attack rate by age" access="input">
-				<doc>Attack rate by age group</doc>
-				<dimensions>
-					<dim name="Age_out"/>
-				</dimensions>
-				<units>Dimensionless</units>
-			</aux>
 			<aux name="Vaccination capacity" access="input">
 				<doc>The maximum number of vaccines that the public health system can administer in a day.</doc>
 				<units>People/day</units>
@@ -19434,17 +19649,29 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>0</eqn>
 				<units>People</units>
 			</stock>
-			<aux name="Cumulative vaccination" access="input">
-				<dimensions>
-					<dim name="Age_out"/>
-				</dimensions>
-				<units>People</units>
-			</aux>
 			<aux name="Vaccination" access="input">
+				<doc>Vaccination rate</doc>
 				<dimensions>
 					<dim name="Age_out"/>
 				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>People/day</units>
+			</aux>
+			<aux name="Attack rate" access="input">
+				<doc>Attack rate by age group</doc>
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Cumulative vaccination" access="input">
+				<doc>Cumulative vaccination</doc>
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People</units>
 			</aux>
 		</variables>
 		<views>
@@ -19493,12 +19720,14 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="6" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19530,7 +19759,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stacked_container uid="1" x="34.9165" y="9.3794" width="2011.04" height="103.453" name="OUTPUTS">
+				<stacked_container uid="1" x="34.9165" y="9.3794" width="2011.04" height="103.453" minimized="true" name="OUTPUTS">
 					<table width="2011.04" height="103.453" isee:export_name="PANDEM2 Outputs" isee:mark_for_export="true" title="OUTPUTS">
 						<item type="time"/>
 						<item>
@@ -19549,10 +19778,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name='"Within-host_profile".Attack_rate[a]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Attack_rate[c]'/>
+							<entity name='"Within-host_profile".Attack_rate[b]'/>
 						</item>
 						<item>
-							<entity name='"Within-host_profile".Attack_rate[b]'/>
+							<entity name='"Within-host_profile".Attack_rate[c]'/>
 						</item>
 						<item>
 							<entity name='"Within-host_profile".Attack_rate[d]'/>
@@ -20262,11 +20491,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="108" x="322.905" y="775.707" width="164.286" height="58.626">The number of staffed ward beds needed to meet current demand (includes patients waiting for ward and in ward overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="109" x="509.715" y="765.875" width="164.286" height="71.46">The gap in staffed ward beds, comparing available staffed beds plus expected beds freed with patients waiting for a bed plus patients in ward overflow</text_box>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="133" name="Actual cases"/>
-				<aux font_style="italic" font_weight="bold" x="195" y="133" name="Attack rate by age"/>
-				<aux font_style="italic" font_weight="bold" x="429.875" y="137" name="Vaccination capacity"/>
-				<aux font_style="italic" font_weight="bold" x="559.274" y="137" name="Contact tracing capacity"/>
-				<aux font_style="italic" font_weight="bold" x="679.357" y="145" name="Testing capacity"/>
-				<aux font_style="italic" font_weight="bold" x="805.5" y="145" name="Mobility index"/>
+				<aux font_style="italic" font_weight="bold" x="329.161" y="140.571" name="Vaccination capacity"/>
+				<aux font_style="italic" font_weight="bold" x="458.56" y="140.571" name="Contact tracing capacity"/>
+				<aux font_style="italic" font_weight="bold" x="578.643" y="148.571" name="Testing capacity"/>
+				<aux font_style="italic" font_weight="bold" x="704.786" y="148.571" name="Mobility index"/>
 				<text_box text_align="center" font_size="10pt" uid="111" x="1127.61" y="1488.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
 				<aux font_style="italic" font_weight="bold" x="195" y="200.833" name="Confirmed cases"/>
 				<text_box font_style="italic" uid="112" x="125.749" y="2258.35" width="1251.67" height="32.5129">These figures show the initial total capacity for staffed ward beds and ICU beds taking into account all the hospital resources, and the capacity set aside for pandemic use. Ward bed calculations take into account physical ward beds and nurses, and ICU beds take into account physical ICU beds, ICU nurses and ventilators. PPE is assumed to be sufficient to supply the staff, and all staff are assumed to be at work.</text_box>
@@ -20348,8 +20576,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux font_style="italic" font_weight="bold" x="1496.9" y="293.334" name="need ward bed"/>
 				<aux font_style="italic" font_weight="bold" x="287.857" y="296.429" name="hospital admissions"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="270.214" y="191.19" width="117.857" height="31.4286" name="Cumulative confirmed cases"/>
-				<aux font_style="italic" font_weight="bold" x="470.643" y="200.833" name="Cumulative vaccination"/>
-				<aux font_style="italic" font_weight="bold" x="601.262" y="200.833" name="Vaccination"/>
+				<aux font_style="italic" font_weight="bold" x="611.429" y="203.571" name="Vaccination"/>
+				<aux font_style="italic" font_weight="bold" x="190" y="141.429" name="Attack rate"/>
+				<aux font_style="italic" font_weight="bold" x="472.143" y="200" name="Cumulative vaccination"/>
 			</view>
 		</views>
 	</model>
@@ -20379,7 +20608,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="45" height="35"/>
 				</stock>
-				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+					<shape type="circle" radius="18"/>
+				</flow>
 				<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
 				<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="55" height="45"/>
