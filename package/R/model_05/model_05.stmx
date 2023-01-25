@@ -3010,38 +3010,38 @@ p, li { white-space: pre-wrap; }
 			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
 				<text_box font_weight="bold" font_color="#0055FF" font_size="40pt" x="78.11" y="57.7778" width="525.207" height="56.4849">Effect of testing</text_box>
-				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="81.5758" y="115.545" width="474.899" height="45.95" title="Testing on or off" show_name="true">
+				<switch font_size="24pt" label_side="left" isee:on_color="#0055FF" x="81.5758" y="115.545" width="490.278" height="45.95" title="Testing on or off" show_name="true">
 					<entity name="Inputs_Epi.switch_testing"/>
 					<reset_to after="never">0</reset_to>
 				</switch>
-				<slider font_size="24pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="200" x="82.3887" y="166.131" width="484.652" height="65.2727" increment="25" min="0" max="200" title="Testing available from (day)" isee:navigate_to="false" show_name="true">
+				<slider font_size="24pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="200" x="83.2398" y="158.046" width="505.503" height="65.2727" increment="25" min="0" max="200" title="Testing available from (day)" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Epi.testing_availability"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
-				<slider font_size="24pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="200" x="89.3887" y="289.04" width="474.652" height="45.95" increment="0.01" min="0" max="1" title="Capacity growth rate" isee:navigate_to="false" show_name="true">
+				<slider font_size="24pt" num_ticks="3" label_side="left" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="always" input_expands="false" input_width="200" x="90.2398" y="272.444" width="484.865" height="45.95" increment="0.01" min="0" max="1" title="Capacity growth rate" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Epi.testing_capacity_growth_rate"/>
 					<reset_to after="never">0</reset_to>
 				</slider>
-				<numeric_input font_size="24pt" input_width="200" x="88.4342" y="233.994" width="465.182" height="45.95" min="0" title="Initial capacity" isee:navigate_to="false" show_name="true">
+				<numeric_input font_size="24pt" input_width="200" x="89.2853" y="217.398" width="476.561" height="45.95" min="0" title="Initial capacity" isee:navigate_to="false" show_name="true">
 					<entity name="Inputs_Epi.initial_testing_capacity"/>
 					<reset_to after="never">0</reset_to>
 				</numeric_input>
-				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="40.1429" y="238.494" width="30" height="30">
-					<popup x="87.2854" y="271.494" width="274.598" height="38.3685">
+				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="40.994" y="221.898" width="30" height="30">
+					<popup x="88.1365" y="254.898" width="274.598" height="38.3685">
 						<text>A measure of preparedness</text>
 					</popup>
 				</isee:annotation>
-				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="56.1429" y="310.722">
-					<popup x="88.2854" y="331.449" width="274.598" height="38.3685">
+				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="56.994" y="294.126">
+					<popup x="89.1365" y="314.853" width="274.598" height="38.3685">
 						<text>A measure of responsiveness</text>
 					</popup>
 				</isee:annotation>
-				<numeric_input font_size="24pt" input_width="200" x="88.9342" y="356.494" width="465.182" height="45.95" min="0" title="Long term capacity" isee:navigate_to="false" show_name="true">
+				<numeric_input font_size="24pt" input_width="200" x="89.7853" y="339.898" width="475.561" height="45.95" min="0" title="Long term capacity" isee:navigate_to="false" show_name="true">
 					<entity name='Inputs_Epi."testing_long-term_capacity"'/>
 					<reset_to after="never">0</reset_to>
 				</numeric_input>
-				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="55.6429" y="375.994">
-					<popup x="87.7854" y="393.994" width="473.859" height="52.8366">
+				<isee:annotation font_size="16pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="16pt" launcher_label="?" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="56.494" y="359.398">
+					<popup x="88.6365" y="377.398" width="473.859" height="52.8366">
 						<text>The limit to capacity in the long term. Increasing growth rate has a greater effect if long term capacity is also increased</text>
 					</popup>
 				</isee:annotation>
@@ -3127,6 +3127,11 @@ p, li { white-space: pre-wrap; }
 						<action target="previous_page">navigate</action>
 					</actions>
 				</button>
+				<isee:annotation background="#FFAA00" font_color="white" font_size="20pt" border_width="thin" border_style="none" transparent="false" isee:flat="true" popup_corner_radius="11" popup_background_color="white" popup_font_style="italic" popup_font_color="#AAAA7F" popup_font_size="20pt" launcher_label="Click for insight" show_by_default="false" hide_launcher="false" launch_on_hover="false" x="482.747" y="397.818" width="99.9545" height="73.5">
+					<popup x="120.505" y="287.797" width="348.795" height="181.337">
+						<text>Testing alone has no effect on cases - to see an effect, combine testing with isolation and contact tracing on the next pages. You can come back to this page to change other settings such as testing capacity growth rate and see how these affect results.</text>
+					</popup>
+				</isee:annotation>
 			</view>
 			<view background="white" page_width="1066" page_height="600" zoom="235" type="interface">
 				<style/>
@@ -3157,7 +3162,7 @@ p, li { white-space: pre-wrap; }
 				<numeric_display color="#AAAA00" font_size="24pt" border_width="0" isee:show_divider="false" isee:show_bounding_box="false" x="641.372" y="55.278" width="391.108" height="40.6667" title="Total actual cases" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.total_actual_cases"/>
 				</numeric_display>
-				<stacked_container x="611.712" y="95.944" width="308.714" height="216.111" z_index="1">
+				<stacked_container x="617.069" y="95.944" width="308.714" height="216.111" z_index="1">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="308.714" height="216.111" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Actual cases (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
@@ -4620,7 +4625,7 @@ We welcome your feedback and suggestions.</text_box>
 					</actions>
 					<image width="477" height="414" size_to_parent="true">data:image/png;base64,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EWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKVLREQUEZYuERFRRFi6REREEWHpEhERRYSlS0REFBGWLhERUURYukRERBFh6RIREUWEpUtERBQRli4REVFEWLpEREQRYekSERFFhKV7YknTAYiI4koh7Jfj4A/lRBRDpiMQEVF1YemeiGAAgJqOQUQUR6I6bDqDjVi6JyCqbwIomc5BRBRDIYB/MR3CRizdE1CRfwZLl4joVJQg+H9Mh7ARS/fE/gVHv60REdHkhADeMB3CRizdE/tHcNIlIjoV/wbFy6ZD2IilewKh47zI5REiokkrAdhZGkn8wXQQG7F0T+Dfvf3//pOE+n8DeNd0FiKiGHkHwP+659/mD5gOYiOW7gm8sOrjI6HjfAfAm6azEBHFyC7R8O+wSnhPzHGwdE+imHb/AcDPAPzFdBYiohh4E4of+O3Nr5sOYiuWbhmJsNQNoGA6BxGR9RQvvTvjjK2mY9iMpVtGfsV/CABkAPimsxARWewfnIRueHXpv/9X00FsxtKdgKDN+wEU3wLw3wCMmM5DRGSRIwB+pyLdheVNvzYdxnYs3Qk6Q9/tgWIDgLdMZyEisoVC+qFY4yRKf2c6SxywdCfolRV//ecaZ7gPiq8B+N/BiZeIprdDAHZA8PS7M874hb+smTecTgDPjJ2E3emL3wDwrJv190PwjqpcLtCZAM4Ev8AQUfUbAfBvAP6skBcQ4rniCvf/Mh0qTli6p0CS4W+khP0hnI9DcDUU/wOA2aZzERFNJYUcEOgLIvqLUJzfvlP60AHTmeKGpXsKRpdR/Hm5vf+SxEheoC8A+A8AzlXI+QL97wB8GEAdgITBqEREp2IYR2+Q+hMUByH4JxH9Zw1lNxz8VyQ0378sxeXkU8DSPQ370hf9C1R/c+E3X32lZmi4OaGluVAsUMiFAj0Pir9SkVkCrQdPLDpdAq4m0OT9EYCaDhEjAsEgFH8EcAiKfxboXoW8Eqrz+pEP1xX23/GRI6ZDxtn/B1JsKxWiumXcAAAAAElFTkSuQmCC</image>
 				</button>
-				<stacked_container x="601.471" y="180.056" width="292.714" height="216.728" z_index="1">
+				<stacked_container x="600.295" y="181.232" width="292.714" height="216.728" z_index="1">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="292.714" height="216.728" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="Total denied ICU (all ages)" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_title=" " left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Hospital.total_unable_to_access_ICU"/>
@@ -6073,7 +6078,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6112,7 +6117,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<module label_side="center" x="53.251" y="47.5" width="79.375" height="45" name="EPI"/>
+				<module label_side="center" x="52.001" y="47.5" width="79.375" height="45" name="EPI"/>
 				<module label_side="center" x="198.125" y="47.5" width="77.5" height="45" name="Hospital"/>
 				<connector uid="1" isee:thickness="2" angle="0" isee:autocreated="true">
 					<from>EPI</from>
@@ -6349,7 +6354,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8682,7 +8687,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="242.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="500" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -10760,7 +10765,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change actual cases">
 				<doc>Percentage change in actual cases between current run and baseline</doc>
-				<eqn>delta_actual_cases/baseline_actual_cases*100</eqn>
+				<eqn>delta_actual_cases//baseline_actual_cases*100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="cases down">
@@ -10844,7 +10849,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal hospitalisations">
 				<doc>Percentage change in total hospitalisations between current run and baseline</doc>
-				<eqn>delta_total_hospitalisations/baseline_total_hospitalisations*100</eqn>
+				<eqn>delta_total_hospitalisations //baseline_total_hospitalisations*100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="baseline total deaths">
@@ -10866,7 +10871,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal deaths">
 				<doc>Percentage change in total deaths between current run and baseline</doc>
-				<eqn>delta_total_deaths / baseline_total_deaths * 100</eqn>
+				<eqn>delta_total_deaths // baseline_total_deaths * 100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="baseline total ward to ICU transfers">
@@ -10888,7 +10893,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal ward to ICU transfers">
 				<doc>Percentage change in total ward to ICU transfers between current run and baseline</doc>
-				<eqn>delta_ward_to_ICU_transfers/baseline_total_ward_to_ICU_transfers*100</eqn>
+				<eqn>delta_ward_to_ICU_transfers //baseline_total_ward_to_ICU_transfers*100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<stock name="Total ICU transfers">
@@ -10928,7 +10933,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal denied ward bed">
 				<doc>Percentage change in total denied ward bed between current run and baseline</doc>
-				<eqn>delta_total_denied_ward_bed/baseline_total_denied_ward_bed*100</eqn>
+				<eqn>delta_total_denied_ward_bed //baseline_total_denied_ward_bed*100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="total unable to access ICU" access="output" isee:autocreated="true">
@@ -10955,7 +10960,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal denied ICU">
 				<doc>Percentage change in total denied ICU between current run and baseline</doc>
-				<eqn>delta_total_denied_ICU/baseline_total_denied_ICU*100</eqn>
+				<eqn>delta_total_denied_ICU // baseline_total_denied_ICU*100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="deaths down">
@@ -10997,7 +11002,7 @@ ELSE 1</eqn>
 			</aux>
 			<aux name="percentage change\ntotal ICU deaths">
 				<doc>Percentage change in total ICU deaths between current run and baseline</doc>
-				<eqn>delta_total_ICU_deaths / baseline_total_ICU_deaths * 100</eqn>
+				<eqn>delta_total_ICU_deaths // baseline_total_ICU_deaths * 100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<stock name="Total cases" access="input">
@@ -11382,7 +11387,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="1228" isee:scroll_y="983" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="2118" isee:scroll_y="1603" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13337,9 +13342,9 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>delta_total_denied_ward_bed</from>
 					<to>percentage_change_total_denied_ward_bed</to>
 				</connector>
-				<aux label_side="right" x="2350.26" y="2222.39" name="total unable to access ICU"/>
+				<aux label_side="right" x="2348.05" y="2222.39" name="total unable to access ICU"/>
 				<aux label_side="left" x="2308.67" y="2263.58" name="baseline total\ndenied ICU"/>
-				<connector uid="619" angle="226.105">
+				<connector uid="619" angle="226.287">
 					<from>total_unable_to_access_ICU</from>
 					<to>baseline_total_denied_ICU</to>
 				</connector>
@@ -13366,7 +13371,7 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>delta_total_denied_ICU</from>
 					<to>percentage_change_total_denied_ICU</to>
 				</connector>
-				<connector uid="625" angle="321.801">
+				<connector uid="625" angle="312.672">
 					<from>
 						<alias uid="626"/>
 					</from>
@@ -13406,7 +13411,7 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<to>delta_total_ICU_deaths</to>
 				</connector>
 				<aux x="2729.83" y="2006.14" name="percentage change\ntotal ICU deaths"/>
-				<connector uid="634" angle="248.579">
+				<connector uid="634" angle="270">
 					<from>baseline_total_ICU_deaths</from>
 					<to>percentage_change_total_ICU_deaths</to>
 				</connector>
@@ -14889,7 +14894,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="255" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17339,7 +17344,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17764,7 +17769,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17803,7 +17808,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux label_side="top" x="119.375" y="79.018" name="Population size"/>
+				<aux label_side="top" x="121.25" y="74.018" name="Population size"/>
 				<aux label_side="top" x="283.787" y="79.018" name="ward beds per 1K"/>
 				<aux label_side="top" x="461.686" y="79.018" name="ICU beds per 100K"/>
 				<aux label_side="top" x="285.543" y="196.304" name="ward nurses per 1K"/>
@@ -17814,7 +17819,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="4" x="384.543" y="226.04" width="164.286" height="38.7143">ICU nurses per 100,000 population.</text_box>
 				<aux label_side="top" x="467.847" y="315.625" name="ventilators per 100K"/>
 				<text_box text_align="center" font_size="10pt" uid="5" x="388.519" y="345.504" width="164.286" height="38.7143">Mechanical ventilators per 100 thousand population</text_box>
-				<aux label_side="top" x="119.375" y="149" name="Age specific contact rates"/>
+				<aux label_side="top" x="121.25" y="144" name="Age specific contact rates"/>
 				<aux label_side="top" x="289.811" y="316.304" name="physicians per 100K"/>
 				<text_box text_align="center" font_size="10pt" uid="6" x="207.668" y="346.04" width="164.286" height="38.7143">Hospital physicians per 100,000 population.</text_box>
 				<aux label_side="top" x="295.75" y="430.068" name="morgue capacity"/>
@@ -18015,7 +18020,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -18074,7 +18079,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux x="195.193" y="203.125" name="testing capacity growth rate"/>
 				<aux x="195.193" y="346.25" name="testing availability"/>
 				<aux x="648.659" y="128.75" name="mobility restriction start time"/>
-				<aux x="85.625" y="70" name="switch mask wearing"/>
+				<aux label_side="left" x="85.625" y="70" name="switch mask wearing"/>
 				<aux x="85.625" y="129.375" name="mask wearing effect"/>
 				<aux x="85.625" y="203.125" name="Probability of infection"/>
 				<aux x="648.659" y="196.136" name="mobility budget"/>
@@ -20589,7 +20594,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 		</views>
 	</model>
 	<isee:controls>
-		<isee:control priority="interactive" name="Inputs_Hospital_surge_strategies.strategy_4_increase_bed_capacity" value="1"/>
+		<isee:control priority="interactive" name="Inputs_Epi.switch_contact_tracing" value="1"/>
+		<isee:control priority="interactive" name="Inputs_Epi.switch_isolation" value="1"/>
+		<isee:control priority="interactive" name="Inputs_Epi.switch_testing" value="1"/>
 	</isee:controls>
 	<macro name="MAXIMUM">
 		<eqn>maximum</eqn>
