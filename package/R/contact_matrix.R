@@ -7,11 +7,17 @@ get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
                                            origin = "eurostat",
                                            destination = "country.name")
 
-  if(!user_country %in% country_names) {
+  # Assumption for the FX
+  #=============================================================================
+  user_country <- "Netherlands"
 
-    msg <- paste0("Country: '", country_code,"' not available")
-    return(msg)
-  }
+  # if(!user_country %in% country_names) {
+  #
+  #   msg <- paste0("Country: '", country_code,"' not available")
+  #   return(msg)
+  # }
+  #
+  #=============================================================================
 
   age_limits <- c(0, 25, 50)
 
