@@ -82,7 +82,7 @@ Inputs_Hospital_patient_params.LOS_ICU_deaths[b]	8
 Inputs_Hospital_patient_params.LOS_ICU_deaths[c]	12
 Inputs_Hospital_patient_params.LOS_morgue	3
 Inputs_Hospital_patient_params.LOS_temporary_morgue	5
-Inputs_Hospital_patient_params.ward_fatality_rate[a]	0
+Inputs_Hospital_patient_params.ward_fatality_rate[a]	0.001
 Inputs_Hospital_patient_params.ward_fatality_rate[b]	0.05
 Inputs_Hospital_patient_params.ward_fatality_rate[c]	0.01
 Inputs_Hospital_patient_params.ward_fatality_rate_antivirals[a]	-0.05
@@ -91,7 +91,7 @@ Inputs_Hospital_patient_params.ward_fatality_rate_antivirals[c]	-0.2
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[a]	-0.1
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[b]	-0.3
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[c]	-0.2
-Inputs_Hospital_patient_params.ICU_fatality_rate[a]	0
+Inputs_Hospital_patient_params.ICU_fatality_rate[a]	0.1
 Inputs_Hospital_patient_params.ICU_fatality_rate[b]	0.55
 Inputs_Hospital_patient_params.ICU_fatality_rate[c]	0.45
 Inputs_Hospital_patient_params.ICU_fatality_rate_vaccines[a]	-0.3
