@@ -1,3 +1,4 @@
+Inputs_Epi.initial_infected	1
 Inputs_Epi.switch_mask_wearing	0
 Inputs_Epi.switch_testing	0
 Inputs_Epi.switch_isolation	0
@@ -35,15 +36,15 @@ Inputs_Data.Age_specific_contact_rates[ab]	2.270895
 Inputs_Data.Age_specific_contact_rates[ac]	0.7165681
 Inputs_Data.Age_specific_contact_rates[ba]	2.892489
 Inputs_Data.Age_specific_contact_rates[bb]	4.428571
-Inputs_Data.Age_specific_contact_rates[bc]	1.8280070
+Inputs_Data.Age_specific_contact_rates[bc]	1.828007
 Inputs_Data.Age_specific_contact_rates[ca]	1.318773
 Inputs_Data.Age_specific_contact_rates[cb]	2.641288
 Inputs_Data.Age_specific_contact_rates[cc]	2.9840000
 Inputs_Data.ward_beds_per_1K	6
-Inputs_Data.ICU_beds_per_100K	33
+Inputs_Data.ICU_beds_per_100K	33.2
 Inputs_Data.ward_nurses_per_1K	5
-Inputs_Data.ICU_nurses_per_100K	12
-Inputs_Data.physicians_per_100K	240
+Inputs_Data.ICU_nurses_per_100K	41.4
+Inputs_Data.physicians_per_100K	234
 Inputs_Data.ventilators_per_100K	30
 Inputs_Data.morgue_capacity	6000
 Inputs_Hospital_patient_params.hospitalisation_fraction[a]	0.026
@@ -80,8 +81,6 @@ Inputs_Hospital_patient_params.LOS_ward_deaths[c]	14.5
 Inputs_Hospital_patient_params.LOS_ICU_deaths[a]	14
 Inputs_Hospital_patient_params.LOS_ICU_deaths[b]	8
 Inputs_Hospital_patient_params.LOS_ICU_deaths[c]	12
-Inputs_Hospital_patient_params.LOS_morgue	3
-Inputs_Hospital_patient_params.LOS_temporary_morgue	5
 Inputs_Hospital_patient_params.ward_fatality_rate[a]	0.001
 Inputs_Hospital_patient_params.ward_fatality_rate[b]	0.05
 Inputs_Hospital_patient_params.ward_fatality_rate[c]	0.01
@@ -91,6 +90,8 @@ Inputs_Hospital_patient_params.ward_fatality_rate_antivirals[c]	-0.2
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[a]	-0.1
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[b]	-0.3
 Inputs_Hospital_patient_params.fraction_ward_to_ICU_antivirals[c]	-0.2
+Inputs_Hospital_patient_params.LOS_morgue	3
+Inputs_Hospital_patient_params.LOS_temporary_morgue	5
 Inputs_Hospital_patient_params.ICU_fatality_rate[a]	0.1
 Inputs_Hospital_patient_params.ICU_fatality_rate[b]	0.55
 Inputs_Hospital_patient_params.ICU_fatality_rate[c]	0.45
