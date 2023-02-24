@@ -5,7 +5,7 @@
 		<name>model_05</name>
 		<uuid>6f814554-d331-4214-9ea0-4d7153be1488</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.2" isee:build_number="2856" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -36,7 +36,7 @@
 			<elem name="cc"/>
 		</dim>
 	</dimensions>
-	<isee:prefs saved_runs="1" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true"/>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="1" keep="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -175,8 +175,8 @@
 				<connect2 to='Vaccines."vaccination_long-term_capacity"' from='Inputs_Epi."vaccination_long-term_capacity"'/>
 				<connect to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
-				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to='Hospital_Resources."strategy_1_reduce_ICU-nurse-to-patient_ratio"' from='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"'/>
 				<connect2 to='Hospital_Resources."strategy_1_reduce_ICU-nurse-to-patient_ratio"' from='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"'/>
 				<connect to='Hospital_Resources."strategy_2_reduce_nurse-to-patient_ratio"' from='Inputs_Hospital_surge_strategies."strategy_2_reduce_nurse-to-patient_ratio"'/>
@@ -626,8 +626,6 @@
 				<connect2 to="Vaccines.vaccination_capacity_growth_rate" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
 				<connect to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
-				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
@@ -652,6 +650,8 @@
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
 				<connect2 to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
+				<connect to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect2 to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
 				<connect to="PANDEM2_Outputs.at_risk_of_dying_from_lack_of_ICU" from="Hospital.at_risk_of_dying_from_lack_of_ICU"/>
@@ -1082,14 +1082,12 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5219,9 +5217,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5326,8 +5322,6 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Vaccines.vaccination_capacity_growth_rate" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
 				<connect to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
-				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 				<connect to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect2 to="PANDEM2_Outputs.Actual_cases" from='"Within-host_profile".Actual_cases'/>
 				<connect to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
@@ -5362,6 +5356,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
 				<connect2 to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
+				<connect to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 			<module name="Hospital" isee:label="">
 				<connect to="PANDEM2_Outputs.Antivirals_administered" from="Hospital.Antivirals_administered"/>
@@ -5920,14 +5916,12 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5986,12 +5980,12 @@ If the .isdb file was previously deleted, then any charts using variables from B
 			<module name="Vaccines" isee:label="">
 				<connect to="PANDEM2_Outputs.Cumulative_vaccination" from="Vaccines.Cumulative_vaccination"/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_vaccination" from="Vaccines.Cumulative_vaccination"/>
-				<connect to='"Within-host_profile".Converter_2' from="Vaccines.psi"/>
-				<connect2 to='"Within-host_profile".Converter_2' from="Vaccines.psi"/>
 				<connect to="PANDEM2_Outputs.Vaccination" from="Vaccines.Vaccination"/>
 				<connect2 to="PANDEM2_Outputs.Vaccination" from="Vaccines.Vaccination"/>
 				<connect to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
 				<connect2 to="PANDEM2_Outputs.Vaccination_capacity" from="Vaccines.Vaccination_capacity"/>
+				<connect to='"Within-host_profile".Converter_2' from="Vaccines.vr"/>
+				<connect2 to='"Within-host_profile".Converter_2' from="Vaccines.vr"/>
 				<connect to="Vaccines.initial_vaccination_capacity" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect2 to="Vaccines.initial_vaccination_capacity" from="Inputs_Epi.initial_vaccination_capacity"/>
 				<connect to="Vaccines.Stock_1" from='"Within-host_profile".S'/>
@@ -6004,8 +5998,6 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Vaccines.vaccination_capacity_growth_rate" from="Inputs_Epi.vaccination_capacity_growth_rate"/>
 				<connect to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
-				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 			<module name="Testing" isee:label="">
 				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
@@ -6118,8 +6110,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Tracing.Converter_2" from='"Within-host_profile".upsilon'/>
 				<connect to='"Within-host_profile".Converter_10' from="Inputs_Epi.isolation_start"/>
 				<connect2 to='"Within-host_profile".Converter_10' from="Inputs_Epi.isolation_start"/>
-				<connect to='"Within-host_profile".Converter_2' from="Vaccines.psi"/>
-				<connect2 to='"Within-host_profile".Converter_2' from="Vaccines.psi"/>
+				<connect to='"Within-host_profile".Converter_2' from="Vaccines.vr"/>
+				<connect2 to='"Within-host_profile".Converter_2' from="Vaccines.vr"/>
 				<connect to='"Within-host_profile".Converter_3' from="Tracing.par_rho"/>
 				<connect2 to='"Within-host_profile".Converter_3' from="Tracing.par_rho"/>
 				<connect to='"Within-host_profile".Converter_4' from="Tracing.effective_contacts"/>
@@ -6146,6 +6138,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
 				<connect2 to='"Within-host_profile".test_isolate_compliance' from="Inputs_Epi.isolate_compliance"/>
+				<connect to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 		</variables>
 		<views>
@@ -6194,14 +6188,12 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6463,9 +6455,7 @@ ELSE 1</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6869,14 +6859,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7141,7 +7129,7 @@ ELSE 0</eqn>
 				<units>1/day</units>
 			</aux>
 			<aux name="par rho" access="output">
-				<doc>Rate at which susceptible individuals leave quarantine</doc>
+				<doc>Rate at which susceptible individuals enter quarantine</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -7353,14 +7341,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7466,8 +7452,8 @@ ELSE 0</eqn>
 					<from>Converter_3</from>
 					<to>Fd</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="298" y="384.833" name="Converter 4"/>
-				<connector uid="14" angle="2.87606">
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="298" y="381.333" name="Converter 4"/>
+				<connector uid="14" angle="0">
 					<from>Converter_4</from>
 					<to>Fd</to>
 				</connector>
@@ -7558,26 +7544,13 @@ ELSE 0</eqn>
 				</dimensions>
 				<units>People</units>
 			</stock>
-			<aux name="vr">
+			<aux name="vr" access="output">
 				<doc>Vaccination rate</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>actual_vaccination / Stock_1</eqn>
 				<units>1/day</units>
-			</aux>
-			<aux name="psi" access="output">
-				<doc>Effective vaccination rate</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>vr *par_mu_V</eqn>
-				<units>1/day</units>
-			</aux>
-			<aux name="par mu V">
-				<doc>Vaccine efficacy</doc>
-				<eqn>vaccine_efficacy</eqn>
-				<units>Dimensionless</units>
 			</aux>
 			<stock name="V">
 				<doc>Vaccination capacity</doc>
@@ -7643,10 +7616,6 @@ ELSE 0</eqn>
 			<aux name="initial vaccination capacity" access="input">
 				<eqn>279964</eqn>
 				<units>People/day</units>
-			</aux>
-			<aux name="vaccine efficacy" access="input">
-				<eqn>0.75</eqn>
-				<units>Dimensionless</units>
 			</aux>
 			<aux name="Vaccination capacity" access="output">
 				<doc>The maximum number of vaccines that the public health system can administer in a day.</doc>
@@ -7755,14 +7724,12 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="169.375" isee:scroll_y="125" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7812,16 +7779,6 @@ ELSE 0</eqn>
 				</connector>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="436.667" y="464.5" width="52" height="46" name="Stock 1"/>
 				<aux label_side="top" x="567" y="400" name="vr"/>
-				<aux label_side="left" x="647" y="476" name="psi"/>
-				<aux label_side="top" x="715" y="476" name="par mu V"/>
-				<connector uid="3" angle="180">
-					<from>par_mu_V</from>
-					<to>psi</to>
-				</connector>
-				<connector uid="4" angle="316.469">
-					<from>vr</from>
-					<to>psi</to>
-				</connector>
 				<stock label_side="center" x="448" y="177.167" name="V"/>
 				<connector uid="5" angle="220.565">
 					<from>V</from>
@@ -7894,11 +7851,6 @@ ELSE 0</eqn>
 					<to>Adjust_V</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="585" y="133.75" name="initial vaccination capacity"/>
-				<aux font_style="italic" font_weight="bold" x="813.75" y="476" name="vaccine efficacy"/>
-				<connector uid="25" angle="175.962">
-					<from>vaccine_efficacy</from>
-					<to>par_mu_V</to>
-				</connector>
 				<aux x="222.167" y="694.375" name="Vaccination capacity"/>
 				<connector uid="28" angle="358.854">
 					<from>
@@ -7927,6 +7879,13 @@ ELSE 0</eqn>
 					<from>actual_vaccination</from>
 					<to>CV_in</to>
 				</connector>
+				<stacked_container uid="35" x="896.875" y="555.625">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Cumulative_vaccination[d]"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias font_style="italic" uid="29" x="105.375" y="685.375" width="18" height="18">
 					<of>Vs</of>
 				</alias>
@@ -7946,6 +7905,7 @@ ELSE 0</eqn>
 				<outflow>S_to_SQ</outflow>
 				<outflow>S_to_II</outflow>
 				<outflow>S_to_R</outflow>
+				<outflow>S_to_Sf</outflow>
 				<units>People</units>
 			</stock>
 			<stock name="E" access="output">
@@ -7955,6 +7915,7 @@ ELSE 0</eqn>
 				</dimensions>
 				<eqn>0</eqn>
 				<inflow>S_to_E</inflow>
+				<inflow>Sf_to_E</inflow>
 				<outflow>E_to_PD</outflow>
 				<outflow>E_to_A</outflow>
 				<outflow>E_to_PU</outflow>
@@ -8124,7 +8085,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>Converter_2*S</eqn>
+				<eqn>vaccine_efficacy * Converter_2*S</eqn>
 				<units>people/day</units>
 			</flow>
 			<stock name="PD" access="output">
@@ -8476,6 +8437,37 @@ ELSE 1</eqn>
 			<aux name="P0 b" access="input">
 				<units>People</units>
 			</aux>
+			<stock name="Sf">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>S_to_Sf</inflow>
+				<outflow>Sf_to_E</outflow>
+				<units>People</units>
+			</stock>
+			<flow name="S to Sf">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>(1 - vaccine_efficacy) * Converter_2 * S</eqn>
+				<units>People/day</units>
+			</flow>
+			<flow name="Sf to E">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>Sf * lambda</eqn>
+				<units>People/day</units>
+			</flow>
+			<aux name="vaccine efficacy" access="input">
+				<eqn>0.75</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="N val">
+				<eqn>SUM(A[*]) + SUM(E[*]) + SUM(ID[*]) + SUM(II[*]) + SUM(IU[*]) + SUM(PD[*]) + SUM(PU[*]) + SUM(R[*]) + SUM(SQ[*]) + SUM(S[*]) + SUM(Sf[*])</eqn>
+				<isee:summing/>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -8523,14 +8515,12 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="234.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="40" isee:scroll_y="294.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -8621,7 +8611,7 @@ ELSE 1</eqn>
 					<from>S</from>
 					<to>S_to_E</to>
 				</connector>
-				<aux label_side="center" x="365.666" y="552.333" width="35" height="35" name="lambda"/>
+				<aux label_side="center" x="383.166" y="481.5" width="35" height="35" name="lambda"/>
 				<stock color="blue" label_side="center" x="658.124" y="272.501" name="II"/>
 				<flow color="#CCCCCC" label_side="top" x="857.812" y="272.501" name="II to R">
 					<pts>
@@ -8640,11 +8630,11 @@ ELSE 1</eqn>
 					<from>II</from>
 					<to>II_to_R</to>
 				</connector>
-				<connector uid="8" angle="72.4712">
+				<connector uid="8" angle="69.2972">
 					<from>lambda</from>
 					<to>S_to_E</to>
 				</connector>
-				<stock label_side="top" x="137.5" y="425" name="SQ"/>
+				<stock label_side="top" x="137.5" y="420.5" name="SQ"/>
 				<flow color="#CCCCCC" label_side="top" x="227.917" y="409.75" name="S to SQ">
 					<pts>
 						<pt x="295.833" y="409.75"/>
@@ -8668,10 +8658,10 @@ ELSE 1</eqn>
 						<pt x="635.624" y="272.501"/>
 					</pts>
 				</flow>
-				<flow color="#CCCCCC" label_side="top" x="670.752" y="795.833" name="S to R">
+				<flow color="#CCCCCC" label_side="top" x="671.585" y="795.833" name="S to R">
 					<pts>
-						<pt x="298.333" y="438"/>
-						<pt x="298.333" y="795.833"/>
+						<pt x="300" y="438"/>
+						<pt x="300" y="795.833"/>
 						<pt x="1043.17" y="795.833"/>
 						<pt x="1043.17" y="440"/>
 					</pts>
@@ -8745,12 +8735,12 @@ ELSE 1</eqn>
 					</from>
 					<to>incidence_rate</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="674.515" y="868" name="Converter 2"/>
-				<connector uid="20" angle="92.9853">
+				<aux font_style="italic" font_weight="bold" x="496.188" y="723" name="Converter 2"/>
+				<connector uid="20" angle="337.45">
 					<from>Converter_2</from>
 					<to>S_to_R</to>
 				</connector>
-				<connector uid="21" angle="234.324">
+				<connector uid="21" angle="232.466">
 					<from>S</from>
 					<to>S_to_R</to>
 				</connector>
@@ -8867,7 +8857,7 @@ ELSE 1</eqn>
 					</from>
 					<to>lambda_A</to>
 				</connector>
-				<connector uid="44" angle="183.843">
+				<connector uid="44" angle="205.844">
 					<from>
 						<alias uid="45"/>
 					</from>
@@ -8879,13 +8869,13 @@ ELSE 1</eqn>
 					</from>
 					<to>lambda_IU</to>
 				</connector>
-				<connector uid="48" angle="160.402">
+				<connector uid="48" angle="180">
 					<from>
 						<alias uid="49"/>
 					</from>
 					<to>lambda</to>
 				</connector>
-				<connector uid="50" angle="122.455">
+				<connector uid="50" angle="155.879">
 					<from>
 						<alias uid="51"/>
 					</from>
@@ -8961,7 +8951,7 @@ ELSE 1</eqn>
 					</from>
 					<to>lambda_PD</to>
 				</connector>
-				<connector uid="70" angle="53.9726">
+				<connector uid="70" angle="292.21">
 					<from>
 						<alias uid="71"/>
 					</from>
@@ -9021,7 +9011,7 @@ ELSE 1</eqn>
 					</from>
 					<to>lambda_ID</to>
 				</connector>
-				<connector uid="85" angle="87.5104">
+				<connector uid="85" angle="90.3136">
 					<from>
 						<alias uid="86"/>
 					</from>
@@ -9159,6 +9149,64 @@ ELSE 1</eqn>
 					<from>P0_b</from>
 					<to>P0</to>
 				</connector>
+				<stock x="431.208" y="655.834" name="Sf"/>
+				<flow color="#D6D6D6" font_color="#D6D6D6" x="361.688" y="648.667" name="S to Sf">
+					<pts>
+						<pt x="326.667" y="438"/>
+						<pt x="326.667" y="648.667"/>
+						<pt x="408.708" y="648.667"/>
+					</pts>
+				</flow>
+				<flow color="#D6D6D6" font_color="#D6D6D6" x="496.188" y="655.834" name="Sf to E">
+					<pts>
+						<pt x="453.708" y="655.834"/>
+						<pt x="526.667" y="655.834"/>
+						<pt x="526.667" y="440"/>
+					</pts>
+				</flow>
+				<connector uid="114" angle="31.0165">
+					<from>Sf</from>
+					<to>Sf_to_E</to>
+				</connector>
+				<connector uid="115" angle="301.344">
+					<from>lambda</from>
+					<to>Sf_to_E</to>
+				</connector>
+				<connector uid="116" angle="304.866">
+					<from>S</from>
+					<to>S_to_Sf</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="361.688" y="719.834" name="vaccine efficacy"/>
+				<connector uid="118" angle="151.072">
+					<from>Converter_2</from>
+					<to>S_to_Sf</to>
+				</connector>
+				<connector uid="119" angle="346.221">
+					<from>vaccine_efficacy</from>
+					<to>S_to_R</to>
+				</connector>
+				<connector uid="120" angle="90">
+					<from>vaccine_efficacy</from>
+					<to>S_to_Sf</to>
+				</connector>
+				<stacked_container uid="121" x="1410.16" y="1640.83">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="total_N"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="390" y="1890" name="N val"/>
+				<stacked_container uid="122" x="809.167" y="1876.67">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="N_val"/>
+						</plot>
+						<plot color="red" pen_style="dot_dashed" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="total_N"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias font_style="italic" label_side="bottom" uid="6" x="832.187" y="203" width="51.25" height="14">
 					<shape type="name_only"/>
 					<of>par_gamma</of>
@@ -9188,18 +9236,18 @@ ELSE 1</eqn>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="42" x="1202.5" y="490.333" width="31" height="26">
 					<of>A</of>
 				</alias>
-				<alias font_style="italic" uid="45" x="447.875" y="557" width="44.25" height="14">
+				<alias font_style="italic" uid="45" x="447.187" y="458.75" width="44.25" height="14">
 					<shape type="name_only"/>
 					<of>lambda_A</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="49" x="446.375" y="593.75" width="47.25" height="14">
+				<alias color="blue" background="white" font_style="italic" uid="49" x="445.687" y="492" width="47.25" height="14">
 					<shape type="name_only"/>
 					<of>lambda_IU</of>
 				</alias>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="47" x="1205.5" y="604" width="25" height="22">
 					<of>IU</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="51" x="405.208" y="637" width="50.25" height="14">
+				<alias color="blue" background="white" font_style="italic" uid="51" x="453.708" y="527" width="50.25" height="14">
 					<shape type="name_only"/>
 					<of>lambda_PU</of>
 				</alias>
@@ -9213,7 +9261,7 @@ ELSE 1</eqn>
 					<shape type="name_only"/>
 					<of>par_xi</of>
 				</alias>
-				<alias font_style="italic" uid="71" x="305.875" y="629" width="50.25" height="14">
+				<alias font_style="italic" uid="71" x="356.249" y="444.75" width="50.25" height="14">
 					<shape type="name_only"/>
 					<of>lambda_PD</of>
 				</alias>
@@ -9228,7 +9276,7 @@ ELSE 1</eqn>
 				<alias color="#FF2600" font_style="italic" font_color="#FF2600" label_side="center" uid="84" x="1230.5" y="951.5" width="34" height="27">
 					<of>ID</of>
 				</alias>
-				<alias font_style="italic" uid="86" x="347.375" y="675" width="47.25" height="14">
+				<alias font_style="italic" uid="86" x="377.374" y="552.833" width="47.25" height="14">
 					<shape type="name_only"/>
 					<of>lambda_ID</of>
 				</alias>
@@ -11234,9 +11282,7 @@ ELSE 1</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -14741,9 +14787,7 @@ ELSE
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16272,9 +16316,7 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16696,9 +16738,7 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16956,8 +16996,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to='Vaccines."vaccination_long-term_capacity"' from='Inputs_Epi."vaccination_long-term_capacity"'/>
 				<connect to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
-				<connect to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
-				<connect2 to="Vaccines.vaccine_efficacy" from="Inputs_Epi.vaccine_efficacy"/>
+				<connect to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
+				<connect2 to='"Within-host_profile".vaccine_efficacy' from="Inputs_Epi.vaccine_efficacy"/>
 			</module>
 			<module name="Inputs Data" isee:label="">
 				<connect to="Mobility.Converter_1" from="Inputs_Data.Age_specific_contact_rates"/>
@@ -17193,9 +17233,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17618,9 +17656,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17680,12 +17716,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="switch vaccines" access="output">
 				<doc>Vaccine switch.</doc>
-				<eqn>0</eqn>
+				<eqn>1</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="vaccine availability" access="output">
 				<doc>Vaccine availability set by the user</doc>
-				<eqn>60</eqn>
+				<eqn>30</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="switch contact tracing" access="output">
@@ -17874,9 +17910,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18281,9 +18315,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18531,9 +18563,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18688,9 +18718,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18798,9 +18826,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19595,9 +19621,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-						<shape type="circle" radius="18"/>
-					</flow>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -20489,9 +20513,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="45" height="35"/>
 				</stock>
-				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
-					<shape type="circle" radius="18"/>
-				</flow>
+				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
 				<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
 				<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="55" height="45"/>
