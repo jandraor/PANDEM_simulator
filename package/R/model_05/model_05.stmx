@@ -125,6 +125,8 @@
 				<connect2 to="Tracing.contact_tracing_effectiveness" from="Inputs_Epi.contact_tracing_effectiveness"/>
 				<connect to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect2 to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
+				<connect to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
+				<connect2 to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
 				<connect to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect2 to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect to='"Within-host_profile".P0_b' from="Inputs_Epi.initial_infected"/>
@@ -576,6 +578,8 @@
 				<connect2 to="Mobility.Converter_3" from="Inputs_Epi.switch_school_closures"/>
 				<connect to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
 				<connect2 to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
+				<connect to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
+				<connect2 to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
 				<connect to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.mobility_restriction_start_time"/>
@@ -5270,14 +5274,16 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Mobility.Converter_3" from="Inputs_Epi.switch_school_closures"/>
 				<connect to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
 				<connect2 to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
+				<connect to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
+				<connect2 to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
 				<connect to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.mobility_restriction_start_time"/>
 				<connect2 to="Mobility.lockdown_start_time" from="Inputs_Epi.mobility_restriction_start_time"/>
+				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
+				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
 				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
-				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
-				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Cumulative_confirmed_cases" from="Testing.Cumulative_confirmed_cases"/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_confirmed_cases" from="Testing.Cumulative_confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
@@ -5328,16 +5334,16 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
-				<connect to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
-				<connect2 to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
+				<connect to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
+				<connect2 to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
+				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
+				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
+				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
+				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
 				<connect to='"Within-host_profile".Converter_10' from="Inputs_Epi.isolation_start"/>
 				<connect2 to='"Within-host_profile".Converter_10' from="Inputs_Epi.isolation_start"/>
 				<connect to='"Within-host_profile".Converter_5' from="Inputs_Epi.mask_wearing_effect"/>
@@ -5508,6 +5514,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital.Beds" from="Hospital_Resources.Beds"/>
 				<connect to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
+				<connect to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
+				<connect2 to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="Hospital.delay_before_hospitalisation" from="Inputs_Hospital_patient_params.delay_before_hospitalisation"/>
 				<connect2 to="Hospital.delay_before_hospitalisation" from="Inputs_Hospital_patient_params.delay_before_hospitalisation"/>
 				<connect to="Hospital.Denied_ICU_fatality_rate" from="Inputs_Hospital_patient_params.denied_ICU_fatality_rate"/>
@@ -5582,26 +5590,24 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
 				<connect to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect2 to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
+				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
+				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
 				<connect to="Hospital.Population_size" from="Inputs_Data.Population_size"/>
 				<connect2 to="Hospital.Population_size" from="Inputs_Data.Population_size"/>
 				<connect to="Hospital.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect2 to="Hospital.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect to="Hospital.proportion_of_morgue_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_morgue_capacity_available_for_pandemic"/>
 				<connect2 to="Hospital.proportion_of_morgue_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_morgue_capacity_available_for_pandemic"/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
+				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
+				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
 				<connect to="Hospital.staffed_equipped_ICU_beds_available_1" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect2 to="Hospital.staffed_equipped_ICU_beds_available_1" from="Hospital_Resources.staffed_equipped_ICU_beds_available"/>
 				<connect to="Hospital.staffed_ward_beds_available_1" from="Hospital_Resources.staffed_ward_beds_available"/>
 				<connect2 to="Hospital.staffed_ward_beds_available_1" from="Hospital_Resources.staffed_ward_beds_available"/>
 				<connect to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect2 to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
-				<connect to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
-				<connect2 to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
-				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
-				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
+				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
+				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
 				<connect to="Hospital.ventilators_per_ICU_bed_1" from="Ventilators.ventilators_per_ICU_bed"/>
 				<connect2 to="Hospital.ventilators_per_ICU_bed_1" from="Ventilators.ventilators_per_ICU_bed"/>
 				<connect to="Hospital.ward_fatality_rate" from="Inputs_Hospital_patient_params.ward_fatality_rate"/>
@@ -6000,10 +6006,10 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Vaccines.vaccine_availability" from="Inputs_Epi.vaccine_availability"/>
 			</module>
 			<module name="Testing" isee:label="">
+				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
+				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.CC"/>
 				<connect to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
 				<connect2 to="PANDEM2_Outputs.Confirmed_cases" from="Testing.Confirmed_cases"/>
-				<connect to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
-				<connect2 to="Hospital.Total_confirmed_cases_1" from="Testing.Cumulative_confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Cumulative_confirmed_cases" from="Testing.Cumulative_confirmed_cases"/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_confirmed_cases" from="Testing.Cumulative_confirmed_cases"/>
 				<connect to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
@@ -6050,8 +6056,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Tracing.Converter_2" from='"Within-host_profile".upsilon'/>
 				<connect to="Tracing.Converter_3" from="Mobility.k"/>
 				<connect2 to="Tracing.Converter_3" from="Mobility.k"/>
-				<connect to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
-				<connect2 to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
+				<connect to="Tracing.Converter_4" from='"Within-host_profile".P_d'/>
+				<connect2 to="Tracing.Converter_4" from='"Within-host_profile".P_d'/>
 				<connect to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect2 to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect to="Tracing.switch_contact_tracing" from="Inputs_Epi.switch_contact_tracing"/>
@@ -6072,6 +6078,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Mobility.Converter_3" from="Inputs_Epi.switch_school_closures"/>
 				<connect to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
 				<connect2 to="Mobility.Converter_4" from="Inputs_Epi.start_school_closures"/>
+				<connect to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
+				<connect2 to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
 				<connect to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect2 to="Mobility.lockdown_severity_1" from="Inputs_Epi.mobility_restriction_severity"/>
 				<connect to="Mobility.lockdown_start_time" from="Inputs_Epi.mobility_restriction_start_time"/>
@@ -6084,8 +6092,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital.Converter_1" from='"Within-host_profile".Attack_rate'/>
 				<connect to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
 				<connect2 to="PANDEM2_Outputs.Attack_rate" from='"Within-host_profile".Attack_rate'/>
-				<connect to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
-				<connect2 to="Hospital.Total_cases" from='"Within-host_profile".Cumulative_cases'/>
+				<connect to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
+				<connect2 to="Hospital.Converter_2" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect2 to="PANDEM2_Outputs.Cumulative_cases" from='"Within-host_profile".Cumulative_cases'/>
 				<connect to="Testing.Converter_1" from='"Within-host_profile".E'/>
@@ -6094,16 +6102,16 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect to="Tracing.Converter_1" from='"Within-host_profile".N'/>
 				<connect2 to="Tracing.Converter_1" from='"Within-host_profile".N'/>
+				<connect to="Tracing.Converter_4" from='"Within-host_profile".P_d'/>
+				<connect2 to="Tracing.Converter_4" from='"Within-host_profile".P_d'/>
+				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
+				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
+				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
+				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".P_u_to_I_u'/>
 				<connect to="Testing.Converter_3" from='"Within-host_profile".par_omega'/>
 				<connect2 to="Testing.Converter_3" from='"Within-host_profile".par_omega'/>
 				<connect to="Testing.Converter_2" from='"Within-host_profile".par_sigma'/>
 				<connect2 to="Testing.Converter_2" from='"Within-host_profile".par_sigma'/>
-				<connect to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
-				<connect2 to="Tracing.Converter_4" from='"Within-host_profile".PD'/>
-				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect2 to="Hospital.PD_to_ID" from='"Within-host_profile".PD_to_ID'/>
-				<connect to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
-				<connect2 to="Hospital.PU_to_IU" from='"Within-host_profile".PU_to_IU'/>
 				<connect to="Vaccines.Stock_1" from='"Within-host_profile".S'/>
 				<connect2 to="Vaccines.Stock_1" from='"Within-host_profile".S'/>
 				<connect to="Tracing.Converter_2" from='"Within-host_profile".upsilon'/>
@@ -6188,7 +6196,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6393,7 +6401,7 @@ ELSE 0</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="effect\nschool closures">
-				<eqn>IF TIME &gt; Converter_4
+				<eqn>IF TIME &gt; Converter_4 AND TIME &lt; (Converter_4 + Converter_5)
 
 THEN (0.05 *  Converter_3) + (1 * (1- Converter_3))
 
@@ -6403,6 +6411,7 @@ ELSE 1</eqn>
 			<aux name="Converter 4" access="input">
 				<units>Days</units>
 			</aux>
+			<aux name="Converter 5" access="input"/>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -6450,7 +6459,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6614,6 +6623,18 @@ ELSE 1</eqn>
 					<from>Converter_4</from>
 					<to>effect_school_closures</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="288.25" y="61" name="Converter 5"/>
+				<connector uid="25" angle="333.229">
+					<from>Converter_5</from>
+					<to>effect_school_closures</to>
+				</connector>
+				<stacked_container uid="26" x="681" y="1029.5">
+					<graph width="350" height="250" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="effect_school_closures"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias font_style="italic" uid="19" x="48.5" y="869.5" width="45" height="35">
 					<of>Z</of>
 				</alias>
@@ -6788,7 +6809,7 @@ ELSE 0</eqn>
 				</element>
 				<units>people/day</units>
 			</aux>
-			<stock name="Cumulative confirmed cases" access="output">
+			<stock name="CC" access="output">
 				<doc>Cumulative confirmed cases by age group</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -6812,6 +6833,23 @@ ELSE 0</eqn>
 				</element>
 				<units>People/day</units>
 			</flow>
+			<aux name="Cumulative confirmed cases" access="output">
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+				<element subscript="a">
+					<eqn>CC[a]</eqn>
+				</element>
+				<element subscript="b">
+					<eqn>CC[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>CC[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>SUM(CC)</eqn>
+				</element>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -7084,7 +7122,7 @@ ELSE 0</eqn>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stock x="782" y="746" name="Cumulative confirmed cases"/>
+				<stock label_side="center" x="782" y="746" name="CC"/>
 				<flow x="697.25" y="747" name="Add confirmed cases">
 					<pts>
 						<pt x="623" y="747"/>
@@ -7094,6 +7132,11 @@ ELSE 0</eqn>
 				<connector uid="45" angle="247.38">
 					<from>Confirmed_cases</from>
 					<to>Add_confirmed_cases</to>
+				</connector>
+				<aux label_side="bottom" x="827" y="828" name="Cumulative confirmed cases"/>
+				<connector uid="46" angle="306.193">
+					<from>CC</from>
+					<to>Cumulative_confirmed_cases</to>
 				</connector>
 				<alias font_style="italic" uid="26" x="80" y="655" width="18" height="18">
 					<of>Ts</of>
@@ -7903,7 +7946,7 @@ ELSE 0</eqn>
 				<inflow>SQ_to_S</inflow>
 				<outflow>S_to_E</outflow>
 				<outflow>S_to_SQ</outflow>
-				<outflow>S_to_II</outflow>
+				<outflow>S_to_E_i</outflow>
 				<outflow>S_to_R</outflow>
 				<outflow>S_to_Sf</outflow>
 				<units>People</units>
@@ -7921,14 +7964,14 @@ ELSE 0</eqn>
 				<outflow>E_to_PU</outflow>
 				<units>People</units>
 			</stock>
-			<stock name="ID">
+			<stock name="I d">
 				<doc>Clinical infectious individuals captured by the healthcare system (detected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
-				<inflow>PD_to_ID</inflow>
-				<outflow>ID_to_R</outflow>
+				<inflow>P_d_to_I_d</inflow>
+				<outflow>I_d_to_R</outflow>
 				<units>People</units>
 			</stock>
 			<stock name="R">
@@ -7937,11 +7980,11 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
-				<inflow>ID_to_R</inflow>
+				<inflow>I_d_to_R</inflow>
 				<inflow>A_to_R</inflow>
-				<inflow>II_to_R</inflow>
+				<inflow>I_i_to_R</inflow>
 				<inflow>S_to_R</inflow>
-				<inflow>IU_to_R</inflow>
+				<inflow>I_u_to_R</inflow>
 				<units>People</units>
 			</stock>
 			<stock name="A">
@@ -7954,7 +7997,7 @@ ELSE 0</eqn>
 				<outflow>A_to_R</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="S to E" access="output" isee:autocreated="true">
+			<flow name="S to E">
 				<doc>Infection rate</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -7970,12 +8013,12 @@ ELSE 0</eqn>
 				<eqn>detection_rate * par_omega * par_sigma * E</eqn>
 				<units>people/day</units>
 			</flow>
-			<flow name="ID to R">
+			<flow name="I d to R">
 				<doc>Recovery of clinical infectious individuals captured by the healthcare system (detected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_gamma * ID</eqn>
+				<eqn>par_gamma * I_d</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="E to A" access="output" isee:autocreated="true">
@@ -8009,25 +8052,25 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>lambda_A + lambda_PD + lambda_ID+ lambda_IU + lambda_PU</eqn>
+				<eqn>lambda_A + lambda_P_d + lambda_I_d+ lambda_I_u + lambda_P_u + lambda_I_i</eqn>
 				<units>1/day</units>
 			</aux>
-			<stock name="II">
+			<stock name="I i">
 				<doc>Infectious isolated</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
-				<inflow>S_to_II</inflow>
-				<outflow>II_to_R</outflow>
+				<inflow>E_i_to_I_i</inflow>
+				<outflow>I_i_to_R</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="II to R">
+			<flow name="I i to R">
 				<doc>Recovery of  isolated individuals.</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_gamma * II</eqn>
+				<eqn>par_xi * I_i</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="lambda A">
@@ -8069,16 +8112,16 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_xi * SQ</eqn>
+				<eqn>SQ / (1 / par_sigma + 1 / par_xi)</eqn>
 				<units>people/day</units>
 			</flow>
-			<flow name="S to II" access="output" isee:autocreated="true">
+			<flow name="S to E i" access="output" isee:autocreated="true">
 				<doc>Isolation of infected individuals</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>par_alpha * S</eqn>
-				<units>people/day</units>
+				<units>People/day</units>
 			</flow>
 			<flow name="S to R">
 				<doc>Vaccination</doc>
@@ -8088,22 +8131,22 @@ ELSE 0</eqn>
 				<eqn>vaccine_efficacy * Converter_2*S</eqn>
 				<units>people/day</units>
 			</flow>
-			<stock name="PD" access="output">
+			<stock name="P d" access="output">
 				<doc>Preclinical infectious individual captured by the healthcare system (detected)</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
 				<inflow>E_to_PD</inflow>
-				<outflow>PD_to_ID</outflow>
+				<outflow>P_d_to_I_d</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="PD to ID" isee:display_name="Confirmed cases" access="output" isee:autocreated="true">
+			<flow name="P d to I d" isee:display_name="Confirmed cases" access="output" isee:autocreated="true">
 				<doc>Preclinical infectious individuals in the detected path develop symptoms </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_nu * PD</eqn>
+				<eqn>par_nu * P_d</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="par nu">
@@ -8119,7 +8162,7 @@ ELSE 0</eqn>
 				<eqn>Population_size</eqn>
 				<units>People</units>
 			</aux>
-			<stock name="Cumulative cases" access="output">
+			<stock name="C">
 				<doc>Cumulative number of infected individuals (actual cases)</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -8141,7 +8184,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>S_to_E</eqn>
+				<eqn>S_to_E + Sf_to_E + S_to_E_i</eqn>
 				<units>people/day</units>
 			</flow>
 			<aux name="detection rate" access="input">
@@ -8192,15 +8235,15 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>(ID + IU) /N</eqn>
+				<eqn>(I_d + I_u + I_i + par_omega * I_i) /N</eqn>
 				<units>Dimensionless</units>
 			</aux>
-			<flow name="IU to R">
+			<flow name="I u to R">
 				<doc>Recovery of clinical infectious individuals not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_gamma *IU</eqn>
+				<eqn>par_gamma *I_u</eqn>
 				<units>people/day</units>
 			</flow>
 			<flow name="E to PU" access="output" isee:autocreated="true">
@@ -8216,32 +8259,32 @@ ELSE 0</eqn>
 				<eqn>0.5</eqn>
 				<units>Dimensionless</units>
 			</aux>
-			<stock name="IU">
+			<stock name="I u">
 				<doc>Clinical infectious individuals not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>0</eqn>
-				<inflow>PU_to_IU</inflow>
-				<outflow>IU_to_R</outflow>
+				<inflow>P_u_to_I_u</inflow>
+				<outflow>I_u_to_R</outflow>
 				<units>People</units>
 			</stock>
-			<flow name="PU to IU" access="output" isee:autocreated="true">
+			<flow name="P u to I u" access="output" isee:autocreated="true">
 				<doc>Preclinical infectious individuals in the undetected path develop symptoms </doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>par_nu * PU</eqn>
+				<eqn>par_nu * P_u</eqn>
 				<units>people/day</units>
 			</flow>
-			<stock name="PU">
+			<stock name="P u">
 				<doc>Preclinical infectious individual not captured by the healthcare system (undetected).</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<eqn>P0</eqn>
 				<inflow>E_to_PU</inflow>
-				<outflow>PU_to_IU</outflow>
+				<outflow>P_u_to_I_u</outflow>
 				<units>People</units>
 			</stock>
 			<aux name="par xi">
@@ -8249,35 +8292,35 @@ ELSE 0</eqn>
 				<eqn>1/3</eqn>
 				<units>1/day</units>
 			</aux>
-			<aux name="lambda PU">
+			<aux name="lambda P u">
 				<doc>Contribution to the force of infection from the undetected preclinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(beta_contacts[aa] * PU[a] + beta_contacts[ab] * PU[b] + beta_contacts[ac] * PU[c]) / N[a]</eqn>
+					<eqn>(beta_contacts[aa] * P_u[a] + beta_contacts[ab] * P_u[b] + beta_contacts[ac] * P_u[c]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(beta_contacts[ba] * PU[a] + beta_contacts[bb] * PU[b] + beta_contacts[bc] * PU[c]) / N[b]</eqn>
+					<eqn>(beta_contacts[ba] * P_u[a] + beta_contacts[bb] * P_u[b] + beta_contacts[bc] * P_u[c]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(beta_contacts[ca] * PU[a] + beta_contacts[cb] * PU[b] + beta_contacts[cc] * PU[c]) / N[c]</eqn>
+					<eqn>(beta_contacts[ca] * P_u[a] + beta_contacts[cb] * P_u[b] + beta_contacts[cc] * P_u[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
-			<aux name="lambda IU">
+			<aux name="lambda I u">
 				<doc>Contribution to the force of infection from the undetected clinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(beta_contacts[aa] * IU[a] + beta_contacts[ab] * IU[b]  + beta_contacts[ac] * IU[c]) / N[a]</eqn>
+					<eqn>(beta_contacts[aa] * I_u[a] + beta_contacts[ab] * I_u[b]  + beta_contacts[ac] * I_u[c]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(beta_contacts[ba] * IU[a] + beta_contacts[bb] * IU[b]  + beta_contacts[bc] * IU[c]) / N[b]</eqn>
+					<eqn>(beta_contacts[ba] * I_u[a] + beta_contacts[bb] * I_u[b]  + beta_contacts[bc] * I_u[c]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(beta_contacts[ca] * IU[a] + beta_contacts[cb] * IU[b]  + beta_contacts[cc] * IU[c]) / N[c]</eqn>
+					<eqn>(beta_contacts[ca] * I_u[a] + beta_contacts[cb] * I_u[b]  + beta_contacts[cc] * I_u[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8287,16 +8330,16 @@ ELSE 0</eqn>
 					<dim name="Age_out"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>Cumulative_cases[a] / N[a]</eqn>
+					<eqn>C[a] / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>Cumulative_cases[b] / N[b]</eqn>
+					<eqn>C[b] / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>Cumulative_cases[c] / N[c]</eqn>
+					<eqn>C[c] / N[c]</eqn>
 				</element>
 				<element subscript="d">
-					<eqn>SUM(Cumulative_cases) / SUM(N)</eqn>
+					<eqn>SUM(C) / SUM(N)</eqn>
 				</element>
 				<units>Dimensionless</units>
 			</aux>
@@ -8312,19 +8355,19 @@ ELSE 0</eqn>
 				</dimensions>
 				<units>1/day</units>
 			</aux>
-			<aux name="lambda PD">
+			<aux name="lambda P d">
 				<doc>Contribution to the force of infection from the detected preclinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>((beta_contacts[aa] * PD[a] - Converter_4[aa]) + (beta_contacts[ab] * PD[b] - Converter_4[ab]) + (beta_contacts[ac] * PD[c] - Converter_4[ac])) / N[a]</eqn>
+					<eqn>((beta_contacts[aa] * P_d[a] - Converter_4[aa]) + (beta_contacts[ab] * P_d[b] - Converter_4[ab]) + (beta_contacts[ac] * P_d[c] - Converter_4[ac])) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>((beta_contacts[ba] * PD[a] - Converter_4[ba]) + (beta_contacts[bb] * PD[b] - Converter_4[bb]) + (beta_contacts[bc] * PD[c] - Converter_4[bc])) / N[b]</eqn>
+					<eqn>((beta_contacts[ba] * P_d[a] - Converter_4[ba]) + (beta_contacts[bb] * P_d[b] - Converter_4[bb]) + (beta_contacts[bc] * P_d[c] - Converter_4[bc])) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>((beta_contacts[ca] * PD[a] - Converter_4[ca]) + (beta_contacts[cb] * PD[b] - Converter_4[cb]) + (beta_contacts[cc] * PD[c] - Converter_4[cc])) / N[c]</eqn>
+					<eqn>((beta_contacts[ca] * P_d[a] - Converter_4[ca]) + (beta_contacts[cb] * P_d[b] - Converter_4[cb]) + (beta_contacts[cc] * P_d[c] - Converter_4[cc])) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8334,19 +8377,19 @@ ELSE 0</eqn>
 				</dimensions>
 				<units>people/day</units>
 			</aux>
-			<aux name="lambda ID">
+			<aux name="lambda I d">
 				<doc>Contribution to the force of infection from the detected clinical class</doc>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>par_mu_T * (beta_contacts[aa] * ID[a] + beta_contacts[ab] * ID[b] + beta_contacts[ac] * ID[c]) / N[a]</eqn>
+					<eqn>par_mu_T * (beta_contacts[aa] * I_d[a] + beta_contacts[ab] * I_d[b] + beta_contacts[ac] * I_d[c]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>par_mu_T * (beta_contacts[ba] * ID[a] + beta_contacts[bb] * ID[b] + beta_contacts[bc] * ID[c]) / N[b]</eqn>
+					<eqn>par_mu_T * (beta_contacts[ba] * I_d[a] + beta_contacts[bb] * I_d[b] + beta_contacts[bc] * I_d[c]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>par_mu_T * (beta_contacts[ca] * ID[a] + beta_contacts[cb] * ID[b] + beta_contacts[cc] * ID[c]) / N[c]</eqn>
+					<eqn>par_mu_T * (beta_contacts[ca] * I_d[a] + beta_contacts[cb] * I_d[b] + beta_contacts[cc] * I_d[c]) / N[c]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8437,7 +8480,7 @@ ELSE 1</eqn>
 			<aux name="P0 b" access="input">
 				<units>People</units>
 			</aux>
-			<stock name="Sf">
+			<stock name="Sv">
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
@@ -8457,7 +8500,7 @@ ELSE 1</eqn>
 				<dimensions>
 					<dim name="Age"/>
 				</dimensions>
-				<eqn>Sf * lambda</eqn>
+				<eqn>Sv * lambda</eqn>
 				<units>People/day</units>
 			</flow>
 			<aux name="vaccine efficacy" access="input">
@@ -8465,8 +8508,60 @@ ELSE 1</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="N val">
-				<eqn>SUM(A[*]) + SUM(E[*]) + SUM(ID[*]) + SUM(II[*]) + SUM(IU[*]) + SUM(PD[*]) + SUM(PU[*]) + SUM(R[*]) + SUM(SQ[*]) + SUM(S[*]) + SUM(Sf[*])</eqn>
+				<eqn>SUM(A[*]) + SUM(E[*]) + E_i + SUM(I_d[*]) + SUM(I_i[*]) + SUM(I_u[*]) + SUM(P_d[*]) + SUM(P_u[*]) + SUM(R[*]) + SUM(SQ[*]) + SUM(S[*]) + SUM(Sv[*])</eqn>
 				<isee:summing/>
+			</aux>
+			<stock name="E i">
+				<eqn>0</eqn>
+				<inflow>S_to_E_i</inflow>
+				<outflow>E_i_to_I_i</outflow>
+				<units>People</units>
+			</stock>
+			<flow name="E i to I i">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>par_sigma * E_i</eqn>
+				<units>People/day</units>
+			</flow>
+			<aux name="lambda I i">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<element subscript="a">
+					<eqn>(I_i_contacts[aa] * I_i[a] + I_i_contacts[ab] * I_i[b] + I_i_contacts[ac] * I_i[c]) / N[a]</eqn>
+				</element>
+				<element subscript="b">
+					<eqn>(I_i_contacts[ba] * I_i[a] + I_i_contacts[bb] * I_i[b] + I_i_contacts[bc] * I_i[c]) / N[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>(I_i_contacts[ca] * I_i[a] + I_i_contacts[cb] * I_i[b] + I_i_contacts[cc] * I_i[c]) / N[c]</eqn>
+				</element>
+			</aux>
+			<aux name="I i contacts">
+				<doc>Quarantine infectious individuals&apos; contact rate adjusted by the clinical fraction, relative infectiousness &amp; compliance.</doc>
+				<dimensions>
+					<dim name="Contacts"/>
+				</dimensions>
+				<eqn>(par_omega + (1 - par_omega) * par_eta) * (1 - par_mu_T) * beta_contacts</eqn>
+			</aux>
+			<aux name="Cumulative cases" access="output">
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+				<element subscript="a">
+					<eqn>C[a]</eqn>
+				</element>
+				<element subscript="b">
+					<eqn>C[b]</eqn>
+				</element>
+				<element subscript="c">
+					<eqn>C[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>SUM(C)</eqn>
+				</element>
+				<units>People</units>
 			</aux>
 		</variables>
 		<views>
@@ -8515,7 +8610,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="40" isee:scroll_y="294.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8554,10 +8649,10 @@ ELSE 1</eqn>
 				</style>
 				<stock label_side="center" x="318.333" y="420.5" name="S"/>
 				<stock label_side="center" x="542.333" y="422.5" name="E"/>
-				<stock color="#FF2600" font_color="#FF2600" label_side="center" x="866.833" y="422.5" name="ID"/>
+				<stock color="#FF2600" font_color="#FF2600" label_side="center" x="866.833" y="422.5" name="I d"/>
 				<stock label_side="center" x="1025" y="422.5" name="R"/>
 				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="804.864" y="677.834" name="A"/>
-				<flow color="#CCCCCC" x="430.333" y="420.5" name="S to E">
+				<flow color="#CCCCCC" label_side="top" x="430.333" y="420.5" name="S to E">
 					<pts>
 						<pt x="340.833" y="420.5"/>
 						<pt x="519.833" y="420.5"/>
@@ -8569,7 +8664,7 @@ ELSE 1</eqn>
 						<pt x="715.916" y="427"/>
 					</pts>
 				</flow>
-				<flow color="#CCCCCC" label_side="top" x="945.917" y="428.333" name="ID to R">
+				<flow color="#CCCCCC" label_side="top" x="945.917" y="428.333" name="I d to R">
 					<pts>
 						<pt x="889.333" y="428.333"/>
 						<pt x="1002.5" y="428.333"/>
@@ -8594,11 +8689,11 @@ ELSE 1</eqn>
 				</aux>
 				<connector uid="1" angle="99.5508">
 					<from>par_gamma</from>
-					<to>ID_to_R</to>
+					<to>I_d_to_R</to>
 				</connector>
 				<connector uid="2" angle="315">
-					<from>ID</from>
-					<to>ID_to_R</to>
+					<from>I_d</from>
+					<to>I_d_to_R</to>
 				</connector>
 				<connector uid="3" angle="333.905">
 					<from>A</from>
@@ -8612,23 +8707,17 @@ ELSE 1</eqn>
 					<to>S_to_E</to>
 				</connector>
 				<aux label_side="center" x="383.166" y="481.5" width="35" height="35" name="lambda"/>
-				<stock color="blue" label_side="center" x="658.124" y="272.501" name="II"/>
-				<flow color="#CCCCCC" label_side="top" x="857.812" y="272.501" name="II to R">
+				<stock color="#FF2600" font_color="#FF2600" label_side="center" x="658.124" y="272.501" name="I i"/>
+				<flow color="#CCCCCC" label_side="top" x="857.812" y="272.501" name="I i to R">
 					<pts>
 						<pt x="680.624" y="272.501"/>
 						<pt x="1023" y="272.501"/>
 						<pt x="1023" y="405"/>
 					</pts>
 				</flow>
-				<connector uid="5" angle="270">
-					<from>
-						<alias uid="6"/>
-					</from>
-					<to>II_to_R</to>
-				</connector>
 				<connector uid="7" angle="41.6335">
-					<from>II</from>
-					<to>II_to_R</to>
+					<from>I_i</from>
+					<to>I_i_to_R</to>
 				</connector>
 				<connector uid="8" angle="69.2972">
 					<from>lambda</from>
@@ -8651,11 +8740,11 @@ ELSE 1</eqn>
 					<from>SQ</from>
 					<to>SQ_to_S</to>
 				</connector>
-				<flow color="#CCCCCC" label_side="top" x="469.312" y="272.501" name="S to II">
+				<flow color="#CCCCCC" label_side="right" label_angle="45" x="369.25" y="272.501" name="S to E i">
 					<pts>
 						<pt x="315" y="403"/>
 						<pt x="315" y="272.501"/>
-						<pt x="635.624" y="272.501"/>
+						<pt x="435.5" y="272.501"/>
 					</pts>
 				</flow>
 				<flow color="#CCCCCC" label_side="top" x="671.585" y="795.833" name="S to R">
@@ -8666,8 +8755,8 @@ ELSE 1</eqn>
 						<pt x="1043.17" y="440"/>
 					</pts>
 				</flow>
-				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="738.416" y="422.5" name="PD"/>
-				<flow color="#CCCCCC" label_side="top" x="802.625" y="427.667" name="PD to ID">
+				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="738.416" y="422.5" name="P d"/>
+				<flow color="#CCCCCC" label_side="top" x="802.625" y="427.667" name="P d to I d">
 					<pts>
 						<pt x="760.916" y="427.667"/>
 						<pt x="844.333" y="427.667"/>
@@ -8678,25 +8767,25 @@ ELSE 1</eqn>
 				</aux>
 				<connector uid="10" angle="92.3038">
 					<from>par_nu</from>
-					<to>PD_to_ID</to>
+					<to>P_d_to_I_d</to>
 				</connector>
 				<connector uid="11" angle="312.933">
-					<from>PD</from>
-					<to>PD_to_ID</to>
+					<from>P_d</from>
+					<to>P_d_to_I_d</to>
 				</connector>
 				<connector uid="12" angle="149.611">
 					<from>S</from>
 					<to>S_to_SQ</to>
 				</connector>
-				<connector uid="13" angle="67.818">
+				<connector uid="13" angle="71.015">
 					<from>S</from>
-					<to>S_to_II</to>
+					<to>S_to_E_i</to>
 				</connector>
 				<aux label_side="top" x="1196.38" y="562.833" width="43.25" height="14" name="lambda A">
 					<shape type="name_only"/>
 				</aux>
 				<aux x="1482.5" y="803.833" name="N"/>
-				<stock label_side="center" x="909.999" y="897.5" name="Cumulative cases"/>
+				<stock label_side="center" x="909.999" y="897.5" name="C"/>
 				<flow label_side="top" x="843.916" y="900" name="C in">
 					<pts>
 						<pt x="788.333" y="900"/>
@@ -8745,7 +8834,7 @@ ELSE 1</eqn>
 					<to>S_to_R</to>
 				</connector>
 				<aux x="1251" y="1399" name="i"/>
-				<flow color="#E6E6E6" x="960.458" y="550" name="IU to R">
+				<flow color="#E6E6E6" x="960.458" y="550" name="I u to R">
 					<pts>
 						<pt x="897.916" y="550"/>
 						<pt x="1011" y="550"/>
@@ -8754,7 +8843,7 @@ ELSE 1</eqn>
 				</flow>
 				<connector uid="22" angle="274.064">
 					<from>par_gamma</from>
-					<to>IU_to_R</to>
+					<to>I_u_to_R</to>
 				</connector>
 				<connector uid="23" angle="246.64">
 					<from>E</from>
@@ -8775,13 +8864,15 @@ ELSE 1</eqn>
 					<from>detection_rate</from>
 					<to>E_to_PU</to>
 				</connector>
-				<aux label_side="top" x="1151" y="569.833" name="par eta"/>
-				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="875.416" y="543.833" name="IU"/>
+				<aux label_side="top" x="1142.21" y="533.666" width="34.25" height="14" name="par eta">
+					<shape type="name_only"/>
+				</aux>
+				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="875.416" y="543.833" name="I u"/>
 				<connector uid="26" angle="33.4407">
-					<from>IU</from>
-					<to>IU_to_R</to>
+					<from>I_u</from>
+					<to>I_u_to_R</to>
 				</connector>
-				<flow color="#E6E6E6" x="809.875" y="543.833" name="PU to IU">
+				<flow color="#E6E6E6" x="809.875" y="543.833" name="P u to I u">
 					<pts>
 						<pt x="766.833" y="543.833"/>
 						<pt x="852.916" y="543.833"/>
@@ -8789,12 +8880,12 @@ ELSE 1</eqn>
 				</flow>
 				<connector uid="27" angle="274.734">
 					<from>par_nu</from>
-					<to>PU_to_IU</to>
+					<to>P_u_to_I_u</to>
 				</connector>
-				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="744.333" y="543.833" name="PU"/>
+				<stock color="#FC0107" font_color="#FC0107" label_side="center" x="744.333" y="543.833" name="P u"/>
 				<connector uid="28" angle="36.9815">
-					<from>PU</from>
-					<to>PU_to_IU</to>
+					<from>P_u</from>
+					<to>P_u_to_I_u</to>
 				</connector>
 				<connector uid="29" angle="0">
 					<from>
@@ -8821,29 +8912,29 @@ ELSE 1</eqn>
 					<from>par_xi</from>
 					<to>A_to_R</to>
 				</connector>
-				<aux x="1196.75" y="796.833" width="50.25" height="14" name="lambda PU">
+				<aux x="1196.25" y="796.833" width="51.25" height="14" name="lambda P u">
 					<shape type="name_only"/>
 				</aux>
 				<connector uid="36" angle="338.442">
 					<from>
 						<alias uid="37"/>
 					</from>
-					<to>lambda_PU</to>
+					<to>lambda_P_u</to>
 				</connector>
 				<connector uid="38" angle="272.284">
 					<from>
 						<alias uid="39"/>
 					</from>
-					<to>lambda_PU</to>
+					<to>lambda_P_u</to>
 				</connector>
-				<aux label_side="top" x="1195.25" y="670.834" width="47.25" height="14" name="lambda IU">
+				<aux label_side="top" x="1194.75" y="670.834" width="48.25" height="14" name="lambda I u">
 					<shape type="name_only"/>
 				</aux>
 				<connector uid="40" angle="32.1732">
 					<from>
 						<alias uid="37"/>
 					</from>
-					<to>lambda_IU</to>
+					<to>lambda_I_u</to>
 				</connector>
 				<connector uid="41" angle="270.004">
 					<from>
@@ -8867,7 +8958,7 @@ ELSE 1</eqn>
 					<from>
 						<alias uid="47"/>
 					</from>
-					<to>lambda_IU</to>
+					<to>lambda_I_u</to>
 				</connector>
 				<connector uid="48" angle="180">
 					<from>
@@ -8889,7 +8980,7 @@ ELSE 1</eqn>
 				</connector>
 				<aux label_side="right" x="1032" y="897.5" name="Attack rate"/>
 				<connector uid="54" angle="0">
-					<from>Cumulative_cases</from>
+					<from>C</from>
 					<to>Attack_rate</to>
 				</connector>
 				<connector uid="55" angle="90">
@@ -8902,11 +8993,11 @@ ELSE 1</eqn>
 					<from>E</from>
 					<to>E_to_PD</to>
 				</connector>
-				<connector uid="58" angle="273.591">
+				<connector uid="58" angle="319.98">
 					<from>E</from>
 					<to>E_to_PU</to>
 				</connector>
-				<connector uid="59" angle="0">
+				<connector uid="59" angle="333.567">
 					<from>par_eta</from>
 					<to>lambda_A</to>
 				</connector>
@@ -8916,40 +9007,34 @@ ELSE 1</eqn>
 				</connector>
 				<connector uid="61" angle="154.455">
 					<from>N</from>
-					<to>lambda_IU</to>
+					<to>lambda_I_u</to>
 				</connector>
 				<connector uid="62" angle="180">
 					<from>N</from>
-					<to>lambda_PU</to>
+					<to>lambda_P_u</to>
 				</connector>
 				<connector uid="63" angle="277.688">
 					<from>par_sigma</from>
 					<to>E_to_A</to>
 				</connector>
-				<connector uid="64" angle="90.0005">
-					<from>
-						<alias uid="65"/>
-					</from>
-					<to>SQ_to_S</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" x="510.166" y="295" width="18" height="18" name="par alpha"/>
-				<connector uid="66" angle="147.714">
+				<aux font_style="italic" font_weight="bold" x="415.499" y="331.5" name="par alpha"/>
+				<connector uid="66" angle="128.093">
 					<from>par_alpha</from>
-					<to>S_to_II</to>
+					<to>S_to_E_i</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="169" y="362" name="Converter 3"/>
 				<connector uid="67" angle="320.976">
 					<from>Converter_3</from>
 					<to>S_to_SQ</to>
 				</connector>
-				<aux label_side="left" x="1211.75" y="899.5" width="50.25" height="14" name="lambda PD">
+				<aux label_side="left" x="1211.25" y="899.5" width="51.25" height="14" name="lambda P d">
 					<shape type="name_only"/>
 				</aux>
 				<connector uid="68" angle="283.478">
 					<from>
 						<alias uid="69"/>
 					</from>
-					<to>lambda_PD</to>
+					<to>lambda_P_d</to>
 				</connector>
 				<connector uid="70" angle="292.21">
 					<from>
@@ -8959,18 +9044,20 @@ ELSE 1</eqn>
 				</connector>
 				<connector uid="72" angle="202.684">
 					<from>N</from>
-					<to>lambda_PD</to>
+					<to>lambda_P_d</to>
 				</connector>
 				<connector uid="73" angle="312.62">
 					<from>
 						<alias uid="37"/>
 					</from>
-					<to>lambda_PD</to>
+					<to>lambda_P_d</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1304" y="832.25" name="Converter 4"/>
+				<aux font_style="italic" font_weight="bold" x="1245.38" y="825.25" width="117.25" height="14" name="Converter 4">
+					<shape type="name_only"/>
+				</aux>
 				<connector uid="74" angle="227.885">
 					<from>Converter_4</from>
-					<to>lambda_PD</to>
+					<to>lambda_P_d</to>
 				</connector>
 				<connector uid="75" angle="102.644">
 					<from>par_sigma</from>
@@ -8992,24 +9079,24 @@ ELSE 1</eqn>
 					</from>
 					<to>E_to_PD</to>
 				</connector>
-				<aux label_side="bottom" x="1208.38" y="1037" width="47.25" height="14" name="lambda ID">
+				<aux label_side="bottom" x="1207.88" y="1037" width="48.25" height="14" name="lambda I d">
 					<shape type="name_only"/>
 				</aux>
 				<connector uid="81" angle="223.794">
 					<from>N</from>
-					<to>lambda_ID</to>
+					<to>lambda_I_d</to>
 				</connector>
 				<connector uid="82" angle="295.001">
 					<from>
 						<alias uid="37"/>
 					</from>
-					<to>lambda_ID</to>
+					<to>lambda_I_d</to>
 				</connector>
 				<connector uid="83" angle="258.903">
 					<from>
 						<alias uid="84"/>
 					</from>
-					<to>lambda_ID</to>
+					<to>lambda_I_d</to>
 				</connector>
 				<connector uid="85" angle="90.3136">
 					<from>
@@ -9025,7 +9112,7 @@ ELSE 1</eqn>
 					</graph>
 					<graph width="610" height="312" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="PD[*]"/>
+							<entity name="P_d[*]"/>
 						</plot>
 					</graph>
 					<graph width="610" height="312" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
@@ -9033,7 +9120,7 @@ ELSE 1</eqn>
 							<entity name="S_to_R[*]"/>
 						</plot>
 						<plot color="fuchsia" pen_style="dotted" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="S_to_II[*]"/>
+							<entity name="S_to_E_i[*]"/>
 						</plot>
 						<plot color="#FF7F00" isee:keep_zero_visible="true" pen_width="1" index="2" show_y_axis="true">
 							<entity name="E_to_PD[*]"/>
@@ -9061,7 +9148,7 @@ ELSE 1</eqn>
 				<aux x="1316.87" y="1039.67" name="par mu T"/>
 				<connector uid="92" angle="182.921">
 					<from>par_mu_T</from>
-					<to>lambda_ID</to>
+					<to>lambda_I_d</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1532.78" y="890.5" name="Population size"/>
 				<connector uid="94" angle="120.119">
@@ -9149,7 +9236,7 @@ ELSE 1</eqn>
 					<from>P0_b</from>
 					<to>P0</to>
 				</connector>
-				<stock x="431.208" y="655.834" name="Sf"/>
+				<stock label_side="center" x="431.208" y="655.834" name="Sv"/>
 				<flow color="#D6D6D6" font_color="#D6D6D6" x="361.688" y="648.667" name="S to Sf">
 					<pts>
 						<pt x="326.667" y="438"/>
@@ -9165,7 +9252,7 @@ ELSE 1</eqn>
 					</pts>
 				</flow>
 				<connector uid="114" angle="31.0165">
-					<from>Sf</from>
+					<from>Sv</from>
 					<to>Sf_to_E</to>
 				</connector>
 				<connector uid="115" angle="301.344">
@@ -9185,7 +9272,7 @@ ELSE 1</eqn>
 					<from>vaccine_efficacy</from>
 					<to>S_to_R</to>
 				</connector>
-				<connector uid="120" angle="90">
+				<connector uid="120" angle="90.0004">
 					<from>vaccine_efficacy</from>
 					<to>S_to_Sf</to>
 				</connector>
@@ -9207,21 +9294,129 @@ ELSE 1</eqn>
 						</plot>
 					</graph>
 				</stacked_container>
-				<alias font_style="italic" label_side="bottom" uid="6" x="832.187" y="203" width="51.25" height="14">
+				<connector uid="123" angle="28.1931">
+					<from>
+						<alias uid="124"/>
+					</from>
+					<to>C_in</to>
+				</connector>
+				<connector uid="125" angle="246.516">
+					<from>
+						<alias uid="126"/>
+					</from>
+					<to>C_in</to>
+				</connector>
+				<stock label_side="center" x="458" y="272.501" name="E i"/>
+				<flow color="silver" font_color="silver" label_side="bottom" x="558.062" y="272.501" name="E i to I i">
+					<pts>
+						<pt x="480.5" y="272.501"/>
+						<pt x="635.624" y="272.501"/>
+					</pts>
+				</flow>
+				<connector uid="127" angle="29.2307">
+					<from>E_i</from>
+					<to>E_i_to_I_i</to>
+				</connector>
+				<connector uid="128" angle="224.275">
+					<from>
+						<alias uid="129"/>
+					</from>
+					<to>E_i_to_I_i</to>
+				</connector>
+				<aux x="1195.38" y="410.75" width="45.25" height="14" name="lambda I i">
 					<shape type="name_only"/>
-					<of>par_gamma</of>
-				</alias>
+				</aux>
+				<connector uid="130" angle="281.18">
+					<from>
+						<alias uid="131"/>
+					</from>
+					<to>lambda_I_i</to>
+				</connector>
+				<connector uid="132" angle="121.11">
+					<from>N</from>
+					<to>lambda_I_i</to>
+				</connector>
+				<connector uid="134" angle="144.689">
+					<from>
+						<alias uid="135"/>
+					</from>
+					<to>lambda</to>
+				</connector>
+				<aux x="1077.04" y="510.333" width="49.25" height="14" name="I i contacts">
+					<shape type="name_only"/>
+				</aux>
+				<connector uid="137" angle="88.874">
+					<from>
+						<alias uid="37"/>
+					</from>
+					<to>I_i_contacts</to>
+				</connector>
+				<connector uid="138" angle="40.564">
+					<from>I_i_contacts</from>
+					<to>lambda_I_i</to>
+				</connector>
+				<connector uid="139" angle="270">
+					<from>
+						<alias uid="140"/>
+					</from>
+					<to>I_i_contacts</to>
+				</connector>
+				<connector uid="141" angle="159.732">
+					<from>par_eta</from>
+					<to>I_i_contacts</to>
+				</connector>
+				<connector uid="142" angle="64.5367">
+					<from>
+						<alias uid="143"/>
+					</from>
+					<to>I_i_contacts</to>
+				</connector>
+				<connector uid="144" angle="47.3533">
+					<from>
+						<alias uid="145"/>
+					</from>
+					<to>SQ_to_S</to>
+				</connector>
+				<connector uid="146" angle="152.637">
+					<from>
+						<alias uid="147"/>
+					</from>
+					<to>SQ_to_S</to>
+				</connector>
+				<connector uid="148" angle="131.566">
+					<from>
+						<alias uid="149"/>
+					</from>
+					<to>i</to>
+				</connector>
+				<connector uid="150" angle="67.6519">
+					<from>
+						<alias uid="151"/>
+					</from>
+					<to>i</to>
+				</connector>
+				<connector uid="154" angle="216.299">
+					<from>
+						<alias uid="155"/>
+					</from>
+					<to>I_i_to_R</to>
+				</connector>
+				<aux x="909.999" y="971.667" name="Cumulative cases"/>
+				<connector uid="156" angle="270">
+					<from>C</from>
+					<to>Cumulative_cases</to>
+				</connector>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="69" x="1206.83" y="826.5" width="28.3333" height="27.5">
-					<of>PD</of>
+					<of>P_d</of>
 				</alias>
 				<alias font_style="italic" uid="19" x="846" y="1021" width="18" height="18">
 					<of>N</of>
 				</alias>
 				<alias color="blue" font_style="italic" label_side="center" uid="30" x="1154.67" y="1381.5" width="45" height="35">
-					<of>ID</of>
+					<of>I_d</of>
 				</alias>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="32" x="1228.5" y="1322.17" width="45" height="35">
-					<of>IU</of>
+					<of>I_u</of>
 				</alias>
 				<alias font_style="italic" uid="34" x="1307.87" y="1390" width="18" height="18">
 					<of>N</of>
@@ -9231,7 +9426,7 @@ ELSE 1</eqn>
 					<of>beta_contacts</of>
 				</alias>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="39" x="1201.67" y="724.5" width="35" height="23">
-					<of>PU</of>
+					<of>P_u</of>
 				</alias>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="42" x="1202.5" y="490.333" width="31" height="26">
 					<of>A</of>
@@ -9240,16 +9435,16 @@ ELSE 1</eqn>
 					<shape type="name_only"/>
 					<of>lambda_A</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="49" x="445.687" y="492" width="47.25" height="14">
+				<alias color="blue" background="white" font_style="italic" uid="49" x="445.187" y="492" width="48.25" height="14">
 					<shape type="name_only"/>
-					<of>lambda_IU</of>
+					<of>lambda_I_u</of>
 				</alias>
 				<alias color="#FC0107" font_style="italic" font_color="#FC0107" label_side="center" uid="47" x="1205.5" y="604" width="25" height="22">
-					<of>IU</of>
+					<of>I_u</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="51" x="453.708" y="527" width="50.25" height="14">
+				<alias color="blue" background="white" font_style="italic" uid="51" x="453.208" y="527" width="51.25" height="14">
 					<shape type="name_only"/>
-					<of>lambda_PU</of>
+					<of>lambda_P_u</of>
 				</alias>
 				<alias color="#CCCCCC" font_style="italic" uid="53" x="785" y="830" width="18" height="18">
 					<of>S_to_E</of>
@@ -9257,13 +9452,9 @@ ELSE 1</eqn>
 				<alias font_style="italic" label_side="center" uid="56" x="1023" y="984" width="18" height="18">
 					<of>N</of>
 				</alias>
-				<alias font_style="italic" uid="65" x="213.792" y="483" width="28.25" height="14">
+				<alias font_style="italic" uid="71" x="355.749" y="444.75" width="51.25" height="14">
 					<shape type="name_only"/>
-					<of>par_xi</of>
-				</alias>
-				<alias font_style="italic" uid="71" x="356.249" y="444.75" width="50.25" height="14">
-					<shape type="name_only"/>
-					<of>lambda_PD</of>
+					<of>lambda_P_d</of>
 				</alias>
 				<alias font_style="italic" uid="78" x="579.375" y="360" width="45.25" height="14">
 					<shape type="name_only"/>
@@ -9274,14 +9465,57 @@ ELSE 1</eqn>
 					<of>par_omega</of>
 				</alias>
 				<alias color="#FF2600" font_style="italic" font_color="#FF2600" label_side="center" uid="84" x="1230.5" y="951.5" width="34" height="27">
-					<of>ID</of>
+					<of>I_d</of>
 				</alias>
-				<alias font_style="italic" uid="86" x="377.374" y="552.833" width="47.25" height="14">
+				<alias font_style="italic" uid="86" x="376.874" y="552.833" width="48.25" height="14">
 					<shape type="name_only"/>
-					<of>lambda_ID</of>
+					<of>lambda_I_d</of>
 				</alias>
 				<alias font_style="italic" uid="97" x="260.167" y="1159.33" width="18" height="18">
 					<of>C_in</of>
+				</alias>
+				<alias color="#D6D6D6" font_style="italic" font_color="#D6D6D6" uid="124" x="760.916" y="930.667" width="18" height="18">
+					<of>Sf_to_E</of>
+				</alias>
+				<alias color="#CCCCCC" font_style="italic" uid="126" x="866.416" y="818.5" width="18" height="18">
+					<of>S_to_E_i</of>
+				</alias>
+				<alias font_style="italic" uid="129" x="573.208" y="227.167" width="45.25" height="14">
+					<shape type="name_only"/>
+					<of>par_sigma</of>
+				</alias>
+				<alias color="#FF2600" font_style="italic" font_color="#FF2600" label_side="center" uid="131" x="1195.5" y="334.167" width="35" height="25.8333">
+					<of>I_i</of>
+				</alias>
+				<alias font_style="italic" uid="135" x="452.375" y="559.667" width="45.25" height="14">
+					<shape type="name_only"/>
+					<of>lambda_I_i</of>
+				</alias>
+				<alias font_style="italic" uid="140" x="1077.04" y="444.75" width="49.25" height="14">
+					<shape type="name_only"/>
+					<of>par_omega</of>
+				</alias>
+				<alias font_style="italic" uid="143" x="1060.17" y="561" width="18" height="18">
+					<of>par_mu_T</of>
+				</alias>
+				<alias font_style="italic" uid="145" x="148.208" y="498" width="45.25" height="14">
+					<shape type="name_only"/>
+					<of>par_sigma</of>
+				</alias>
+				<alias font_style="italic" uid="147" x="254.208" y="449.667" width="28.25" height="14">
+					<shape type="name_only"/>
+					<of>par_xi</of>
+				</alias>
+				<alias color="#FF2600" font_style="italic" font_color="#FF2600" label_side="center" uid="149" x="1282.5" y="1440.83" width="45" height="35">
+					<of>I_i</of>
+				</alias>
+				<alias font_style="italic" uid="151" x="1196.13" y="1454.67" width="49.25" height="14">
+					<shape type="name_only"/>
+					<of>par_omega</of>
+				</alias>
+				<alias font_style="italic" uid="155" x="895.874" y="227.167" width="28.25" height="14">
+					<shape type="name_only"/>
+					<of>par_xi</of>
 				</alias>
 			</view>
 		</views>
@@ -10895,16 +11129,9 @@ ELSE 1</eqn>
 				<eqn>delta_total_ICU_deaths // baseline_total_ICU_deaths * 100</eqn>
 				<units>dmnl</units>
 			</aux>
-			<stock name="Total cases" access="input">
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>People</units>
-			</stock>
 			<aux name="total actual cases">
 				<doc>Total actual cases in all age groups</doc>
-				<eqn>SUM(Total_cases)</eqn>
+				<eqn>Converter_2[d]</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="ward nurse absenteeism rate" access="input">
@@ -11230,6 +11457,12 @@ ELSE 1</eqn>
 				</dimensions>
 				<units>Dimensionless</units>
 			</aux>
+			<aux name="Converter 2" access="input">
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+				<units>People</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -11277,7 +11510,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="1353" isee:scroll_y="847" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13319,12 +13552,7 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					</from>
 					<to>current_total_ICU_deaths</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="2263.33" y="1379.64" width="121" height="31" name="Total cases"/>
 				<aux label_side="right" label_angle="45" x="2442.34" y="1426" name="total actual cases"/>
-				<connector uid="638" angle="7.42173">
-					<from>Total_cases</from>
-					<to>total_actual_cases</to>
-				</connector>
 				<connector uid="639" angle="223.938">
 					<from>total_actual_cases</from>
 					<to>baseline_actual_cases</to>
@@ -13639,6 +13867,11 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 				<connector uid="715" angle="197.343">
 					<from>Converter_1</from>
 					<to>Attack_rate</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="2345.05" y="1392.63" name="Converter 2"/>
+				<connector uid="716" angle="336.169">
+					<from>Converter_2</from>
+					<to>total_actual_cases</to>
 				</connector>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" label_side="top" uid="88" x="1309.11" y="223" width="18" height="18">
 					<of>patients_per_ward_bed</of>
@@ -16946,6 +17179,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Tracing.contact_tracing_effectiveness" from="Inputs_Epi.contact_tracing_effectiveness"/>
 				<connect to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
 				<connect2 to='Tracing."contact_tracing_long-term_capacity"' from='Inputs_Epi."contact_tracing_long-term_capacity"'/>
+				<connect to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
+				<connect2 to="Mobility.Converter_5" from="Inputs_Epi.duration_school_closures"/>
 				<connect to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect2 to="Tracing.initial_contact_tracing_capacity" from="Inputs_Epi.initial_contact_tracing_capacity"/>
 				<connect to='"Within-host_profile".P0_b' from="Inputs_Epi.initial_infected"/>
@@ -17850,13 +18085,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="start school closures" access="output">
 				<doc>Day at which school &amp; educational settings are closed.</doc>
-				<eqn>0</eqn>
+				<eqn>10</eqn>
 				<units>Days</units>
 			</aux>
 			<aux name="initial infected" access="output">
 				<doc>Number of infected people at the start of the pandemic.</doc>
 				<eqn>1</eqn>
 				<units>People</units>
+			</aux>
+			<aux name="duration school closures" access="output">
+				<eqn>30</eqn>
 			</aux>
 		</variables>
 		<views>
@@ -17905,7 +18143,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:scroll_x="186.364" isee:scroll_y="2.27273" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17962,7 +18200,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux x="195.193" y="203.125" name="testing capacity growth rate"/>
 				<aux x="195.193" y="346.25" name="testing availability"/>
 				<aux x="648.659" y="128.75" name="mobility restriction start time"/>
-				<aux label_side="bottom" x="85.625" y="70" name="switch mask wearing"/>
+				<aux label_side="right" x="85.625" y="70" name="switch mask wearing"/>
 				<aux x="85.625" y="129.375" name="mask wearing effect"/>
 				<aux x="85.625" y="203.125" name="Probability of infection"/>
 				<aux x="648.659" y="196.136" name="mobility budget"/>
@@ -17972,6 +18210,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux x="311.557" y="129.375" name="isolation start"/>
 				<aux x="764.739" y="128.75" name="start school closures"/>
 				<aux x="85.625" y="23.6364" name="initial infected"/>
+				<aux x="764.739" y="196.136" name="duration school closures"/>
 			</view>
 		</views>
 	</model>
@@ -19362,7 +19601,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			<aux name="Cumulative cases" access="input">
 				<doc>Cumulative number of infected individuals (actual cases)</doc>
 				<dimensions>
-					<dim name="Age"/>
+					<dim name="Age_out"/>
 				</dimensions>
 				<units>People</units>
 			</aux>
@@ -19528,14 +19767,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>People/day</units>
 			</aux>
-			<stock name="Cumulative confirmed cases" access="input">
-				<doc>Cumulative confirmed cases by age group</doc>
-				<dimensions>
-					<dim name="Age"/>
-				</dimensions>
-				<eqn>0</eqn>
-				<units>People</units>
-			</stock>
 			<aux name="Vaccination" access="input">
 				<doc>Vaccination rate</doc>
 				<dimensions>
@@ -19569,6 +19800,11 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<non_negative/>
 				<units>Patients</units>
 			</stock>
+			<aux name="Cumulative confirmed cases" access="input">
+				<dimensions>
+					<dim name="Age_out"/>
+				</dimensions>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -19616,7 +19852,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="6" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19702,6 +19938,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name='"Within-host_profile".Cumulative_cases[c]'/>
 						</item>
 						<item>
+							<entity name='"Within-host_profile".Cumulative_cases[d]'/>
+						</item>
+						<item>
 							<entity name="Testing.Confirmed_cases[a]"/>
 						</item>
 						<item>
@@ -19712,15 +19951,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name="Testing.Confirmed_cases[d]"/>
-						</item>
-						<item>
-							<entity name="Testing.Cumulative_confirmed_cases[a]"/>
-						</item>
-						<item>
-							<entity name="Testing.Cumulative_confirmed_cases[b]"/>
-						</item>
-						<item>
-							<entity name="Testing.Cumulative_confirmed_cases[c]"/>
 						</item>
 						<item>
 							<entity name="Hospital.total_in_hospital[a]"/>
@@ -20229,6 +20459,18 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						<item>
 							<entity name="Vaccines.Cumulative_vaccination[d]"/>
 						</item>
+						<item>
+							<entity name="Testing.Cumulative_confirmed_cases[a]"/>
+						</item>
+						<item>
+							<entity name="Testing.Cumulative_confirmed_cases[b]"/>
+						</item>
+						<item>
+							<entity name="Testing.Cumulative_confirmed_cases[c]"/>
+						</item>
+						<item>
+							<entity name="Testing.Cumulative_confirmed_cases[d]"/>
+						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
@@ -20478,12 +20720,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux font_style="italic" font_weight="bold" x="397.025" y="1139.81" name="absent physicians"/>
 				<aux font_style="italic" font_weight="bold" x="1496.9" y="293.334" name="need ward bed"/>
 				<aux font_style="italic" font_weight="bold" x="287.857" y="296.429" name="hospital admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="270.214" y="191.19" width="117.857" height="31.4286" name="Cumulative confirmed cases"/>
 				<aux font_style="italic" font_weight="bold" x="611.429" y="203.571" name="Vaccination"/>
 				<aux font_style="italic" font_weight="bold" x="190" y="141.429" name="Attack rate"/>
 				<aux font_style="italic" font_weight="bold" x="472.143" y="200" name="Cumulative vaccination"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="341.072" y="857.621" width="134.286" height="28.5714" name="Patients In ICU Bed"/>
 				<text_box text_align="center" font_size="10pt" uid="153" x="326.071" y="904.993" width="164.286" height="38.961">Patients occupying an ICU bed (by age group)</text_box>
+				<aux font_style="italic" font_weight="bold" x="320.59" y="200.833" name="Cumulative confirmed cases"/>
 			</view>
 		</views>
 	</model>

@@ -27,7 +27,8 @@ Inputs_Epi.vaccine_efficacy	0.75
 Inputs_Epi.contact_tracing_effectiveness	0.5
 Inputs_Epi.mobility_restriction_severity	0
 Inputs_Epi.mobility_budget	120
-Inputs_Epi.start_school_closures	0
+Inputs_Epi.start_school_closures	10
+Inputs_Epi.duration_school_closures	30
 Inputs_Data.Population_size[a]	20364956
 Inputs_Data.Population_size[b]	25939296
 Inputs_Data.Population_size[c]	37479693
