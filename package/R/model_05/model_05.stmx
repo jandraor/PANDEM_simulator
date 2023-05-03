@@ -9,7 +9,7 @@
 	</header>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
-		<stop>270</stop>
+		<stop>275</stop>
 		<dt reciprocal="true">32</dt>
 	</sim_specs>
 	<dimensions>
@@ -17,23 +17,32 @@
 			<elem name="a"/>
 			<elem name="b"/>
 			<elem name="c"/>
+			<elem name="d"/>
 		</dim>
 		<dim name="Age_out">
 			<elem name="a"/>
 			<elem name="b"/>
 			<elem name="c"/>
 			<elem name="d"/>
+			<elem name="e"/>
 		</dim>
 		<dim name="Contacts">
 			<elem name="aa"/>
 			<elem name="ab"/>
 			<elem name="ac"/>
+			<elem name="ad"/>
 			<elem name="ba"/>
 			<elem name="bb"/>
 			<elem name="bc"/>
+			<elem name="bd"/>
 			<elem name="ca"/>
 			<elem name="cb"/>
 			<elem name="cc"/>
+			<elem name="cd"/>
+			<elem name="da"/>
+			<elem name="db"/>
+			<elem name="dc"/>
+			<elem name="dd"/>
 		</dim>
 	</dimensions>
 	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="1" keep="false" rifp="true"/>
@@ -1086,7 +1095,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6196,7 +6205,7 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6346,14 +6355,20 @@ ELSE 0</eqn>
 				<element subscript="ac">
 					<eqn>Converter_1[ac]</eqn>
 				</element>
+				<element subscript="ad">
+					<eqn>Converter_1[ad]</eqn>
+				</element>
 				<element subscript="ba">
 					<eqn>Converter_1[ba]</eqn>
 				</element>
 				<element subscript="bb">
-					<eqn>Converter_1[bb]</eqn>
+					<eqn>Converter_1[bb] * effect_school_closures</eqn>
 				</element>
 				<element subscript="bc">
 					<eqn>Converter_1[bc]</eqn>
+				</element>
+				<element subscript="bd">
+					<eqn>Converter_1[bd]</eqn>
 				</element>
 				<element subscript="ca">
 					<eqn>Converter_1[ca]</eqn>
@@ -6363,6 +6378,21 @@ ELSE 0</eqn>
 				</element>
 				<element subscript="cc">
 					<eqn>Converter_1[cc]</eqn>
+				</element>
+				<element subscript="cd">
+					<eqn>Converter_1[cd]</eqn>
+				</element>
+				<element subscript="da">
+					<eqn>Converter_1[da]</eqn>
+				</element>
+				<element subscript="db">
+					<eqn>Converter_1[db]</eqn>
+				</element>
+				<element subscript="dc">
+					<eqn>Converter_1[dc]</eqn>
+				</element>
+				<element subscript="dd">
+					<eqn>Converter_1[dd]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -6805,6 +6835,9 @@ ELSE 0</eqn>
 					<eqn>immediate_testing[c] + decrease_backlog[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>immediate_testing[d] + decrease_backlog[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(immediate_testing) + SUM(decrease_backlog)</eqn>
 				</element>
 				<units>people/day</units>
@@ -6831,6 +6864,9 @@ ELSE 0</eqn>
 				<element subscript="c">
 					<eqn>Confirmed_cases[c]</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>Confirmed_cases[d]</eqn>
+				</element>
 				<units>People/day</units>
 			</flow>
 			<aux name="Cumulative confirmed cases" access="output">
@@ -6847,6 +6883,9 @@ ELSE 0</eqn>
 					<eqn>CC[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>CC[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(CC)</eqn>
 				</element>
 			</aux>
@@ -7161,13 +7200,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn> (effective_contacts[aa]  + effective_contacts[ab] + effective_contacts[ac]) / Converter_1[a]</eqn>
+					<eqn> (effective_contacts[aa]  + effective_contacts[ab] + effective_contacts[ac] + effective_contacts[ad]) / Converter_1[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn> (effective_contacts[ba]  + effective_contacts[bb] + effective_contacts[bc]) / Converter_1[b]</eqn>
+					<eqn> (effective_contacts[ba]  + effective_contacts[bb] + effective_contacts[bc] + effective_contacts[bd]) / Converter_1[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn> (effective_contacts[ca]  + effective_contacts[cb] + effective_contacts[cc]) / Converter_1[c]</eqn>
+					<eqn> (effective_contacts[ca]  + effective_contacts[cb] + effective_contacts[cc] + effective_contacts[cd]) / Converter_1[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn> (effective_contacts[da]  + effective_contacts[db] + effective_contacts[dc] + effective_contacts[dd]) / Converter_1[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -7177,13 +7219,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(1 - Converter_2) * (traced_contacts[aa]  + traced_contacts[ab] + traced_contacts[ac]) / Converter_1[a]</eqn>
+					<eqn>(1 - Converter_2) * (traced_contacts[aa]  + traced_contacts[ab] + traced_contacts[ac] + traced_contacts[ad]) / Converter_1[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(1 - Converter_2) * (traced_contacts[ba]  + traced_contacts[bb] + traced_contacts[bc]) / Converter_1[b]</eqn>
+					<eqn>(1 - Converter_2) * (traced_contacts[ba]  + traced_contacts[bb] + traced_contacts[bc] +  traced_contacts[bd]) / Converter_1[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(1 - Converter_2) * (traced_contacts[ca]  + traced_contacts[cb] + traced_contacts[cc]) / Converter_1[c]</eqn>
+					<eqn>(1 - Converter_2) * (traced_contacts[ca]  + traced_contacts[cb] + traced_contacts[cc] + traced_contacts[cd]) / Converter_1[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>(1 - Converter_2) * (traced_contacts[da]  + traced_contacts[db] + traced_contacts[dc] + traced_contacts[dd]) / Converter_1[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -7226,6 +7271,9 @@ ELSE 0</eqn>
 				<element subscript="ac">
 					<eqn>Converter_3[ac] * Converter_4[c]</eqn>
 				</element>
+				<element subscript="ad">
+					<eqn>Converter_3[ad] * Converter_4[d]</eqn>
+				</element>
 				<element subscript="ba">
 					<eqn>Converter_3[ba] * Converter_4[a]</eqn>
 				</element>
@@ -7235,6 +7283,9 @@ ELSE 0</eqn>
 				<element subscript="bc">
 					<eqn>Converter_3[bc] * Converter_4[c]</eqn>
 				</element>
+				<element subscript="bd">
+					<eqn>Converter_3[bd] * Converter_4[d]</eqn>
+				</element>
 				<element subscript="ca">
 					<eqn>Converter_3[ca] * Converter_4[a]</eqn>
 				</element>
@@ -7243,6 +7294,21 @@ ELSE 0</eqn>
 				</element>
 				<element subscript="cc">
 					<eqn>Converter_3[cc] * Converter_4[c]</eqn>
+				</element>
+				<element subscript="cd">
+					<eqn>Converter_3[cd] * Converter_4[d]</eqn>
+				</element>
+				<element subscript="da">
+					<eqn>Converter_3[da] * Converter_4[a]</eqn>
+				</element>
+				<element subscript="db">
+					<eqn>Converter_3[db] * Converter_4[b]</eqn>
+				</element>
+				<element subscript="dc">
+					<eqn>Converter_3[dc] * Converter_4[c]</eqn>
+				</element>
+				<element subscript="dd">
+					<eqn>Converter_3[dd] * Converter_4[d]</eqn>
 				</element>
 				<units>People/day</units>
 			</aux>
@@ -7259,7 +7325,7 @@ ELSE 0</eqn>
 				<dimensions>
 					<dim name="Contacts"/>
 				</dimensions>
-				<eqn>1/9</eqn>
+				<eqn>1/16</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="effective contacts" access="output">
@@ -7421,7 +7487,7 @@ ELSE 0</eqn>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<aux x="581.375" y="505.167" width="43.25" height="14" name="par alpha">
+				<aux x="531.541" y="569.167" width="43.25" height="14" name="par alpha">
 					<shape type="name_only"/>
 				</aux>
 				<aux label_side="left" label_angle="225" x="387.708" y="469" width="34.25" height="14" name="par rho">
@@ -7464,7 +7530,7 @@ ELSE 0</eqn>
 					<to>par_rho</to>
 				</connector>
 				<aux label_side="right" x="553.166" y="458" name="effective contacts"/>
-				<connector uid="7" angle="312.614">
+				<connector uid="7" angle="270">
 					<from>effective_contacts</from>
 					<to>par_alpha</to>
 				</connector>
@@ -7472,12 +7538,12 @@ ELSE 0</eqn>
 					<from>traced_contacts</from>
 					<to>effective_contacts</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="455" y="576.167" name="Converter 1"/>
-				<connector uid="9" angle="23.3852">
+				<aux font_style="italic" font_weight="bold" x="414" y="573.167" name="Converter 1"/>
+				<connector uid="9" angle="358.765">
 					<from>Converter_1</from>
 					<to>par_alpha</to>
 				</connector>
-				<connector uid="10" angle="116.603">
+				<connector uid="10" angle="95.3895">
 					<from>Converter_1</from>
 					<to>par_rho</to>
 				</connector>
@@ -7680,6 +7746,9 @@ ELSE 0</eqn>
 					<eqn>actual_vaccination[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>actual_vaccination[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(actual_vaccination)</eqn>
 				</element>
 				<units>People/day</units>
@@ -7699,6 +7768,9 @@ ELSE 0</eqn>
 					<eqn>CV[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>CV[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(CV)</eqn>
 				</element>
 				<units>People</units>
@@ -8079,13 +8151,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>par_eta * (beta_contacts[aa] * A[a] + beta_contacts[ab] * A[b] + beta_contacts[ac] * A[c]) / N[a]</eqn>
+					<eqn>par_eta * (beta_contacts[aa] * A[a] + beta_contacts[ab] * A[b] + beta_contacts[ac] * A[c] + beta_contacts[ad] * A[d]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>par_eta * (beta_contacts[ba] * A[a] + beta_contacts[bb] * A[b] + beta_contacts[bc] * A[c]) / N[b]</eqn>
+					<eqn>par_eta * (beta_contacts[ba] * A[a] + beta_contacts[bb] * A[b] + beta_contacts[bc] * A[c] + beta_contacts[bd] * A[d]  ) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>par_eta * (beta_contacts[ca] * A[a] + beta_contacts[cb] * A[b] + beta_contacts[cc] * A[c]) / N[c]</eqn>
+					<eqn>par_eta * (beta_contacts[ca] * A[a] + beta_contacts[cb] * A[b] + beta_contacts[cc] * A[c] + beta_contacts[cd] * A[d]) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>par_eta * (beta_contacts[da] * A[a] + beta_contacts[db] * A[b] + beta_contacts[dc] * A[c] + beta_contacts[dd] * A[d]) / N[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8168,12 +8243,15 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>1</eqn>
+					<eqn>0</eqn>
 				</element>
 				<element subscript="b">
 					<eqn>0</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>0</eqn>
 				</element>
 				<inflow>C_in</inflow>
@@ -8298,13 +8376,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(beta_contacts[aa] * P_u[a] + beta_contacts[ab] * P_u[b] + beta_contacts[ac] * P_u[c]) / N[a]</eqn>
+					<eqn>(beta_contacts[aa] * P_u[a] + beta_contacts[ab] * P_u[b] + beta_contacts[ac] * P_u[c] + beta_contacts[ad] * P_u[d]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(beta_contacts[ba] * P_u[a] + beta_contacts[bb] * P_u[b] + beta_contacts[bc] * P_u[c]) / N[b]</eqn>
+					<eqn>(beta_contacts[ba] * P_u[a] + beta_contacts[bb] * P_u[b] + beta_contacts[bc] * P_u[c] + beta_contacts[bd] * P_u[d] ) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(beta_contacts[ca] * P_u[a] + beta_contacts[cb] * P_u[b] + beta_contacts[cc] * P_u[c]) / N[c]</eqn>
+					<eqn>(beta_contacts[ca] * P_u[a] + beta_contacts[cb] * P_u[b] + beta_contacts[cc] * P_u[c] + beta_contacts[cd] * P_u[d]) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>(beta_contacts[da] * P_u[a] + beta_contacts[db] * P_u[b] + beta_contacts[dc] * P_u[c] + beta_contacts[dd] * P_u[d]) / N[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8314,13 +8395,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(beta_contacts[aa] * I_u[a] + beta_contacts[ab] * I_u[b]  + beta_contacts[ac] * I_u[c]) / N[a]</eqn>
+					<eqn>(beta_contacts[aa] * I_u[a] + beta_contacts[ab] * I_u[b]  + beta_contacts[ac] * I_u[c] + beta_contacts[ad] * I_u[d]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(beta_contacts[ba] * I_u[a] + beta_contacts[bb] * I_u[b]  + beta_contacts[bc] * I_u[c]) / N[b]</eqn>
+					<eqn>(beta_contacts[ba] * I_u[a] + beta_contacts[bb] * I_u[b]  + beta_contacts[bc] * I_u[c] + beta_contacts[bd] * I_u[d]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(beta_contacts[ca] * I_u[a] + beta_contacts[cb] * I_u[b]  + beta_contacts[cc] * I_u[c]) / N[c]</eqn>
+					<eqn>(beta_contacts[ca] * I_u[a] + beta_contacts[cb] * I_u[b]  + beta_contacts[cc] * I_u[c] + beta_contacts[cd] * I_u[d]) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>(beta_contacts[da] * I_u[a] + beta_contacts[db] * I_u[b]  + beta_contacts[dc] * I_u[c] + beta_contacts[dd] * I_u[d]) / N[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8339,6 +8423,9 @@ ELSE 0</eqn>
 					<eqn>C[c] / N[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>C[d] / N[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(C) / SUM(N)</eqn>
 				</element>
 				<units>Dimensionless</units>
@@ -8361,13 +8448,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>((beta_contacts[aa] * P_d[a] - Converter_4[aa]) + (beta_contacts[ab] * P_d[b] - Converter_4[ab]) + (beta_contacts[ac] * P_d[c] - Converter_4[ac])) / N[a]</eqn>
+					<eqn>( (beta_contacts[aa] * P_d[a] - Converter_4[aa]) + (beta_contacts[ab] * P_d[b] - Converter_4[ab]) + (beta_contacts[ac] * P_d[c] - Converter_4[ac]) + (beta_contacts[ad] * P_d[a] - Converter_4[ad])) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>((beta_contacts[ba] * P_d[a] - Converter_4[ba]) + (beta_contacts[bb] * P_d[b] - Converter_4[bb]) + (beta_contacts[bc] * P_d[c] - Converter_4[bc])) / N[b]</eqn>
+					<eqn>((beta_contacts[ba] * P_d[a] - Converter_4[ba]) + (beta_contacts[bb] * P_d[b] - Converter_4[bb]) + (beta_contacts[bc] * P_d[c] - Converter_4[bc]) + (beta_contacts[bd] * P_d[d] - Converter_4[bd])) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>((beta_contacts[ca] * P_d[a] - Converter_4[ca]) + (beta_contacts[cb] * P_d[b] - Converter_4[cb]) + (beta_contacts[cc] * P_d[c] - Converter_4[cc])) / N[c]</eqn>
+					<eqn>((beta_contacts[ca] * P_d[a] - Converter_4[ca]) + (beta_contacts[cb] * P_d[b] - Converter_4[cb]) + (beta_contacts[cc] * P_d[c] - Converter_4[cc]) + (beta_contacts[cd] * P_d[d] - Converter_4[cd])) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>((beta_contacts[da] * P_d[a] - Converter_4[da]) + (beta_contacts[db] * P_d[b] - Converter_4[db]) + (beta_contacts[dc] * P_d[c] - Converter_4[dc]) + (beta_contacts[dd] * P_d[d] - Converter_4[dd])) / N[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8383,13 +8473,16 @@ ELSE 0</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>par_mu_T * (beta_contacts[aa] * I_d[a] + beta_contacts[ab] * I_d[b] + beta_contacts[ac] * I_d[c]) / N[a]</eqn>
+					<eqn>par_mu_T * (beta_contacts[aa] * I_d[a] + beta_contacts[ab] * I_d[b] + beta_contacts[ac] * I_d[c] + beta_contacts[ad] * I_d[d]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>par_mu_T * (beta_contacts[ba] * I_d[a] + beta_contacts[bb] * I_d[b] + beta_contacts[bc] * I_d[c]) / N[b]</eqn>
+					<eqn>par_mu_T * (beta_contacts[ba] * I_d[a] + beta_contacts[bb] * I_d[b] + beta_contacts[bc] * I_d[c] + beta_contacts[bd] * I_d[d]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>par_mu_T * (beta_contacts[ca] * I_d[a] + beta_contacts[cb] * I_d[b] + beta_contacts[cc] * I_d[c]) / N[c]</eqn>
+					<eqn>par_mu_T * (beta_contacts[ca] * I_d[a] + beta_contacts[cb] * I_d[b] + beta_contacts[cc] * I_d[c] + beta_contacts[cd] * I_d[d]) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>par_mu_T * (beta_contacts[da] * I_d[a] + beta_contacts[db] * I_d[b] + beta_contacts[dc] * I_d[c] + beta_contacts[dd] * I_d[d]) / N[d]</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -8428,7 +8521,10 @@ ELSE 1</eqn>
 					<eqn>C_in[c]</eqn>
 				</element>
 				<element subscript="d">
-					<eqn>C_in[a] + C_in[b] +C_in[c]</eqn>
+					<eqn>C_in[d]</eqn>
+				</element>
+				<element subscript="e">
+					<eqn>C_in[a] + C_in[b] +C_in[c] + C_in[d]</eqn>
 				</element>
 				<units>People/day</units>
 			</aux>
@@ -8473,6 +8569,9 @@ ELSE 1</eqn>
 					<eqn>P0_b</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>0</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>0</eqn>
 				</element>
 				<units>People</units>
@@ -8529,13 +8628,16 @@ ELSE 1</eqn>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>(I_i_contacts[aa] * I_i[a] + I_i_contacts[ab] * I_i[b] + I_i_contacts[ac] * I_i[c]) / N[a]</eqn>
+					<eqn>(I_i_contacts[aa] * I_i[a] + I_i_contacts[ab] * I_i[b] + I_i_contacts[ac] * I_i[c] + I_i_contacts[ad] * I_i[d]) / N[a]</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>(I_i_contacts[ba] * I_i[a] + I_i_contacts[bb] * I_i[b] + I_i_contacts[bc] * I_i[c]) / N[b]</eqn>
+					<eqn>(I_i_contacts[ba] * I_i[a] + I_i_contacts[bb] * I_i[b] + I_i_contacts[bc] * I_i[c] + I_i_contacts[bd] * I_i[d]) / N[b]</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>(I_i_contacts[ca] * I_i[a] + I_i_contacts[cb] * I_i[b] + I_i_contacts[cc] * I_i[c]) / N[c]</eqn>
+					<eqn>(I_i_contacts[ca] * I_i[a] + I_i_contacts[cb] * I_i[b] + I_i_contacts[cc] * I_i[c] + I_i_contacts[cd] * I_i[d]) / N[c]</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>(I_i_contacts[da] * I_i[a] + I_i_contacts[db] * I_i[b] + I_i_contacts[dc] * I_i[c] + I_i_contacts[dd] * I_i[d]) / N[d]</eqn>
 				</element>
 			</aux>
 			<aux name="I i contacts">
@@ -8559,6 +8661,9 @@ ELSE 1</eqn>
 					<eqn>C[c]</eqn>
 				</element>
 				<element subscript="d">
+					<eqn>C[d]</eqn>
+				</element>
+				<element subscript="e">
 					<eqn>SUM(C)</eqn>
 				</element>
 				<units>People</units>
@@ -8610,7 +8715,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="847.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8997,7 +9102,7 @@ ELSE 1</eqn>
 					<from>E</from>
 					<to>E_to_PU</to>
 				</connector>
-				<connector uid="59" angle="333.567">
+				<connector uid="59" angle="333.566">
 					<from>par_eta</from>
 					<to>lambda_A</to>
 				</connector>
@@ -17519,7 +17624,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Inputs_Data.Age_specific_contact_rates[ac]"/>
 						</item>
 						<item>
-							<entity name="Inputs_Data.Age_specific_contact_rates[ba]"/>
+							<entity name="Inputs_Data.Age_specific_contact_rates[ad]"/>
 						</item>
 						<item>
 							<entity name="Inputs_Data.ICU_beds_per_100K"/>
@@ -17760,13 +17865,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age"/>
 				</dimensions>
 				<element subscript="a">
-					<eqn>20364956</eqn>
+					<eqn>11477800</eqn>
 				</element>
 				<element subscript="b">
-					<eqn>25939296</eqn>
+					<eqn>8427265</eqn>
 				</element>
 				<element subscript="c">
-					<eqn>37479693</eqn>
+					<eqn>44978330</eqn>
+				</element>
+				<element subscript="d">
+					<eqn>18271636</eqn>
 				</element>
 				<units>People</units>
 			</aux>
@@ -17801,31 +17909,52 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Contacts"/>
 				</dimensions>
 				<element subscript="aa">
-					<eqn>4.731801</eqn>
+					<eqn>3.45614</eqn>
 				</element>
 				<element subscript="ab">
-					<eqn>2.270895</eqn>
+					<eqn>0.950906</eqn>
 				</element>
 				<element subscript="ac">
-					<eqn>0.7165681</eqn>
+					<eqn>0.8247093</eqn>
+				</element>
+				<element subscript="ad">
+					<eqn>0.2954502</eqn>
 				</element>
 				<element subscript="ba">
-					<eqn>2.892489</eqn>
+					<eqn>0.6981771</eqn>
 				</element>
 				<element subscript="bb">
-					<eqn>4.428571</eqn>
+					<eqn>4.518987</eqn>
 				</element>
 				<element subscript="bc">
-					<eqn>1.828007</eqn>
+					<eqn>0.861203</eqn>
+				</element>
+				<element subscript="bd">
+					<eqn>0.1940169</eqn>
 				</element>
 				<element subscript="ca">
-					<eqn>1.318773</eqn>
+					<eqn>3.231808</eqn>
 				</element>
 				<element subscript="cb">
-					<eqn>2.641288</eqn>
+					<eqn>4.596446</eqn>
 				</element>
 				<element subscript="cc">
-					<eqn>2.984</eqn>
+					<eqn>5.489567</eqn>
+				</element>
+				<element subscript="cd">
+					<eqn>2.206438</eqn>
+				</element>
+				<element subscript="da">
+					<eqn>0.4703304</eqn>
+				</element>
+				<element subscript="db">
+					<eqn>0.4206591</eqn>
+				</element>
+				<element subscript="dc">
+					<eqn>0.8963257</eqn>
+				</element>
+				<element subscript="dd">
+					<eqn>1.684615</eqn>
 				</element>
 				<units>1/day</units>
 			</aux>
@@ -17886,7 +18015,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -18056,7 +18185,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			</aux>
 			<aux name="Probability of infection" access="output">
 				<doc>This parameter represents the probability of infection after a contact between a susceptible and clinical infectious individuals. This parameter can take values between 0 and 1 inclusive, and also corresponds to the prob_inf parameter of the R0 API.</doc>
-				<eqn>0.0714</eqn>
+				<eqn>0.0447</eqn>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="mobility budget" access="output">
@@ -18209,7 +18338,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux x="311.557" y="70" name="switch isolation"/>
 				<aux x="311.557" y="129.375" name="isolation start"/>
 				<aux x="764.739" y="128.75" name="start school closures"/>
-				<aux x="85.625" y="23.6364" name="initial infected"/>
+				<aux x="76.625" y="14.6364" width="18" height="18" name="initial infected"/>
 				<aux x="764.739" y="196.136" name="duration school closures"/>
 			</view>
 		</views>
@@ -18230,6 +18359,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>0.017</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>0.017</eqn>
+				</element>
 				<units>dmnl</units>
 			</aux>
 			<aux name="LOS ward deaths" access="output" isee:autocreated="true">
@@ -18246,6 +18378,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>14.5</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>14.5</eqn>
+				</element>
 				<units>Days</units>
 			</aux>
 			<aux name="LOS ward" access="output" isee:autocreated="true">
@@ -18260,6 +18395,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>7.6</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>13.2</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>13.2</eqn>
 				</element>
 				<units>Days</units>
@@ -18283,6 +18421,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>12</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>12</eqn>
+				</element>
 				<units>Days</units>
 			</aux>
 			<aux name="LOS ward before ICU" access="output" isee:autocreated="true">
@@ -18297,6 +18438,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>4</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>7</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>7</eqn>
 				</element>
 				<units>Days</units>
@@ -18315,6 +18459,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>0.01</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>0.01</eqn>
+				</element>
 				<units>dmnl</units>
 			</aux>
 			<aux name="ICU fatality rate" access="output" isee:autocreated="true">
@@ -18329,6 +18476,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>0.55</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>0.45</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>0.45</eqn>
 				</element>
 				<units>dmnl</units>
@@ -18352,6 +18502,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>0.86</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>0.86</eqn>
+				</element>
 				<units>dmnl</units>
 			</aux>
 			<aux name="fraction ICU" access="output" isee:autocreated="true">
@@ -18368,6 +18521,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>0.02</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>0.02</eqn>
+				</element>
 				<units>dmnl</units>
 			</aux>
 			<aux name="fraction ward to ICU" access="output" isee:autocreated="true">
@@ -18382,6 +18538,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>0.13</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>0.03</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>0.03</eqn>
 				</element>
 				<units>dmnl</units>
@@ -18405,6 +18564,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>10</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>10</eqn>
+				</element>
 				<units>Days</units>
 			</aux>
 			<aux name="delay before hospitalisation" access="output" isee:autocreated="true">
@@ -18426,6 +18588,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>-0.2</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>-0.2</eqn>
+				</element>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="ICU fatality rate vaccines" access="output" isee:autocreated="true">
@@ -18440,6 +18605,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>-0.2</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>-0.1</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>-0.1</eqn>
 				</element>
 				<units>Dimensionless</units>
@@ -18458,6 +18626,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<element subscript="c">
 					<eqn>-0.2</eqn>
 				</element>
+				<element subscript="d">
+					<eqn>-0.2</eqn>
+				</element>
 				<units>Dimensionless</units>
 			</aux>
 			<aux name="LOS ICU vaccines" access="output" isee:autocreated="true">
@@ -18472,6 +18643,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>-0.2</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>-0.1</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>-0.1</eqn>
 				</element>
 				<units>Dimensionless</units>
@@ -18493,6 +18667,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<eqn>-0.3</eqn>
 				</element>
 				<element subscript="c">
+					<eqn>-0.2</eqn>
+				</element>
+				<element subscript="d">
 					<eqn>-0.2</eqn>
 				</element>
 				<units>Dimensionless</units>
@@ -18549,7 +18726,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19905,6 +20082,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name='"Within-host_profile".Actual_cases[d]'/>
 						</item>
 						<item>
+							<entity name='"Within-host_profile".Actual_cases[e]'/>
+						</item>
+						<item>
 							<entity name='"Within-host_profile".Attack_rate[a]'/>
 						</item>
 						<item>
@@ -19915,6 +20095,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name='"Within-host_profile".Attack_rate[d]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Attack_rate[e]'/>
 						</item>
 						<item>
 							<entity name="Vaccines.Vaccination_capacity"/>
@@ -19939,6 +20122,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name='"Within-host_profile".Cumulative_cases[d]'/>
+						</item>
+						<item>
+							<entity name='"Within-host_profile".Cumulative_cases[e]'/>
 						</item>
 						<item>
 							<entity name="Testing.Confirmed_cases[a]"/>
@@ -20448,6 +20634,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Vaccines.Vaccination[d]"/>
 						</item>
 						<item>
+							<entity name="Vaccines.Vaccination[e]"/>
+						</item>
+						<item>
 							<entity name="Vaccines.Cumulative_vaccination[a]"/>
 						</item>
 						<item>
@@ -20458,6 +20647,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						</item>
 						<item>
 							<entity name="Vaccines.Cumulative_vaccination[d]"/>
+						</item>
+						<item>
+							<entity name="Vaccines.Cumulative_vaccination[e]"/>
 						</item>
 						<item>
 							<entity name="Testing.Cumulative_confirmed_cases[a]"/>

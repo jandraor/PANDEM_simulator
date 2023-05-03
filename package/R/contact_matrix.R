@@ -1,4 +1,4 @@
-get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
+get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c, pop_d) {
 
   polymod       <- socialmixr::polymod
   country_names <- socialmixr::survey_countries(polymod)
@@ -7,22 +7,10 @@ get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
                                            origin = "eurostat",
                                            destination = "country.name")
 
-  # Assumption for the FX
-  #=============================================================================
-  user_country <- "Netherlands"
-
-  # if(!user_country %in% country_names) {
-  #
-  #   msg <- paste0("Country: '", country_code,"' not available")
-  #   return(msg)
-  # }
-  #
-  #=============================================================================
-
-  age_limits <- c(0, 25, 50)
+  age_limits <- c(0, 15, 25, 65)
 
   pop_df <- data.frame(lower.age.limit = age_limits,
-                       population = c(pop_a, pop_b, pop_c))
+                       population = c(pop_a, pop_b, pop_c, pop_d))
 
   cm_object <- socialmixr::contact_matrix(socialmixr::polymod,
                                           age.limits = age_limits,
@@ -35,9 +23,10 @@ get_contact_matrix <- function(country_code, pop_a, pop_b, pop_c) {
 
   contact_list <- as.list(contact_matrix)
 
-  names(contact_list) <- c("aa", "ba", "ca",
-                           "ab", "bb", "cb",
-                           "ac", "bc", "cc")
+  names(contact_list) <- c("aa", "ba", "ca", "da",
+                           "ab", "bb", "cb", "db",
+                           "ac", "bc", "cc", "dc",
+                           "ad", "bd", "cd", "dd")
 
   contact_list
 }
