@@ -6,7 +6,7 @@ Inputs_Epi.switch_vaccines	0
 Inputs_Epi.switch_contact_tracing	0
 Inputs_Epi.switch_school_closures	0
 Inputs_Epi.mask_wearing_effect	0.1
-Inputs_Epi.Probability_of_infection	0.0447
+Inputs_Epi.Probability_of_infection	0.1121063
 Inputs_Epi.mask_wearing_start	0
 Inputs_Epi.initial_testing_capacity	53454
 Inputs_Epi.initial_vaccination_capacity	279964
