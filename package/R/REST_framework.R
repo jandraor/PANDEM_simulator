@@ -204,9 +204,26 @@ function(req, res) {
   pop_a          <- as.numeric(user_args$pop_a)
   pop_b          <- as.numeric(user_args$pop_b)
   pop_c          <- as.numeric(user_args$pop_c)
+  pop_d          <- as.numeric(user_args$pop_d)
 
-  R0_val <- estimate_R0(prob_inf, country_code, pop_a, pop_b, pop_c)
+  R0_val <- estimate_R0(prob_inf, country_code, pop_a, pop_b, pop_c, pop_d)
 
   list(R0 = R0_val)
 }
 
+#* @get /prob_inf
+#* @serializer unboxedJSON list(digits = 7)
+function(req, res) {
+
+  user_args      <- req$args
+  country_code   <- user_args$country_code
+  pop_a          <- as.numeric(user_args$pop_a)
+  pop_b          <- as.numeric(user_args$pop_b)
+  pop_c          <- as.numeric(user_args$pop_c)
+  pop_d          <- as.numeric(user_args$pop_d)
+  R0             <- as.numeric(user_args$R0)
+
+  prob_inf <- get_upsilon(R0, country_code, pop_a, pop_b, pop_c, pop_d)
+
+  list(prob_inf = prob_inf)
+}
