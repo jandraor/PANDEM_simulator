@@ -175,7 +175,8 @@ function(req, res) {
   pop_a          <- as.numeric(user_args$pop_a)
   pop_b          <- as.numeric(user_args$pop_b)
   pop_c          <- as.numeric(user_args$pop_c)
-  contact_matrix <- get_contact_matrix(country_code, pop_a, pop_b, pop_c)
+  pop_d          <- as.numeric(user_args$pop_d)
+  contact_matrix <- get_contact_matrix(country_code, pop_a, pop_b, pop_c, pop_d)
 
   if(class(contact_matrix) == "character") {
 
