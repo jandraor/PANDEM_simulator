@@ -206,6 +206,10 @@
 				<connect2 to="Hospital.Denied_ICU_fatality_rate" from="Inputs_Hospital_patient_params.denied_ICU_fatality_rate"/>
 				<connect to="Hospital.fraction_ICU" from="Inputs_Hospital_patient_params.fraction_ICU"/>
 				<connect2 to="Hospital.fraction_ICU" from="Inputs_Hospital_patient_params.fraction_ICU"/>
+				<connect to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
 				<connect to="Hospital.fraction_ward_to_ICU_2" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
 				<connect2 to="Hospital.fraction_ward_to_ICU_2" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
 				<connect to="Hospital.fraction_ward_to_ICU_3" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
@@ -264,12 +268,16 @@
 				<connect2 to="Hospital.ward_fatality_rate_antivirals" from="Inputs_Hospital_patient_params.ward_fatality_rate_antivirals"/>
 				<connect to="Hospital.antiviral_capacity" from="Inputs_Hospital_resource_params.antiviral_capacity"/>
 				<connect2 to="Hospital.antiviral_capacity" from="Inputs_Hospital_resource_params.antiviral_capacity"/>
+				<connect to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect2 to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Hospital.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Hospital.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Ventilators.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Ventilators.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Ventilators.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Ventilators.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect2 to="Hospital_Resources.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_bed_2" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
@@ -278,6 +286,8 @@
 				<connect2 to="Hospital.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
 				<connect2 to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+				<connect to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect2 to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect to="Hospital_Resources.nurses_per_bed" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
@@ -332,6 +342,8 @@
 				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect2 to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
+				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
 				<connect to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect2 to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect to="Hospital_Resources.simulate_staff_absenteeism" from="Inputs_Modelling_options.simulate_staff_absenteeism"/>
@@ -458,6 +470,10 @@
 				<connect2 to="PANDEM2_Outputs.occupied_nurses" from="Hospital_Resources.occupied_nurses"/>
 				<connect to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
 				<connect to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect2 to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect to="PANDEM2_Outputs.pandemic_ward_demand_factor" from="Hospital_Resources.pandemic_ward_demand_factor"/>
@@ -530,6 +546,8 @@
 				<connect2 to="PANDEM2_Outputs.Testing_capacity" from="Testing.Testing_capacity"/>
 				<connect to="PANDEM2_Outputs.Total_Admissions" from="Hospital.Total_Admissions"/>
 				<connect2 to="PANDEM2_Outputs.Total_Admissions" from="Hospital.Total_Admissions"/>
+				<connect to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
+				<connect2 to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
 				<connect to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect2 to="PANDEM2_Outputs.total_deaths" from="Hospital.total_deaths"/>
 				<connect to="PANDEM2_Outputs.total_expected_deaths" from="Hospital.total_expected_deaths"/>
@@ -550,6 +568,8 @@
 				<connect2 to="PANDEM2_Outputs.Total_needed_Ward_Bed" from="Hospital.Total_needed_Ward_Bed"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
+				<connect2 to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
 				<connect to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PANDEM2_Outputs.total_unable_to_access_ICU" from="Hospital.total_unable_to_access_ICU"/>
@@ -907,6 +927,10 @@
 				<connect2 to="PANDEM2_Outputs.occupied_nurses" from="Hospital_Resources.occupied_nurses"/>
 				<connect to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
 				<connect to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect2 to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect to="PANDEM2_Outputs.pandemic_ward_demand_factor" from="Hospital_Resources.pandemic_ward_demand_factor"/>
@@ -931,6 +955,8 @@
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
+				<connect to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
+				<connect2 to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
@@ -939,8 +965,18 @@
 				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
+				<connect2 to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
 				<connect to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect2 to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect2 to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect2 to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
@@ -951,6 +987,8 @@
 				<connect2 to="Hospital_Resources.ICU_nurses_per_bed_2" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
 				<connect2 to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+				<connect to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect2 to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect to="Hospital_Resources.nurses_per_bed" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
@@ -991,6 +1029,8 @@
 				<connect2 to="Hospital_Resources.strategy_4_increase_bed_capacity" from="Inputs_Hospital_surge_strategies.strategy_4_increase_bed_capacity"/>
 				<connect to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 				<connect2 to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
+				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
 				<connect to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
 				<connect2 to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
 				<connect to="Hospital_Resources.ward_nurses_per_1K_1" from="Inputs_Data.ward_nurses_per_1K"/>
@@ -5391,6 +5431,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.deceased_moved_to_morgue" from="Hospital.deceased_moved_to_morgue"/>
 				<connect to="PANDEM2_Outputs.deceased_moved_to_temporary_morgues" from="Hospital.deceased_moved_to_temporary_morgues"/>
 				<connect2 to="PANDEM2_Outputs.deceased_moved_to_temporary_morgues" from="Hospital.deceased_moved_to_temporary_morgues"/>
+				<connect to="Hospital_Resources.effective_LOS_ward" from="Hospital.effective_LOS_ward"/>
+				<connect2 to="Hospital_Resources.effective_LOS_ward" from="Hospital.effective_LOS_ward"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect2 to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect to="PANDEM2_Outputs.expected_beds_freed" from="Hospital.expected_beds_freed"/>
@@ -5705,6 +5747,10 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.occupied_nurses" from="Hospital_Resources.occupied_nurses"/>
 				<connect to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
 				<connect2 to="PANDEM2_Outputs.occupied_ward_beds" from="Hospital_Resources.occupied_ward_beds"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_ICU" from="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+				<connect to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
+				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
 				<connect to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect2 to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect to="PANDEM2_Outputs.pandemic_ward_demand_factor" from="Hospital_Resources.pandemic_ward_demand_factor"/>
@@ -5733,6 +5779,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.staffed_ward_beds_needed" from="Hospital_Resources.staffed_ward_beds_needed"/>
 				<connect to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
 				<connect2 to="PANDEM2_Outputs.stress_code" from="Hospital_Resources.stress_code"/>
+				<connect to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
+				<connect2 to="PANDEM2_Outputs.total_daily_oxygen_consumption" from="Hospital_Resources.total_daily_oxygen_consumption"/>
 				<connect to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_ICU_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_ICU_nurses_needed_for_incoming_patients"/>
 				<connect to="PANDEM2_Outputs.total_initial_ICU_bed_capacity" from="Hospital_Resources.total_initial_ICU_bed_capacity"/>
@@ -5741,14 +5789,26 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.total_initial_ward_bed_capacity" from="Hospital_Resources.total_initial_ward_bed_capacity"/>
 				<connect to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
 				<connect2 to="PANDEM2_Outputs.total_nurses_needed_for_incoming_patients" from="Hospital_Resources.total_nurses_needed_for_incoming_patients"/>
+				<connect to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
+				<connect2 to="PANDEM2_Outputs.Total_oxygen_used" from="Hospital_Resources.Total_oxygen_used"/>
 				<connect to="Hospital.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect2 to="Hospital.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
 				<connect2 to="PANDEM2_Outputs.ward_nurse_absenteeism_rate" from="Hospital_Resources.ward_nurse_absenteeism_rate"/>
+				<connect to="Hospital_Resources.effective_LOS_ward" from="Hospital.effective_LOS_ward"/>
+				<connect2 to="Hospital_Resources.effective_LOS_ward" from="Hospital.effective_LOS_ward"/>
 				<connect to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect2 to="Hospital_Resources.expected_beds_freed_1" from="Hospital.expected_beds_freed"/>
 				<connect to="Hospital_Resources.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
 				<connect2 to="Hospital_Resources.expected_ICU_beds_freed" from="Hospital.expected_ICU_beds_freed"/>
+				<connect to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect2 to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect2 to="Hospital_Resources.i" from='"Within-host_profile".i'/>
 				<connect to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
@@ -5767,6 +5827,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital_Resources.In_Ward_Overflow_1" from="Hospital.In_Ward_Overflow"/>
 				<connect to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
 				<connect2 to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+				<connect to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
 				<connect2 to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
 				<connect to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
@@ -5827,6 +5889,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital_Resources.strategy_4_increase_bed_capacity" from="Inputs_Hospital_surge_strategies.strategy_4_increase_bed_capacity"/>
 				<connect to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 				<connect2 to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
+				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
 				<connect to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
 				<connect2 to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
 				<connect to="Hospital_Resources.ward_nurses_per_1K_1" from="Inputs_Data.ward_nurses_per_1K"/>
@@ -10721,7 +10785,7 @@ fraction_ward_to_ICU_3)
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Dimensionless</units>
 			</aux>
-			<aux name="effective LOS ward">
+			<aux name="effective LOS ward" access="output" isee:autocreated="true">
 				<doc>Average LOS in ward adjusted to take into account use of therapeutic antivirals</doc>
 				<dimensions>
 					<dim name="Age"/>
@@ -11635,7 +11699,7 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_y="660" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -15095,6 +15159,83 @@ ELSE
 				<eqn>MAXIMUM(pandemic_ICU_demand_factor)</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="fraction ward HFNO" access="input">
+				<eqn>0.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="oxygen consumption per day in wards" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per day in wards, in litres</doc>
+				<eqn>{ Oxygen consumed per day by high flow nasal oxygen patients }
+SUM(
+(Patients_In_Ward_Bed * fraction_ward_HFNO * high_flow_oxygen_rate* 60*24 * adjust_for_LOS_minus_1)
+{ Plus oxygen consumed per day by low flow nasal oxygen patients }
++ (Patients_In_Ward_Bed * fraction_ward_LFNO * low_flow_oxygen_rate* 60*24 * adjust_for_LOS_minus_1)
+)</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="effective LOS ward" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Days</units>
+			</aux>
+			<aux name="adjust for LOS minus 1">
+				<doc>Adjust daily total oxygen consumption to LOS minus last day, when patients come off oxygen (on average)</doc>
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{ We assume that oxygen treatment ends the day before the last day in the ward so adjust oxygen consumption figures for this but only if LOS is 2 or above }
+IF effective_LOS_ward &gt; 2
+THEN
+(effective_LOS_ward - 1)/effective_LOS_ward
+ELSE
+1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="fraction ward LFNO" access="input">
+				<eqn>0.6</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="high flow oxygen rate" access="input">
+				<eqn>60</eqn>
+				<units>Litres/Minute</units>
+			</aux>
+			<aux name="low flow oxygen rate" access="input">
+				<eqn>5</eqn>
+				<units>Litres/Minute</units>
+			</aux>
+			<aux name="ventilator oxygen rate" access="input">
+				<eqn>45</eqn>
+				<units>Litres/minute</units>
+			</aux>
+			<aux name="fraction ICU patients requiring ventilator" access="input">
+				<eqn>0.56</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="oxygen consumption per day in ICU" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per day in ICU, in litres</doc>
+				<eqn>SUM(Patients_In_ICU_Bed_1 * fraction_ICU_patients_requiring_ventilator * ventilator_oxygen_rate* 60*24)</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="total daily oxygen consumption" access="output" isee:autocreated="true">
+				<doc>Total daily oxygen consumption in wards and ICU, in litres</doc>
+				<eqn>oxygen_consumption_per_day_in_ICU + oxygen_consumption_per_day_in_wards</eqn>
+				<units>Litres</units>
+			</aux>
+			<stock name="Total oxygen used" access="output" isee:autocreated="true">
+				<doc>Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</doc>
+				<eqn>0</eqn>
+				<inflow>oxygen_used</inflow>
+				<non_negative/>
+				<units>Litres</units>
+			</stock>
+			<flow name="oxygen used">
+				<doc>Oxygen used per day, in litres</doc>
+				<eqn>total_daily_oxygen_consumption</eqn>
+				<non_negative/>
+				<units>Litres/day</units>
+			</flow>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -15142,7 +15283,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="750" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -16315,6 +16456,86 @@ Loosely based on RUNMC calculations. Possible because nurses, in practice, are m
 					<from>pandemic_ICU_demand_factor</from>
 					<to>peak_ICU_demand_factor</to>
 				</connector>
+				<text_box font_style="italic" uid="415" x="1274.34" y="1639" width="483.82" height="87.6483">Estimated oxygen consumption.
+Risk: assumes model unit of time is days
+Simplifying assumptions: 
+Oxygen is consumed at the same rate for all the age cohorts (no data)
+Ward patients have HFNO or LFNO for LOS minus one day
+ICU patients use ventilators for all their time in ICU</text_box>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1811.2" name="fraction ward HFNO"/>
+				<aux label_side="left" x="1654.33" y="1814.45" name="oxygen consumption per day in wards"/>
+				<connector uid="417" angle="314.438">
+					<from>
+						<alias uid="416"/>
+					</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<connector uid="419" angle="215.499">
+					<from>fraction_ward_HFNO</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1800.5" y="1769.59" name="effective LOS ward"/>
+				<aux label_side="top" x="1745" y="1769.59" name="adjust for LOS minus 1"/>
+				<connector uid="421" angle="180">
+					<from>effective_LOS_ward</from>
+					<to>adjust_for_LOS_minus_1</to>
+				</connector>
+				<connector uid="422" angle="226.819">
+					<from>adjust_for_LOS_minus_1</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1905" name="fraction ward LFNO"/>
+				<connector uid="430" angle="161.07">
+					<from>fraction_ward_LFNO</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1856.25" name="high flow oxygen rate"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1745" y="1948.75" name="low flow oxygen rate"/>
+				<connector uid="432" angle="187.434">
+					<from>high_flow_oxygen_rate</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<connector uid="433" angle="161.565">
+					<from>low_flow_oxygen_rate</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" label_side="left" x="1277.5" y="1856.25" name="ventilator oxygen rate"/>
+				<aux font_style="italic" font_weight="bold" label_side="left" x="1270.5" y="1807.93" name="fraction ICU patients requiring ventilator"/>
+				<aux label_side="right" x="1370.31" y="1814.45" name="oxygen consumption per day in ICU"/>
+				<connector uid="435" angle="219.606">
+					<from>
+						<alias uid="434"/>
+					</from>
+					<to>oxygen_consumption_per_day_in_ICU</to>
+				</connector>
+				<connector uid="436" angle="12.5045">
+					<from>fraction_ICU_patients_requiring_ventilator</from>
+					<to>oxygen_consumption_per_day_in_ICU</to>
+				</connector>
+				<connector uid="437" angle="17.7447">
+					<from>ventilator_oxygen_rate</from>
+					<to>oxygen_consumption_per_day_in_ICU</to>
+				</connector>
+				<aux x="1500" y="1896.25" name="total daily oxygen consumption"/>
+				<connector uid="438" angle="304.283">
+					<from>oxygen_consumption_per_day_in_ICU</from>
+					<to>total_daily_oxygen_consumption</to>
+				</connector>
+				<connector uid="439" angle="229.265">
+					<from>oxygen_consumption_per_day_in_wards</from>
+					<to>total_daily_oxygen_consumption</to>
+				</connector>
+				<stock label_side="center" x="1540" y="1970" width="100" height="35" name="Total oxygen used"/>
+				<flow x="1498.13" y="1991.25" name="oxygen used">
+					<pts>
+						<pt x="1456.25" y="1991.25"/>
+						<pt x="1540" y="1991.25"/>
+					</pts>
+				</flow>
+				<connector uid="440" angle="266.424">
+					<from>total_daily_oxygen_consumption</from>
+					<to>oxygen_used</to>
+				</connector>
 				<alias font_style="italic" uid="90" x="1371.14" y="418.404" width="18" height="18">
 					<of>total_ICU_nurses_needed_for_incoming_patients</of>
 				</alias>
@@ -16416,6 +16637,12 @@ Loosely based on RUNMC calculations. Possible because nurses, in practice, are m
 				</alias>
 				<alias color="#00AA00" font_style="italic" font_color="#00AA00" label_side="center" uid="406" x="2016.75" y="821.857" width="94.1667" height="24.2857">
 					<of>ICU_Nurses</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" label_side="center" uid="416" x="1525.21" y="1742.75" width="138.125" height="20.8929">
+					<of>Patients_In_Ward_Bed</of>
+				</alias>
+				<alias font_style="italic" font_weight="bold" label_side="center" uid="434" x="1338.93" y="1739.27" width="137.143" height="27.8571">
+					<of>Patients_In_ICU_Bed_1</of>
 				</alias>
 			</view>
 		</views>
@@ -16673,7 +16900,7 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="42.8571" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="42.1429" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17404,6 +17631,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Hospital.Denied_ICU_fatality_rate" from="Inputs_Hospital_patient_params.denied_ICU_fatality_rate"/>
 				<connect to="Hospital.fraction_ICU" from="Inputs_Hospital_patient_params.fraction_ICU"/>
 				<connect2 to="Hospital.fraction_ICU" from="Inputs_Hospital_patient_params.fraction_ICU"/>
+				<connect to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_HFNO" from="Inputs_Hospital_patient_params.fraction_ward_HFNO"/>
+				<connect to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
+				<connect2 to="Hospital_Resources.fraction_ward_LFNO" from="Inputs_Hospital_patient_params.fraction_ward_LFNO"/>
 				<connect to="Hospital.fraction_ward_to_ICU_2" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
 				<connect2 to="Hospital.fraction_ward_to_ICU_2" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
 				<connect to="Hospital.fraction_ward_to_ICU_3" from="Inputs_Hospital_patient_params.fraction_ward_to_ICU"/>
@@ -17464,12 +17695,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 			<module name="Inputs Hospital resource params" isee:label="">
 				<connect to="Hospital.antiviral_capacity" from="Inputs_Hospital_resource_params.antiviral_capacity"/>
 				<connect2 to="Hospital.antiviral_capacity" from="Inputs_Hospital_resource_params.antiviral_capacity"/>
+				<connect to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect2 to="Hospital_Resources.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Hospital.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Hospital.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Ventilators.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Ventilators.fraction_ICU_patients_requiring_ventilator" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect to="Ventilators.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
 				<connect2 to="Ventilators.fraction_ICU_patients_requiring_ventilator_1" from="Inputs_Hospital_resource_params.fraction_ICU_patients_requiring_ventilator"/>
+				<connect to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.high_flow_oxygen_rate" from="Inputs_Hospital_resource_params.high_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect2 to="Hospital_Resources.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_bed_2" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
@@ -17478,6 +17713,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Hospital.ICU_nurses_per_bed_1" from="Inputs_Hospital_resource_params.ICU_nurses_per_bed"/>
 				<connect to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
 				<connect2 to="Hospital_Resources.increased_risk_to_staff_if_PPE_use_reduced_1" from="Inputs_Hospital_resource_params.increased_risk_to_staff_if_PPE_use_reduced"/>
+				<connect to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.low_flow_oxygen_rate" from="Inputs_Hospital_resource_params.low_flow_oxygen_rate"/>
 				<connect to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect2 to="Hospital_Resources.nurse_burnout_rate" from="Inputs_Hospital_resource_params.nurse_burnout_rate"/>
 				<connect to="Hospital_Resources.nurses_per_bed" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
@@ -17532,6 +17769,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect2 to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
+				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
+				<connect2 to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
 			</module>
 			<module name="Inputs Modelling options" isee:label="">
 				<connect to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
@@ -18714,6 +18953,16 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>5</eqn>
 				<units>Days</units>
 			</aux>
+			<aux name="fraction ward HFNO" access="output" isee:autocreated="true">
+				<doc>Proportion of ward patients needing high flow nasal oxygen</doc>
+				<eqn>0.2</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="fraction ward LFNO" access="output" isee:autocreated="true">
+				<doc>Proportion of ward patients requiring low flow nasal oxygen</doc>
+				<eqn>0.6</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -18844,6 +19093,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="24" x="929.375" y="438.711" width="179.136" height="53.4286">The expected reduction in the fraction of patients in wards who later require ICU, if they were treated with antivirals</text_box>
 				<aux font_color="#55AAFF" label_side="top" x="294.25" y="505.89" name="LOS temporary morgue"/>
 				<text_box text_align="center" font_size="10pt" uid="25" x="212.107" y="532.604" width="164.286" height="39.4286">Average length of stay of a body in a temporary morgue</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="122.257" y="604.375" name="fraction ward HFNO"/>
+				<text_box text_align="center" font_size="10pt" uid="26" x="40.1141" y="623.104" width="164.286" height="39.4286">Proportion of ward patients needing high flow nasal oxygen</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="294.25" y="604.375" name="fraction ward LFNO"/>
+				<text_box text_align="center" font_size="10pt" uid="27" x="212.107" y="623.104" width="164.286" height="39.4286">Proportion of ward patients needing low flow nasal oxygen</text_box>
 			</view>
 		</views>
 	</model>
@@ -18963,6 +19216,21 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<doc>Proportion of all nurses who become absent due to stress when workload is increased to meet higher demand</doc>
 				<eqn>0.05</eqn>
 				<units>dmnl</units>
+			</aux>
+			<aux name="low flow oxygen rate" access="output" isee:autocreated="true">
+				<doc>Average low flow oxygen rate, in litres per minute</doc>
+				<eqn>5</eqn>
+				<units>Litres/Minute</units>
+			</aux>
+			<aux name="high flow oxygen rate" access="output" isee:autocreated="true">
+				<doc>Average high flow oxygen rate, in litres per minute</doc>
+				<eqn>60</eqn>
+				<units>Litres/Minute</units>
+			</aux>
+			<aux name="ventilator oxygen rate" access="output" isee:autocreated="true">
+				<doc>Average oxygen rate from a ventilator, in litres per minute</doc>
+				<eqn>45</eqn>
+				<units>Litres/minute</units>
 			</aux>
 		</variables>
 		<views>
@@ -19085,17 +19353,23 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux label_side="top" x="330.329" y="303.321" name="PPE days supply in target stock"/>
 				<text_box text_align="center" font_size="10pt" uid="26" x="248.186" y="333.486" width="164.286" height="45.9643">The desired number of days of supply of PPE to keep in stock</text_box>
 				<aux label_side="bottom" x="159.74" y="678.716" name="antiviral capacity"/>
-				<text_box text_align="center" font_size="10pt" uid="27" x="82.458" y="717.461" width="164.286" height="92.4292">Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="27" x="82.458" y="717.461" width="164.286" height="75.0004">Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</text_box>
 				<aux label_side="bottom" x="359.851" y="666.841" name="previous strain\nvaccine capacity"/>
-				<text_box text_align="center" font_size="10pt" uid="28" x="271.458" y="714.461" width="164.286" height="117.429">Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</text_box>
+				<text_box text_align="center" font_size="10pt" uid="28" x="271.458" y="714.461" width="164.286" height="81.0004">Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</text_box>
 				<aux label_side="bottom" x="550.454" y="666.841" name="threshold number\nof beds blocked by deceased"/>
-				<text_box text_align="center" font_size="10pt" uid="30" x="463.561" y="717.211" width="164.286" height="94.429">The number of hospital beds blocked by deceased patients that triggers emergency procedures such as army personnel moving bodies to temporary morgues</text_box>
+				<text_box text_align="center" font_size="10pt" uid="30" x="468.311" y="715.068" width="164.286" height="67.2861">The number of hospital beds blocked by deceased patients that triggers emergency procedures such as army personnel moving bodies to temporary morgues</text_box>
 				<aux label_side="top" x="882.115" y="77.054" name="proportion of physicians\navailable for pandemic"/>
 				<text_box text_align="center" font_size="10pt" uid="31" x="799.972" y="106.075" width="164.286" height="50.1429">Proportion of hospital physicians made available for care of pandemic patients</text_box>
 				<aux label_side="top" x="1265.69" y="77.91" name="proportion of morgue capacity\navailable for pandemic"/>
 				<text_box text_align="center" font_size="10pt" uid="32" x="1183.54" y="107.789" width="164.286" height="48.7137">Proportion of morgue spaces made available for deceased pandemic patients</text_box>
 				<aux x="523.571" y="405" name="nurse burnout rate"/>
 				<text_box text_align="center" font_size="10pt" uid="33" x="448.74" y="448.27" width="164.286" height="51.5714">Proportion of all nurses who become absent due to stress when workload is increased to meet staff shortages</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="358.193" y="829.714" name="low flow oxygen rate"/>
+				<text_box text_align="center" font_size="10pt" uid="34" x="276.05" y="848.443" width="164.286" height="39.4286">Average low flow oxygen rate, in litres per minute</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="161.419" y="831.589" name="high flow oxygen rate"/>
+				<text_box text_align="center" font_size="10pt" uid="35" x="79.2757" y="850.318" width="164.286" height="39.4286">Average high flow oxygen rate, in litres per minute</text_box>
+				<text_box text_align="center" font_size="10pt" uid="37" x="450.311" y="848.443" width="164.286" height="39.4286">Average oxygen rate from a ventilator, in litres per minute</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="532.454" y="829.714" name="ventilator oxygen rate"/>
 			</view>
 		</views>
 	</model>
@@ -20025,6 +20299,27 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<dim name="Age_out"/>
 				</dimensions>
 			</aux>
+			<aux name="oxygen consumption per day in ICU" access="input">
+				<doc>Oxygen consumption per day in ICU, in litres</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="oxygen consumption per day in wards" access="input">
+				<doc>Oxygen consumption per day in wards, in litres</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="total daily oxygen consumption" access="input">
+				<doc>Total daily oxygen consumption in wards and ICU, in litres</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres</units>
+			</aux>
+			<stock name="Total oxygen used" access="input">
+				<doc>Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</doc>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>Litres</units>
+			</stock>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -20072,7 +20367,7 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" isee:scroll_y="2220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" isee:scroll_y="1043" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -20795,6 +21090,18 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 						<item>
 							<entity name="Testing.Cumulative_confirmed_cases[e]"/>
 						</item>
+						<item>
+							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.total_daily_oxygen_consumption"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.Total_oxygen_used"/>
+						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
@@ -20847,37 +21154,37 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="43" x="1685.9" y="903.564" width="176.786" height="77.881">Gap in physical ICU beds, comparing ICU beds available plus expected ICU beds freed with ICU beds needed (value greater than zero only when demand exceeds supply)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="44" x="741.774" y="1483.86" width="176.786" height="52.0477">Patients waiting for an ICU bed who cannot get access to one (does not include patients currently in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="45" x="931.774" y="1488.86" width="176.786" height="42.0489">Patients at risk of dying because they cannot access an ICU bed in this time period</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="46" x="59.2217" y="2043.47" width="252.409" height="18.5711">Totals (cumulative - see end of run figures):</text_box>
-				<text_box font_style="italic" uid="47" x="126.749" y="2729.35" width="1251.67" height="32.5129">Calculations of peak daily demand for ICU and ward are made by treating all resources as unlimited, allowing admission of all patients needing ICU or a ward beds without the complication of overflows. The required peak capacity of beds, nurses, ventilators and PPE can be calculated from these peak daily figures.</text_box>
-				<text_box text_align="center" uid="48" x="122.439" y="2130.05" width="164.286" height="71.8327">Total of all patients who needed ICU during current run (from admissions and transfers from ward and overflow)</text_box>
-				<text_box text_align="center" uid="49" x="322.085" y="2130.05" width="164.286" height="54.9994">Total number of patients who were admitted to ICU</text_box>
-				<text_box text_align="center" uid="50" x="507.249" y="2133.88" width="184.523" height="64.1661">Total of all patients who needed a ward bed during current run (from admissions and transfers from ICU)</text_box>
-				<text_box text_align="center" uid="51" x="718.72" y="2133.88" width="164.286" height="64.1661">Total number of patients who were admitted to wards (from admissions and transfers from ICU)</text_box>
-				<text_box text_align="center" uid="52" x="914.117" y="2130.05" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
-				<text_box text_align="center" uid="53" x="1094.27" y="2130.33" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
-				<text_box text_align="center" uid="54" x="136.273" y="2831.39" width="164.286" height="75.35">Highest estimated ICU demand in a single day</text_box>
-				<text_box text_align="center" uid="55" x="316.297" y="2831.39" width="164.286" height="75.35">Highest estimated number of physical ICU beds required a single day</text_box>
-				<text_box text_align="center" uid="56" x="490.205" y="2831.39" width="164.286" height="75.35">Highest estimated number of ICU nurses required in a single day</text_box>
-				<text_box text_align="center" uid="57" x="670.44" y="2831.39" width="164.286" height="82.4994">Highest estimated number of ventilators required for ICU patients in a single day</text_box>
-				<text_box text_align="center" uid="58" x="846.489" y="2831.39" width="164.286" height="92.85">Highest estimated demand for ward beds in a single day</text_box>
-				<text_box text_align="center" uid="59" x="1020.94" y="2831.39" width="164.286" height="82.4994">Highest estimated number of physical ward beds required a single day</text_box>
-				<text_box text_align="center" uid="60" x="1201.94" y="2831.39" width="164.286" height="82.4994">Highest estimated number of ward nurses required a single day</text_box>
-				<text_box text_align="center" uid="61" x="1396.44" y="2831.39" width="164.286" height="107.85">Highest estimated number of PPE sets required in a single day by nursing staff (both ward and ICU nurses)</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="64.3432" y="2695.78" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="139.582" y="2085.04" width="127" height="25" name="Total needed ICU"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="330.19" y="2082.54" width="154" height="28" name="Total ICU admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="524.011" y="2082.04" width="151" height="29" name="Total needed Ward Bed"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="728.333" y="2082.54" width="157" height="35" name="Total Ward admissions"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="931.76" y="2083.54" width="129" height="33" name="Potential deaths due to lack of ICU"/>
-				<aux font_style="italic" font_weight="bold" x="1176.41" y="2094.04" name="total deaths"/>
-				<aux font_style="italic" font_weight="bold" x="214.041" y="2792.25" name="peak ICU demand"/>
-				<aux font_style="italic" font_weight="bold" x="398.44" y="2791.63" name="peak demand ICU beds"/>
-				<aux font_style="italic" font_weight="bold" x="563.348" y="2783.25" width="16.75" height="16.75" name="peak demand ICU nurses"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="752.833" y="2791.63" name="peak demand ventilators"/>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="928.632" y="2794.42" name="peak ward demand"/>
-				<aux font_style="italic" font_weight="bold" x="1103.08" y="2794.42" name="peak demand ward beds"/>
-				<aux font_style="italic" font_weight="bold" x="1284.08" y="2794.42" name="peak demand nurses"/>
-				<aux font_style="italic" font_weight="bold" x="1478.58" y="2791.63" name="peak demand PPE"/>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="46" x="59.2217" y="2192.47" width="252.409" height="18.5711">Totals (cumulative - see end of run figures):</text_box>
+				<text_box font_style="italic" uid="47" x="126.749" y="2878.35" width="1251.67" height="32.5129">Calculations of peak daily demand for ICU and ward are made by treating all resources as unlimited, allowing admission of all patients needing ICU or a ward beds without the complication of overflows. The required peak capacity of beds, nurses, ventilators and PPE can be calculated from these peak daily figures.</text_box>
+				<text_box text_align="center" uid="48" x="122.439" y="2279.05" width="164.286" height="71.8327">Total of all patients who needed ICU during current run (from admissions and transfers from ward and overflow)</text_box>
+				<text_box text_align="center" uid="49" x="322.085" y="2279.05" width="164.286" height="54.9994">Total number of patients who were admitted to ICU</text_box>
+				<text_box text_align="center" uid="50" x="507.249" y="2282.88" width="184.523" height="64.1661">Total of all patients who needed a ward bed during current run (from admissions and transfers from ICU)</text_box>
+				<text_box text_align="center" uid="51" x="718.72" y="2282.88" width="164.286" height="64.1661">Total number of patients who were admitted to wards (from admissions and transfers from ICU)</text_box>
+				<text_box text_align="center" uid="52" x="914.117" y="2279.05" width="164.286" height="54.9994">Patients at risk of dying from requiring ICU when no ICU bed was available to them</text_box>
+				<text_box text_align="center" uid="53" x="1094.27" y="2279.33" width="164.286" height="54.9994">Total deaths in hospital; includes potential deaths due to lack of ICU</text_box>
+				<text_box text_align="center" uid="54" x="136.273" y="2980.39" width="164.286" height="75.35">Highest estimated ICU demand in a single day</text_box>
+				<text_box text_align="center" uid="55" x="316.297" y="2980.39" width="164.286" height="75.35">Highest estimated number of physical ICU beds required a single day</text_box>
+				<text_box text_align="center" uid="56" x="490.205" y="2980.39" width="164.286" height="75.35">Highest estimated number of ICU nurses required in a single day</text_box>
+				<text_box text_align="center" uid="57" x="670.44" y="2980.39" width="164.286" height="82.4994">Highest estimated number of ventilators required for ICU patients in a single day</text_box>
+				<text_box text_align="center" uid="58" x="846.489" y="2980.39" width="164.286" height="92.85">Highest estimated demand for ward beds in a single day</text_box>
+				<text_box text_align="center" uid="59" x="1020.94" y="2980.39" width="164.286" height="82.4994">Highest estimated number of physical ward beds required a single day</text_box>
+				<text_box text_align="center" uid="60" x="1201.94" y="2980.39" width="164.286" height="82.4994">Highest estimated number of ward nurses required a single day</text_box>
+				<text_box text_align="center" uid="61" x="1396.44" y="2980.39" width="164.286" height="107.85">Highest estimated number of PPE sets required in a single day by nursing staff (both ward and ICU nurses)</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="62" x="64.3432" y="2844.78" width="219.728" height="18.5711">Peak values (see end of run figures):</text_box>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="139.582" y="2234.04" width="127" height="25" name="Total needed ICU"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="330.19" y="2231.54" width="154" height="28" name="Total ICU admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="524.011" y="2231.04" width="151" height="29" name="Total needed Ward Bed"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="728.333" y="2231.54" width="157" height="35" name="Total Ward admissions"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="931.76" y="2232.54" width="129" height="33" name="Potential deaths due to lack of ICU"/>
+				<aux font_style="italic" font_weight="bold" x="1176.41" y="2243.04" name="total deaths"/>
+				<aux font_style="italic" font_weight="bold" x="214.041" y="2941.25" name="peak ICU demand"/>
+				<aux font_style="italic" font_weight="bold" x="398.44" y="2940.63" name="peak demand ICU beds"/>
+				<aux font_style="italic" font_weight="bold" x="563.348" y="2932.25" width="16.75" height="16.75" name="peak demand ICU nurses"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="752.833" y="2940.63" name="peak demand ventilators"/>
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="928.632" y="2943.42" name="peak ward demand"/>
+				<aux font_style="italic" font_weight="bold" x="1103.08" y="2943.42" name="peak demand ward beds"/>
+				<aux font_style="italic" font_weight="bold" x="1284.08" y="2943.42" name="peak demand nurses"/>
+				<aux font_style="italic" font_weight="bold" x="1478.58" y="2940.63" name="peak demand PPE"/>
 				<aux font_style="italic" font_weight="bold" x="380.25" y="466.667" name="occupied ward beds"/>
 				<text_box text_align="center" font_size="10pt" uid="63" x="303.75" y="514.04" width="144.643" height="38.961">Total ward beds occupied by patients</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="157.768" y="855.906" width="140" height="32" name="ICU Beds"/>
@@ -20944,15 +21251,15 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="99" x="143.44" y="1496.78" width="176.786" height="52.0477">The number of ICU ward beds supported by available ICU nurses and ventilators</text_box>
 				<text_box text_align="center" font_size="10pt" uid="100" x="343.44" y="1496.78" width="176.786" height="64.5477">The number of staffed ICU beds needed to meet current demand (includes patients waiting for ICU and in ICU overflow)</text_box>
 				<text_box text_align="center" font_size="10pt" uid="101" x="541.714" y="1490.53" width="176.786" height="77.0477">The gap in staffed ICU beds, comparing available staffed ICU beds plus expected ICU beds freed with patients waiting for ICU plus patients in ICU overflow</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="102" x="64.3303" y="2928.07" width="148.242" height="18.5711">Active surge strategies:</text_box>
-				<text_box text_align="center" uid="103" x="132.989" y="3005.3" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="104" x="703.107" y="3009.3" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="105" x="411.989" y="3009.3" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</text_box>
-				<text_box text_align="center" uid="106" x="994.443" y="3012.3" width="260.286" height="71.3294">Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</text_box>
-				<aux font_style="italic" font_weight="bold" x="242.047" y="2955.33" width="18" height="18" name="activate surge strategy 1"/>
-				<aux font_style="italic" font_weight="bold" x="532.142" y="2964.33" name="activate surge strategy 2"/>
-				<aux font_style="italic" font_weight="bold" x="825" y="2971.08" name="activate surge strategy 3"/>
-				<aux font_style="italic" font_weight="bold" x="1124.58" y="2971.08" name="activate surge strategy 4"/>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="102" x="64.3303" y="3077.07" width="148.242" height="18.5711">Active surge strategies:</text_box>
+				<text_box text_align="center" uid="103" x="132.989" y="3154.3" width="250.523" height="102.329">Surge strategy 1 is to reduce the ICU nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of ICU nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="104" x="703.107" y="3158.3" width="260.286" height="96.3294">Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="105" x="411.989" y="3158.3" width="250.523" height="102.329">Surge strategy 2 is to reduce the nurse-to-patient ratio (for all patients). It will be activated when only a small proportion of nurses are available, and if the strategy is enabled.</text_box>
+				<text_box text_align="center" uid="106" x="994.443" y="3161.3" width="260.286" height="71.3294">Surge strategy 4 is to increase bed capacity. It will be activated when only a small proportion of beds are available, and if the strategy is enabled.</text_box>
+				<aux font_style="italic" font_weight="bold" x="242.047" y="3104.33" width="18" height="18" name="activate surge strategy 1"/>
+				<aux font_style="italic" font_weight="bold" x="532.142" y="3113.33" name="activate surge strategy 2"/>
+				<aux font_style="italic" font_weight="bold" x="825" y="3120.08" name="activate surge strategy 3"/>
+				<aux font_style="italic" font_weight="bold" x="1124.58" y="3120.08" name="activate surge strategy 4"/>
 				<aux font_style="italic" font_weight="bold" x="216.548" y="725" name="staffed ward beds available"/>
 				<aux font_style="italic" font_weight="bold" x="404.166" y="725" name="staffed ward beds needed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="591.858" y="725" name="staffed ward beds gap"/>
@@ -20966,22 +21273,22 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux font_style="italic" font_weight="bold" x="704.786" y="148.571" name="Mobility index"/>
 				<text_box text_align="center" font_size="10pt" uid="111" x="1127.61" y="1488.86" width="176.786" height="42.0489">Patients dying in ICU per time period</text_box>
 				<aux font_style="italic" font_weight="bold" x="195" y="200.833" name="Confirmed cases"/>
-				<text_box font_style="italic" uid="112" x="125.749" y="2258.35" width="1251.67" height="32.5129">These figures show the initial total capacity for staffed ward beds and ICU beds taking into account all the hospital resources, and the capacity set aside for pandemic use. Ward bed calculations take into account physical ward beds and nurses, and ICU beds take into account physical ICU beds, ICU nurses and ventilators. PPE is assumed to be sufficient to supply the staff, and all staff are assumed to be at work.</text_box>
-				<text_box text_align="center" uid="113" x="135.273" y="2360.39" width="164.286" height="75.35">The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="114" x="63.3432" y="2224.78" width="576.728" height="18.5711">Initial capacity for staffed ward and ICU beds (these figures will not change during the run):</text_box>
-				<text_box text_align="center" uid="115" x="338.297" y="2367.39" width="164.286" height="75.35">The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
-				<text_box text_align="center" uid="116" x="536.523" y="2367.39" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
-				<text_box text_align="center" uid="117" x="734.69" y="2367.39" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
-				<aux font_style="italic" font_weight="bold" x="1052.5" y="2547.66" name="stress code"/>
-				<text_box font_style="italic" uid="118" x="131.749" y="2494.35" width="1251.67" height="32.5129">Additional demand for ward and ICU beds stresses the hospital system. Calculation of stress code is subject to refinement after discussions with end users.</text_box>
-				<text_box text_align="center" uid="119" x="77.1063" y="2588.06" width="228.453" height="75.35">The pandemic demand for ward beds compared to the normal total capacity in the hospital, expressed as a multiplier. E.g. a value of 2 means the pandemic demand is twice the normal ward capacity</text_box>
-				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="120" x="69.3432" y="2460.78" width="219.728" height="18.5711">Stress indicators:</text_box>
-				<text_box text_align="center" uid="121" x="325.919" y="2591.06" width="226.487" height="75.35">The pandemic demand for ICU  beds compared to the normal total capacity in the hospital, expressed as a multiplier. E.g. a value of 2 means the pandemic demand is twice the normal ICU capacity</text_box>
-				<text_box text_align="center" uid="122" x="970.357" y="2593.56" width="164.286" height="75.35">Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</text_box>
-				<aux font_style="italic" font_weight="bold" x="217.416" y="2314.83" name="total initial ward bed capacity"/>
-				<aux font_style="italic" font_weight="bold" x="420.44" y="2314.83" name="initial pandemic ward bed capacity"/>
-				<aux font_style="italic" font_weight="bold" x="607.691" y="2314.83" name="total initial ICU bed capacity"/>
-				<aux font_style="italic" font_weight="bold" x="806.833" y="2314.83" name="initial pandemic ICU bed capacity"/>
+				<text_box font_style="italic" uid="112" x="125.749" y="2407.35" width="1251.67" height="32.5129">These figures show the initial total capacity for staffed ward beds and ICU beds taking into account all the hospital resources, and the capacity set aside for pandemic use. Ward bed calculations take into account physical ward beds and nurses, and ICU beds take into account physical ICU beds, ICU nurses and ventilators. PPE is assumed to be sufficient to supply the staff, and all staff are assumed to be at work.</text_box>
+				<text_box text_align="center" uid="113" x="135.273" y="2509.39" width="164.286" height="75.35">The total number of staffed ward beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="114" x="63.3432" y="2373.78" width="576.728" height="18.5711">Initial capacity for staffed ward and ICU beds (these figures will not change during the run):</text_box>
+				<text_box text_align="center" uid="115" x="338.297" y="2516.39" width="164.286" height="75.35">The total number of staffed ward beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box text_align="center" uid="116" x="536.523" y="2516.39" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially available in hospital for all patients (assuming no staff absent and sufficient PPE)</text_box>
+				<text_box text_align="center" uid="117" x="734.69" y="2516.39" width="164.286" height="75.35">The total number of staffed, equipped ICU beds initially allocated for pandemic patients (assuming no staff absent and sufficient PPE)</text_box>
+				<aux font_style="italic" font_weight="bold" x="1052.5" y="2696.66" name="stress code"/>
+				<text_box font_style="italic" uid="118" x="131.749" y="2643.35" width="1251.67" height="32.5129">Additional demand for ward and ICU beds stresses the hospital system. Calculation of stress code is subject to refinement after discussions with end users.</text_box>
+				<text_box text_align="center" uid="119" x="77.1063" y="2737.06" width="228.453" height="75.35">The pandemic demand for ward beds compared to the normal total capacity in the hospital, expressed as a multiplier. E.g. a value of 2 means the pandemic demand is twice the normal ward capacity</text_box>
+				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="120" x="69.3432" y="2609.78" width="219.728" height="18.5711">Stress indicators:</text_box>
+				<text_box text_align="center" uid="121" x="325.919" y="2740.06" width="226.487" height="75.35">The pandemic demand for ICU  beds compared to the normal total capacity in the hospital, expressed as a multiplier. E.g. a value of 2 means the pandemic demand is twice the normal ICU capacity</text_box>
+				<text_box text_align="center" uid="122" x="970.357" y="2742.56" width="164.286" height="75.35">Overall indicator of stress on hospital care, taking into account additional demand for ward and ICU beds</text_box>
+				<aux font_style="italic" font_weight="bold" x="217.416" y="2463.83" name="total initial ward bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="420.44" y="2463.83" name="initial pandemic ward bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="607.691" y="2463.83" name="total initial ICU bed capacity"/>
+				<aux font_style="italic" font_weight="bold" x="806.833" y="2463.83" name="initial pandemic ICU bed capacity"/>
 				<text_box uid="123" x="51.5113" y="1744.81" width="66.928" height="45.9994">Morgue</text_box>
 				<text_box text_align="center" uid="124" x="150.107" y="1798.81" width="164.286" height="35.6627">Deceased patients being moved to morgue</text_box>
 				<text_box text_align="center" uid="126" x="508.227" y="1798.81" width="226.929" height="78.996">Where unusually high mortality rates overwhelm regular mortuary services, surplus bodies may be moved to temporary morgues such as refrigerated trucks to prevent bed blocking in hospitals</text_box>
@@ -21002,8 +21309,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="375.237" y="1900.36" width="93.5714" height="36.4286" name="Antivirals administered"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="552.406" y="1901.07" width="138.571" height="35" name="Previous vaccines administered"/>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="194.167" name="Cumulative cases"/>
-				<aux font_style="italic" font_weight="bold" x="1334.03" y="2090.04" name="Total Admissions"/>
-				<text_box text_align="center" uid="137" x="1263.44" y="2130.33" width="164.286" height="54.9994">Cumulative total of all patients admitted to hospital</text_box>
+				<aux font_style="italic" font_weight="bold" x="1334.03" y="2239.04" name="Total Admissions"/>
+				<text_box text_align="center" uid="137" x="1263.44" y="2279.33" width="164.286" height="54.9994">Cumulative total of all patients admitted to hospital</text_box>
 				<aux font_style="italic" font_weight="bold" x="393.875" y="592" name="absent nurses"/>
 				<aux font_style="italic" font_weight="bold" x="397.5" y="1002.5" name="absent ICU nurses"/>
 				<aux font_style="italic" font_weight="bold" x="807.096" y="294.167" name="ICU admissions"/>
@@ -21020,12 +21327,12 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box uid="140" x="268.542" y="41" width="1162.5" height="23">2. Issue with Stella simulator (not Architect): flows may not output correctly (no value attribute in JSON returned by sim API). Fix is to create a converter that has the flow as input, and output that instead.</text_box>
 				<text_box uid="141" x="268.542" y="61" width="1436.67" height="33">3. Issue: Output variable descriptions returned by sim API are null or outdated. Fix is to note the module prefix in the variable name, then copy the variable description, right-click variable and select Module - Neither, paste the description back in, right-click variable and select Assign Input to. Select module and variable name from the list.</text_box>
 				<text_box uid="142" x="270.214" y="94" width="1162.5" height="23">4. Issue with sim API: when outputting arrayed variables in the export table, do not use [*]. Output the variable once for every array dimention, eg var[a], var[b] and var[c].</text_box>
-				<aux font_style="italic" font_weight="bold" x="198.333" y="2540.83" name="pandemic ward demand factor"/>
-				<aux font_style="italic" font_weight="bold" x="434.167" y="2547.66" name="pandemic ICU demand factor"/>
-				<aux font_style="italic" font_weight="bold" x="659.167" y="2547.66" name="peak ward demand factor"/>
-				<text_box text_align="center" uid="143" x="573.737" y="2593.56" width="164.286" height="75.35">The peak value of the pandemic demand for ward beds, expressed as a multiple of total normal ward capacity.</text_box>
-				<text_box text_align="center" uid="144" x="778.548" y="2593.56" width="164.286" height="75.35">The peak value of the pandemic demand for ICU beds, expressed as a multiple of total normal ICU capacity.</text_box>
-				<aux font_style="italic" font_weight="bold" x="854.167" y="2547.66" name="peak ICU demand factor"/>
+				<aux font_style="italic" font_weight="bold" x="198.333" y="2689.83" name="pandemic ward demand factor"/>
+				<aux font_style="italic" font_weight="bold" x="434.167" y="2696.66" name="pandemic ICU demand factor"/>
+				<aux font_style="italic" font_weight="bold" x="659.167" y="2696.66" name="peak ward demand factor"/>
+				<text_box text_align="center" uid="143" x="573.737" y="2742.56" width="164.286" height="75.35">The peak value of the pandemic demand for ward beds, expressed as a multiple of total normal ward capacity.</text_box>
+				<text_box text_align="center" uid="144" x="778.548" y="2742.56" width="164.286" height="75.35">The peak value of the pandemic demand for ICU beds, expressed as a multiple of total normal ICU capacity.</text_box>
+				<aux font_style="italic" font_weight="bold" x="854.167" y="2696.66" name="peak ICU demand factor"/>
 				<aux font_style="italic" font_weight="bold" x="633.643" y="294.167" name="need ICU"/>
 				<text_box text_align="center" font_size="10pt" uid="145" x="560.774" y="327.307" width="155.346" height="50.265">All patients who require an ICU bed - on admission and for ward and overflow transfers</text_box>
 				<aux font_style="italic" font_weight="bold" x="1314.88" y="295.834" name="total expected deaths"/>
@@ -21037,10 +21344,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<text_box text_align="center" font_size="10pt" uid="148" x="1872.85" y="652.349" width="164.286" height="63.651">Percentage of all nurses who are absent through either infection or burnout</text_box>
 				<text_box text_align="center" font_size="10pt" uid="149" x="1572.02" y="1047.12" width="164.286" height="63.651">Percentage of ICU nurses who are absent through either infection or burnout</text_box>
 				<text_box text_align="center" font_size="10pt" uid="150" x="1421" y="326.474" width="164.286" height="58.39">Patients who need a ward bed (on admission or after a stay in ICU)</text_box>
-				<aux font_style="italic" font_weight="bold" x="1517.5" y="2090.04" name="total unable to access ward bed"/>
-				<aux font_style="italic" font_weight="bold" x="1677.5" y="2090.04" name="total unable to access ICU"/>
-				<text_box text_align="center" uid="151" x="1435.36" y="2131.16" width="164.286" height="54.9994">Total denied a ward bed in all age groups</text_box>
-				<text_box text_align="center" uid="152" x="1602.33" y="2131.16" width="164.286" height="54.9994">Total denied ICU in all age groups</text_box>
+				<aux font_style="italic" font_weight="bold" x="1517.5" y="2239.04" name="total unable to access ward bed"/>
+				<aux font_style="italic" font_weight="bold" x="1677.5" y="2239.04" name="total unable to access ICU"/>
+				<text_box text_align="center" uid="151" x="1435.36" y="2280.16" width="164.286" height="54.9994">Total denied a ward bed in all age groups</text_box>
+				<text_box text_align="center" uid="152" x="1602.33" y="2280.16" width="164.286" height="54.9994">Total denied ICU in all age groups</text_box>
 				<aux font_style="italic" font_weight="bold" x="397.025" y="1139.81" name="absent physicians"/>
 				<aux font_style="italic" font_weight="bold" x="1496.9" y="293.334" name="need ward bed"/>
 				<aux font_style="italic" font_weight="bold" x="287.857" y="296.429" name="hospital admissions"/>
@@ -21050,6 +21357,15 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="341.072" y="857.621" width="134.286" height="28.5714" name="Patients In ICU Bed"/>
 				<text_box text_align="center" font_size="10pt" uid="153" x="326.071" y="904.993" width="164.286" height="38.961">Patients occupying an ICU bed (by age group)</text_box>
 				<aux font_style="italic" font_weight="bold" x="320.59" y="200.833" name="Cumulative confirmed cases"/>
+				<text_box uid="154" x="57.511" y="2052.81" width="200.596" height="45.9994">Oxygen</text_box>
+				<text_box text_align="center" uid="155" x="337.262" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in ICU</text_box>
+				<text_box text_align="center" uid="156" x="545.499" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in wards</text_box>
+				<text_box text_align="center" uid="157" x="734.69" y="2103.98" width="164.286" height="51.496">Total daily oxygen consumption in wards and ICU, in litres</text_box>
+				<text_box text_align="center" uid="158" x="1773.33" y="2280.16" width="164.286" height="69.6061">Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</text_box>
+				<aux font_style="italic" font_weight="bold" x="421.19" y="2060.17" name="oxygen consumption per day in ICU"/>
+				<aux font_style="italic" font_weight="bold" x="621.691" y="2064" name="oxygen consumption per day in wards"/>
+				<aux font_style="italic" font_weight="bold" x="809.5" y="2064" name="total daily oxygen consumption"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1783.97" y="2232.54" width="134" height="33" name="Total oxygen used"/>
 			</view>
 		</views>
 	</model>
