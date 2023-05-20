@@ -8,15 +8,15 @@ Inputs_Epi.switch_school_closures	0
 Inputs_Epi.mask_wearing_effect	0.1
 Inputs_Epi.Probability_of_infection	0.1121063
 Inputs_Epi.mask_wearing_start	0
-Inputs_Epi.initial_testing_capacity	53454
-Inputs_Epi.initial_vaccination_capacity	279964
-Inputs_Epi.initial_contact_tracing_capacity	4000
+Inputs_Epi.initial_testing_capacity	4
+Inputs_Epi.initial_vaccination_capacity	3.3
+Inputs_Epi.initial_contact_tracing_capacity	4.8
 Inputs_Epi.testing_capacity_growth_rate	0.025
 Inputs_Epi.vaccination_capacity_growth_rate	0.2057
 Inputs_Epi.contact_tracing_capacity_growth_rate	0.025
-Inputs_Epi.testing_long-term_capacity	239119
-Inputs_Epi.vaccination_long-term_capacity	7123623
-Inputs_Epi.contact_tracing_long-term_capacity	16000
+Inputs_Epi.testing_long-term_capacity	83
+Inputs_Epi.vaccination_long-term_capacity	84.7
+Inputs_Epi.contact_tracing_long-term_capacity	19.2
 Inputs_Epi.testing_availability	0
 Inputs_Epi.vaccine_availability	60
 Inputs_Epi.contact_tracing_availability	0
@@ -24,7 +24,7 @@ Inputs_Epi.mobility_restriction_start_time	0
 Inputs_Epi.isolation_start	0
 Inputs_Epi.isolate_compliance	0.5
 Inputs_Epi.vaccine_efficacy	0.75
-Inputs_Epi.contact_tracing_effectiveness	0.5
+Inputs_Epi.quarantine compliance	0.5
 Inputs_Epi.mobility_restriction_severity	0
 Inputs_Epi.mobility_budget	120
 Inputs_Epi.start_school_closures	10
