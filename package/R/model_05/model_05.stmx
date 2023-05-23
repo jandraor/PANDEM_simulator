@@ -5,7 +5,7 @@
 		<name>model_05</name>
 		<uuid>6f814554-d331-4214-9ea0-4d7153be1488</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.0" isee:build_number="2658" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="3.3" isee:build_number="2953" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="Euler" time_units="Days" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>0</start>
@@ -45,7 +45,7 @@
 			<elem name="dd"/>
 		</dim>
 	</dimensions>
-	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="3" keep="false" rifp="true"/>
+	<isee:prefs saved_runs="3" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true"/>
 	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
 	<isee:time_formats default_format="Builtin">
 		<isee:time_format name="Builtin" type="adaptive"/>
@@ -108,8 +108,8 @@
 				<connect2 to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
 				<connect2 to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
-				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
-				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
+				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
+				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
 				<connect to="Hospital_Resources.physicians_per_100K" from="Inputs_Data.physicians_per_100K"/>
 				<connect2 to="Hospital_Resources.physicians_per_100K" from="Inputs_Data.physicians_per_100K"/>
 				<connect to="Hospital_Resources.Population_size" from="Inputs_Data.Population_size"/>
@@ -124,6 +124,8 @@
 				<connect2 to="Ventilators.Population_size" from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
+				<connect to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
+				<connect2 to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
 				<connect to="Ventilators.ventilators_per_100K" from="Inputs_Data.ventilators_per_100K"/>
 				<connect2 to="Ventilators.ventilators_per_100K" from="Inputs_Data.ventilators_per_100K"/>
 				<connect to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
@@ -328,6 +330,8 @@
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_physicians_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_physicians_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_physicians_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_physicians_available_for_pandemic"/>
+				<connect to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
+				<connect2 to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
@@ -340,10 +344,6 @@
 				<connect2 to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 				<connect2 to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
-				<connect to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect2 to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
@@ -480,6 +480,10 @@
 				<connect2 to="PANDEM2_Outputs.oxygen_consumption_per_day_in_wards" from="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
 				<connect to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
 				<connect2 to="PANDEM2_Outputs.pandemic_ICU_demand_factor" from="Hospital_Resources.pandemic_ICU_demand_factor"/>
+				<connect to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
+				<connect2 to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
+				<connect to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
+				<connect2 to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
 				<connect to="PANDEM2_Outputs.pandemic_ward_demand_factor" from="Hospital_Resources.pandemic_ward_demand_factor"/>
 				<connect2 to="PANDEM2_Outputs.pandemic_ward_demand_factor" from="Hospital_Resources.pandemic_ward_demand_factor"/>
 				<connect to="PANDEM2_Outputs.Patients_In_ICU_Bed" from="Hospital.Patients_In_ICU_Bed"/>
@@ -524,8 +528,6 @@
 				<connect2 to="PANDEM2_Outputs.physicians_at_work" from="Hospital_Resources.physicians_at_work"/>
 				<connect to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
 				<connect2 to="PANDEM2_Outputs.Potential_deaths_due_to_lack_of_ICU" from="Hospital.Potential_deaths_due_to_lack_of_ICU"/>
-				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -733,6 +735,8 @@
 				<connect2 to="PANDEM2_Outputs.need_ICU" from="Hospital.need_ICU"/>
 				<connect to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
 				<connect2 to="PANDEM2_Outputs.need_ward_bed" from="Hospital.need_ward_bed"/>
+				<connect to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
+				<connect2 to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
 				<connect to="PANDEM2_Outputs.Patients_In_ICU_Bed" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect2 to="PANDEM2_Outputs.Patients_In_ICU_Bed" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect to="PANDEM2_Outputs.Patients_Waiting_for_ICU" from="Hospital.Patients_Waiting_for_ICU"/>
@@ -861,8 +865,8 @@
 				<connect2 to="Hospital.LOS_ward_deaths_2" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
 				<connect to="Hospital.LOS_ward_deaths_3" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
 				<connect2 to="Hospital.LOS_ward_deaths_3" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
-				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
-				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
+				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
+				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
 				<connect to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect2 to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect to="Hospital.Population_size" from="Inputs_Data.Population_size"/>
@@ -1047,8 +1051,8 @@
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
-				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
+				<connect2 to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -1063,16 +1067,16 @@
 				<connect2 to="PPE.PPE_per_staff_per_day" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect2 to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
+				<connect to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
+				<connect2 to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
 				<connect to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect2 to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect2 to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
 				<connect2 to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
-				<connect to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
+				<connect to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
+				<connect2 to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
 				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
 				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
@@ -1143,12 +1147,14 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -1910,7 +1916,7 @@ expected peak demand: Ward beds</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<numeric_display color="red" font_size="24pt" isee:transparent="false" isee:show_divider="false" isee:show_bounding_box="false" label_side="left" x="794.555" y="429.191" width="205.062" height="37" isee:immediately_update_on_user_input="true" isee:conditional_entity="Hospital.ward_bed_shortfall" title="Shortfall" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="red" font_size="24pt" isee:transparent="false" isee:show_divider="false" isee:show_bounding_box="false" label_side="left" x="794.555" y="429.191" width="205.062" height="37" isee:conditional_immediately_update_on_user_input="true" isee:conditional_entity="Hospital.ward_bed_shortfall" isee:immediately_update_on_user_input="true" title="Shortfall" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.ward_bed_shortfall"/>
 				</numeric_display>
 				<lamp x="750.055" y="430.191" width="35" height="35">
@@ -1988,7 +1994,7 @@ expected peak demand: ICU</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<numeric_display color="red" font_size="24pt" isee:transparent="false" isee:show_divider="false" isee:show_bounding_box="false" label_side="left" x="823.555" y="438.191" width="190.562" height="37" isee:immediately_update_on_user_input="true" isee:conditional_entity="Hospital.ICU_shortfall" title="Shortfall" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+				<numeric_display color="red" font_size="24pt" isee:transparent="false" isee:show_divider="false" isee:show_bounding_box="false" label_side="left" x="823.555" y="438.191" width="190.562" height="37" isee:conditional_immediately_update_on_user_input="true" isee:conditional_entity="Hospital.ICU_shortfall" isee:immediately_update_on_user_input="true" title="Shortfall" retain_ending_value="true" isee:navigate_to="false" show_name="true">
 					<entity name="Hospital.ICU_shortfall"/>
 				</numeric_display>
 				<lamp x="773.555" y="439.191" width="35" height="35">
@@ -4167,10 +4173,10 @@ Surge strategy 4: Increase bed capacity
 				<stacked_container x="643.563" y="118.541" width="361.865" height="172.648" z_index="-3">
 					<graph font_color="#0055FF" font_size="18pt" legend_position="bottom" isee:hide_border="true" axis_label_font_size="14pt" width="361.865" height="172.648" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="7" num_y_labels="3" title="PPE in stock" isee:fill_intensity="0.1" x_axis_title=" " isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot isee:immediately_update_on_user_input="true" color="red" title="Baseline" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="PPE.PPE"/>
+							<entity name="PPE.Pandemic_PPE_Stock"/>
 						</plot>
 						<plot isee:immediately_update_on_user_input="true" color="blue" title="Latest run" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
-							<entity name="PPE.PPE"/>
+							<entity name="PPE.Pandemic_PPE_Stock"/>
 						</plot>
 					</graph>
 				</stacked_container>
@@ -5278,7 +5284,9 @@ If the .isdb file was previously deleted, then any charts using variables from B
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -5485,6 +5493,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital_Resources.No_limit_ICU" from="Hospital.No_limit_ICU"/>
 				<connect to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
 				<connect2 to="Hospital_Resources.No_limit_ward" from="Hospital.No_limit_ward"/>
+				<connect to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
+				<connect2 to="PANDEM2_Outputs.pandemic_morgue_capacity" from="Hospital.pandemic_morgue_capacity"/>
 				<connect to="Hospital_Resources.Patients_In_ICU_Bed_1" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect2 to="Hospital_Resources.Patients_In_ICU_Bed_1" from="Hospital.Patients_In_ICU_Bed"/>
 				<connect to="PANDEM2_Outputs.Patients_In_ICU_Bed" from="Hospital.Patients_In_ICU_Bed"/>
@@ -5649,8 +5659,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="Hospital.LOS_ward_deaths_2" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
 				<connect to="Hospital.LOS_ward_deaths_3" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
 				<connect2 to="Hospital.LOS_ward_deaths_3" from="Inputs_Hospital_patient_params.LOS_ward_deaths"/>
-				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
-				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
+				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
+				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
 				<connect to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect2 to="Hospital.nurses_per_bed_1" from="Inputs_Hospital_resource_params.nurses_per_bed"/>
 				<connect to="Hospital.PD_to_ID" from='"Within-host_profile".P_d_to_I_d'/>
@@ -5907,8 +5917,8 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PANDEM2_Outputs.activate_surge_strategy_3" from="PPE.activate_surge_strategy_3"/>
 				<connect to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
-				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
+				<connect2 to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_needed" from="PPE.PPE_needed"/>
@@ -5923,16 +5933,16 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<connect2 to="PPE.PPE_per_staff_per_day" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect2 to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
+				<connect to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
+				<connect2 to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
 				<connect to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect2 to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect2 to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
 				<connect2 to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
-				<connect to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
+				<connect to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
+				<connect2 to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
 				<connect to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
 				<connect2 to="PANDEM2_Outputs.expected_ventilators_freed" from="Ventilators.expected_ventilators_freed"/>
 				<connect to="PANDEM2_Outputs.gap_in_ventilators" from="Ventilators.gap_in_ventilators"/>
@@ -6007,12 +6017,14 @@ If the .isdb file was previously deleted, then any charts using variables from B
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6290,7 +6302,9 @@ If the .isdb file was previously deleted, then any charts using variables from B
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -6576,7 +6590,9 @@ ELSE 1</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7038,7 +7054,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7572,7 +7590,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -7999,7 +8019,9 @@ ELSE 0</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -8927,7 +8949,9 @@ ELSE 1</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -11002,7 +11026,7 @@ ELSE
 			</flow>
 			<aux name="unoccupied morgue spaces">
 				<doc>Number of available (unoccupied) mortuary spaces</doc>
-				<eqn>available_morgue_spaces - In_morgues</eqn>
+				<eqn>pandemic_morgue_capacity - In_morgues</eqn>
 				<units>People</units>
 			</aux>
 			<aux name="removal delay">
@@ -11063,15 +11087,16 @@ ELSE
 			</flow>
 			<aux name="morgue capacity" access="input">
 				<eqn>3000</eqn>
-				<units>Patients</units>
+				<units>Dimensionless</units>
 			</aux>
 			<aux name="proportion of morgue capacity\navailable for pandemic" access="input">
 				<eqn>0.5</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="available morgue spaces">
-				<doc>Number of morgue spaces made available for deceased pandemic patients</doc>
-				<eqn>morgue_capacity * proportion_of_morgue_capacity_available_for_pandemic</eqn>
+			<aux name="pandemic morgue capacity" access="output" isee:autocreated="true">
+				<doc>Number of morgue spaces made available for deceased pandemic patients, based on pre-allocated proportion of normal (peacetime) morgue capacity</doc>
+				<eqn>morgue_capacity *
+(SUM(Population_size) / 100000) * proportion_of_morgue_capacity_available_for_pandemic</eqn>
 				<units>Patients</units>
 			</aux>
 			<flow name="moved to undertakers">
@@ -11827,12 +11852,14 @@ ELSE 1</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_y="660" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="333" isee:scroll_y="686" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -13422,19 +13449,19 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>treatments_per_patient</from>
 					<to>previous_vaccines_given</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" font_color="#00AA00" label_side="right" x="2337" y="1270.35" name="morgue capacity"/>
+				<aux font_style="italic" font_weight="bold" font_color="#00AA00" label_side="right" x="2296.83" y="1298.19" name="morgue capacity"/>
 				<aux font_style="italic" font_weight="bold" label_side="right" x="2387.05" y="1239.35" name="proportion of morgue capacity\navailable for pandemic"/>
-				<aux label_side="top" x="2319" y="1209.14" name="available morgue spaces"/>
-				<connector uid="521" angle="151.18">
+				<aux label_side="top" x="2319" y="1209.14" name="pandemic morgue capacity"/>
+				<connector uid="521" angle="55.4543">
 					<from>morgue_capacity</from>
-					<to>available_morgue_spaces</to>
+					<to>pandemic_morgue_capacity</to>
 				</connector>
 				<connector uid="522" angle="156.062">
 					<from>proportion_of_morgue_capacity_available_for_pandemic</from>
-					<to>available_morgue_spaces</to>
+					<to>pandemic_morgue_capacity</to>
 				</connector>
 				<connector uid="523" angle="172.832">
-					<from>available_morgue_spaces</from>
+					<from>pandemic_morgue_capacity</from>
 					<to>unoccupied_morgue_spaces</to>
 				</connector>
 				<flow x="2106.69" y="1284" name="moved to undertakers">
@@ -14190,6 +14217,12 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 					<from>Converter_2</from>
 					<to>total_actual_cases</to>
 				</connector>
+				<connector uid="718" angle="83.5576">
+					<from>
+						<alias uid="717"/>
+					</from>
+					<to>pandemic_morgue_capacity</to>
+				</connector>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" label_side="top" uid="88" x="1309.11" y="223" width="18" height="18">
 					<of>patients_per_ward_bed</of>
 				</alias>
@@ -14457,6 +14490,9 @@ In the model snippet below, if there are more beds blocked than the threshold nu
 				<alias font_style="italic" uid="670" x="1294" y="1748" width="18" height="18">
 					<of>total_ICU_deaths</of>
 				</alias>
+				<alias font_style="italic" font_weight="bold" label_side="right" uid="717" x="2352.5" y="1258.14" width="18" height="18">
+					<of>Population_size</of>
+				</alias>
 			</view>
 		</views>
 	</model>
@@ -14647,8 +14683,8 @@ MAX(ICU_Beds - occupied_ICU_beds,  0)</eqn>
 				<connect2 to="PANDEM2_Outputs.interrupted_PPE_supply" from="PPE.interrupted_PPE_supply"/>
 				<connect to="Hospital_Resources.max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
 				<connect2 to="max_staff_supported_by_available_PPE_1" from="PPE.max_staff_supported_by_available_PPE"/>
-				<connect to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
-				<connect2 to="PANDEM2_Outputs.PPE" from="PPE.PPE"/>
+				<connect to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
+				<connect2 to="PANDEM2_Outputs.Pandemic_PPE_Stock" from="PPE.Pandemic_PPE_Stock"/>
 				<connect to="Hospital_Resources.PPE_gap" from="PPE.PPE_gap"/>
 				<connect2 to="PPE_gap" from="PPE.PPE_gap"/>
 				<connect to="PANDEM2_Outputs.PPE_gap" from="PPE.PPE_gap"/>
@@ -14659,6 +14695,8 @@ MAX(ICU_Beds - occupied_ICU_beds,  0)</eqn>
 				<connect2 to="PANDEM2_Outputs.total_PPE_used" from="PPE.total_PPE_used"/>
 				<connect to="PPE.all_nurses_requiring_PPE" from="Hospital_Resources.all_nurses_requiring_PPE"/>
 				<connect2 to="PPE.all_nurses_requiring_PPE" from="all_nurses_requiring_PPE"/>
+				<connect to="PPE.Population_size" from="Hospital_Resources.Population_size"/>
+				<connect2 to="PPE.Population_size" from="Population_size"/>
 				<connect to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect2 to="PPE.PPE_acquisition_lag_1" from="Inputs_Hospital_resource_params.PPE_acquisition_lag"/>
 				<connect to="PPE.PPE_days_supply_in_target_stock" from="Inputs_Hospital_resource_params.PPE_days_supply_in_target_stock"/>
@@ -14667,16 +14705,16 @@ MAX(ICU_Beds - occupied_ICU_beds,  0)</eqn>
 				<connect2 to="PPE.PPE_per_staff_per_day" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
 				<connect2 to="PPE.PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.PPE_per_staff_per_day"/>
+				<connect to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
+				<connect2 to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
 				<connect to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect2 to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect2 to="PPE.simulate_interruption_in_PPE_supply" from="Inputs_Modelling_options.simulate_interruption_in_PPE_supply"/>
 				<connect to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
 				<connect2 to="PPE.strategy_3_reduce_PPE_per_shift" from="Inputs_Hospital_surge_strategies.strategy_3_reduce_PPE_per_shift"/>
-				<connect to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
+				<connect to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
+				<connect2 to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
 			</module>
 			<stock name="Patients In ICU Bed 1" access="input">
 				<dimensions>
@@ -15289,15 +15327,15 @@ ELSE
 				<eqn>0.2</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="oxygen consumption per day in wards" access="output" isee:autocreated="true">
-				<doc>Oxygen consumption per day in wards, in litres</doc>
-				<eqn>{ Oxygen consumed per day by high flow nasal oxygen patients }
+			<aux name="oxygen consumption\nper minute in wards" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per minute in wards (litres per minute)</doc>
+				<eqn>{ Oxygen consumed per min by high flow nasal oxygen patients }
 SUM(
-(Patients_In_Ward_Bed * fraction_ward_HFNO * high_flow_oxygen_rate* 60*24 * adjust_for_LOS_minus_1)
-{ Plus oxygen consumed per day by low flow nasal oxygen patients }
-+ (Patients_In_Ward_Bed * fraction_ward_LFNO * low_flow_oxygen_rate* 60*24 * adjust_for_LOS_minus_1)
+(Patients_In_Ward_Bed * fraction_ward_HFNO * high_flow_oxygen_rate * adjust_for_LOS_minus_1)
+{ Plus oxygen consumed per min by low flow nasal oxygen patients }
++ (Patients_In_Ward_Bed * fraction_ward_LFNO * low_flow_oxygen_rate * adjust_for_LOS_minus_1)
 )</eqn>
-				<units>Litres/day</units>
+				<units>Litres/minute</units>
 			</aux>
 			<aux name="effective LOS ward" access="input">
 				<dimensions>
@@ -15325,29 +15363,30 @@ ELSE
 			</aux>
 			<aux name="high flow oxygen rate" access="input">
 				<eqn>60</eqn>
-				<units>Litres/Minute</units>
+				<units>Litres/(minute*patient)</units>
 			</aux>
 			<aux name="low flow oxygen rate" access="input">
 				<eqn>5</eqn>
-				<units>Litres/Minute</units>
+				<units>Litres/(minute*patient)</units>
 			</aux>
 			<aux name="ventilator oxygen rate" access="input">
 				<eqn>45</eqn>
-				<units>Litres/minute</units>
+				<units>Litres/(minute*patient)</units>
 			</aux>
 			<aux name="fraction ICU patients requiring ventilator" access="input">
 				<eqn>0.56</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="oxygen consumption per day in ICU" access="output" isee:autocreated="true">
-				<doc>Oxygen consumption per day in ICU, in litres</doc>
-				<eqn>SUM(Patients_In_ICU_Bed_1 * fraction_ICU_patients_requiring_ventilator * ventilator_oxygen_rate* 60*24)</eqn>
-				<units>Litres/day</units>
+			<aux name="oxygen consumption\nper minute in ICU" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per minute in ICU (litres per minute)</doc>
+				<eqn>SUM(Patients_In_ICU_Bed_1 * fraction_ICU_patients_requiring_ventilator * ventilator_oxygen_rate
+)</eqn>
+				<units>Litres/minute</units>
 			</aux>
 			<aux name="total daily oxygen consumption" access="output" isee:autocreated="true">
-				<doc>Total daily oxygen consumption in wards and ICU, in litres</doc>
+				<doc>Total daily oxygen consumption in wards and ICU (litres per day)</doc>
 				<eqn>oxygen_consumption_per_day_in_ICU + oxygen_consumption_per_day_in_wards</eqn>
-				<units>Litres</units>
+				<units>Litres/day</units>
 			</aux>
 			<stock name="Total oxygen used" access="output" isee:autocreated="true">
 				<doc>Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</doc>
@@ -15362,6 +15401,21 @@ ELSE
 				<non_negative/>
 				<units>Litres/day</units>
 			</flow>
+			<aux name="oxygen consumption per day in ICU" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per day in ICU (litres per day)</doc>
+				<eqn>oxygen_consumption_per_minute_in_ICU * minutes_per_day</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="minutes per day">
+				<doc>Converter: minutes per day</doc>
+				<eqn>60 * 24</eqn>
+				<units>minutes/day</units>
+			</aux>
+			<aux name="oxygen consumption per day in wards" access="output" isee:autocreated="true">
+				<doc>Oxygen consumption per day in wards (litres per day)</doc>
+				<eqn>oxygen_consumption_per_minute_in_wards * minutes_per_day</eqn>
+				<units>Litres/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -15409,12 +15463,14 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="750" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="237.5" isee:scroll_y="1177.5" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -16586,79 +16642,102 @@ Simplifying assumptions:
 Oxygen is consumed at the same rate for all the age cohorts (no data)
 Ward patients have HFNO or LFNO for LOS minus one day
 ICU patients use ventilators for all their time in ICU</text_box>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1811.2" name="fraction ward HFNO"/>
-				<aux label_side="left" x="1654.33" y="1814.45" name="oxygen consumption per day in wards"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1790.83" y="1812.45" name="fraction ward HFNO"/>
+				<aux label_side="left" x="1654.33" y="1814.45" name="oxygen consumption\nper minute in wards"/>
 				<connector uid="417" angle="314.438">
 					<from>
 						<alias uid="416"/>
 					</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
 				<connector uid="419" angle="215.499">
 					<from>fraction_ward_HFNO</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="1800.5" y="1769.59" name="effective LOS ward"/>
-				<aux label_side="top" x="1745" y="1769.59" name="adjust for LOS minus 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1843" y="1770.84" name="effective LOS ward"/>
+				<aux label_side="top" x="1787.5" y="1770.84" name="adjust for LOS minus 1"/>
 				<connector uid="421" angle="180">
 					<from>effective_LOS_ward</from>
 					<to>adjust_for_LOS_minus_1</to>
 				</connector>
 				<connector uid="422" angle="226.819">
 					<from>adjust_for_LOS_minus_1</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1905" name="fraction ward LFNO"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1790.83" y="1906.25" name="fraction ward LFNO"/>
 				<connector uid="430" angle="161.07">
 					<from>fraction_ward_LFNO</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="1748.33" y="1856.25" name="high flow oxygen rate"/>
-				<aux font_style="italic" font_weight="bold" label_side="right" x="1745" y="1948.75" name="low flow oxygen rate"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1790.83" y="1857.5" name="high flow oxygen rate"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1787.5" y="1950" name="low flow oxygen rate"/>
 				<connector uid="432" angle="187.434">
 					<from>high_flow_oxygen_rate</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
 				<connector uid="433" angle="161.565">
 					<from>low_flow_oxygen_rate</from>
-					<to>oxygen_consumption_per_day_in_wards</to>
+					<to>oxygen_consumption_per_minute_in_wards</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="left" x="1277.5" y="1856.25" name="ventilator oxygen rate"/>
 				<aux font_style="italic" font_weight="bold" label_side="left" x="1270.5" y="1807.93" name="fraction ICU patients requiring ventilator"/>
-				<aux label_side="right" x="1370.31" y="1814.45" name="oxygen consumption per day in ICU"/>
+				<aux label_side="right" x="1370.31" y="1814.45" name="oxygen consumption\nper minute in ICU"/>
 				<connector uid="435" angle="219.606">
 					<from>
 						<alias uid="434"/>
 					</from>
-					<to>oxygen_consumption_per_day_in_ICU</to>
+					<to>oxygen_consumption_per_minute_in_ICU</to>
 				</connector>
 				<connector uid="436" angle="12.5045">
 					<from>fraction_ICU_patients_requiring_ventilator</from>
-					<to>oxygen_consumption_per_day_in_ICU</to>
+					<to>oxygen_consumption_per_minute_in_ICU</to>
 				</connector>
 				<connector uid="437" angle="17.7447">
 					<from>ventilator_oxygen_rate</from>
-					<to>oxygen_consumption_per_day_in_ICU</to>
+					<to>oxygen_consumption_per_minute_in_ICU</to>
 				</connector>
-				<aux x="1500" y="1896.25" name="total daily oxygen consumption"/>
-				<connector uid="438" angle="304.283">
+				<aux label_side="top" x="1490.14" y="1924.25" name="total daily oxygen consumption"/>
+				<stock label_side="center" x="1534" y="1970" width="100" height="35" name="Total oxygen used"/>
+				<flow x="1492.13" y="1987.5" name="oxygen used">
+					<pts>
+						<pt x="1450.25" y="1987.5"/>
+						<pt x="1534" y="1987.5"/>
+					</pts>
+				</flow>
+				<connector uid="440" angle="271.798">
+					<from>total_daily_oxygen_consumption</from>
+					<to>oxygen_used</to>
+				</connector>
+				<aux label_side="left" x="1407.5" y="1879" name="oxygen consumption per day in ICU"/>
+				<aux color="#AAAA7F" font_color="#AAAA00" label_side="top" x="1490.14" y="1867.75" name="minutes per day"/>
+				<connector uid="441" angle="276.483">
 					<from>oxygen_consumption_per_day_in_ICU</from>
 					<to>total_daily_oxygen_consumption</to>
 				</connector>
-				<connector uid="439" angle="229.265">
+				<connector uid="442" angle="260.478">
+					<from>oxygen_consumption_per_minute_in_ICU</from>
+					<to>oxygen_consumption_per_day_in_ICU</to>
+				</connector>
+				<connector uid="443" angle="175.62">
+					<from>minutes_per_day</from>
+					<to>oxygen_consumption_per_day_in_ICU</to>
+				</connector>
+				<aux label_side="right" x="1565.18" y="1879" name="oxygen consumption per day in wards"/>
+				<connector uid="444" angle="235.995">
+					<from>oxygen_consumption_per_minute_in_wards</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<connector uid="445" angle="276.263">
 					<from>oxygen_consumption_per_day_in_wards</from>
 					<to>total_daily_oxygen_consumption</to>
 				</connector>
-				<stock label_side="center" x="1540" y="1970" width="100" height="35" name="Total oxygen used"/>
-				<flow x="1498.13" y="1991.25" name="oxygen used">
-					<pts>
-						<pt x="1456.25" y="1991.25"/>
-						<pt x="1540" y="1991.25"/>
-					</pts>
-				</flow>
-				<connector uid="440" angle="266.424">
-					<from>total_daily_oxygen_consumption</from>
-					<to>oxygen_used</to>
+				<connector uid="446" angle="7.42213">
+					<from>minutes_per_day</from>
+					<to>oxygen_consumption_per_day_in_wards</to>
+				</connector>
+				<connector uid="447" angle="86.4545" isee:autocreated="true">
+					<from>Population_size</from>
+					<to>PPE</to>
 				</connector>
 				<alias font_style="italic" uid="90" x="1371.14" y="418.404" width="18" height="18">
 					<of>total_ICU_nurses_needed_for_incoming_patients</of>
@@ -16773,9 +16852,9 @@ ICU patients use ventilators for all their time in ICU</text_box>
 	</model>
 	<model name="PPE">
 		<variables>
-			<stock name="PPE" access="output" isee:autocreated="true">
-				<doc>Personal protective equipment in stock (masks, gloves, aprons etc). Units are PPE sets.</doc>
-				<eqn>target_PPE_stock_1</eqn>
+			<stock name="Pandemic PPE Stock" access="output" isee:autocreated="true">
+				<doc>Personal protective equipment in stock (masks, gloves, aprons etc) and pre-allocated for pandemic use. Units are PPE sets.</doc>
+				<eqn>target_pandemic_PPE_stock</eqn>
 				<inflow>PPE_acquisition</inflow>
 				<outflow>PPE_used</outflow>
 				<non_negative/>
@@ -16800,7 +16879,7 @@ ELSE 0</eqn>
 			</flow>
 			<flow name="PPE used">
 				<doc>PPE sets used by staff per day, the minimum of PPE needed and PPE actually available</doc>
-				<eqn>MIN(PPE_needed,  PPE)  * per_day</eqn>
+				<eqn>MIN(PPE_needed,  Pandemic_PPE_Stock)  * per_day</eqn>
 				<non_negative/>
 				<units>PPE Sets/Day</units>
 			</flow>
@@ -16811,7 +16890,7 @@ ELSE 0</eqn>
 			</aux>
 			<aux name="adjustment">
 				<doc>Adjustment for stock - the difference between actual stock and desired (target) stock</doc>
-				<eqn>(target_PPE_stock_1 - PPE)/adjustment_time</eqn>
+				<eqn>(target_pandemic_PPE_stock - Pandemic_PPE_Stock)/adjustment_time</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<aux name="adjustment time">
@@ -16821,7 +16900,7 @@ ELSE 0</eqn>
 			</aux>
 			<stock name="Expected PPE Demand">
 				<doc>The expected demand for PPE</doc>
-				<eqn>target_PPE_stock_1 / PPE_days_supply_in_target_stock</eqn>
+				<eqn>target_pandemic_PPE_stock / PPE_days_supply_in_target_stock</eqn>
 				<inflow>change_in_expected_demand</inflow>
 				<non_negative/>
 				<units>PPE Sets</units>
@@ -16848,7 +16927,7 @@ ELSE 0</eqn>
 			</aux>
 			<aux name="PPE gap" access="output" isee:autocreated="true">
 				<doc>Gap in PPE (value greater than zero only when demand exceeds supply)</doc>
-				<eqn>- MIN(0, PPE - PPE_needed)</eqn>
+				<eqn>- MIN(0, Pandemic_PPE_Stock - PPE_needed)</eqn>
 				<units>PPE Sets</units>
 			</aux>
 			<aux name="Test PPE supply switch">
@@ -16884,9 +16963,9 @@ ELSE
 				<doc>Maximum number of nurses that can be supported by available PPE (at normal usage rate)</doc>
 				<eqn>IF activate_surge_strategy_3
 THEN
-MAX(PPE / reduced_PPE_per_staff_per_day_1,  0)
+MAX(Pandemic_PPE_Stock / reduced_PPE_per_staff_per_day_1,  0)
 ELSE
-MAX(PPE / PPE_per_staff_per_day,  0)</eqn>
+MAX(Pandemic_PPE_Stock / PPE_per_staff_per_day,  0)</eqn>
 				<units>Staff</units>
 			</aux>
 			<aux name="peak PPE needed">
@@ -16896,7 +16975,7 @@ MAX(PPE / PPE_per_staff_per_day,  0)</eqn>
 			</aux>
 			<aux name="activate surge strategy 3" access="output" isee:autocreated="true">
 				<doc>Surge strategy 3 is to reduce the PPE sets used per staff per shift and will be activated when PPE stock is running low, and if the strategy is enabled.</doc>
-				<eqn>IF PPE &lt; (target_PPE_stock /PPE_days_supply_in_target_stock)
+				<eqn>IF Pandemic_PPE_Stock &lt; (target_pandemic_PPE_stock /PPE_days_supply_in_target_stock)
 AND
 strategy_3_reduce_PPE_per_shift
 THEN
@@ -16941,10 +17020,6 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 				<eqn>1</eqn>
 				<units>1/day</units>
 			</aux>
-			<aux name="target PPE stock 1" access="input">
-				<eqn>40000</eqn>
-				<units>PPE Sets</units>
-			</aux>
 			<aux name="PPE acquisition lag 1" access="input">
 				<eqn>3</eqn>
 				<units>Days</units>
@@ -16961,10 +17036,6 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 				<eqn>0</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="target PPE stock" access="input">
-				<eqn>40000</eqn>
-				<units>PPE Sets</units>
-			</aux>
 			<aux name="reduced PPE per staff per day 1" access="input">
 				<eqn>2</eqn>
 				<units>PPE Sets/Staff</units>
@@ -16976,6 +17047,25 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 			<aux name="all nurses requiring PPE" access="input">
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Staff</units>
+			</aux>
+			<aux name="proportion of PPE capacity\navailable for pandemic" access="input">
+				<eqn>0.5</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="target PPE stock per 1K" access="input">
+				<eqn>96</eqn>
+				<units>PPE Sets/People</units>
+			</aux>
+			<aux name="Population size" access="input">
+				<dimensions>
+					<dim name="Age"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>People</units>
+			</aux>
+			<aux name="target pandemic PPE stock">
+				<eqn>target_PPE_stock_per_1K * (SUM(Population_size) / 1000) * proportion_of_PPE_capacity_available_for_pandemic</eqn>
+				<units>PPE Sets</units>
 			</aux>
 		</variables>
 		<views>
@@ -17029,7 +17119,9 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17061,16 +17153,16 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stock label_side="center" x="436.286" y="392.143" name="PPE"/>
-				<flow x="329.215" y="392.143" name="PPE acquisition">
+				<stock label_side="center" x="379.679" y="375.714" width="105.714" height="32.8571" name="Pandemic PPE Stock"/>
+				<flow x="312.161" y="392.143" name="PPE acquisition">
 					<pts>
 						<pt x="256.643" y="392.143"/>
-						<pt x="413.786" y="392.143"/>
+						<pt x="379.679" y="392.143"/>
 					</pts>
 				</flow>
-				<flow x="526.607" y="392.143" name="PPE used">
+				<flow x="539.911" y="392.143" name="PPE used">
 					<pts>
-						<pt x="458.786" y="392.143"/>
+						<pt x="485.393" y="392.143"/>
 						<pt x="618.429" y="392.143"/>
 					</pts>
 				</flow>
@@ -17087,7 +17179,7 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<to>adjustment</to>
 				</connector>
 				<connector uid="4" angle="97.7658">
-					<from>PPE</from>
+					<from>Pandemic_PPE_Stock</from>
 					<to>adjustment</to>
 				</connector>
 				<stock label_side="center" x="338.214" y="547.499" width="120" height="35" name="Expected PPE Demand"/>
@@ -17121,7 +17213,7 @@ MAX(0,  anchor + adjustment) * per_day</eqn>
 					<to>change_in_expected_demand</to>
 				</connector>
 				<connector uid="10" angle="299.876">
-					<from>PPE</from>
+					<from>Pandemic_PPE_Stock</from>
 					<to>PPE_used</to>
 				</connector>
 				<text_box uid="11" x="19.572" y="45.9999" width="930.499" height="74.7145">PPE stock initial value is set to target value
@@ -17155,7 +17247,7 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 				<aux x="235.143" y="513" name="interrupted PPE supply"/>
 				<aux color="#00AA00" font_color="#00AA00" label_side="right" x="477.213" y="767.619" name="max staff supported\nby available PPE"/>
 				<numeric_display uid="23" x="609.858" y="127" width="276.822" height="24" retain_ending_value="true" isee:navigate_to="false" show_name="true">
-					<entity name="Inputs_Hospital_resource_params.target_PPE_stock"/>
+					<entity name="target_pandemic_PPE_stock"/>
 				</numeric_display>
 				<aux color="#AA0000" font_color="#AA0000" x="736.143" y="435.572" name="peak PPE needed"/>
 				<connector uid="24" angle="330.056">
@@ -17235,11 +17327,6 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					</from>
 					<to>activate_surge_strategy_3</to>
 				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="324.179" y="229.571" name="target PPE stock 1"/>
-				<connector uid="50" angle="175.55">
-					<from>target_PPE_stock_1</from>
-					<to>adjustment</to>
-				</connector>
 				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="339.179" y="336.429" name="PPE acquisition lag 1"/>
 				<connector uid="51" angle="219.671">
 					<from>PPE_acquisition_lag_1</from>
@@ -17263,11 +17350,6 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 				<connector uid="55" angle="188.908">
 					<from>simulate_interruption_in_PPE_supply</from>
 					<to>PPE_order_rate</to>
-				</connector>
-				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" x="288.143" y="880.714" name="target PPE stock"/>
-				<connector uid="56" angle="75.4258">
-					<from>target_PPE_stock</from>
-					<to>activate_surge_strategy_3</to>
 				</connector>
 				<connector uid="57" angle="102.416">
 					<from>PPE_days_supply_in_target_stock</from>
@@ -17296,8 +17378,34 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					</graph>
 				</stacked_container>
 				<text_box font_style="italic" font_size="10pt" uid="62" x="282.143" y="479.499" width="125.356" height="47.002">Supply will be interrupted from day 60 to day 80</text_box>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="340.714" y="177.857" name="proportion of PPE capacity\navailable for pandemic"/>
+				<aux color="#55AAFF" font_style="italic" font_weight="bold" font_color="#55AAFF" label_side="top" x="420.714" y="229.571" name="target PPE stock per 1K"/>
+				<aux font_style="italic" font_weight="bold" x="502.143" y="276.429" name="Population size"/>
+				<aux label_side="bottom" x="339.179" y="229.571" name="target pandemic PPE stock"/>
+				<connector uid="63" angle="205">
+					<from>target_PPE_stock_per_1K</from>
+					<to>target_pandemic_PPE_stock</to>
+				</connector>
+				<connector uid="64" angle="188.958">
+					<from>Population_size</from>
+					<to>target_pandemic_PPE_stock</to>
+				</connector>
+				<connector uid="65" angle="276.981">
+					<from>proportion_of_PPE_capacity_available_for_pandemic</from>
+					<to>target_pandemic_PPE_stock</to>
+				</connector>
+				<connector uid="66" angle="74.7449">
+					<from>
+						<alias uid="67"/>
+					</from>
+					<to>activate_surge_strategy_3</to>
+				</connector>
+				<connector uid="68" angle="164.017">
+					<from>target_pandemic_PPE_stock</from>
+					<to>adjustment</to>
+				</connector>
 				<alias font_style="italic" uid="30" x="348.179" y="696.357" width="45" height="35">
-					<of>PPE</of>
+					<of>Pandemic_PPE_Stock</of>
 				</alias>
 				<alias font_style="italic" label_side="top" uid="13" x="208.143" y="699" width="18" height="18">
 					<of>PPE_needed</of>
@@ -17307,6 +17415,9 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 				</alias>
 				<alias color="#AAAAFF" font_style="italic" font_color="#AAAAFF" uid="43" x="48" y="430.286" width="18" height="18">
 					<of>per_day</of>
+				</alias>
+				<alias font_style="italic" uid="67" x="268.857" y="891" width="18" height="18">
+					<of>target_pandemic_PPE_stock</of>
 				</alias>
 			</view>
 		</views>
@@ -17451,7 +17562,9 @@ Assumption is that PPE supplies are unconstrained, unless the option &apos;inter
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -17721,8 +17834,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Hospital_Resources.ICU_beds_per_100K_1" from="Inputs_Data.ICU_beds_per_100K"/>
 				<connect to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
 				<connect2 to="Hospital_Resources.ICU_nurses_per_100K_1" from="Inputs_Data.ICU_nurses_per_100K"/>
-				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
-				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity"/>
+				<connect to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
+				<connect2 to="Hospital.morgue_capacity" from="Inputs_Data.morgue_capacity_per_100K"/>
 				<connect to="Hospital_Resources.physicians_per_100K" from="Inputs_Data.physicians_per_100K"/>
 				<connect2 to="Hospital_Resources.physicians_per_100K" from="Inputs_Data.physicians_per_100K"/>
 				<connect to="Hospital_Resources.Population_size" from="Inputs_Data.Population_size"/>
@@ -17737,6 +17850,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Ventilators.Population_size" from="Inputs_Data.Population_size"/>
 				<connect to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
 				<connect2 to='"Within-host_profile".Population_size' from="Inputs_Data.Population_size"/>
+				<connect to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
+				<connect2 to="PPE.target_PPE_stock_per_1K" from="Inputs_Data.target_PPE_stock_level_per_1K"/>
 				<connect to="Ventilators.ventilators_per_100K" from="Inputs_Data.ventilators_per_100K"/>
 				<connect2 to="Ventilators.ventilators_per_100K" from="Inputs_Data.ventilators_per_100K"/>
 				<connect to="Hospital_Resources.ward_beds_per_1K_1" from="Inputs_Data.ward_beds_per_1K"/>
@@ -17875,6 +17990,8 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="Hospital_Resources.proportion_of_nurses_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_nurses_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_physicians_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_physicians_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_physicians_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_physicians_available_for_pandemic"/>
+				<connect to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
+				<connect2 to="PPE.proportion_of_PPE_capacity_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_PPE_capacity_available_for_pandemic"/>
 				<connect to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect2 to="Hospital_Resources.proportion_of_ventilators_available_for_pandemic" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
 				<connect to="Ventilators.proportion_of_ventilators_available_for_pandemic_1" from="Inputs_Hospital_resource_params.proportion_of_ventilators_available_for_pandemic"/>
@@ -17887,10 +18004,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<connect2 to="PPE.reduced_PPE_per_staff_per_day_1" from="Inputs_Hospital_resource_params.reduced_PPE_per_staff_per_day"/>
 				<connect to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 				<connect2 to="Hospital_Resources.surge_capacity_bed_increase" from="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
-				<connect to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
-				<connect2 to="PPE.target_PPE_stock_1" from="Inputs_Hospital_resource_params.target_PPE_stock"/>
 				<connect to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect2 to="Hospital.threshold_number_of_beds_blocked_by_deceased" from="Inputs_Hospital_resource_params.threshold_number_of_beds_blocked_by_deceased"/>
 				<connect to="Hospital_Resources.ventilator_oxygen_rate" from="Inputs_Hospital_resource_params.ventilator_oxygen_rate"/>
@@ -17959,12 +18072,14 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="0.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18222,9 +18337,6 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 							<entity name="Inputs_Hospital_resource_params.surge_capacity_bed_increase"/>
 						</item>
 						<item>
-							<entity name="Inputs_Hospital_resource_params.target_PPE_stock"/>
-						</item>
-						<item>
 							<entity name='Inputs_Hospital_surge_strategies."strategy_1_reduce_ICU-nurse-to-patient_ratio"'/>
 						</item>
 						<item>
@@ -18354,10 +18466,15 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<eqn>234</eqn>
 				<units>Staff/people</units>
 			</aux>
-			<aux name="morgue capacity" access="output" isee:autocreated="true">
-				<doc>Total number of hospital mortuary spaces in normal conditions</doc>
-				<eqn>6000</eqn>
-				<units>Patients</units>
+			<aux name="morgue capacity per 100K" access="output" isee:autocreated="true">
+				<doc>Total number of hospital mortuary spaces per 100,000 population in normal (peace-time) conditions</doc>
+				<eqn>7.2</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="target PPE stock level per 1K" access="output" isee:autocreated="true">
+				<doc>Target PPE stock level per 1K population for all purposes. Hospitals will aim to keep stocks at this target level, ordering more when usage rates are higher.</doc>
+				<eqn>96</eqn>
+				<units>PPE Sets/People</units>
 			</aux>
 		</variables>
 		<views>
@@ -18411,7 +18528,9 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18457,8 +18576,10 @@ Note: unlike PPE, ventilators will be reused, not disposed of.</text_box>
 				<aux label_side="top" x="121.25" y="144" name="Age specific contact rates"/>
 				<aux label_side="top" x="289.811" y="316.304" name="physicians per 100K"/>
 				<text_box text_align="center" font_size="10pt" uid="6" x="207.668" y="346.04" width="164.286" height="38.7143">Hospital physicians per 100,000 population.</text_box>
-				<aux label_side="top" x="295.75" y="430.068" name="morgue capacity"/>
-				<text_box text_align="center" font_size="10pt" uid="7" x="213.607" y="459.211" width="164.286" height="64.429">Total number of hospital mortuary spaces in normal conditions</text_box>
+				<aux label_side="top" x="295.75" y="430.068" name="morgue capacity per 100K"/>
+				<text_box text_align="center" font_size="10pt" uid="7" x="213.607" y="459.211" width="164.286" height="64.429">Total number of hospital mortuary spaces per 100,000 population in normal (peace-time) conditions</text_box>
+				<aux label_side="top" x="477.448" y="427.589" name="target PPE stock level per 1K"/>
+				<text_box text_align="center" font_size="10pt" uid="8" x="395.305" y="453.611" width="164.286" height="55.629">Target PPE stock level for all purposes. Hospitals will aim to keep stocks at this target level, ordering more when usage rates are higher.</text_box>
 			</view>
 		</views>
 	</model>
@@ -18666,12 +18787,14 @@ maximum severity (full lockdown).</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="808" page_height="561" isee:page_cols="2" isee:scroll_x="2.27273" isee:scroll_y="5.90909" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="2" isee:scroll_x="2.27273" isee:scroll_y="5.45455" zoom="220" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -18732,7 +18855,7 @@ maximum severity (full lockdown).</doc>
 				<aux x="311.557" y="70" name="switch isolation"/>
 				<aux x="311.557" y="129.375" name="isolation start"/>
 				<aux x="764.739" y="128.75" name="start school closures"/>
-				<aux x="85.625" y="23.6364" name="initial infected"/>
+				<aux x="76.625" y="14.6364" width="18" height="18" name="initial infected"/>
 				<aux x="764.739" y="196.136" name="duration school closures"/>
 			</view>
 		</views>
@@ -19135,7 +19258,9 @@ maximum severity (full lockdown).</doc>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19240,11 +19365,6 @@ maximum severity (full lockdown).</doc>
 				<eqn>0.5</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="target PPE stock" access="output" isee:autocreated="true">
-				<doc>Target PPE stock level. Hospitals will aim to keep stocks at this target level, ordering more when usage rates are higher.</doc>
-				<eqn>4000000</eqn>
-				<units>PPE Sets</units>
-			</aux>
 			<aux name="fraction ICU patients requiring ventilator" access="output" isee:autocreated="true">
 				<doc>The fraction of ICU patients that require a ventilator</doc>
 				<eqn>0.56</eqn>
@@ -19338,17 +19458,22 @@ maximum severity (full lockdown).</doc>
 			<aux name="low flow oxygen rate" access="output" isee:autocreated="true">
 				<doc>Average low flow oxygen rate, in litres per minute</doc>
 				<eqn>5</eqn>
-				<units>Litres/Minute</units>
+				<units>Litres/(minute*patient)</units>
 			</aux>
 			<aux name="high flow oxygen rate" access="output" isee:autocreated="true">
 				<doc>Average high flow oxygen rate, in litres per minute</doc>
 				<eqn>60</eqn>
-				<units>Litres/Minute</units>
+				<units>Litres/(minute*patient)</units>
 			</aux>
 			<aux name="ventilator oxygen rate" access="output" isee:autocreated="true">
 				<doc>Average oxygen rate from a ventilator, in litres per minute</doc>
 				<eqn>45</eqn>
-				<units>Litres/minute</units>
+				<units>Litres/(minute*patient)</units>
+			</aux>
+			<aux name="proportion of PPE capacity\navailable for pandemic" access="output" isee:autocreated="true">
+				<doc>Proportion of PPE made available for care of pandemic patients</doc>
+				<eqn>0.5</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -19402,7 +19527,9 @@ maximum severity (full lockdown).</doc>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19442,50 +19569,50 @@ maximum severity (full lockdown).</doc>
 				<text_box text_align="center" font_size="10pt" uid="3" x="430.686" y="107.646" width="164.286" height="50.1429">Proportion of nurses made available for care of pandemic patients</text_box>
 				<aux label_side="top" x="702.115" y="78.054" name="proportion of ICU nurses available for pandemic"/>
 				<text_box text_align="center" font_size="10pt" uid="4" x="619.972" y="107.075" width="164.286" height="50.1429">Proportion of ICU nurses made available for care of pandemic patients</text_box>
-				<aux label_side="top" x="157.323" y="311.089" name="target PPE stock"/>
-				<text_box text_align="center" font_size="10pt" uid="5" x="79.936" y="337.111" width="164.286" height="38.7143">Target PPE stock level</text_box>
-				<aux label_side="top" x="154.608" y="206.922" name="fraction ICU patients requiring ventilator"/>
-				<text_box text_align="center" font_size="10pt" uid="6" x="74.609" y="231.229" width="164.286" height="50.1429">The fraction of ICU patients that require a ventilator</text_box>
-				<text_box text_align="center" font_size="10pt" uid="8" x="73.597" y="448.27" width="164.286" height="51.5714">Normal number of nurses required per patient in a ward bed</text_box>
-				<aux x="155.74" y="401.96" name="nurses per bed"/>
-				<aux color="blue" label_side="bottom" x="349.454" y="401.96" name="ICU nurses per bed"/>
-				<text_box text_align="center" font_size="10pt" uid="9" x="267.311" y="448.27" width="164.286" height="51.5714">Normal number of ICU nurses per patient in an ICU bed</text_box>
-				<aux color="blue" label_side="top" x="703.133" y="297.446" name="PPE per staff per day"/>
-				<text_box text_align="center" font_size="10pt" uid="11" x="620.99" y="330.729" width="164.286" height="50.1429">PPE sets used per staff member per day (or shift)</text_box>
-				<aux label_side="top" x="1072.69" y="78.91" name="proportion of ventilators available for pandemic"/>
-				<text_box text_align="center" font_size="10pt" uid="12" x="990.54" y="108.789" width="164.286" height="48.7137">Proportion of ventilators made available for care of pandemic patients</text_box>
-				<aux color="blue" label_side="top" x="899.133" y="295.446" name="reduced PPE per staff per day"/>
-				<text_box text_align="center" font_size="10pt" uid="14" x="816.99" y="321.817" width="164.286" height="71.1429">PPE sets used per staff member per day (or shift) in times of low availability of PPE, if surge strategy is enabled</text_box>
-				<aux color="blue" label_side="top" x="1093.14" y="306.422" name="increased risk to staff if PPE use reduced"/>
-				<text_box text_align="center" font_size="10pt" uid="16" x="1010.99" y="331.729" width="164.286" height="71.1429">Increased risk to staff if surge strategy to reduce PPE usage rates is enabled</text_box>
-				<text_box text_align="center" font_size="10pt" uid="18" x="77.597" y="579.27" width="164.286" height="78.5714">Number of nurses required per patient/bed when availability of nurses is low, if surge strategy enabled</text_box>
-				<aux x="159.74" y="532.96" name="reduced nurses per bed ratio"/>
-				<aux color="blue" label_side="bottom" x="353.454" y="528.96" name="reduced ICU nurses per bed ratio"/>
-				<text_box text_align="center" font_size="10pt" uid="19" x="271.311" y="575.27" width="164.286" height="78.5714">Number of ICU nurses required per patient/bed when availability of ICU nurses is low, if surge strategy enabled </text_box>
-				<aux color="blue" label_side="bottom" x="550.454" y="526.96" name="surge capacity bed increase"/>
-				<text_box text_align="center" font_size="10pt" uid="22" x="468.311" y="573.27" width="164.286" height="78.5714">Percentage of beds to make available when surge capacity is enabled and beds are all occupied</text_box>
-				<aux label_side="top" x="499.704" y="291.446" width="18" height="18" name="PPE acquisition lag"/>
-				<text_box text_align="center" font_size="10pt" uid="24" x="426.561" y="330.611" width="164.286" height="38.7143">Delay between ordering PPE and PPE delivery</text_box>
-				<aux label_side="top" x="330.329" y="303.321" name="PPE days supply in target stock"/>
-				<text_box text_align="center" font_size="10pt" uid="26" x="248.186" y="333.486" width="164.286" height="45.9643">The desired number of days of supply of PPE to keep in stock</text_box>
-				<aux label_side="bottom" x="159.74" y="678.716" name="antiviral capacity"/>
-				<text_box text_align="center" font_size="10pt" uid="27" x="82.458" y="717.461" width="164.286" height="75.0004">Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</text_box>
-				<aux label_side="bottom" x="359.851" y="666.841" name="previous strain\nvaccine capacity"/>
-				<text_box text_align="center" font_size="10pt" uid="28" x="271.458" y="714.461" width="164.286" height="81.0004">Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</text_box>
-				<aux label_side="bottom" x="550.454" y="666.841" name="threshold number\nof beds blocked by deceased"/>
-				<text_box text_align="center" font_size="10pt" uid="30" x="468.311" y="715.068" width="164.286" height="67.2861">The number of hospital beds blocked by deceased patients that triggers emergency procedures such as army personnel moving bodies to temporary morgues</text_box>
-				<aux label_side="top" x="882.115" y="77.054" name="proportion of physicians\navailable for pandemic"/>
-				<text_box text_align="center" font_size="10pt" uid="31" x="799.972" y="106.075" width="164.286" height="50.1429">Proportion of hospital physicians made available for care of pandemic patients</text_box>
-				<aux label_side="top" x="1265.69" y="77.91" name="proportion of morgue capacity\navailable for pandemic"/>
-				<text_box text_align="center" font_size="10pt" uid="32" x="1183.54" y="107.789" width="164.286" height="48.7137">Proportion of morgue spaces made available for deceased pandemic patients</text_box>
-				<aux x="523.571" y="405" name="nurse burnout rate"/>
-				<text_box text_align="center" font_size="10pt" uid="33" x="448.74" y="448.27" width="164.286" height="51.5714">Proportion of all nurses who become absent due to stress when workload is increased to meet staff shortages</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="358.193" y="829.714" name="low flow oxygen rate"/>
-				<text_box text_align="center" font_size="10pt" uid="34" x="276.05" y="848.443" width="164.286" height="39.4286">Average low flow oxygen rate, in litres per minute</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="161.419" y="831.589" name="high flow oxygen rate"/>
-				<text_box text_align="center" font_size="10pt" uid="35" x="79.2757" y="850.318" width="164.286" height="39.4286">Average high flow oxygen rate, in litres per minute</text_box>
-				<text_box text_align="center" font_size="10pt" uid="37" x="450.311" y="848.443" width="164.286" height="39.4286">Average oxygen rate from a ventilator, in litres per minute</text_box>
-				<aux font_color="#55AAFF" label_side="top" x="532.454" y="829.714" name="ventilator oxygen rate"/>
+				<aux label_side="top" x="148.894" y="329.065" name="fraction ICU patients requiring ventilator"/>
+				<text_box text_align="center" font_size="10pt" uid="6" x="68.8947" y="353.372" width="164.286" height="30.8572">The fraction of ICU patients that require a ventilator</text_box>
+				<text_box text_align="center" font_size="10pt" uid="8" x="67.8827" y="570.413" width="164.286" height="51.5714">Normal number of nurses required per patient in a ward bed</text_box>
+				<aux x="150.026" y="524.103" name="nurses per bed"/>
+				<aux color="blue" label_side="bottom" x="343.74" y="524.103" name="ICU nurses per bed"/>
+				<text_box text_align="center" font_size="10pt" uid="9" x="261.597" y="570.413" width="164.286" height="51.5714">Normal number of ICU nurses per patient in an ICU bed</text_box>
+				<aux color="blue" label_side="top" x="523.133" y="416.017" name="PPE per staff per day"/>
+				<text_box text_align="center" font_size="10pt" uid="11" x="440.99" y="449.3" width="164.286" height="50.1429">PPE sets used per staff member per day (or shift)</text_box>
+				<aux label_side="top" x="339.119" y="203.196" name="proportion of ventilators available for pandemic"/>
+				<text_box text_align="center" font_size="10pt" uid="12" x="256.969" y="233.075" width="164.286" height="48.7137">Proportion of ventilators made available for care of pandemic patients</text_box>
+				<aux color="blue" label_side="top" x="719.133" y="414.017" name="reduced PPE per staff per day"/>
+				<text_box text_align="center" font_size="10pt" uid="14" x="636.99" y="440.388" width="164.286" height="71.1429">PPE sets used per staff member per day (or shift) in times of low availability of PPE, if surge strategy is enabled</text_box>
+				<aux color="blue" label_side="top" x="913.14" y="424.993" name="increased risk to staff if PPE use reduced"/>
+				<text_box text_align="center" font_size="10pt" uid="16" x="830.99" y="450.3" width="164.286" height="71.1429">Increased risk to staff if surge strategy to reduce PPE usage rates is enabled</text_box>
+				<text_box text_align="center" font_size="10pt" uid="18" x="71.8827" y="701.413" width="164.286" height="78.5714">Number of nurses required per patient/bed when availability of nurses is low, if surge strategy enabled</text_box>
+				<aux x="154.026" y="655.103" name="reduced nurses per bed ratio"/>
+				<aux color="blue" label_side="bottom" x="347.74" y="651.103" name="reduced ICU nurses per bed ratio"/>
+				<text_box text_align="center" font_size="10pt" uid="19" x="265.597" y="697.413" width="164.286" height="78.5714">Number of ICU nurses required per patient/bed when availability of ICU nurses is low, if surge strategy enabled </text_box>
+				<aux color="blue" label_side="bottom" x="544.74" y="649.103" name="surge capacity bed increase"/>
+				<text_box text_align="center" font_size="10pt" uid="22" x="462.597" y="695.413" width="164.286" height="78.5714">Percentage of beds to make available when surge capacity is enabled and beds are all occupied</text_box>
+				<aux label_side="top" x="328.704" y="419.017" name="PPE acquisition lag"/>
+				<text_box text_align="center" font_size="10pt" uid="24" x="246.561" y="449.182" width="164.286" height="38.7143">Delay between ordering PPE and PPE delivery</text_box>
+				<aux label_side="top" x="150.329" y="421.892" name="PPE days supply in target stock"/>
+				<text_box text_align="center" font_size="10pt" uid="26" x="68.186" y="452.057" width="164.286" height="45.9643">The desired number of days of supply of PPE to keep in stock</text_box>
+				<aux label_side="bottom" x="154.026" y="800.859" name="antiviral capacity"/>
+				<text_box text_align="center" font_size="10pt" uid="27" x="76.7437" y="839.604" width="164.286" height="75.0004">Capacity of therapeutic antiviral treatment, between zero and 1. Zero means none available, 1 means available to all ward patients (and assumes given to all)</text_box>
+				<aux label_side="bottom" x="354.137" y="788.984" name="previous strain\nvaccine capacity"/>
+				<text_box text_align="center" font_size="10pt" uid="28" x="265.744" y="836.604" width="164.286" height="81.0004">Capacity of vaccines for previous strains that can help current patients, between zero and 1. Zero means none available, 1 means available to all ICU patients (and assumes given to all)</text_box>
+				<aux label_side="bottom" x="544.74" y="788.984" name="threshold number\nof beds blocked by deceased"/>
+				<text_box text_align="center" font_size="10pt" uid="30" x="462.597" y="837.211" width="164.286" height="67.2861">The number of hospital beds blocked by deceased patients that triggers emergency procedures such as army personnel moving bodies to temporary morgues</text_box>
+				<aux label_side="top" x="148.544" y="201.34" name="proportion of physicians\navailable for pandemic"/>
+				<text_box text_align="center" font_size="10pt" uid="31" x="66.4006" y="230.361" width="164.286" height="50.1429">Proportion of hospital physicians made available for care of pandemic patients</text_box>
+				<aux label_side="top" x="701.404" y="197.196" name="proportion of morgue capacity\navailable for pandemic"/>
+				<text_box text_align="center" font_size="10pt" uid="32" x="619.254" y="227.075" width="164.286" height="48.7137">Proportion of morgue spaces made available for deceased pandemic patients</text_box>
+				<aux x="508.857" y="518.143" width="18" height="18" name="nurse burnout rate"/>
+				<text_box text_align="center" font_size="10pt" uid="33" x="443.026" y="570.413" width="164.286" height="51.5714">Proportion of all nurses who become absent due to stress when workload is increased to meet staff shortages</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="352.479" y="951.857" name="low flow oxygen rate"/>
+				<text_box text_align="center" font_size="10pt" uid="34" x="270.336" y="970.586" width="164.286" height="39.4286">Average low flow oxygen rate, in litres per minute</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="155.705" y="953.732" name="high flow oxygen rate"/>
+				<text_box text_align="center" font_size="10pt" uid="35" x="73.5614" y="972.461" width="164.286" height="39.4286">Average high flow oxygen rate, in litres per minute</text_box>
+				<text_box text_align="center" font_size="10pt" uid="37" x="444.597" y="970.586" width="164.286" height="39.4286">Average oxygen rate from a ventilator, in litres per minute</text_box>
+				<aux font_color="#55AAFF" label_side="top" x="526.74" y="951.857" name="ventilator oxygen rate"/>
+				<aux label_side="top" x="516.405" y="200.767" name="proportion of PPE capacity\navailable for pandemic"/>
+				<text_box text_align="center" font_size="10pt" uid="38" x="434.255" y="230.646" width="164.286" height="48.7137">Proportion of PPE made available for care of pandemic patients</text_box>
 			</view>
 		</views>
 	</model>
@@ -19563,7 +19690,9 @@ maximum severity (full lockdown).</doc>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -19671,7 +19800,9 @@ maximum severity (full lockdown).</doc>
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -20012,12 +20143,6 @@ maximum severity (full lockdown).</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>Ventilators</units>
 			</aux>
-			<stock name="PPE" access="input">
-				<doc>Personal protective equipment in stock (masks, gloves, aprons etc). Units are PPE sets.</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<non_negative/>
-				<units>PPE Sets</units>
-			</stock>
 			<aux name="PPE needed" access="input">
 				<doc>PPE sets needed by staff caring for all patients currently in hospital (at normal, non-surge usage rate). Includes patients in wards, waiting for wards and in overflows</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
@@ -20412,20 +20537,10 @@ maximum severity (full lockdown).</doc>
 				</dimensions>
 				<units>People</units>
 			</aux>
-			<aux name="oxygen consumption per day in ICU" access="input">
-				<doc>Oxygen consumption per day in ICU, in litres</doc>
+			<aux name="pandemic morgue capacity" access="input">
+				<doc>Number of morgue spaces made available for deceased pandemic patients, based on pre-allocated proportion of normal (peacetime) morgue capacity</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Litres/day</units>
-			</aux>
-			<aux name="oxygen consumption per day in wards" access="input">
-				<doc>Oxygen consumption per day in wards, in litres</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Litres/day</units>
-			</aux>
-			<aux name="total daily oxygen consumption" access="input">
-				<doc>Total daily oxygen consumption in wards and ICU, in litres</doc>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>Litres</units>
+				<units>Patients</units>
 			</aux>
 			<stock name="Total oxygen used" access="input">
 				<doc>Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</doc>
@@ -20433,6 +20548,27 @@ maximum severity (full lockdown).</doc>
 				<non_negative/>
 				<units>Litres</units>
 			</stock>
+			<aux name="total daily oxygen consumption" access="input">
+				<doc>Total daily oxygen consumption in wards and ICU (litres per day)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<stock name="Pandemic PPE Stock" access="input">
+				<doc>Personal protective equipment in stock (masks, gloves, aprons etc) and pre-allocated for pandemic use. Units are PPE sets.</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<non_negative/>
+				<units>PPE Sets</units>
+			</stock>
+			<aux name="oxygen consumption per day in ICU" access="input">
+				<doc>Oxygen consumption per day in ICU (litres per day)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres/day</units>
+			</aux>
+			<aux name="oxygen consumption per day in wards" access="input">
+				<doc>Oxygen consumption per day in wards (litres per day)</doc>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>Litres/day</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -20480,12 +20616,14 @@ maximum severity (full lockdown).</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="14pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" isee:scroll_y="1043" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="1090" page_height="762" isee:page_cols="3" isee:page_rows="6" isee:scroll_y="1260" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
 					</stock>
-					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
 					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
 					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="55" height="45"/>
@@ -20818,7 +20956,7 @@ maximum severity (full lockdown).</doc>
 							<entity name="Hospital_Resources.staffed_equipped_ICU_beds_gap"/>
 						</item>
 						<item>
-							<entity name="PPE.PPE"/>
+							<entity name="PPE.Pandemic_PPE_Stock"/>
 						</item>
 						<item>
 							<entity name="PPE.PPE_needed"/>
@@ -20831,6 +20969,9 @@ maximum severity (full lockdown).</doc>
 						</item>
 						<item>
 							<entity name="PPE.interrupted_PPE_supply"/>
+						</item>
+						<item>
+							<entity name="Hospital.pandemic_morgue_capacity"/>
 						</item>
 						<item>
 							<entity name="Hospital.In_morgues"/>
@@ -20861,6 +21002,15 @@ maximum severity (full lockdown).</doc>
 						</item>
 						<item>
 							<entity name="Hospital.Previous_vaccines_administered[d]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.total_daily_oxygen_consumption"/>
 						</item>
 						<item>
 							<entity name="Hospital.Total_needed_ICU[a]"/>
@@ -20933,6 +21083,9 @@ maximum severity (full lockdown).</doc>
 						</item>
 						<item>
 							<entity name="Hospital.total_deaths[d]"/>
+						</item>
+						<item>
+							<entity name="Hospital_Resources.Total_oxygen_used"/>
 						</item>
 						<item>
 							<entity name="Hospital.Total_Admissions[a]"/>
@@ -21201,18 +21354,6 @@ maximum severity (full lockdown).</doc>
 						<item>
 							<entity name="Testing.Cumulative_confirmed_cases[e]"/>
 						</item>
-						<item>
-							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_ICU"/>
-						</item>
-						<item>
-							<entity name="Hospital_Resources.oxygen_consumption_per_day_in_wards"/>
-						</item>
-						<item>
-							<entity name="Hospital_Resources.total_daily_oxygen_consumption"/>
-						</item>
-						<item>
-							<entity name="Hospital_Resources.Total_oxygen_used"/>
-						</item>
 					</table>
 				</stacked_container>
 				<text_box font_weight="bold" border_width="0.5" border_style="solid" uid="2" x="14.0451" y="73.89" width="203.242" height="18.5711">Epi key indicators:</text_box>
@@ -21343,7 +21484,6 @@ maximum severity (full lockdown).</doc>
 				<text_box text_align="center" uid="92" x="687.071" y="1643.14" width="164.286" height="52.9994">Cumulative total of PPE sets used over the simulated time period up to this point in time</text_box>
 				<text_box text_align="center" uid="93" x="515.715" y="1637.14" width="164.286" height="56.9994">Gap in PPE (value greater than zero only when demand exceeds supply)</text_box>
 				<text_box text_align="center" uid="94" x="886.317" y="1648.97" width="219.863" height="73.9994">Whether PPE supply is interrupted (1 for yes, 0 for no). Occurs between a preset start and end time when option to simulate interrupted supply is set.</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="238.214" y="1600.83" name="PPE"/>
 				<aux font_style="italic" font_weight="bold" x="428.166" y="1600.83" name="PPE needed"/>
 				<aux color="red" font_style="italic" font_weight="bold" font_color="red" x="597.858" y="1600.83" name="PPE gap"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="719.167" y="1595.64" width="102" height="31" name="total PPE used"/>
@@ -21401,8 +21541,8 @@ maximum severity (full lockdown).</doc>
 				<aux font_style="italic" font_weight="bold" x="607.691" y="2463.83" name="total initial ICU bed capacity"/>
 				<aux font_style="italic" font_weight="bold" x="806.833" y="2463.83" name="initial pandemic ICU bed capacity"/>
 				<text_box uid="123" x="51.5113" y="1744.81" width="66.928" height="45.9994">Morgue</text_box>
-				<text_box text_align="center" uid="124" x="150.107" y="1798.81" width="164.286" height="35.6627">Deceased patients being moved to morgue</text_box>
-				<text_box text_align="center" uid="126" x="508.227" y="1798.81" width="226.929" height="78.996">Where unusually high mortality rates overwhelm regular mortuary services, surplus bodies may be moved to temporary morgues such as refrigerated trucks to prevent bed blocking in hospitals</text_box>
+				<text_box text_align="center" uid="124" x="351.429" y="1797.81" width="164.286" height="35.6627">Deceased patients being moved to morgue</text_box>
+				<text_box text_align="center" uid="126" x="706.227" y="1806.81" width="226.929" height="78.996">Where unusually high mortality rates overwhelm regular mortuary services, surplus bodies may be moved to temporary morgues such as refrigerated trucks to prevent bed blocking in hospitals</text_box>
 				<aux font_style="italic" font_weight="bold" x="215.548" y="1139.81" name="max available physicians"/>
 				<text_box uid="128" x="33.5708" y="1142.81" width="79.358" height="45.9994">Physicians</text_box>
 				<text_box text_align="center" font_size="10pt" uid="127" x="133.405" y="1194.81" width="164.286" height="44.9682">Total hospital physicians employed and available for care of pandemic patients, assuming none are absent</text_box>
@@ -21413,10 +21553,10 @@ maximum severity (full lockdown).</doc>
 (for totals see end of run figures)</text_box>
 				<text_box text_align="center" uid="132" x="339.047" y="1957.81" width="164.286" height="76.6627">Antiviral treatments administered to patients in wards and ward overflows (whole treatments, whether one or more doses)</text_box>
 				<text_box text_align="center" uid="133" x="545.499" y="1957.81" width="164.286" height="70.6627">Previous strain vaccines administered to patients in ICU (whole treatments, whether one or more doses)</text_box>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="375.773" y="1748.98" width="92.5" height="24.1667" name="In morgues"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="751.417" y="1748.33" width="160.833" height="25" name="In temporary morgues"/>
-				<text_box text_align="center" uid="135" x="334.262" y="1787.98" width="164.286" height="51.496">Normal hospital morgue spaces occupied by deceased patients</text_box>
-				<text_box text_align="center" uid="136" x="744.381" y="1787.14" width="164.286" height="53.996">Deceased patients in temporary morgues, e.g. mobile refrigerated trailer units</text_box>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="573.773" y="1756.98" width="92.5" height="24.1667" name="In morgues"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="949.417" y="1756.33" width="160.833" height="25" name="In temporary morgues"/>
+				<text_box text_align="center" uid="135" x="532.262" y="1795.98" width="164.286" height="51.496">Normal hospital morgue spaces occupied by deceased patients</text_box>
+				<text_box text_align="center" uid="136" x="942.381" y="1795.14" width="164.286" height="80.996">Deceased patients in temporary morgues, e.g. mobile refrigerated trailer units</text_box>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="375.237" y="1900.36" width="93.5714" height="36.4286" name="Antivirals administered"/>
 				<stock font_style="italic" font_weight="bold" label_side="center" x="552.406" y="1901.07" width="138.571" height="35" name="Previous vaccines administered"/>
 				<aux font_style="italic" font_weight="bold" x="69.9165" y="194.167" name="Cumulative cases"/>
@@ -21431,8 +21571,8 @@ maximum severity (full lockdown).</doc>
 				<aux font_style="italic" font_weight="bold" x="827.5" y="1452.5" name="moving to ICU overflow"/>
 				<aux font_style="italic" font_weight="bold" x="1011.17" y="1437" width="18" height="18" name="at risk of dying from lack of ICU"/>
 				<aux font_style="italic" font_weight="bold" x="1208.75" y="1446.25" name="deaths in ICU"/>
-				<aux font_style="italic" font_weight="bold" x="236.25" y="1743.75" name="deceased moved to morgue"/>
-				<aux font_style="italic" font_weight="bold" x="615" y="1755" name="deceased moved to temporary morgues"/>
+				<aux font_style="italic" font_weight="bold" x="434.25" y="1751.75" name="deceased moved to morgue"/>
+				<aux font_style="italic" font_weight="bold" x="813" y="1763" name="deceased moved to temporary morgues"/>
 				<text_box font_weight="bold" text_decoration="underline" uid="139" x="260.833" y="4.16667" width="260" height="23.8333">Note Stella issues and workarounds:</text_box>
 				<text_box uid="138" x="268.542" y="23" width="1471.66" height="23">1. If there is a change in the model to a variable that is included in this list of output variables, do not leave the original output variable here and then relink it. Delete it and start again. (Otherwise it gets named varx_1 internally and the sim API throws an error). Put back in export table.</text_box>
 				<text_box uid="140" x="268.542" y="41" width="1162.5" height="23">2. Issue with Stella simulator (not Architect): flows may not output correctly (no value attribute in JSON returned by sim API). Fix is to create a converter that has the flow as input, and output that instead.</text_box>
@@ -21469,14 +21609,17 @@ maximum severity (full lockdown).</doc>
 				<text_box text_align="center" font_size="10pt" uid="153" x="326.071" y="904.993" width="164.286" height="38.961">Patients occupying an ICU bed (by age group)</text_box>
 				<aux font_style="italic" font_weight="bold" x="320.59" y="200.833" name="Cumulative confirmed cases"/>
 				<text_box uid="154" x="57.511" y="2052.81" width="200.596" height="45.9994">Oxygen</text_box>
-				<text_box text_align="center" uid="155" x="337.262" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in ICU</text_box>
-				<text_box text_align="center" uid="156" x="545.499" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in wards</text_box>
-				<text_box text_align="center" uid="157" x="734.69" y="2103.98" width="164.286" height="51.496">Total daily oxygen consumption in wards and ICU, in litres</text_box>
+				<text_box text_align="center" uid="155" x="337.262" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in ICU (litres per day)</text_box>
+				<text_box text_align="center" uid="156" x="545.499" y="2103.98" width="164.286" height="51.496">Oxygen consumption per day in wards (litres per day)</text_box>
+				<text_box text_align="center" uid="157" x="734.69" y="2103.98" width="164.286" height="51.496">Total daily oxygen consumption in wards and ICU (litres per day)</text_box>
 				<text_box text_align="center" uid="158" x="1773.33" y="2280.16" width="164.286" height="69.6061">Total estimated oxygen needed for both ward and ICU patients during the entire run, in litres</text_box>
-				<aux font_style="italic" font_weight="bold" x="421.19" y="2060.17" name="oxygen consumption per day in ICU"/>
-				<aux font_style="italic" font_weight="bold" x="621.691" y="2064" name="oxygen consumption per day in wards"/>
-				<aux font_style="italic" font_weight="bold" x="809.5" y="2064" name="total daily oxygen consumption"/>
-				<stock font_style="italic" font_weight="bold" label_side="center" x="1783.97" y="2232.54" width="134" height="33" name="Total oxygen used"/>
+				<aux font_style="italic" font_weight="bold" x="240.559" y="1751.75" name="pandemic morgue capacity"/>
+				<text_box text_align="center" uid="159" x="157.799" y="1794.81" width="164.286" height="87.6627">Number of morgue spaces made available for deceased pandemic patients, based on pre-allocated proportion of normal (peacetime) morgue capacity</text_box>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="1790.97" y="2232.54" width="127" height="40" name="Total oxygen used"/>
+				<aux font_style="italic" font_weight="bold" x="816.833" y="2059" name="total daily oxygen consumption"/>
+				<stock font_style="italic" font_weight="bold" label_side="center" x="171.059" y="1583.83" width="139" height="34" name="Pandemic PPE Stock"/>
+				<aux font_style="italic" font_weight="bold" x="416.25" y="2063" name="oxygen consumption per day in ICU"/>
+				<aux font_style="italic" font_weight="bold" x="621.691" y="2059" name="oxygen consumption per day in wards"/>
 			</view>
 		</views>
 	</model>
@@ -21506,7 +21649,9 @@ maximum severity (full lockdown).</doc>
 				<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="45" height="35"/>
 				</stock>
-				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+				<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+					<shape type="circle" radius="18"/>
+				</flow>
 				<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
 				<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 					<shape type="rectangle" width="55" height="45"/>
