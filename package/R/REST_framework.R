@@ -227,3 +227,9 @@ function(req, res) {
 
   list(prob_inf = prob_inf)
 }
+
+#* @get /ping
+#* @serializer unboxedJSON
+function(req, res) {
+  "pong"
+}
